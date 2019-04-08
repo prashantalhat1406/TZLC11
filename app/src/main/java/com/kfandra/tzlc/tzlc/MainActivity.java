@@ -1,22 +1,23 @@
 package com.kfandra.tzlc.tzlc;
 
-import android.Manifest;
+//import android.Manifest;
 import android.annotation.TargetApi;
-import android.app.Activity;
+//import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.net.Uri;
-import android.os.Build;
+//import android.net.Uri;
+//import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
+//import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageButton;
+//import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Toast;
+//import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -58,10 +59,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar =  findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-    //if (!checkWriteExternalPermission())
+    if (!checkWriteExternalPermission())
         ask();
 
         tzlcDataSource datasource;
@@ -73,9 +74,9 @@ public class MainActivity extends AppCompatActivity {
 
                 try {
 
-                    BufferedReader br = null;
+                    //BufferedReader br = null;
 
-                    br = new BufferedReader(
+                    BufferedReader br = new BufferedReader(
                             new InputStreamReader(getAssets().open("tzclubdata.txt")));
                     String line;
                     int[] colors = this.getResources().getIntArray(R.array.androidcolors);
@@ -95,14 +96,14 @@ public class MainActivity extends AppCompatActivity {
                     }
                     br.close();
                 }catch (Exception e){
-
+                    Log.d("Main", "Club Data txt file error");
                 }
 
                 try {
 
-                    BufferedReader br = null;
+                    //BufferedReader br = null;
 
-                    br = new BufferedReader(
+                    BufferedReader br = new BufferedReader(
                             new InputStreamReader(getAssets().open("tzplayerdata.txt")));
                     String line;
                     //String line;
@@ -119,14 +120,15 @@ public class MainActivity extends AppCompatActivity {
                     }
                     br.close();
                 }catch (Exception e){
+                    Log.d("Main", "Player Data txt file error");
                 }
 
 
                 try {
 
-                    BufferedReader br = null;
+                    //BufferedReader br = null;
 
-                    br = new BufferedReader(
+                    BufferedReader br = new BufferedReader(
                             new InputStreamReader(getAssets().open("tzmatchdata.txt")));
                     String line;
                     //String line;
@@ -144,6 +146,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                     br.close();
                 }catch (Exception e){
+
+                    Log.d("Main", "Match Data txt file error");
+
                 }
 
 
@@ -151,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
         datasource.close();
 
 
-        ImageView clubs = (ImageView) findViewById(R.id.butClubs);
+        ImageView clubs =  findViewById(R.id.butClubs);
         clubs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -168,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });*/
 
-        ImageView matches = (ImageView)findViewById(R.id.butMatches);
+        ImageView matches = findViewById(R.id.butMatches);
         matches.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -177,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ImageView players = (ImageView)findViewById(R.id.butPlayer);
+        ImageView players = findViewById(R.id.butPlayer);
         players.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
