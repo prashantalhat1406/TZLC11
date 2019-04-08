@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".tzlc_match_details"
+    tools:showIn="@layout/activity_tzlc_match_details">
+
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <Button android:id="@+id/butMatchDetails_MO"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" android:layout_weight="0.25" android:text="MO's"/>
+        <Button android:id="@+id/butMatchDetails_Loan"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" android:layout_weight="0.25" android:text="Loans" />
+        <Button android:id="@+id/butMatchDetails_Goal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" android:layout_weight="0.25" android:text="Goals"/>
+        <Button android:id="@+id/butMatchDetails_Card"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" android:layout_weight="0.25" android:text="Cards"/>
+
+    </LinearLayout>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+        <ImageButton android:id="@+id/butMatchDetails_Stat"
+            android:layout_width="match_parent" android:src="@drawable/stats" android:scaleType="fitCenter" android:backgroundTint="#FFFAFA"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25" android:text="Stats"/>
+
+        <ImageButton android:id="@+id/butMatchDetails_Info"
+            android:layout_width="match_parent" android:src="@drawable/info" android:scaleType="fitCenter" android:backgroundTint="#FFFAFA"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"  android:text="Info"/>
+
+        <ImageButton android:id="@+id/butMatchDetails_MO"
+            android:layout_width="match_parent"
+            android:backgroundTint="#FFFAFA" android:scaleType="fitCenter"
+            android:src="@drawable/referee"
+            android:layout_height="match_parent" android:layout_weight="0.25" android:text="MO's"/>
+        <ImageButton android:id="@+id/butMatchDetails_Loan" android:scaleType="fitCenter"
+            android:layout_width="match_parent" android:src="@drawable/loan" android:backgroundTint="#FFFAFA"
+            android:layout_height="match_parent" android:layout_weight="0.25" android:text="Loans" />
+        <ImageButton android:id="@+id/butMatchDetails_Goal" android:backgroundTint="#FFFAFA"
+            android:layout_width="match_parent" android:src="@drawable/goal" android:scaleType="fitCenter"
+            android:layout_height="match_parent" android:layout_weight="0.25" android:text="Goals"/>
+        <ImageButton android:id="@+id/butMatchDetails_Card" android:backgroundTint="#FFFAFA"
+            android:layout_width="match_parent" android:src="@drawable/cards" android:scaleType="fitCenter"
+            android:layout_height="match_parent" android:layout_weight="0.25" android:text="Cards"/>
+        <ImageButton android:id="@+id/butMatchDetails_HighLight"
+            android:layout_width="match_parent" android:src="@drawable/tv" android:scaleType="fitCenter" android:backgroundTint="#FFFAFA"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25" android:text="HighLight" />
+
+
+    </LinearLayout>
+<!--
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="180dp"
+        android:orientation="horizontal">
+
+        <ImageButton android:id="@+id/butMatchDetails_Stat"
+            android:layout_width="match_parent" android:src="@drawable/stats" android:scaleType="fitCenter" android:backgroundTint="#FFFAFA"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25" android:text="Stats"/>
+
+        <ImageButton android:id="@+id/butMatchDetails_Info"
+            android:layout_width="match_parent" android:src="@drawable/info" android:scaleType="fitCenter" android:backgroundTint="#FFFAFA"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"  android:text="Info"/>
+
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" android:visibility="gone"
+            android:layout_weight="0.25" android:text="dummy"/>
+
+    </LinearLayout> -->
+
+    <TextView android:visibility="invisible"
+        android:id="@+id/txt_matchID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="140dp"
+        android:layout_marginStart="89dp"
+        android:text="TextView" />
+</RelativeLayout>

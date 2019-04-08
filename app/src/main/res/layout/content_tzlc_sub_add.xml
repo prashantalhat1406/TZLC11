@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".tzlc_sub_add"
+    tools:showIn="@layout/activity_tzlc_sub_add" android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="viewStart"
+            android:gravity="center"
+            android:layout_weight="0.7"
+            android:text="For Club" />
+
+        <RadioGroup
+            android:layout_width="match_parent" android:id="@+id/rdgrpSubAdd"
+            android:layout_height="match_parent" android:layout_weight="0.3" android:orientation="horizontal">
+            <RadioButton
+                android:layout_width="match_parent" android:layout_weight="0.5" android:id="@+id/subAddHomeClub"
+                android:layout_height="match_parent" android:text="Home Club"/>
+            <RadioButton
+                android:layout_width="match_parent" android:layout_weight="0.5" android:id="@+id/subAddAwayClub"
+                android:layout_height="match_parent" android:text="Away Club"/>
+        </RadioGroup>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:textAlignment="viewStart"
+            android:gravity="center"
+            android:layout_weight="0.7"
+            android:text="Player OUT" />
+
+        <Spinner
+            android:id="@+id/spnPlayerOUT"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="false"
+            android:layout_weight="0.3" />
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:textAlignment="viewStart"
+            android:gravity="center"
+            android:layout_weight="0.7"
+            android:text="Player IN" />
+
+
+
+        <Spinner
+            android:id="@+id/spnPlayerIN"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:focusable="false"  />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:textAlignment="viewStart"
+            android:gravity="center"
+            android:layout_weight="0.7"
+            android:inputType="time"
+            android:text="Match Time" />
+
+        <EditText
+            android:id="@+id/edtSubTime"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:inputType="number"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_weight="0.2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:gravity="center"
+            android:textAlignment="viewStart"
+            android:layout_weight="0.7"
+
+            android:text="Subs Reason" />
+
+        <Spinner
+            android:id="@+id/spnSubReason"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="false"
+            android:layout_weight="0.3" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:layout_weight="0.12">  </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tzlcListViewItemHeight"
+        android:orientation="horizontal" android:layout_marginTop="5dp"
+        android:descendantFocusability="blocksDescendants"
+        >
+        <TextView
+            android:id="@+id/highlightMatchTime"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:text="Match Time"
+            android:textSize="@dimen/tzlcTextSize"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/highlightVCM"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:textSize="@dimen/tzlcTextSize"
+            android:text="Highlight"
+
+            android:layout_gravity="center"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/highlightClub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:textSize="@dimen/tzlcTextSize"
+            android:text="Club"
+
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/highlightHL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:textSize="@dimen/tzlcTextSize"
+            android:text="Highlight"
+
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/highlightHL2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:textSize="@dimen/tzlcTextSize"
+            android:text="Highlight2"
+
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="matchType">
+        <item>League 1st Div</item>
+        <item>League 2nd Div</item>
+        <item>Combined League Match</item>
+        <item>KFANDRAAI League Cup</item>
+        <item>KFANDRAAI Cup</item>
+        <item>Friendly</item>
+    </string-array>
+
+    <string-array name="matchTypeShort">
+        <item>L1D</item>
+        <item>L2D</item>
+        <item>CLM</item>
+        <item>KLC</item>
+        <item>KC</item>
+        <item>FND</item>
+    </string-array>
+
+    <string-array name="matchSubType">
+        <item>NA</item>
+        <item>1st Round</item>
+        <item>Pre-Quarter Final</item>
+        <item>Semi Final</item>
+        <item>Final</item>
+    </string-array>
+
+    <string-array name="matchSubTypeShort">
+        <item>NA</item>
+        <item>1R</item>
+        <item>PQF</item>
+        <item>SF</item>
+        <item>F</item>
+    </string-array>
+
+    <string-array name="MOJobProfile">
+        <item>BB</item>
+        <item>VCM1</item>
+        <item>VCM2</item>
+        <item>VCM3</item>
+        <item>SR</item>
+        <item>MR</item>
+        <item>RA</item>
+        <item>Loan</item>
+    </string-array>
+    <string-array name="cardOffences">
+        <item>Deliberate Obstruction</item>
+        <item>Accidental Obstruction</item>
+        <item>Deliberate Handlball</item>
+        <item>Accidental Handlball</item>
+        <item>Double Footed Chanllange</item>
+        <item>Mistimed Tackle</item>
+        <item>Violence</item>
+        <item>Abuse</item>
+        <item>10 Yard Infringement</item>
+        <item>Arguing</item>
+        <item>Unnecessary Appealing</item>
+        <item>Instigating Opposition</item>
+        <item>Wasting Time</item>
+        <item>Touching Referee</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="subsReasons">
+        <item>Injury</item>
+        <item>Card</item>
+        <item>Tactical</item>
+        <item>Fatigue</item>
+        <item>Work</item>
+        <item>GameTime</item>
+    </string-array>
+
+    <string-array name="resetTime">
+        <item>Half Time</item>
+        <item>Full Time</item>
+        <item>1st QTR</item>
+        <item>2nd QTR</item>
+        <item>3rd QTR</item>
+        <item>4th QTR</item>
+        <item>Time Up</item>
+        <item>Time Up</item>
+        <item>Time Up</item>
+        <item>Time Up</item>
+    </string-array>
+
+    <string-array name="reports">
+        <item>Top 10 Goal Scorers</item>
+        <item>Top 10 Assists</item>
+    </string-array>
+</resources>

@@ -1,0 +1,11 @@
+KITFO,KITFO,Prashant@Alhat,Sharad@Yeole,Papal,0,1,0
+ThunderBlotz,TZ,Ajay@Sanghavi,,Ncl,6,1,0
+NPP,NPP,Satish@Suttati,,NA,2,1,0
+Senile Wombats,SW,Amar@Venkatramani,Satish@Suttati,NA,3,1,1
+Blazing Eagle,BE,Sharad@Yeole,,Papal,4,0,0
+Blue Ice,BI,Ajay@Sanghavi,,NCL,5,0,0
+Royal Warrior,RW,Jaidev@karnth,Nishant@Fernades,NCL,6,0,0
+Silver Sharks,SS,Varun@Kuzhikattil,,Papal,7,0,0
+PACU,PACU,Jehan@Kothari,Manan@Joshi,NCL,8,0,0
+Black Thunder,BT,Sagar@Kanekar,Siddarth@Chiplunkar,NCL,9,0,0
+Aundh Panther,AP,Mukul@Inamdar,Aditya@Kotbagi,NCL,10,0,0

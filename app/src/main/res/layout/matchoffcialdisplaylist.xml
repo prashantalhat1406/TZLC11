@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tzlcListViewItemHeight"
+        android:orientation="horizontal" android:layout_marginTop="5dp"
+        android:descendantFocusability="blocksDescendants"
+        >
+        <TextView
+            android:id="@+id/moName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text="Player Name"
+            android:textSize="@dimen/tzlcTextSize"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/moClub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text="Club"
+            android:textSize="@dimen/tzlcTextSize"
+
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/moMatch"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text="Match"
+            android:textSize="@dimen/tzlcTextSize"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/moJob"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text="job Profile"
+            android:textSize="@dimen/tzlcTextSize"
+
+            android:layout_gravity="center"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/moTime"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text="On-matchTime"
+            android:textSize="@dimen/tzlcTextSize"
+
+            android:layout_gravity="center"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+</RelativeLayout>

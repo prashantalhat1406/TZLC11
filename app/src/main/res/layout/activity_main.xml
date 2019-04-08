@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <!--<include
+        layout="@layout/content_main"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" /> -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:layout_weight="0.8">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="WELCOME TO THE TZLC STATS APP"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="28dp"
+            android:textColor="@color/Navy"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:layout_weight="0.2">
+        <ImageView android:layout_weight="0.3" android:scaleType="fitCenter"
+            android:layout_width="match_parent" android:id="@+id/butClubs"
+            android:layout_height="match_parent" android:src="@drawable/clubs"/>
+        <ImageView android:layout_weight="0.3" android:scaleType="fitCenter"
+            android:layout_width="match_parent" android:id="@+id/butMatches"
+            android:layout_height="match_parent" android:src="@drawable/fixtures"/>
+        <ImageView android:layout_weight="0.3" android:scaleType="fitCenter"
+            android:layout_width="match_parent" android:id="@+id/butPlayer"
+            android:layout_height="match_parent" android:src="@drawable/players"/>
+
+    </LinearLayout>
+
+    <!--<ImageButton android:id="@+id/butClubs" android:scaleType="fitCenter" android:backgroundTint="#FFFAFA"
+        android:layout_width="match_parent" android:src="@drawable/clubs"
+        android:layout_height="match_parent" android:layout_weight="0.3"/>
+    <ImageButton android:id="@+id/butMatches" android:scaleType="fitCenter" android:backgroundTint="#FFFAFA"
+        android:layout_width="match_parent" android:src="@drawable/fixtures"
+        android:layout_height="match_parent" android:layout_weight="0.3"/>
+    <ImageButton android:id="@+id/butPlayer" android:scaleType="fitCenter" android:backgroundTint="#FFFAFA"
+        android:layout_width="match_parent" android:src="@drawable/players"
+        android:layout_height="match_parent" android:layout_weight="0.3"/>-->
+
+
+    <!--<android.support.design.widget.FloatingActionButton
+        android:id="@+id/butPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/butClubs"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="60dp"
+        android:tooltipText="Player"
+        app:backgroundTint="@android:drawable/screen_background_light"
+        app:srcCompat="@drawable/icon_player" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/butMatches"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/butPlayer"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="35dp"
+        android:tooltipText="Matches"
+        app:backgroundTint="@android:drawable/screen_background_light"
+        app:srcCompat="@drawable/icon_match" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/butClubs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="190dp"
+        android:layout_marginStart="31dp"
+        android:tooltipText="Clubs"
+        app:backgroundTint="@android:drawable/screen_background_light"
+        app:srcCompat="@drawable/icon_club" />-->
+
+
+
+</LinearLayout>

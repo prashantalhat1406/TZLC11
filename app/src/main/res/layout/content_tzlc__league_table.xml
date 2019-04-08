@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".tzlc_LeagueTable" android:orientation="vertical"
+    tools:showIn="@layout/activity_tzlc__league_table">
+
+    <LinearLayout
+        android:layout_width="match_parent" android:orientation="vertical"
+        android:layout_height="match_parent" android:layout_weight="0.2">
+
+    <TextView
+            android:layout_width="match_parent"  android:gravity="center" android:textAlignment="center" android:textStyle="bold"
+            android:layout_height="match_parent" android:layout_weight="0.9" android:text="1st Division" android:textSize="@dimen/tzlcTextSize"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:orientation="horizontal" android:layout_weight="0.9">
+
+        <TextView
+            android:layout_width="match_parent"  android:gravity="center" android:textAlignment="center" android:textStyle="bold"
+            android:layout_height="match_parent" android:layout_weight="0.18" android:text="Clubs"/>
+
+        <TextView
+            android:layout_width="match_parent"   android:gravity="center" android:textAlignment="center" android:textStyle="bold"
+            android:layout_height="match_parent" android:layout_weight="0.2" android:text="P"/>
+
+        <TextView
+            android:layout_width="match_parent"   android:gravity="center" android:textAlignment="center" android:textStyle="bold"
+            android:layout_height="match_parent" android:layout_weight="0.2" android:text="W"/>
+
+        <TextView
+            android:layout_width="match_parent"   android:gravity="center" android:textAlignment="center" android:textStyle="bold"
+            android:layout_height="match_parent" android:layout_weight="0.2" android:text="D"/>
+
+        <TextView
+            android:layout_width="match_parent"   android:gravity="center" android:textAlignment="center" android:textStyle="bold"
+            android:layout_height="match_parent" android:layout_weight="0.2" android:text="L"/>
+
+        <TextView
+            android:layout_width="match_parent"   android:gravity="center" android:textAlignment="center" android:textStyle="bold"
+            android:layout_height="match_parent" android:layout_weight="0.2" android:text="F"/>
+
+        <TextView
+            android:layout_width="match_parent"   android:gravity="center" android:textAlignment="center" android:textStyle="bold"
+            android:layout_height="match_parent" android:layout_weight="0.2" android:text="A"/>
+
+        <TextView
+            android:layout_width="match_parent"   android:gravity="center" android:textAlignment="center" android:textStyle="bold"
+            android:layout_height="match_parent" android:layout_weight="0.2" android:text="GD"/>
+
+        <TextView
+            android:layout_width="match_parent"   android:gravity="center" android:textAlignment="center" android:textStyle="bold"
+            android:layout_height="match_parent" android:layout_weight="0.2" android:text="PTs"/>
+
+        <TextView
+            android:layout_width="match_parent"   android:gravity="center" android:textAlignment="center" android:textStyle="bold"
+            android:layout_height="match_parent" android:layout_weight="0.2" android:text="H"/>
+
+        <TextView
+            android:layout_width="match_parent"   android:gravity="center" android:textAlignment="center" android:textStyle="bold"
+            android:layout_height="match_parent" android:layout_weight="0.2" android:text="A"/>
+
+        <TextView
+            android:layout_width="match_parent"   android:gravity="center" android:textAlignment="center" android:textStyle="bold"
+            android:layout_height="match_parent" android:layout_weight="0.19" android:text=""/>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <ListView
+        android:id="@+id/displayLeagueTable"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <LinearLayout
+        android:layout_width="match_parent" android:orientation="vertical"
+        android:layout_height="match_parent" android:layout_weight="0.2">
+
+    <TextView
+            android:layout_width="match_parent"  android:gravity="center" android:textAlignment="center" android:textStyle="bold"
+            android:layout_height="match_parent" android:layout_weight="0.9" android:text="2nd Division" android:textSize="@dimen/tzlcTextSize"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:orientation="horizontal" android:layout_weight="0.9" >
+
+        <TextView
+            android:layout_width="match_parent"  android:gravity="center" android:textAlignment="center" android:textStyle="bold"
+            android:layout_height="match_parent" android:layout_weight="0.18" android:text="Clubs"/>
+
+        <TextView
+            android:layout_width="match_parent"   android:gravity="center" android:textAlignment="center" android:textStyle="bold"
+            android:layout_height="match_parent" android:layout_weight="0.2" android:text="P"/>
+
+        <TextView
+            android:layout_width="match_parent"   android:gravity="center" android:textAlignment="center" android:textStyle="bold"
+            android:layout_height="match_parent" android:layout_weight="0.2" android:text="W"/>
+
+        <TextView
+            android:layout_width="match_parent"   android:gravity="center" android:textAlignment="center" android:textStyle="bold"
+            android:layout_height="match_parent" android:layout_weight="0.2" android:text="D"/>
+
+        <TextView
+            android:layout_width="match_parent"   android:gravity="center" android:textAlignment="center" android:textStyle="bold"
+            android:layout_height="match_parent" android:layout_weight="0.2" android:text="L"/>
+
+        <TextView
+            android:layout_width="match_parent"   android:gravity="center" android:textAlignment="center" android:textStyle="bold"
+            android:layout_height="match_parent" android:layout_weight="0.2" android:text="F"/>
+
+        <TextView
+            android:layout_width="match_parent"   android:gravity="center" android:textAlignment="center" android:textStyle="bold"
+            android:layout_height="match_parent" android:layout_weight="0.2" android:text="A"/>
+
+        <TextView
+            android:layout_width="match_parent"   android:gravity="center" android:textAlignment="center" android:textStyle="bold"
+            android:layout_height="match_parent" android:layout_weight="0.2" android:text="GD"/>
+
+        <TextView
+            android:layout_width="match_parent"   android:gravity="center" android:textAlignment="center" android:textStyle="bold"
+            android:layout_height="match_parent" android:layout_weight="0.2" android:text="PTs"/>
+
+        <TextView
+            android:layout_width="match_parent"   android:gravity="center" android:textAlignment="center" android:textStyle="bold"
+            android:layout_height="match_parent" android:layout_weight="0.2" android:text="H"/>
+
+        <TextView
+            android:layout_width="match_parent"   android:gravity="center" android:textAlignment="center" android:textStyle="bold"
+            android:layout_height="match_parent" android:layout_weight="0.2" android:text="A"/>
+
+        <TextView
+            android:layout_width="match_parent"   android:gravity="center" android:textAlignment="center" android:textStyle="bold"
+            android:layout_height="match_parent" android:layout_weight="0.19" android:text=""/>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <ListView
+        android:id="@+id/displayLeagueTable2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2" />
+
+    </LinearLayout>
+
+</LinearLayout>

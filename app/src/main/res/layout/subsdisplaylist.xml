@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tzlcListViewItemHeight"
+        android:orientation="horizontal"
+        android:descendantFocusability="blocksDescendants"
+        android:layout_marginTop="5dp"
+        >
+
+        <TextView
+            android:id="@+id/subClub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.23"
+            android:text="Club"
+            android:textSize="@dimen/tzlcTextSize"
+            android:layout_gravity="center"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/subTime"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.23"
+            android:text="Time"
+            android:textSize="@dimen/tzlcTextSize"
+            android:layout_gravity="center"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/subPlayerOUT"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:text="Player OUT"
+            android:textSize="@dimen/tzlcTextSize"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/subPlayerIN"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:text="Player IN"
+            android:textSize="@dimen/tzlcTextSize"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/subReason"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:text="Reason"
+            android:textSize="@dimen/tzlcTextSize"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+
+
+    </LinearLayout>
+</LinearLayout>

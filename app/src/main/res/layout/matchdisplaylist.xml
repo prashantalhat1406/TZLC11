@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tzlcListViewItemHeight"
+        android:orientation="horizontal" android:layout_marginTop="5dp"
+        android:descendantFocusability="blocksDescendants"
+        android:background="@drawable/roundbutton"
+        >
+        <TextView
+            android:id="@+id/matchDate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.24"
+            android:text="Date"
+            android:textSize="@dimen/tzlcTextSize"
+
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/matchName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:text="Match"
+            android:textSize="@dimen/tzlcTextSize"
+
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/matchType"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text="Type"
+            android:textSize="@dimen/tzlcTextSize"
+
+            android:layout_gravity="center"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/matchResult"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.26"
+            android:text="Result"
+            android:textSize="@dimen/tzlcTextSize"
+
+            android:layout_gravity="center"
+            android:gravity="center"
+            />
+    </LinearLayout>
+</RelativeLayout>

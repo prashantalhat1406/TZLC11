@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kfandra.tzlc.tzlc">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".tzlc_club_add"
+            android:label="@string/title_activity_add_club_details"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kfandra.tzlc.tzlc.MainActivity" />
+        </activity>
+        <activity
+            android:name=".tzlc_club_display"
+            android:label="@string/title_activity_display_club_info"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kfandra.tzlc.tzlc.MainActivity" />
+        </activity>
+        <activity
+            android:name=".StatsRecording"
+            android:label="@string/title_activity_stats_recording"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kfandra.tzlc.tzlc.MainActivity" />
+        </activity>
+        <activity
+            android:name=".saiSeva"
+            android:label="@string/title_activity_sai_seva"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:parentActivityName=".MainActivity"
+                android:value="com.kfandra.tzlc.tzlc.MainActivity" />
+        </activity>
+        <activity
+            android:name=".addExpenseDetails"
+            android:label="@string/title_activity_add_expense_details"
+            android:parentActivityName=".saiSeva"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kfandra.tzlc.tzlc.saiSeva" />
+        </activity>
+        <activity
+            android:name=".editExpenseDetails"
+            android:label="@string/title_activity_edit_expense_details"
+            android:parentActivityName=".saiSeva"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kfandra.tzlc.tzlc.saiSeva" />
+        </activity>
+        <activity
+            android:name=".displaySummaryExpenses"
+            android:label="@string/title_activity_display_summary_expenses"
+            android:parentActivityName=".saiSeva"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kfandra.tzlc.tzlc.saiSeva" />
+        </activity>
+        <activity
+            android:name=".tzlc_match_display"
+            android:label="@string/title_activity_tzlc_match_display"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kfandra.tzlc.tzlc.MainActivity" />
+
+        </activity>
+        <activity
+            android:name=".tzlc_match_add"
+            android:label="@string/title_activity_tzlc_match_add"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <!--
+                <meta-data android:parentActivityName=".tzlc_match_display"
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kfandra.tzlc.tzlc.tzlc_match_display" />
+            -->
+        </activity>
+        <activity
+            android:name=".tzlc_player_display"
+            android:label="@string/title_activity_tzlc_player_display"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kfandra.tzlc.tzlc.MainActivity" />
+        </activity>
+        <activity
+            android:name=".tzlc_player_add"
+            android:label="@string/title_activity_tzlc_player_add"
+            android:parentActivityName=".tzlc_player_display"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kfandra.tzlc.tzlc.tzlc_player_display" />
+        </activity>
+        <activity
+            android:name=".tzlc_match_details"
+            android:label="@string/title_activity_tzlc_match_details"
+            android:parentActivityName=".tzlc_match_display"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kfandra.tzlc.tzlc.tzlc_match_display" />
+        </activity>
+        <activity
+            android:name=".tzlc_mo_display"
+            android:label="@string/title_activity_tzlc_mo_display"
+            android:parentActivityName=".tzlc_match_details"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kfandra.tzlc.tzlc.tzlc_match_details" />
+        </activity>
+        <activity
+            android:name=".tzlc_mo_add"
+            android:label="@string/title_activity_tzlc_mo_add"
+            android:parentActivityName=".tzlc_mo_display"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kfandra.tzlc.tzlc.tzlc_mo_display" />
+        </activity>
+        <activity
+            android:name=".tzlc_loan_display"
+            android:label="@string/title_activity_tzlc_loan_display"
+            android:parentActivityName=".tzlc_match_details"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kfandra.tzlc.tzlc.tzlc_match_details" />
+        </activity>
+        <activity
+            android:name=".tzlc_loan_add"
+            android:label="@string/title_activity_tzlc_loan_add"
+            android:parentActivityName=".tzlc_loan_display"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kfandra.tzlc.tzlc.tzlc_loan_display" />
+        </activity>
+        <activity
+            android:name=".tzlc_goal_display"
+            android:label="@string/title_activity_tzlc_goal_display"
+            android:parentActivityName=".tzlc_match_details"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kfandra.tzlc.tzlc.tzlc_match_details" />
+        </activity>
+        <activity
+            android:name=".tzlc_goal_add"
+            android:label="@string/title_activity_tzlc_goal_add"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".tzlc_card_display"
+            android:label="@string/title_activity_tzlc_card_displayil"
+            android:parentActivityName=".tzlc_match_details"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kfandra.tzlc.tzlc.tzlc_match_details" />
+        </activity>
+        <activity
+            android:name=".tzlc_card_add"
+            android:label="@string/title_activity_tzlc_card_add"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".tzlc_stats_add"
+            android:label="@string/title_activity_tzlc_stats_add"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".tzlc_highlight_add"
+            android:label="@string/title_activity_tzlc_highlight_add"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".tzlc_highlight_display"
+            android:label="@string/title_activity_tzlc_highlight_display"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".tzlc_stats_display"
+            android:label="@string/title_activity_tzlc_stats_display"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TextTabs"
+            android:label="@string/title_activity_text_tabs"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".tzlc_club_detail"
+            android:label="@string/title_activity_tab"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".tzlc_player_details"
+            android:label="@string/title_activity_tzlc_player_details"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".tzlc_squad_add"
+            android:label="@string/title_activity_tzlc_squad_add"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".tzlc_match_details_tabs"
+            android:label="@string/title_activity_tzlc_match_details_tabs"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".tzlc_sub_add"
+            android:label="@string/title_activity_tzlc_sub_add"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".tzlc_sub_display"
+            android:label="@string/title_activity_tzlc_sub_display"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".tzlc_Reports"
+            android:label="@string/title_activity_tzlc__reports"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kfandra.tzlc.tzlc.MainActivity" />
+        </activity>
+        <activity
+            android:name=".tzlc_LeagueTable"
+            android:label="@string/title_activity_tzlc__league_table"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kfandra.tzlc.tzlc.MainActivity" />
+        </activity>
+        <activity
+            android:name=".tzlc_change_jersey_color"
+            android:label="@string/title_activity_tzlc_change_jersey_color"
+            android:parentActivityName=".tzlc_stats_add"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kfandra.tzlc.tzlc.tzlc_stats_add" />
+        </activity>
+    </application>
+
+</manifest>

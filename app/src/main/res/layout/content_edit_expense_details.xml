@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".editExpenseDetails"
+    tools:showIn="@layout/activity_edit_expense_details">
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/select_expense_category" />
+
+    <Spinner
+        android:id="@+id/EditspnCategory"
+        android:layout_width="175dp"
+        android:layout_height="42dp"
+        android:layout_alignBottom="@+id/textView7"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="-18dp"
+        android:layout_marginEnd="15dp" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/textView7"
+        android:layout_marginTop="81dp"
+        android:text="@string/enter_amount" />
+
+    <EditText
+        android:id="@+id/Editamount"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/textView16"
+        android:layout_marginEnd="15dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/textView7"
+        android:layout_marginTop="174dp"
+        android:text="@string/select_date" />
+
+    <EditText
+        android:id="@+id/EditdatePicker"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView17"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="15dp"
+        android:focusable="false"
+        android:ems="10"
+        android:inputType="date" />
+
+    <!--<Button
+        android:id="@+id/EDITExpenses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="24dp"
+        android:layout_marginStart="44dp"
+        android:text="Save" />-->
+
+    <RadioGroup
+        android:id="@+id/EditradioGroup"
+        android:layout_width="338dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="159dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/Editdebit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/debit" />
+
+        <RadioButton
+            android:id="@+id/Editcredit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/credit" />
+    </RadioGroup>
+
+    <!--<Button
+        android:id="@+id/DELETEExpenses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/EDITExpenses"
+        android:layout_marginEnd="58dp"
+        android:text="Delete" />-->
+
+</RelativeLayout>

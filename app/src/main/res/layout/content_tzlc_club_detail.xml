@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".tzlc_club_detail" android:orientation="vertical"
+    tools:showIn="@layout/activity_tzlc_club_detail">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:layout_weight="0.8">
+        <LinearLayout
+            android:layout_width="match_parent" android:orientation="vertical"
+            android:layout_height="match_parent" android:layout_weight="0.6">
+            <ImageView android:id="@+id/clubDetailLogo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:layout_weight="0.1"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:layout_weight="0.9">
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent" android:orientation="vertical"
+            android:layout_height="match_parent" android:layout_weight="0.4">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:layout_weight="0.25">
+                <TextView android:layout_weight="0.5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:text="Club Name " android:gravity="center" android:textAlignment="textStart"/>
+                <TextView android:id="@+id/txtclubDetailClubname"
+                    android:layout_width="match_parent" android:layout_weight="0.5"
+                    android:layout_height="match_parent" android:text="Club" android:gravity="center" android:textAlignment="textStart" android:textStyle="bold"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:layout_weight="0.25">
+                <TextView android:layout_weight="0.5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:text="Home Ground" android:gravity="center" android:textAlignment="textStart"/>
+                <TextView android:id="@+id/txtClubDetailGround"
+                    android:layout_width="match_parent" android:layout_weight="0.5"
+                    android:layout_height="match_parent" android:text="Ground" android:gravity="center" android:textAlignment="textStart" android:textStyle="bold"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:layout_weight="0.25">
+                <TextView android:layout_weight="0.5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:text="Manager" android:gravity="center" android:textAlignment="textStart"/>
+                <TextView android:id="@+id/txtClubDetailManager"
+                    android:layout_width="match_parent" android:layout_weight="0.5"
+                    android:layout_height="match_parent" android:text="Manager" android:gravity="center" android:textAlignment="textStart" android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:layout_weight="0.25">
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <android.support.design.widget.TabLayout
+        android:layout_width="match_parent" android:id="@+id/tabLayout" app:tabMaxWidth="0dp"
+        android:layout_height="match_parent" android:layout_weight="0.98">
+
+    </android.support.design.widget.TabLayout>
+
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent" android:id="@+id/viewPage"
+        android:layout_height="match_parent" android:layout_weight="0.35">
+
+    </android.support.v4.view.ViewPager>
+
+</LinearLayout>

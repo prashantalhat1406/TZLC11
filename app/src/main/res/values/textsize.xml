@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tzlcTextSize">18dp</dimen>
+    <dimen name="tzlcStatsTextSize">28dp</dimen>
+    <dimen name="tzlcListViewItemHeight">55dp</dimen>
+    <dimen name="tzlcStatsLabelSize">15dp</dimen>
+</resources>

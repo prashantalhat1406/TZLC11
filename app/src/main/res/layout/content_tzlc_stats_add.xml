@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".StatsRecording" android:orientation="vertical"
+    tools:showIn="@layout/activity_stats_recording">
+
+    <LinearLayout android:layout_weight="0.85"
+        android:id="@+id/layoutH1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:layout_weight="0.3" android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtstatsHomeClub"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:text="Home Club"
+                android:textSize="18sp"
+                android:textStyle="normal|bold" />
+            <TextView android:id="@+id/txtstatsHomeClubScore"
+                android:layout_width="match_parent" android:textStyle="bold" android:textSize="14dp"
+                android:layout_height="match_parent" android:layout_weight="0.5" android:text="Score" android:gravity="center"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:layout_weight="0.3" android:orientation="vertical">
+            <TextView android:id="@+id/txtstatsMatchType"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:layout_weight="0.5" android:text="Match Type" android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/txtstatsMatchTimer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:text="00 : 00"
+                android:textSize="20sp"
+                android:textColor="@color/Red"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:layout_weight="0.3" android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtstatsAwayClub"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:text="Away Club"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            <TextView android:id="@+id/txtstatsAwayClubScore"
+                android:layout_width="match_parent" android:textStyle="bold" android:textSize="14dp"
+                android:layout_height="match_parent" android:layout_weight="0.5" android:text="Score" android:gravity="center"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent" android:paddingTop="5dp"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <LinearLayout android:layout_weight="0.3"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/layoutH2" android:layout_weight="0.5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.21" android:paddingBottom="5dp" android:paddingTop="5dp" android:paddingLeft="5dp" android:paddingRight="5dp"
+            android:orientation="horizontal">
+
+            <TextView android:id="@+id/txtHomeClub1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center" android:text="SS" android:textSize="@dimen/tzlcTextSize"
+                android:layout_weight="0.2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:gravity="center"
+                android:textSize="18sp" />
+
+            <TextView android:id="@+id/txtAwayClub1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center" android:text="BE" android:textSize="@dimen/tzlcTextSize"
+                android:layout_weight="0.2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2" android:paddingBottom="5dp" android:paddingTop="5dp" android:paddingLeft="5dp" android:paddingRight="5dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/butstatsHomeDFK"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:background="@drawable/roundbutton" android:textSize="@dimen/tzlcStatsTextSize" android:enabled="false"
+                android:backgroundTint="@android:color/holo_orange_light" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:gravity="center"
+                android:text="FreeKick"
+                android:textSize="@dimen/tzlcStatsLabelSize"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/butstatsAwayDFK"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:background="@drawable/roundbutton" android:textSize="@dimen/tzlcStatsTextSize" android:enabled="false"
+                android:backgroundTint="@android:color/holo_blue_bright" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2" android:paddingBottom="5dp" android:paddingTop="5dp" android:paddingLeft="5dp" android:paddingRight="5dp"
+            android:orientation="horizontal">
+
+            <Button android:id="@+id/butstatsHomeCor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/roundbutton" android:textSize="@dimen/tzlcStatsTextSize" android:enabled="false"
+                android:layout_weight="0.2" android:backgroundTint="@android:color/holo_orange_light"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:gravity="center"
+                android:text="Corner"
+                android:textSize="@dimen/tzlcStatsLabelSize"
+                android:textStyle="bold" />
+
+            <Button android:id="@+id/butstatsAwayCor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/roundbutton" android:textSize="@dimen/tzlcStatsTextSize" android:enabled="false"
+                android:layout_weight="0.2" android:backgroundTint="@android:color/holo_blue_bright"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2" android:paddingBottom="5dp" android:paddingTop="5dp" android:paddingLeft="5dp" android:paddingRight="5dp"
+            android:orientation="horizontal">
+
+            <Button android:id="@+id/butstatsHomeGK"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/roundbutton" android:textSize="@dimen/tzlcStatsTextSize" android:enabled="false"
+                android:layout_weight="0.2" android:backgroundTint="@android:color/holo_orange_light"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:gravity="center"
+                android:text="Goal Kick"
+                android:textSize="@dimen/tzlcStatsLabelSize"
+                android:textStyle="bold" />
+
+            <Button android:id="@+id/butstatsAwayGK"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/roundbutton" android:textSize="@dimen/tzlcStatsTextSize" android:enabled="false"
+                android:layout_weight="0.2" android:backgroundTint="@android:color/holo_blue_bright"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2" android:paddingBottom="5dp" android:paddingTop="5dp" android:paddingLeft="5dp" android:paddingRight="5dp"
+            android:orientation="horizontal">
+
+            <Button android:id="@+id/butstatsHomeSOnT"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/roundbutton" android:textSize="@dimen/tzlcStatsTextSize" android:enabled="false"
+                android:layout_weight="0.2" android:backgroundTint="@android:color/holo_orange_light"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:gravity="center"
+                android:text="Shot On Target"
+                android:textSize="@dimen/tzlcStatsLabelSize"
+                android:textStyle="bold" />
+
+            <Button android:id="@+id/butstatsAwaySOnT"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/roundbutton" android:textSize="@dimen/tzlcStatsTextSize" android:enabled="false"
+                android:layout_weight="0.2" android:backgroundTint="@android:color/holo_blue_bright"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2" android:paddingBottom="5dp" android:paddingTop="5dp" android:paddingLeft="5dp" android:paddingRight="5dp"
+            android:orientation="horizontal">
+
+            <Button android:id="@+id/butstatsHomeSOffT"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/roundbutton" android:textSize="@dimen/tzlcStatsTextSize" android:enabled="false"
+                android:layout_weight="0.2" android:backgroundTint="@android:color/holo_orange_light"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:gravity="center"
+                android:text="Shot Off Target"
+                android:textSize="@dimen/tzlcStatsLabelSize"
+                android:textStyle="bold" />
+
+            <Button android:id="@+id/butstatsAwaySOffT"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/roundbutton" android:textSize="@dimen/tzlcStatsTextSize" android:enabled="false"
+                android:layout_weight="0.2" android:backgroundTint="@android:color/holo_blue_bright"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/darker_gray"/>
+
+    <LinearLayout
+        android:id="@+id/layoutH3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.21" android:paddingBottom="5dp" android:paddingTop="5dp" android:paddingLeft="5dp" android:paddingRight="5dp"
+            android:orientation="horizontal">
+
+            <TextView android:id="@+id/txtHomeClub2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center" android:text="SS" android:textSize="@dimen/tzlcTextSize" android:enabled="false"
+                android:layout_weight="0.2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:gravity="center"
+
+                android:textSize="18sp" />
+
+            <TextView android:id="@+id/txtAwayClub2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center" android:text="BE" android:textSize="@dimen/tzlcTextSize" android:enabled="false"
+                android:layout_weight="0.2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2" android:paddingBottom="5dp" android:paddingTop="5dp" android:paddingLeft="5dp" android:paddingRight="5dp"
+            android:orientation="horizontal">
+
+            <Button android:id="@+id/butstatsHomeLC"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/roundbutton" android:textSize="@dimen/tzlcStatsTextSize" android:enabled="false"
+                android:layout_weight="0.2" android:backgroundTint="@android:color/holo_orange_light"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:gravity="center"
+                android:text="Late Challenge"
+                android:textSize="@dimen/tzlcStatsLabelSize"
+                android:textStyle="bold" />
+
+            <Button android:id="@+id/butstatsAwayLC"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/roundbutton" android:textSize="@dimen/tzlcStatsTextSize" android:enabled="false"
+                android:layout_weight="0.2" android:backgroundTint="@android:color/holo_blue_bright"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2" android:paddingBottom="5dp" android:paddingTop="5dp" android:paddingLeft="5dp" android:paddingRight="5dp"
+            android:orientation="horizontal">
+
+            <Button android:id="@+id/butstatsHomeTackle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/roundbutton" android:textSize="@dimen/tzlcStatsTextSize" android:enabled="false"
+                android:layout_weight="0.2" android:backgroundTint="@android:color/holo_orange_light"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:gravity="center"
+                android:text="Tackles"
+                android:textSize="@dimen/tzlcStatsLabelSize"
+                android:textStyle="bold" />
+
+            <Button android:id="@+id/butstatsAwayTackle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/roundbutton" android:textSize="@dimen/tzlcStatsTextSize" android:enabled="false"
+                android:layout_weight="0.2" android:backgroundTint="@android:color/holo_blue_bright"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2" android:paddingBottom="5dp" android:paddingTop="5dp" android:paddingLeft="5dp" android:paddingRight="5dp"
+            android:orientation="horizontal">
+
+            <Button android:id="@+id/butstatsHomeTI"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/roundbutton" android:textSize="@dimen/tzlcStatsTextSize" android:enabled="false"
+                android:layout_weight="0.2" android:backgroundTint="@android:color/holo_orange_light"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:gravity="center"
+                android:text="Throw-In"
+                android:textSize="@dimen/tzlcStatsLabelSize"
+                android:textStyle="bold" />
+
+            <Button android:id="@+id/butstatsAwayTI"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/roundbutton" android:textSize="@dimen/tzlcStatsTextSize" android:enabled="false"
+                android:layout_weight="0.2" android:backgroundTint="@android:color/holo_blue_bright"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2" android:paddingBottom="5dp" android:paddingTop="5dp" android:paddingLeft="5dp" android:paddingRight="5dp"
+            android:orientation="horizontal">
+
+            <Button android:id="@+id/butstatsHomeOff"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/roundbutton" android:textSize="@dimen/tzlcStatsTextSize" android:enabled="false"
+                android:layout_weight="0.2" android:backgroundTint="@android:color/holo_orange_light"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:gravity="center"
+                android:text="Offside"
+                android:textSize="@dimen/tzlcStatsLabelSize"
+                android:textStyle="bold" />
+
+            <Button android:id="@+id/butstatsAwayOff"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/roundbutton" android:textSize="@dimen/tzlcStatsTextSize" android:enabled="false"
+                android:layout_weight="0.2" android:backgroundTint="@android:color/holo_blue_bright"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2" android:paddingBottom="5dp" android:paddingTop="5dp" android:paddingLeft="5dp" android:paddingRight="5dp"
+            android:orientation="horizontal">
+
+            <Button android:id="@+id/butstatsHomePOP"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/roundbutton" android:textSize="@dimen/tzlcStatsTextSize" android:enabled="false"
+                android:layout_weight="0.2" android:backgroundTint="@android:color/holo_orange_light"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:gravity="center"
+                android:text="POP"
+                android:textSize="@dimen/tzlcStatsLabelSize"
+                android:textStyle="bold" />
+
+            <Button android:id="@+id/butstatsAwayPOP"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/roundbutton" android:textSize="@dimen/tzlcStatsTextSize" android:enabled="false"
+                android:layout_weight="0.2" android:backgroundTint="@android:color/holo_blue_bright"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <LinearLayout android:layout_weight="0.7"
+        android:id="@+id/layoutH4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent" android:orientation="horizontal"
+                android:layout_height="match_parent" android:layout_weight="0.5">
+
+                <ImageButton android:layout_weight="0.5" android:id="@+id/butstatsGoal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"  android:src="@drawable/goal" android:scaleType="fitCenter" android:backgroundTint="#FFFAFA"/>
+
+                <ImageButton android:layout_weight="0.5" android:id="@+id/butstatsCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"  android:src="@drawable/cards" android:scaleType="fitCenter" android:backgroundTint="#FFFAFA"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent" android:orientation="horizontal"
+                android:layout_height="match_parent" android:layout_weight="0.5">
+
+                <ImageButton android:layout_weight="0.5" android:id="@+id/butstatsSubs"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"  android:src="@drawable/subs" android:scaleType="fitCenter" android:backgroundTint="#FFFAFA" android:visibility="gone"/>
+
+                <ImageButton android:layout_weight="0.5" android:id="@+id/butstatsHighlight"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:src="@drawable/tv" android:scaleType="fitCenter" android:backgroundTint="#FFFAFA" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/butstatsChange"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" app:backgroundTint="@android:color/holo_orange_light"  />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent" android:orientation="vertical"
+                android:layout_height="match_parent" android:layout_weight="0.5">
+
+                <TextView android:id="@+id/txtstatsHomeClubPossesion"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:gravity="center"
+
+                    android:text="00 : 00" />
+
+                <TextView android:id="@+id/txtstatsAwayClubPossesion"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:gravity="center"
+                    android:text="00 : 00" />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent" android:orientation="vertical"
+                android:layout_height="match_parent" android:layout_weight="0.5">
+
+                <ImageButton android:layout_weight="0.5" android:id="@+id/butstatsPause"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:src="@drawable/start" android:scaleType="fitCenter" android:backgroundTint="#FFFAFA" />
+
+                <ImageButton android:layout_weight="0.5" android:id="@+id/butstatsResetTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:src="@drawable/reset" android:scaleType="fitCenter" android:backgroundTint="#FFFAFA" />
+
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

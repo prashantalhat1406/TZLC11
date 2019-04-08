@@ -1,0 +1,32 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.kfandra.tzlc.tzlc.MainActivity">
+    <!--<item
+        android:id="@+id/clubData"
+        android:orderInCategory="100"
+        android:title="Load ClubData"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/playerData"
+        android:orderInCategory="100"
+        android:title="Load Player Data"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/matchData"
+        android:orderInCategory="100"
+        android:title="Load Match Data"
+        app:showAsAction="never" />-->
+
+    <item
+        android:id="@+id/tzlcReports"
+        android:orderInCategory="100"
+        android:title="Reports"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/tzlcLeagueTable"
+        android:orderInCategory="100"
+        android:title="League Table"
+        app:showAsAction="never" />
+</menu>

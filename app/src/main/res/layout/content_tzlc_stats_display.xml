@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".tzlc_stats_display" android:orientation="vertical"
+    tools:showIn="@layout/activity_tzlc_stats_display">
+    <ScrollView android:id="@+id/matchReport"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="vertical">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_weight="0.3"
+                android:layout_height="match_parent" android:orientation="vertical">
+                    <TextView android:id="@+id/reportHomeClub" android:gravity="center"
+                        android:layout_width="match_parent" android:layout_weight="0.3"
+                        android:layout_height="match_parent" android:text="Home"/>
+                <TextView android:id="@+id/reportHomeScore" android:gravity="center"
+                    android:layout_width="match_parent" android:layout_weight="0.3"
+                    android:layout_height="match_parent" android:text="Score"/>
+                <TextView android:id="@+id/reportHomePossession" android:gravity="center"
+                    android:layout_width="match_parent" android:layout_weight="0.3"
+                    android:layout_height="match_parent" android:text="Pssession"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_weight="0.3"
+                android:layout_height="match_parent" android:orientation="vertical">
+                <TextView android:gravity="center" android:id="@+id/reportMatchType"
+                    android:layout_width="match_parent" android:layout_weight="0.3"
+                    android:layout_height="match_parent" android:text="Club"/>
+                <TextView android:gravity="center"
+                    android:layout_width="match_parent" android:layout_weight="0.3"
+                    android:layout_height="match_parent" android:text="Score"/>
+                <TextView android:gravity="center"
+                    android:layout_width="match_parent" android:layout_weight="0.3"
+                    android:layout_height="match_parent" android:text="Possession"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_weight="0.3"
+                android:layout_height="match_parent" android:orientation="vertical">
+                <TextView android:id="@+id/reportAwayClub" android:gravity="center"
+                    android:layout_width="match_parent" android:layout_weight="0.3"
+                    android:layout_height="match_parent" android:text="Home"/>
+                <TextView android:id="@+id/reportAwayScore" android:gravity="center"
+                    android:layout_width="match_parent" android:layout_weight="0.3"
+                    android:layout_height="match_parent" android:text="Score"/>
+                <TextView android:id="@+id/reportAwayPossession" android:gravity="center"
+                    android:layout_width="match_parent" android:layout_weight="0.3"
+                    android:layout_height="match_parent" android:text="Pssession"/>
+            </LinearLayout>
+        </LinearLayout>
+
+     <TextView android:gravity="center"
+         android:layout_width="match_parent" android:layout_marginTop="10dp"
+         android:layout_height="wrap_content" android:text="Match Stats"/>
+
+    <LinearLayout android:id="@+id/layoutStats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_weight="0.2"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/reportHomeDFK" android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="DFK" />
+
+            <TextView
+                android:id="@+id/reportHomeCOR" android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="Corners" />
+
+
+
+            <TextView
+                android:id="@+id/reportHomeGK" android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="Goal Kicks" />
+
+            <TextView
+                android:id="@+id/reportHomeSOnT" android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="Shot On Target" />
+
+            <TextView
+                android:id="@+id/reportHomeSOffT" android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="Shot Off Target" />
+
+            <TextView
+                android:id="@+id/reportHomeLC" android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="Late Challange" />
+
+            <TextView
+                android:id="@+id/reportHomeTCK" android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="Tackles" />
+
+            <TextView
+                android:id="@+id/reportHomeTI" android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="Throw In" />
+
+            <TextView
+                android:id="@+id/reportHomeOFF" android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="Offside" />
+
+            <TextView
+                android:id="@+id/reportHomePOP" android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="POP" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:orientation="vertical">
+
+            <TextView
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="Free Kicks" />
+
+            <TextView
+                 android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="Corner" />
+
+
+
+            <TextView
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="Goal Kicks" />
+
+            <TextView
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="Shot On Target" />
+
+            <TextView
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="Shot Off Target" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:gravity="center"
+                android:text="Late Challenge" />
+
+            <TextView
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="Tackles" />
+            <TextView
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="Throw In" />
+
+            <TextView
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="Offside" />
+
+            <TextView
+                android:id="@+id/reportHomePOP" android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="POP" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/reportAwayDFK" android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="DFK" />
+
+            <TextView
+                android:id="@+id/reportAwayCOR" android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="Corner" />
+
+
+
+            <TextView
+                android:id="@+id/reportAwayGK" android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="Goal Kicks" />
+
+            <TextView
+                android:id="@+id/reportAwaySOnT" android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="Shot On Target" />
+
+            <TextView
+                android:id="@+id/reportAwaySOffT" android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="Shot Off Target" />
+
+            <TextView
+                android:id="@+id/reportAwayLC" android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="Late Challange" />
+
+            <TextView
+                android:id="@+id/reportAwayTCK" android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="Tackles" />
+
+            <TextView
+                android:id="@+id/reportAwayTI" android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="Throw IN" />
+
+            <TextView
+                android:id="@+id/reportAwayOFF" android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="Offside" />
+
+            <TextView
+                android:id="@+id/reportAwayPOP" android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="POP" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+    <!--<ListView
+        android:id="@+id/reportGoalList"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/layoutStats"
+        android:layout_alignParentStart="true"
+         />-->
+
+            <TextView android:layout_width="match_parent" android:layout_marginTop="15dp" android:layout_height="wrap_content" android:text="Goals" android:gravity="center"/>
+            <include android:layout_marginTop="5dp" android:layout_width="match_parent" android:layout_height="200dp" layout="@layout/content_tzlc_goal_display"/>
+
+            <TextView android:layout_width="match_parent" android:layout_marginTop="15dp" android:layout_height="wrap_content" android:text="Cards" android:gravity="center"/>
+            <include android:layout_marginTop="5dp" android:layout_width="match_parent" android:layout_height="200dp" layout="@layout/content_tzlc_card_display"/>
+
+
+            <!--<ListView
+        android:id="@+id/reportCardList"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/reportGoalList"
+        android:layout_alignParentStart="true"
+
+         />-->
+
+            <TextView android:layout_width="match_parent" android:layout_marginTop="15dp" android:layout_height="wrap_content" android:text="HighLights" android:gravity="center"/>
+            <include android:layout_marginTop="5dp" android:layout_width="match_parent" android:layout_height="200dp" layout="@layout/content_tzlc_highlight_display"/>
+
+    <!--<ListView
+        android:id="@+id/reportHighLightList"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/reportCardList"
+        android:layout_alignParentStart="true"
+        />-->
+
+            <TextView android:layout_width="match_parent" android:layout_marginTop="15dp" android:layout_height="wrap_content" android:text="Loans" android:gravity="center"/>
+            <include android:layout_marginTop="5dp" android:layout_width="match_parent" android:layout_height="200dp" layout="@layout/content_tzlc_loan_display"/>
+
+    <!--<ListView
+        android:id="@+id/reportLoanList"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/reportHighLightList"
+        android:layout_alignParentStart="true"
+         />-->
+
+            <TextView android:layout_width="match_parent" android:layout_marginTop="15dp" android:layout_height="wrap_content" android:text="Match Offcials" android:gravity="center"/>
+            <include android:layout_marginTop="5dp" android:layout_width="match_parent" android:layout_height="200dp" layout="@layout/content_tzlc_mo_display"/>
+
+    <!--<ListView
+        android:id="@+id/reportMOList"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/reportLoanList"
+        android:layout_alignParentStart="true"
+         />-->
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</RelativeLayout>

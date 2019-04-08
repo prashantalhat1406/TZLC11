@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/tzlcListViewItemHeight"
+    android:orientation="horizontal" android:layout_marginTop="5dp"
+    >
+    <TextView
+        android:id="@+id/clubName"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.25"
+        android:text="Club name"
+        android:textSize="@dimen/tzlcTextSize"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/clubShortName"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.25"
+        android:text="Club Short Name"
+        android:textSize="@dimen/tzlcTextSize"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/managerName"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.25"
+        android:text="Manager name"
+        android:textSize="@dimen/tzlcTextSize"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/homeGroung"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.25"
+        android:text="Home Ground"
+        android:textSize="@dimen/tzlcTextSize"
+        android:layout_gravity="center"
+        android:gravity="center"
+        />
+</LinearLayout>
+</RelativeLayout>

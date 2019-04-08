@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".tzlc_card_add" android:orientation="vertical"
+    tools:showIn="@layout/activity_tzlc_card_add">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center" android:textAlignment="viewStart"
+            android:layout_weight="0.3"
+            android:text="Club" />
+
+        <RadioGroup
+            android:layout_width="match_parent" android:id="@+id/cardRadioGroup"
+            android:layout_height="match_parent" android:layout_weight="0.2" android:orientation="horizontal">
+            <RadioButton
+                android:layout_width="match_parent" android:layout_weight="0.5" android:id="@+id/rdbCardAddHomeClub"
+                android:layout_height="match_parent" android:text="Home Club"/>
+            <RadioButton
+                android:layout_width="match_parent" android:layout_weight="0.5" android:id="@+id/rdbCardAddAwayClub"
+                android:layout_height="match_parent" android:text="Away Club"/>
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout android:layout_weight="0.2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:gravity="center"
+            android:textAlignment="viewStart"
+            android:layout_weight="0.3"
+            android:text="Player " />
+
+        <Spinner
+            android:id="@+id/spnCardPlayer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="false"
+            android:layout_weight="0.2" />
+    </LinearLayout>
+
+    <LinearLayout android:layout_weight="0.2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="0.3"
+            android:gravity="center"
+            android:text="Card Type "
+            android:textAlignment="textStart" />
+
+        <RadioGroup
+            android:id="@+id/rdgrpCardType"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rdyellowCard"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"
+                android:text="Yellow"
+                android:textColor="#FFFF00"
+                 />
+
+            <RadioButton
+                android:id="@+id/rdredCard"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"
+                android:text="Red"
+                android:textColor="#FF0000"
+                 />
+
+            <RadioButton
+                android:id="@+id/rdblueCard"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"
+                android:text="Blue"
+                android:textColor="#0000FF"
+                 />
+        </RadioGroup>
+
+    </LinearLayout>
+
+
+    <LinearLayout android:layout_weight="0.2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:gravity="center"
+            android:textAlignment="viewStart"
+            android:layout_weight="0.3"
+
+
+            android:text="Card Time" />
+
+        <EditText
+            android:id="@+id/edtCardTime"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2" android:textIsSelectable="true"
+             />
+    </LinearLayout>
+
+    <LinearLayout android:layout_weight="0.2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:gravity="center"
+            android:textAlignment="viewStart"
+            android:layout_weight="0.3"
+
+            android:text="Card Reason" />
+
+        <Spinner
+            android:id="@+id/spnCardReason"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="false"
+            android:layout_weight="0.2" />
+
+    </LinearLayout>
+    <LinearLayout android:layout_weight="0.1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></LinearLayout>
+
+</LinearLayout>

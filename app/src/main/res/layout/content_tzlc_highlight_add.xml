@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".tzlc_highlight_add"
+    tools:showIn="@layout/activity_tzlc_highlight_add">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.8"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:layout_weight="0.7"
+            android:text="Club" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:layout_weight="0.3" android:orientation="horizontal">
+            <RadioButton
+                android:layout_width="match_parent" android:layout_weight="0.5" android:id="@+id/highlightHomeClub"
+                android:layout_height="match_parent" android:text="Home Club"/>
+            <RadioButton
+                android:layout_width="match_parent" android:layout_weight="0.5" android:id="@+id/highlightAwayClub"
+                android:layout_height="match_parent" android:text="Away Club"/>
+        </RadioGroup>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.8"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent" android:layout_weight="0.25"
+            android:layout_height="match_parent" android:text="VCM Time " android:gravity="center" android:inputType="time"/>
+        <EditText android:id="@+id/edtVCMTime" android:inputType="time"
+            android:layout_width="match_parent" android:layout_weight="0.25" android:hint="mm:ss"
+            android:layout_height="match_parent" />
+        <TextView
+            android:layout_width="match_parent" android:layout_weight="0.25"
+            android:layout_height="match_parent" android:text="SR Time " android:gravity="center"/>
+        <EditText android:id="@+id/edtsrTime" android:inputType="number"
+            android:layout_width="match_parent" android:layout_weight="0.25"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <TextView android:layout_width="match_parent" android:layout_marginTop="15dp" android:layout_height="wrap_content" android:text="Select Highlight" android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:layout_weight="0.24" android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:orientation="vertical"
+            android:layout_weight="0.5">
+
+            <!--<TextView
+                android:layout_width="match_parent" android:layout_weight="0.95"
+                android:layout_height="match_parent" android:text="Highlight - 1"/> -->
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_weight="0.05" android:orientation="vertical"
+                android:layout_height="match_parent">
+                <CheckBox android:layout_weight="0.1" android:id="@+id/chkHL1"
+                    android:layout_width="match_parent" android:textSize="@dimen/tzlcTextSize" android:textColor="@color/Maroon" android:textStyle="bold"
+                    android:layout_height="match_parent" android:text="Sitter/Open Chance"/>
+                <CheckBox android:layout_weight="0.1" android:id="@+id/chkHL2"
+                    android:layout_width="match_parent" android:textSize="@dimen/tzlcTextSize" android:textColor="@color/Maroon"  android:textStyle="bold"
+                    android:layout_height="match_parent" android:text="Good ShOnTar"/>
+                <CheckBox android:layout_weight="0.1" android:id="@+id/chkHL3"
+                    android:layout_width="match_parent" android:textSize="@dimen/tzlcTextSize" android:textColor="@color/Maroon" android:textStyle="bold"
+                    android:layout_height="match_parent" android:text="Post/Bar"/>
+                <CheckBox android:layout_weight="0.1" android:id="@+id/chkHL4"
+                    android:layout_width="match_parent" android:textSize="@dimen/tzlcTextSize" android:textColor="@color/Maroon" android:textStyle="bold"
+                    android:layout_height="match_parent" android:text="GOAL"/>
+                <CheckBox android:layout_weight="0.1" android:id="@+id/chkHL5"
+                    android:layout_width="match_parent" android:textSize="@dimen/tzlcTextSize"  android:textColor="@color/Maroon" android:textStyle="bold"
+                    android:layout_height="match_parent" android:text="POP"/>
+                <CheckBox android:layout_weight="0.1" android:id="@+id/chkHL6"
+                    android:layout_width="match_parent" android:textSize="@dimen/tzlcTextSize"  android:textColor="@color/Navy" android:textStyle="bold"
+                    android:layout_height="match_parent" android:text="Missed"/>
+                <CheckBox android:layout_weight="0.1" android:id="@+id/chkHL7"
+                    android:layout_width="match_parent" android:textSize="@dimen/tzlcTextSize"  android:textColor="@color/Navy" android:textStyle="bold"
+                    android:layout_height="match_parent" android:text="Save By GK"/>
+                <CheckBox android:layout_weight="0.1" android:id="@+id/chkHL8"
+                    android:layout_width="match_parent" android:textSize="@dimen/tzlcTextSize"  android:textColor="@color/Navy" android:textStyle="bold"
+                    android:layout_height="match_parent" android:text="Saved By Player"/>
+                <CheckBox android:layout_weight="0.1" android:id="@+id/chkHL9"
+                    android:layout_width="match_parent"  android:textSize="@dimen/tzlcTextSize" android:textColor="@color/Green" android:textStyle="bold"
+                    android:layout_height="match_parent" android:text="Skill"/>
+                <!--<CheckBox android:layout_weight="0.1" android:id="@+id/chkHL10"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:text="POP"/>
+                <CheckBox android:layout_weight="0.1" android:id="@+id/chkHL11"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:text="Shot"/>
+                <CheckBox android:layout_weight="0.1" android:id="@+id/chkHL12"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:text="Save"/>-->
+            </LinearLayout>
+
+            <!-- <RadioGroup android:id="@+id/HLGroup"
+                android:layout_width="match_parent" android:layout_weight="0.05"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/HL1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Clearance" />
+
+                <RadioButton
+                    android:id="@+id/HL2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Through Ball" />
+
+                <RadioButton
+                    android:id="@+id/HL3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="One two" />
+
+                <RadioButton
+                    android:id="@+id/HL4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="6+ Passess DH" />
+
+
+                <RadioButton
+                    android:id="@+id/HL5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="6+ Passess AH" />
+
+                <RadioButton
+                    android:id="@+id/HL6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Dribble" />
+
+                <RadioButton
+                    android:id="@+id/HL7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Tackle" />
+
+                <RadioButton
+                    android:id="@+id/HL8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Skill" />
+
+                <RadioButton
+                    android:id="@+id/HL9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Cross" />
+
+                <RadioButton
+                    android:id="@+id/HL10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="POP" />
+
+                <RadioButton
+                    android:id="@+id/HL11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Shot" />
+
+                <RadioButton
+                    android:id="@+id/HL12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Save" />
+
+                <RadioButton
+                    android:id="@+id/HL13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="One-Two" />
+
+                <RadioButton
+                    android:id="@+id/HL14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Great Skill" />
+
+                <RadioButton
+                    android:id="@+id/HL15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Dribble" />
+
+                <RadioButton
+                    android:id="@+id/HL16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Assist" />
+
+                <RadioButton
+                    android:id="@+id/HL17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Great Save" />
+
+                <RadioButton
+                    android:id="@+id/HL18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="POP" />
+
+
+            </RadioGroup>-->
+
+
+
+        </LinearLayout>
+
+
+        <!--
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/darker_gray"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5" android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent" android:layout_weight="0.98"
+                android:layout_height="match_parent" android:text="Highlight - 2"/>
+
+            <RadioGroup android:id="@+id/HL2Group"
+                android:layout_width="match_parent" android:layout_weight="0.20"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/HL21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="-NA" />
+
+                <RadioButton
+                    android:id="@+id/HL22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Successful" />
+
+                <RadioButton
+                    android:id="@+id/HL23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Failed" />
+
+                <RadioButton
+                    android:id="@+id/HL24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Shot on Target" />
+
+
+                <RadioButton
+                    android:id="@+id/HL25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Shot Off Target" />
+
+                <RadioButton
+                    android:id="@+id/HL26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Shot Way Off Target" />
+
+                <RadioButton
+                    android:id="@+id/HL27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Ball over 20yards" />
+
+                <RadioButton
+                    android:id="@+id/HL28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Ball below 20yards" />
+
+                <RadioButton
+                    android:id="@+id/HL29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Cross field pass" />
+
+                <RadioButton
+                    android:id="@+id/HL210"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Great Cross" />
+
+                <RadioButton
+                    android:id="@+id/HL211"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Clearance Header" />
+
+                <RadioButton
+                    android:id="@+id/HL212"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Clearance Ground" />
+
+                <RadioButton
+                    android:id="@+id/HL213"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="One-Two" />
+
+                <RadioButton
+                    android:id="@+id/HL214"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Great Skill" />
+
+                <RadioButton
+                    android:id="@+id/HL215"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Dribble" />
+
+                <RadioButton
+                    android:id="@+id/HL216"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Assist" />
+
+                <RadioButton
+                    android:id="@+id/HL217"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Great Save" />
+
+                <RadioButton
+                    android:id="@+id/HL218"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="POP Scored" />
+
+                <RadioButton
+                    android:id="@+id/HL219"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="POP Missed" />
+
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent" android:layout_weight="0.87"
+                android:layout_height="match_parent" android:text=""/>
+
+
+
+        </LinearLayout>
+        -->
+
+    </LinearLayout>
+
+
+
+    <!--<TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true">
+        <RadioGroup android:id="@+id/hlRadioGroup">
+        <TableRow android:layout_width="match_parent">
+
+            <RadioButton android:id="@+id/HL1"
+                android:layout_weight="0.5"
+                android:text="Shot on Post" />
+
+            <RadioButton android:id="@+id/HL2"
+                android:layout_weight="0.5"
+                android:text="Very Good Attempt" />
+        </TableRow>
+
+        <TableRow  android:layout_width="match_parent">
+
+            <RadioButton android:id="@+id/HL3"
+                android:layout_weight="0.5"
+                android:text="Terrible Attempt" />
+
+            <RadioButton android:id="@+id/HL4"
+                android:layout_weight="0.5"
+                android:text="Great Off the ball run" />
+
+        </TableRow>
+
+        <TableRow android:layout_width="match_parent">
+
+            <RadioButton
+                android:layout_weight="0.5"
+                android:text="Move 6+ passes" />
+
+            <RadioButton
+                android:layout_weight="0.5"
+                android:text="Move 10+ passes" />
+        </TableRow>
+
+        <TableRow android:layout_width="match_parent">
+
+            <RadioButton
+                android:layout_weight="0.5"
+                android:text="Ball over 20yards" />
+
+            <RadioButton
+                android:layout_weight="0.5"
+                android:text="Ball below 20yards" />
+        </TableRow>
+
+        <TableRow android:layout_width="match_parent">
+
+            <RadioButton
+                android:layout_weight="0.5"
+                android:text="Cross field pass" />
+
+            <RadioButton
+                android:layout_weight="0.5"
+                android:text="Great Cross" />
+        </TableRow>
+
+        <TableRow android:layout_width="match_parent">
+
+            <RadioButton
+                android:layout_weight="0.5"
+                android:text="Clearance Header" />
+
+            <RadioButton
+                android:layout_weight="0.5"
+                android:text="Clearance Ground" />
+        </TableRow>
+
+        <TableRow android:layout_width="match_parent">
+
+            <RadioButton
+                android:layout_weight="0.5"
+                android:text="One-Two" />
+
+            <RadioButton
+                android:layout_weight="0.5"
+                android:text="Great Skill" />
+        </TableRow>
+
+        <TableRow android:layout_width="match_parent">
+
+            <RadioButton
+                android:layout_weight="0.5"
+                android:text="Dribble" />
+
+            <RadioButton
+                android:layout_weight="0.5"
+                android:text="Assist" />
+        </TableRow>
+        </RadioGroup>
+
+
+    </TableLayout>-->
+
+    <!--<LinearLayout
+        android:layout_width="180dp"
+        android:layout_height="430dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/HL01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Shot on Post/Bar" />
+
+        <RadioButton
+            android:id="@+id/HL02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Very Good Attempt" />
+        <RadioButton
+            android:id="@+id/HL03"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fast Move 6+ passes" />
+        <RadioButton
+            android:id="@+id/HL04"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fast Move 10+ passes" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="180dp"
+        android:layout_height="430dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:orientation="vertical">
+
+    </LinearLayout>-->
+</LinearLayout>

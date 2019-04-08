@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".tzlc_Reports" android:orientation="vertical"
+    tools:showIn="@layout/activity_tzlc__reports">
+
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_weight="0.9" android:orientation="horizontal"
+        android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:textSize="@dimen/tzlcTextSize"
+                android:layout_height="match_parent"  android:layout_weight="0.8" android:text="Show " android:gravity="center" android:textAlignment="center" android:textStyle="bold"/>
+            <Spinner android:id="@+id/spnReport"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:layout_weight="0.2" android:textAlignment="center" android:gravity="center">
+            </Spinner>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <ListView
+        android:id="@+id/displayReport"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.1" />
+
+</LinearLayout>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".tzlc_loan_add" android:orientation="vertical"
+    tools:showIn="@layout/activity_tzlc_loan_add">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="viewStart"
+            android:gravity="center"
+            android:layout_weight="0.7"
+            android:text="For Club" />
+
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:layout_weight="0.3" android:orientation="horizontal">
+            <RadioButton
+                android:layout_width="match_parent" android:layout_weight="0.5" android:id="@+id/loanAddHomeClub"
+                android:layout_height="match_parent" android:text="Home Club"/>
+            <RadioButton
+                android:layout_width="match_parent" android:layout_weight="0.5" android:id="@+id/loanAddAwayClub"
+                android:layout_height="match_parent" android:text="Away Club"/>
+        </RadioGroup>
+
+        <!--<TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="0.26"
+            android:text="For Club"
+            android:gravity="center"
+            android:textAlignment="textStart"/>
+
+        <Spinner
+            android:id="@+id/spnForClub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="false"
+            android:layout_weight="0.21" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="0.26"
+            android:text="Missing"
+            android:gravity="center"
+            android:textAlignment="textStart"/>
+
+        <Spinner
+            android:id="@+id/spnMissingPlayer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="false"
+            android:layout_weight="0.21" />-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="0.26"
+            android:text="Loan Club"
+            android:gravity="center"
+            android:textAlignment="textStart"/>
+
+        <Spinner
+            android:id="@+id/spnLoanClub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.21"
+            android:focusable="false" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="0.26"
+            android:text="Loanee"
+            android:gravity="center"
+            android:textAlignment="textStart"/>
+
+        <Spinner
+            android:id="@+id/spnLoanPlayer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.21"
+            android:focusable="false" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="0.75"
+            android:gravity="center"
+            android:text="Loan Rule "
+            android:textAlignment="textStart" />
+
+        <RadioGroup
+            android:id="@+id/rdgrpRule"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:orientation="horizontal">
+
+            <RadioButton android:layout_weight="0.25"
+                android:id="@+id/rdgkl"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="GKL" />
+
+            <RadioButton android:layout_weight="0.25"
+                android:id="@+id/rdavgkl"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="AVGKL" />
+
+            <RadioButton android:layout_weight="0.25"
+                android:id="@+id/rdavpl"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="AVPL" />
+
+            <RadioButton android:layout_weight="0.25"
+                android:id="@+id/rddl"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="DL" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="0.3"
+            android:gravity="center"
+            android:text="Player Value "
+            android:textAlignment="textStart" />
+
+        <EditText android:id="@+id/edtLoanPlayerValue"
+            android:layout_width="match_parent" android:layout_weight="0.3"
+            android:layout_height="match_parent" android:inputType="number"/>
+        <TextView
+            android:layout_width="match_parent" android:layout_weight="0.3"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="0.6"
+            android:gravity="center"
+            android:text="Loan Type "
+            android:textAlignment="textStart" />
+
+        <RadioGroup
+            android:id="@+id/rdgrpType"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
+            android:orientation="horizontal">
+
+            <RadioButton android:layout_weight="0.5"
+                android:id="@+id/rdoutfield"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="OutField" />
+
+            <RadioButton android:layout_weight="0.5"
+                android:id="@+id/rdgk"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="GK" />
+        </RadioGroup>
+
+    </LinearLayout> -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:layout_weight="0.1"></LinearLayout>
+
+</LinearLayout>

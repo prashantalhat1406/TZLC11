@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".tzlc_change_jersey_color" android:orientation="vertical"
+    tools:showIn="@layout/activity_tzlc_change_jersey_color">
+
+    <LinearLayout
+        android:layout_width="match_parent" android:orientation="horizontal"
+        android:layout_height="match_parent" android:layout_weight="0.2">
+        <LinearLayout android:orientation="vertical"
+            android:layout_width="match_parent" android:layout_weight="0.5"
+            android:layout_height="match_parent">
+            <Button android:id="@+id/butHomeJerseyColor"
+                android:layout_width="match_parent" android:text="HOME" android:textSize="26dp" android:textStyle="bold" android:enabled="false"
+                android:layout_height="match_parent" android:layout_weight="0.2"/>
+            <TextView
+                android:layout_width="match_parent" android:layout_weight="0.8" android:gravity="center"
+                android:layout_height="match_parent" android:text="Select Color of Home Club"/>
+            <Spinner android:id="@+id/spnJerseyH"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:layout_weight="0.8"></Spinner>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical"
+            android:layout_width="match_parent" android:layout_weight="0.5"
+            android:layout_height="match_parent">
+            <Button android:id="@+id/butAwayJerseyColor"
+                android:layout_width="match_parent" android:text="AWAY" android:textSize="26dp" android:textStyle="bold" android:enabled="false"
+                android:layout_height="match_parent" android:layout_weight="0.2"/>
+            <TextView
+                android:layout_width="match_parent" android:layout_weight="0.8" android:gravity="center"
+                android:layout_height="match_parent" android:text="Select Color of Away Club"/>
+            <Spinner android:id="@+id/spnJerseyA"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:layout_weight="0.8"></Spinner>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent" android:orientation="horizontal"
+        android:layout_height="match_parent" android:layout_weight="0.8">
+        <Button android:id="@+id/butSaveJerseyColor"
+            android:layout_width="match_parent" android:layout_weight="0.5"
+            android:layout_height="match_parent" android:text="SAVE" />
+        <Button android:id="@+id/butCancelJerseyColor" android:visibility="gone"
+            android:layout_width="match_parent" android:layout_weight="0.5"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</LinearLayout>
