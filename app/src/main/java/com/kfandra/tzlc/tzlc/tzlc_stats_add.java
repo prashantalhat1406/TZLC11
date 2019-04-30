@@ -688,7 +688,7 @@ public class tzlc_stats_add extends AppCompatActivity {
             }
         });
 
-        resetTimer = findViewById(R.id.butstatsResetTime);
+        /*resetTimer = findViewById(R.id.butstatsResetTime);
         resetTimer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -738,7 +738,7 @@ public class tzlc_stats_add extends AppCompatActivity {
 
 
             }
-        });
+        });*/
 
     }
 
@@ -986,6 +986,54 @@ public class tzlc_stats_add extends AppCompatActivity {
                 extras.putString("awayClubName",datasource.getClub( m.getAwayClubID()).getClubShortName());
                 jerseyColor.putExtras(extras);
                 startActivityForResult(jerseyColor,100);
+                break;
+
+            case R.id.resetTimers :
+
+                DialogInterface.OnClickListener resetdialog = new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (which)
+                        {
+                            case DialogInterface.BUTTON_POSITIVE :
+                                awaySwapBuff = 0L;
+                                homeSwapBuff = 0L;
+                                matchSwapBuff = 0L;
+                                homeStartTime = SystemClock.uptimeMillis();
+                                awayStartTime = SystemClock.uptimeMillis();
+                                matchStartTime = SystemClock.uptimeMillis();
+                                htHomeTime =homeTime;
+                                htAwayTime =awayTime;
+                                homeTime =0;
+                                awayTime =0;
+                                timerMatch.setText("" + String.format("%02d", 0) + " : " + String.format("%02d", 0));
+                                if (matchTime < 2700)
+                                    halftime = 2400;
+                                else
+                                    halftime = 2700;
+                                halftime=0;
+
+                                //ArrayAdapter<CharSequence> adapterResetReason = ArrayAdapter.createFromResource(tzlc_stats_add.this,R.array.resetTime,R.layout.dropdownitem);
+                                String resetReason [] = getResources().getStringArray(R.array.resetTime);
+
+
+                                Highlight highlight = new Highlight(matchID,-1 , -300,
+                                        matchTime,
+                                        resetReason[resetCount],
+                                        "--NA--");
+                                datasource.addHighlight(highlight);
+                                resetCount++;
+
+                                break;
+                            case DialogInterface.BUTTON_NEGATIVE : break;
+                        }
+                    }
+                };
+                AlertDialog.Builder resetbuilder = new AlertDialog.Builder(tzlc_stats_add.this);
+                resetbuilder.setTitle("Alert !!");
+                resetbuilder.setMessage("Are you sure you want to reset Timer ??").setPositiveButton("Yes",resetdialog).setNegativeButton("No",resetdialog).show();
+
+                break;
     }
 
         return super.onOptionsItemSelected(item);
