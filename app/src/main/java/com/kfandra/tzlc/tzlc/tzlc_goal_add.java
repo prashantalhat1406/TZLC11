@@ -75,6 +75,7 @@ public class tzlc_goal_add extends AppCompatActivity implements TimePickerDialog
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,playernames);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         adapter.setDropDownViewResource(R.layout.dropdownitem);
+        adapter.insert("Please select Player",0);
         goalScorer = findViewById(R.id.spnGoalScorer);
         assistPlayer = findViewById(R.id.spnAssistPlayer);
         goalScorer.setAdapter(adapter);
@@ -95,6 +96,7 @@ public class tzlc_goal_add extends AppCompatActivity implements TimePickerDialog
                 }
                 ArrayAdapter<String> adapterPlayerNames = new ArrayAdapter<String>(tzlc_goal_add.this,R.layout.dropdownitem,playernames);
                 adapterPlayerNames.setDropDownViewResource(R.layout.dropdownitem);
+                adapterPlayerNames.insert("Please select Player",0);
                 goalScorer.setAdapter(adapterPlayerNames);
                 adapterPlayerNames.add("NA");
                 assistPlayer.setAdapter(adapterPlayerNames);
@@ -197,6 +199,7 @@ public class tzlc_goal_add extends AppCompatActivity implements TimePickerDialog
                 String[] arr = srt.split(":");
                 if ((arr.length == 2)){
                     if(homeClub.isChecked()||awayClub.isChecked()) {
+                        if(!goalScorer.getSelectedItem().toString().equals("Please select Player") && !assistPlayer.getSelectedItem().toString().equals("Please select Player")) {
                         int vcmtime = (Integer.parseInt(arr[0]) * 60) + Integer.parseInt(arr[1]);
                         Goal goal = new Goal();
                         goal.setMatchID(matchID);
@@ -251,6 +254,9 @@ public class tzlc_goal_add extends AppCompatActivity implements TimePickerDialog
                         returnI.putExtras(extras);
                         setResult(100, returnI);
                         finish();
+                        }else{
+                            Toast.makeText(tzlc_goal_add.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
+                        }
                     }else{
                         Toast.makeText(tzlc_goal_add.this, "Error !!! Please select Club.", Toast.LENGTH_SHORT).show();
                     }
