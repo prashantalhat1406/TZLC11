@@ -121,6 +121,7 @@ public class tzlc_loan_add extends AppCompatActivity {
             public void onClick(View view) {
 
                 if(homeClub.isChecked()||awayClub.isChecked()) {
+                    if(loanPlayerValue.getText().toString().length()!=0){
                     Loan loan = new Loan();
                     loan.setMatchID(matchID);
                     loan.setMissingPlayerID(-1);
@@ -185,6 +186,10 @@ public class tzlc_loan_add extends AppCompatActivity {
                     returnI.putExtra("matchID", matchID);
                     setResult(100, returnI);
                     finish();
+
+                    }else{
+                        Toast.makeText(tzlc_loan_add.this, "Error !!! Please Enter Loan Value.", Toast.LENGTH_SHORT).show();
+                    }
                 }else{
                     Toast.makeText(tzlc_loan_add.this, "Error !!! Please select Club.", Toast.LENGTH_SHORT).show();
                 }
