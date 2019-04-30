@@ -80,6 +80,7 @@ public class tzlc_card_add extends AppCompatActivity {
                 }
                 ArrayAdapter<String> adapterPlayerNames = new ArrayAdapter<String>(tzlc_card_add.this,R.layout.dropdownitem,playernames);
                 adapterPlayerNames.setDropDownViewResource(R.layout.dropdownitem);
+                adapterPlayerNames.insert("Please select Player",0);
                 playerName.setAdapter(adapterPlayerNames);
             }
         });
@@ -134,6 +135,7 @@ public class tzlc_card_add extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(homeClub.isChecked()||awayClub.isChecked()) {
+                    if(!playerName.getSelectedItem().toString().equals("Please select Player")) {
                     Card card = new Card(matchID,
                             datasource.getPlayerID(playerName.getSelectedItem().toString()),
                             matchTime,
@@ -179,6 +181,9 @@ public class tzlc_card_add extends AppCompatActivity {
                 returnI.putExtras(extras);
                 setResult(100,returnI);
                 finish();
+                    }else{
+                        Toast.makeText(tzlc_card_add.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
+                    }
                 }else{
                     Toast.makeText(tzlc_card_add.this, "Error !!! Please select Club.", Toast.LENGTH_SHORT).show();
                 }
