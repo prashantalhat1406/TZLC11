@@ -3,7 +3,6 @@ package com.kfandra.tzlc.tzlc;
 import android.content.DialogInterface;
 import android.content.Intent;
 
-import android.content.pm.ActivityInfo;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -13,7 +12,6 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.InputType;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -23,7 +21,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Queue;
 
@@ -35,6 +32,7 @@ public class tzlc_stats_add extends AppCompatActivity {
     private Button butawayDFK, butawayCor, butawayGK, butawaySOnT, butawaySOffT, butawayLC, butawayTCK, butawayTI, butawayOff, butawayPOP;
     private ImageButton startPause, resetTimer;
     private FloatingActionButton possisionChange;
+    private FloatingActionButton buthomePass, butawayPass;
     private long homeStartTime = 0L;
     private long awayStartTime = 0L;
     private long matchStartTime = 0L;
@@ -50,11 +48,12 @@ public class tzlc_stats_add extends AppCompatActivity {
     long homeUpdatedTime = 0L;
     long awayUpdatedTime = 0L;
     long matchUpdatedTime = 0L;
-    private TextView timerHome;
-    private TextView timerAway;
+    private TextView homePasses;
+    private TextView awayPasses;
     private TextView timerMatch;
     private TextView homeScore, awayScore;
     int matchTime = 0;
+    public int completedPassesHome=0,completedPassesAway=0;
     int homeTime = 0,htHomeTime=0;
     int awayTime = 0, htAwayTime=0;
     private long    goalAgainstClubId;
@@ -70,6 +69,7 @@ public class tzlc_stats_add extends AppCompatActivity {
     int halftime=0, resetCount =0;
     private Queue<Integer> cardTimes;
     private Queue<Integer> cardTtypes;
+    public TextView homeClub, awayClub;
 
     public boolean isColorDark(int color){
         double darkness = 1-(0.299*Color.red(color) + 0.587*Color.green(color) + 0.114*Color.blue(color))/255;
@@ -96,7 +96,8 @@ public class tzlc_stats_add extends AppCompatActivity {
         buthomeTI.setBackgroundTintList(ColorStateList.valueOf(tempHColor));buthomeTI.setTextColor(temphomeTextColor);
         buthomeOff.setBackgroundTintList(ColorStateList.valueOf(tempHColor));buthomeOff.setTextColor(temphomeTextColor);
         buthomePOP.setBackgroundTintList(ColorStateList.valueOf(tempHColor));buthomePOP.setTextColor(temphomeTextColor);
-        timerHome.setTextColor(tempHColor);
+        buthomePOP.setBackgroundTintList(ColorStateList.valueOf(tempHColor));
+        homePasses.setTextColor(tempHColor);
         TextView homeClub = findViewById(R.id.txtstatsHomeClub);
         TextView homeClub1 = findViewById(R.id.txtHomeClub1);
         TextView homeClub2 = findViewById(R.id.txtHomeClub2);
@@ -116,7 +117,8 @@ public class tzlc_stats_add extends AppCompatActivity {
         butawayTI.setBackgroundTintList(ColorStateList.valueOf(tempAColor));butawayTI.setTextColor(tempawayTextColor);
         butawayOff.setBackgroundTintList(ColorStateList.valueOf(tempAColor));butawayOff.setTextColor(tempawayTextColor);
         butawayPOP.setBackgroundTintList(ColorStateList.valueOf(tempAColor));butawayPOP.setTextColor(tempawayTextColor);
-        timerAway.setTextColor(tempAColor);
+        butawayPass.setBackgroundTintList(ColorStateList.valueOf(tempAColor));
+        awayPasses.setTextColor(tempAColor);
         TextView awayClub = findViewById(R.id.txtstatsAwayClub);
         TextView awayClub1 = findViewById(R.id.txtAwayClub1);
         TextView awayClub2 = findViewById(R.id.txtAwayClub2);
@@ -150,9 +152,15 @@ public class tzlc_stats_add extends AppCompatActivity {
         datasource= new tzlcDataSource(this);
         datasource.open();
 
+        homePasses = findViewById(R.id.txtstatsHomePasses);
+        awayPasses = findViewById(R.id.txtstatsAwayPasses);
 
         //stat = new Stats();
         stat = datasource.getAllStatsForMatch(matchID);
+        homePasses.setText(""+((stat.getHome_TIME()/1000)));stat.setHome_TIME((stat.getHome_TIME()/1000));
+        awayPasses.setText(""+((stat.getAway_TIME()/1000)));stat.setAway_TIME((stat.getAway_TIME()/1000));
+        //undo=R.id.butHomePasses;undoMenu.findItem(R.id.undo).setEnabled(true);
+        datasource.updateStats(stat);
 
         //stat.setAway_Score(0);
         //stat.setHome_Score(0);
@@ -167,10 +175,10 @@ public class tzlc_stats_add extends AppCompatActivity {
         temphomeColor = homeColor;
         tempawayColor = awayColor;
 
-        timerHome = findViewById(R.id.txtstatsHomeClubPossesion);
-        timerHome.setTextColor(homeColor);
-        timerAway = findViewById(R.id.txtstatsAwayClubPossesion);
-        timerAway.setTextColor(awayColor);
+
+        homePasses.setTextColor(homeColor);
+
+        awayPasses.setTextColor(awayColor);
 
         timerMatch = findViewById(R.id.txtstatsMatchTimer);
 
@@ -233,7 +241,7 @@ public class tzlc_stats_add extends AppCompatActivity {
             }
         });
 
-        subsButton = findViewById(R.id.butstatsSubs);
+        /*subsButton = findViewById(R.id.butstatsSubs);
         subsButton.setEnabled(false);
         subsButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -242,14 +250,11 @@ public class tzlc_stats_add extends AppCompatActivity {
                 Bundle extras  = new Bundle();
                 extras.putLong("matchID", matchID);
                 extras.putInt("matchTime",matchTime+halftime);
-                /*if(halftime)
-                    extras.putInt("matchTime",matchTime+2400);
-                else
-                    extras.putInt("matchTime",matchTime);*/
+
                 i.putExtras(extras);
                 startActivityForResult(i,100);
             }
-        });
+        });*/
 
 
 
@@ -258,7 +263,7 @@ public class tzlc_stats_add extends AppCompatActivity {
 
 
 
-        final TextView homeClub = findViewById(R.id.txtstatsHomeClub);
+        homeClub = findViewById(R.id.txtstatsHomeClub);
         homeClub.setText(""+datasource.getClub( m.getHomeClubID()).getClubShortName());
         homeClub.setTextColor(homeColor);
         TextView homeClub1 = findViewById(R.id.txtHomeClub1);
@@ -268,7 +273,7 @@ public class tzlc_stats_add extends AppCompatActivity {
         homeClub2.setText(""+datasource.getClub( m.getHomeClubID()).getClubShortName());
         homeClub2.setTextColor(homeColor);
 
-        TextView awayClub = findViewById(R.id.txtstatsAwayClub);
+        awayClub = findViewById(R.id.txtstatsAwayClub);
         awayClub.setText(""+datasource.getClub( m.getAwayClubID()).getClubShortName());
         awayClub.setTextColor(awayColor);
         TextView awayClub1 = findViewById(R.id.txtAwayClub1);
@@ -431,6 +436,18 @@ public class tzlc_stats_add extends AppCompatActivity {
             }
         });
 
+        buthomePass = findViewById(R.id.butHomePasses);
+        buthomePass.setBackgroundTintList(ColorStateList.valueOf(homeColor));
+        buthomePass.setOnClickListener(new View.OnClickListener()
+        {
+            @Override public void onClick(View v)
+            {
+                homePasses.setText(""+((stat.getHome_TIME())+1));stat.setHome_TIME((stat.getHome_TIME())+1);
+                //undo=R.id.butHomePasses;undoMenu.findItem(R.id.undo).setEnabled(true);
+                datasource.updateStats(stat);
+            }
+        });
+
 
         butawayDFK = findViewById(R.id.butstatsAwayDFK);
         butawayDFK.setBackgroundTintList(ColorStateList.valueOf(awayColor));
@@ -572,10 +589,23 @@ public class tzlc_stats_add extends AppCompatActivity {
             }
         });
 
+        butawayPass= findViewById(R.id.butAwayPasses);
+        butawayPass.setBackgroundTintList(ColorStateList.valueOf(awayColor));
+        //butawayPass.setTextColor(awayTextColor);
+        //butawayPass.setText(""+(stat.getAway_POP()));
+        butawayPass.setOnClickListener(new View.OnClickListener()
+        {
+            @Override public void onClick(View v)
+            {
+                awayPasses.setText(""+((stat.getAway_TIME())+1));stat.setAway_TIME((stat.getAway_TIME())+1);
+                //undo=R.id.butAwayPasses;undoMenu.findItem(R.id.undo).setEnabled(true);
+                datasource.updateStats(stat);
+            }
+        });
 
 
 
-        possisionChange = findViewById(R.id.butstatsChange);
+        /*possisionChange = findViewById(R.id.butstatsChange);
         possisionChange.setEnabled(false);
         possisionChange.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -601,7 +631,7 @@ public class tzlc_stats_add extends AppCompatActivity {
 
                 }
             }
-        });
+        });*/
 
 
 
@@ -612,11 +642,11 @@ public class tzlc_stats_add extends AppCompatActivity {
             public void onClick(View v) {
                 if(start) {
                     startPause.setImageResource(R.drawable.pause);
-                    possisionChange.setEnabled(true);
+                    //possisionChange.setEnabled(true);
                     highlightButton.setEnabled(true);
                     goalButton.setEnabled(true);
                     cardButton.setEnabled(true);
-                    subsButton.setEnabled(true);
+                    //subsButton.setEnabled(true);
 
                     buthomeDFK.setEnabled(true);
                     buthomeCor.setEnabled(true);
@@ -641,16 +671,16 @@ public class tzlc_stats_add extends AppCompatActivity {
 
                     matchStartTime = SystemClock.uptimeMillis();
                     matchTimeHandler.postDelayed(updateMatchTimerThread,0);
-                    homeTimeHandler.postDelayed(updateHomeTimerThread,0);
-                    awayTimeHandler.postDelayed(updateAwayTimerThread,0);
+                    //homeTimeHandler.postDelayed(updateHomeTimerThread,0);
+                    //awayTimeHandler.postDelayed(updateAwayTimerThread,0);
 
                     start =false;
                     awayPossession = !awayPossession;
-                    possisionChange.callOnClick();
+                    //possisionChange.callOnClick();
                 }
                 else{
                     startPause.setImageResource(R.drawable.start);
-                    possisionChange.setEnabled(false);
+                    //possisionChange.setEnabled(false);
                     highlightButton.setEnabled(false);
                     goalButton.setEnabled(false);
                     cardButton.setEnabled(false);
@@ -680,10 +710,10 @@ public class tzlc_stats_add extends AppCompatActivity {
                     matchSwapBuff += matchTimeInMillisecond;
                     matchTimeHandler.removeCallbacks(updateMatchTimerThread);
                     start = true;
-                    awaySwapBuff += awayTimeInMillisecond;
+                    /*awaySwapBuff += awayTimeInMillisecond;
                     awayTimeHandler.removeCallbacks(updateAwayTimerThread);
                     homeSwapBuff += homeTimeInMillisecond;
-                    homeTimeHandler.removeCallbacks(updateHomeTimerThread);
+                    homeTimeHandler.removeCallbacks(updateHomeTimerThread);*/
                 }
             }
         });
@@ -796,14 +826,14 @@ public class tzlc_stats_add extends AppCompatActivity {
         builder.setMessage("Please save Stats to exit this screen !!").setPositiveButton("Ok",dialog).show();
     }
 
-    private Runnable updateHomeTimerThread = new Runnable() {
+    /*private Runnable updateHomeTimerThread = new Runnable() {
         @Override
         public void run() {
             homeTimeInMillisecond = SystemClock.uptimeMillis() - homeStartTime;
             homeUpdatedTime = homeSwapBuff + homeTimeInMillisecond;
             int sec = (int) (homeUpdatedTime / 1000);
             int min = sec / 60;
-            timerHome.setText("" + String.format("%02d", min) + " : " + String.format("%02d", (sec % 60)));
+            homePasses.setText("" + String.format("%02d", min) + " : " + String.format("%02d", (sec % 60)));
             stat.setHome_TIME(sec);
             homeTime = (min*60)+sec;
             homeTimeHandler.postDelayed(updateHomeTimerThread,0);
@@ -817,13 +847,13 @@ public class tzlc_stats_add extends AppCompatActivity {
             awayUpdatedTime = awaySwapBuff + awayTimeInMillisecond;
             int sec = (int) (awayUpdatedTime / 1000);
             int min = sec / 60;
-            timerAway.setText("" + String.format("%02d", min) + " : " + String.format("%02d", (sec % 60)));
+            awayPasses.setText("" + String.format("%02d", min) + " : " + String.format("%02d", (sec % 60)));
             stat.setAway_TIME(sec);
             awayTime = (min*60)+sec;
             awayTimeHandler.postDelayed(updateAwayTimerThread,0);
         }
     };
-
+*/
     private Runnable updateMatchTimerThread = new Runnable() {
         @Override
         public void run() {
@@ -856,6 +886,8 @@ public class tzlc_stats_add extends AppCompatActivity {
         goalID = b.getLong("goalID",-1);
         temphomeColor = b.getInt("homeColor",temphomeColor);
         tempawayColor = b.getInt("awayColor",tempawayColor);
+        completedPassesHome = b.getInt("homePasses",0);
+        completedPassesAway = b.getInt("awayPasses",0);
 
 
 
@@ -953,8 +985,10 @@ public class tzlc_stats_add extends AppCompatActivity {
                             case DialogInterface.BUTTON_POSITIVE :
                                 stat.setMatchID(m.getId());
                                 stat.setMatchTime(matchTime);
-                                stat.setHome_TIME(htHomeTime + homeTime);
-                                stat.setAway_TIME(htAwayTime + awayTime);
+                                stat.setHome_TIME((stat.getHome_TIME()*1000)+completedPassesHome);
+                                stat.setAway_TIME((stat.getAway_TIME()*1000)+completedPassesAway);
+                                //stat.setHome_TIME(htHomeTime + homeTime);
+                                //tat.setAway_TIME(htAwayTime + awayTime);
                                 stat.setHome_Score(Integer.parseInt(homeScore.getText().toString()));
                                 stat.setAway_Score(Integer.parseInt(awayScore.getText().toString()));
 
@@ -996,16 +1030,16 @@ public class tzlc_stats_add extends AppCompatActivity {
                         switch (which)
                         {
                             case DialogInterface.BUTTON_POSITIVE :
-                                awaySwapBuff = 0L;
-                                homeSwapBuff = 0L;
+                                //awaySwapBuff = 0L;
+                                //homeSwapBuff = 0L;
                                 matchSwapBuff = 0L;
-                                homeStartTime = SystemClock.uptimeMillis();
-                                awayStartTime = SystemClock.uptimeMillis();
+                                //homeStartTime = SystemClock.uptimeMillis();
+                                //awayStartTime = SystemClock.uptimeMillis();
                                 matchStartTime = SystemClock.uptimeMillis();
-                                htHomeTime =homeTime;
-                                htAwayTime =awayTime;
-                                homeTime =0;
-                                awayTime =0;
+                                //htHomeTime =homeTime;
+                                //htAwayTime =awayTime;
+                                //homeTime =0;
+                                //awayTime =0;
                                 timerMatch.setText("" + String.format("%02d", 0) + " : " + String.format("%02d", 0));
                                 if (matchTime < 2700)
                                     halftime = 2400;
@@ -1033,6 +1067,18 @@ public class tzlc_stats_add extends AppCompatActivity {
                 resetbuilder.setTitle("Alert !!");
                 resetbuilder.setMessage("Are you sure you want to reset Timer ??").setPositiveButton("Yes",resetdialog).setNegativeButton("No",resetdialog).show();
 
+                break;
+            case R.id.completedPasses :
+                Intent completedPasses = new Intent(tzlc_stats_add.this, tzlc_stats_completed_passes.class);
+                Bundle extras_passes  = new Bundle();
+                extras_passes.putLong("matchID", matchID);
+                extras_passes.putInt("matchTime",matchTime+halftime);
+                extras_passes.putInt("homeColor",temphomeColor);
+                extras_passes.putInt("awayColor",tempawayColor);
+                extras_passes.putString("homeClub",datasource.getClub( m.getHomeClubID()).getClubShortName()) ;
+                extras_passes.putString("awayClub",datasource.getClub( m.getAwayClubID()).getClubShortName());
+                completedPasses.putExtras(extras_passes);
+                startActivityForResult(completedPasses,100);
                 break;
     }
 

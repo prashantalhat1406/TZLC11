@@ -434,6 +434,7 @@
                 android:background="@drawable/roundbutton" android:textSize="@dimen/tzlcStatsTextSize" android:enabled="false"
                 android:layout_weight="0.2" android:backgroundTint="@android:color/holo_blue_bright"/>
         </LinearLayout>
+
     </LinearLayout>
 
     </LinearLayout>
@@ -443,103 +444,66 @@
         android:layout_height="1dp"
         android:background="@android:color/darker_gray"/>
 
-    <LinearLayout android:layout_weight="0.7"
+    <LinearLayout
+        android:layout_weight="0.7"
         android:id="@+id/layoutH4"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.2"
-            android:orientation="vertical">
+            android:layout_width="match_parent" android:layout_weight="0.6"
+            android:layout_height="match_parent" android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="match_parent" android:orientation="horizontal"
-                android:layout_height="match_parent" android:layout_weight="0.5">
+            <ImageButton android:layout_weight="0.5" android:id="@+id/butstatsGoal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"  android:src="@drawable/goal" android:scaleType="fitCenter" android:backgroundTint="#FFFAFA"/>
 
-                <ImageButton android:layout_weight="0.5" android:id="@+id/butstatsGoal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:src="@drawable/goal" android:scaleType="fitCenter" android:backgroundTint="#FFFAFA"/>
+            <ImageButton android:layout_weight="0.5" android:id="@+id/butstatsCard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"  android:src="@drawable/cards" android:scaleType="fitCenter" android:backgroundTint="#FFFAFA"/>
 
-                <ImageButton android:layout_weight="0.5" android:id="@+id/butstatsCard"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:src="@drawable/cards" android:scaleType="fitCenter" android:backgroundTint="#FFFAFA"/>
+            <ImageButton android:layout_weight="0.5" android:id="@+id/butstatsHighlight"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:src="@drawable/tv" android:scaleType="fitCenter" android:backgroundTint="#FFFAFA" />
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent" android:orientation="horizontal"
-                android:layout_height="match_parent" android:layout_weight="0.5">
-
-                <ImageButton android:layout_weight="0.5" android:id="@+id/butstatsSubs"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:src="@drawable/subs" android:scaleType="fitCenter" android:backgroundTint="#FFFAFA" android:visibility="gone"/>
-
-                <ImageButton android:layout_weight="0.5" android:id="@+id/butstatsHighlight"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" android:src="@drawable/tv" android:scaleType="fitCenter" android:backgroundTint="#FFFAFA" />
-
-            </LinearLayout>
-
+            <ImageButton android:layout_weight="0.5" android:id="@+id/butstatsPause"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:src="@drawable/start" android:scaleType="fitCenter" android:backgroundTint="#FFFAFA" />
 
         </LinearLayout>
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/butstatsChange"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" app:backgroundTint="@android:color/holo_orange_light"  />
-
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.2"
-            android:orientation="horizontal">
+            android:layout_width="match_parent" android:layout_weight="0.4"
+            android:layout_height="match_parent" android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="match_parent" android:orientation="vertical"
-                android:layout_height="match_parent" android:layout_weight="0.5">
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/butHomePasses"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" app:backgroundTint="@android:color/holo_orange_light"  />
 
-                <TextView android:id="@+id/txtstatsHomeClubPossesion"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.2"
-                    android:gravity="center"
+            <TextView android:id="@+id/txtstatsHomePasses"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:gravity="center"
 
-                    android:text="00 : 00" />
+                android:text="0" />
 
-                <TextView android:id="@+id/txtstatsAwayClubPossesion"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.2"
-                    android:gravity="center"
-                    android:text="00 : 00" />
+            <TextView android:id="@+id/txtstatsAwayPasses"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:gravity="center"
+                android:text="0" />
 
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent" android:orientation="vertical"
-                android:layout_height="match_parent" android:layout_weight="0.5">
-
-                <ImageButton android:layout_weight="0.5" android:id="@+id/butstatsPause"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" android:src="@drawable/start" android:scaleType="fitCenter" android:backgroundTint="#FFFAFA" />
-
-                <!--<ImageButton android:layout_weight="0.5" android:id="@+id/butstatsResetTime"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" android:src="@drawable/reset" android:scaleType="fitCenter" android:backgroundTint="#FFFAFA" /> -->
-
-
-            </LinearLayout>
-
-
-
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/butAwayPasses"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" app:backgroundTint="@android:color/holo_orange_light"  />
 
         </LinearLayout>
 
-    </LinearLayout>
+        </LinearLayout>
 
 </LinearLayout>

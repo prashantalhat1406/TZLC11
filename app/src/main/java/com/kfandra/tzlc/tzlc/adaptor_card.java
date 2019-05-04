@@ -18,7 +18,7 @@ class adaptor_card extends ArrayAdapter<Card> {
     public adaptor_card(@NonNull Context context, int resource, List<Card> objects) {
         super(context, resource, objects);
         cards = objects;
-        
+
     }
 
     @NonNull
