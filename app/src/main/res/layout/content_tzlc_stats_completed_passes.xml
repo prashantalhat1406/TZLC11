@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".tzlc_stats_completed_passes"
+    tools:showIn="@layout/activity_tzlc_stats_completed_passes">
+
+    <LinearLayout android:layout_weight="0.5"
+        android:layout_width="match_parent" android:orientation="vertical"
+        android:layout_height="match_parent">
+        <LinearLayout android:layout_weight="0.1"
+            android:layout_width="match_parent" android:orientation="horizontal"
+            android:layout_height="match_parent">
+            <TextView android:id="@+id/txtHomeClubPasses"
+                android:layout_width="match_parent" android:layout_weight="0.3" android:layout_gravity="center" android:gravity="center" android:textSize="@dimen/tzlcTextSize"
+                android:layout_height="match_parent"  android:text="Enter Passes for Home Cub :"/>
+            <EditText android:id="@+id/edtHomePasses"
+                android:layout_width="match_parent" android:layout_weight="0.7"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.1"
+            android:layout_width="match_parent" android:orientation="horizontal"
+            android:layout_height="match_parent">
+            <TextView android:id="@+id/txtAwayClubPasses"
+                android:layout_width="match_parent" android:layout_weight="0.3" android:layout_gravity="center" android:gravity="center" android:textSize="@dimen/tzlcTextSize"
+                android:layout_height="match_parent"  android:text="Enter Passes for Away Cub :"/>
+            <EditText android:id="@+id/edtAwayPasses"
+                android:layout_width="match_parent" android:layout_weight="0.7"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button android:id="@+id/butSavePasses"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"  android:text="SAVE"  android:textSize="@dimen/tzlcTextSize"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_weight="0.5"
+        android:layout_height="match_parent"></LinearLayout>
+
+</LinearLayout>
