@@ -133,18 +133,18 @@ public class tzlc_club_detail extends AppCompatActivity {
         loan.findViewById(R.id.tabIcon).setBackgroundResource(R.drawable.loan);
         tabs.addTab(tabs.newTab().setCustomView(loan));*/
 
-        String [] images={"playerdata","fixture2","referee","cards","goal","loan"};
-        //String [] images={"Players","Fixtures","MO's","Cards","Goals","Loans"};
+        //String [] images={"playerdata","fixture2","referee","cards","goal","loan"};
+        String [] images={"Players","Fixtures","MO's","Cards","Goals","Loans"};
 
         for (int i = 0; i < images.length; i++) {
-            ImageView imageView = new ImageView(tzlc_club_detail.this);
+            /*ImageView imageView = new ImageView(tzlc_club_detail.this);
             imageView.setImageResource(getResources().getIdentifier(images[i],"drawable",getPackageName()));
             imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
             imageView.setMaxWidth(50);
             imageView.setMaxHeight(50);
 
-            tabs.addTab(tabs.newTab().setCustomView(imageView));
-            //tabs.addTab(tabs.newTab().setText(images[i]));
+            tabs.addTab(tabs.newTab().setCustomView(imageView));*/
+            tabs.addTab(tabs.newTab().setText(images[i]));
 
         }
 
