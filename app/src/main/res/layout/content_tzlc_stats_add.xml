@@ -487,7 +487,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
                 android:gravity="center"
-
+                android:textSize="@dimen/tzlcStatsTextSize"
                 android:text="0" />
 
             <TextView android:id="@+id/txtstatsAwayPasses"
@@ -495,6 +495,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
                 android:gravity="center"
+                android:textSize="@dimen/tzlcStatsTextSize"
                 android:text="0" />
 
             <android.support.design.widget.FloatingActionButton

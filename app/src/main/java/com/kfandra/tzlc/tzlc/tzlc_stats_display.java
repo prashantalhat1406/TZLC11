@@ -139,8 +139,8 @@ public class tzlc_stats_display extends AppCompatActivity {
         homeClubScore.setText("" + stat.getHome_Score());
         double poss = 0.0;
         TextView homeClubPossession = findViewById(R.id.reportHomePossession);
-        poss = (((double) stat.getHome_TIME() / (stat.getHome_TIME() + stat.getAway_TIME())) * 100);
-        homeClubPossession.setText("" + String.format("%.2f", poss) + "%");
+        //poss = (((double) stat.getHome_TIME() / (stat.getHome_TIME() + stat.getAway_TIME())) * 100);
+        homeClubPossession.setText("" + stat.getHome_TIME() );
 
         TextView homeClubDFK = findViewById(R.id.reportHomeDFK);
         homeClubDFK.setText("" + stat.getHome_DFK());
@@ -167,8 +167,8 @@ public class tzlc_stats_display extends AppCompatActivity {
         TextView awayClubScore = findViewById(R.id.reportAwayScore);
         awayClubScore.setText("" + stat.getAway_Score());
         TextView awayClubPossession = findViewById(R.id.reportAwayPossession);
-        poss = (((double) stat.getAway_TIME() / (stat.getHome_TIME() + stat.getAway_TIME())) * 100);
-        awayClubPossession.setText("" + String.format("%.2f", poss) + "%");
+        //poss = (((double) stat.getAway_TIME() / (stat.getHome_TIME() + stat.getAway_TIME())) * 100);
+        awayClubPossession.setText("" + stat.getAway_TIME());
         TextView awayClubDFK = findViewById(R.id.reportAwayDFK);
         awayClubDFK.setText("" + stat.getAway_DFK());
         TextView awayClubCOR = findViewById(R.id.reportAwayCOR);
