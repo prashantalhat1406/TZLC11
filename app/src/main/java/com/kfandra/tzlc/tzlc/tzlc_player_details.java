@@ -79,17 +79,17 @@ public class tzlc_player_details extends AppCompatActivity {
         View loan = getLayoutInflater().inflate(R.layout.tabslayout, null);
         loan.findViewById(R.id.tabIcon).setBackgroundResource(R.drawable.loan);
         tabs.addTab(tabs.newTab().setCustomView(loan));*/
-        String [] images={"referee","cards","goal","loan"};
-        //String [] images={"MO's","Cards","Goals","Loans"};
+        //String [] images={"referee","cards","goal","loan"};
+        String [] images={"MO's","Cards","Goals","Loans"};
 
         for (int i = 0; i < images.length; i++) {
-            ImageView imageView = new ImageView(tzlc_player_details.this);
+            /*ImageView imageView = new ImageView(tzlc_player_details.this);
             imageView.setImageResource(getResources().getIdentifier(images[i],"drawable",getPackageName()));
             imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
             imageView.setMaxWidth(50);
             imageView.setMaxHeight(50);
-            tabs.addTab(tabs.newTab().setCustomView(imageView));
-            //tabs.addTab(tabs.newTab().setText(images[i]));
+            tabs.addTab(tabs.newTab().setCustomView(imageView));*/
+            tabs.addTab(tabs.newTab().setText(images[i]));
         }
         //tabs.addTab(tabs.newTab().setText("Assist"));
 
@@ -100,10 +100,10 @@ public class tzlc_player_details extends AppCompatActivity {
         tabs.addTab(tabs.newTab().setIcon(R.drawable.loan));*/
         tabs.setTabGravity(TabLayout.GRAVITY_FILL);
 
-        tabs.getTabAt(0).setText(""+datasource.getAllMOsForPlayer(playerID).size());
-        tabs.getTabAt(1).setText(""+datasource.getAllCardsForPlayer(playerID).size());
-        tabs.getTabAt(2).setText(""+datasource.getAllGoalsForPlayer(playerID).size());
-        tabs.getTabAt(3).setText(""+datasource.getAllLoansForPlayer(playerID).size());
+        tabs.getTabAt(0).setText(tabs.getTabAt(0).getText()+" ( "+datasource.getAllMOsForPlayer(playerID).size()+" )");
+        tabs.getTabAt(1).setText(tabs.getTabAt(1).getText()+" ( "+datasource.getAllCardsForPlayer(playerID).size()+" )");
+        tabs.getTabAt(2).setText(tabs.getTabAt(2).getText()+" ( "+datasource.getAllGoalsForPlayer(playerID).size()+" )");
+        tabs.getTabAt(3).setText(tabs.getTabAt(3).getText()+" ( "+datasource.getAllLoansForPlayer(playerID).size()+" )");
 
 
 

@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 //import android.widget.ImageButton;
+import android.widget.Button;
 import android.widget.ImageView;
 //import android.widget.Toast;
 
@@ -156,7 +157,8 @@ public class MainActivity extends AppCompatActivity {
         datasource.close();
 
 
-        ImageView clubs =  findViewById(R.id.butClubs);
+        //ImageView clubs =  findViewById(R.id.butClubs);
+        Button clubs =  findViewById(R.id.butClubs);
         clubs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -173,7 +175,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });*/
 
-        ImageView matches = findViewById(R.id.butMatches);
+        //ImageView matches = findViewById(R.id.butMatches);
+        Button matches = findViewById(R.id.butMatches);
         matches.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -182,7 +185,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ImageView players = findViewById(R.id.butPlayer);
+        //ImageView players = findViewById(R.id.butPlayer);
+        Button players = findViewById(R.id.butPlayer);
         players.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
