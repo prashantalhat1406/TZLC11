@@ -55,12 +55,13 @@ public class tzlc_player_details extends AppCompatActivity {
         TextView org = findViewById(R.id.txtplayerDetailOrg);
         org.setText(""+datasource.getClub(player.getOrgID()).getClubShortName());
 
-        ImageView orgLogo = findViewById(R.id.imgplayerOrgLogo);
+        /*ImageView orgLogo = findViewById(R.id.imgplayerOrgLogo);
         if(player.getOrgID()==1)
             orgLogo.setImageResource(R.drawable.logo_kitfo);
 
         if(player.getOrgID()==2)
             orgLogo.setImageResource(R.drawable.logo_tz);
+         */
 
 
         TabLayout tabs = (TabLayout) findViewById(R.id.tabPlayerDetailLayout);

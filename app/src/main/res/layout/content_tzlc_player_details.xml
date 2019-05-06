@@ -40,15 +40,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" android:layout_weight="0.25">
-                <TextView android:layout_weight="0.72"
+                <TextView android:layout_weight="0.62"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" android:text="Organization " android:gravity="center" android:textAlignment="textStart"/>
                 <TextView android:id="@+id/txtplayerDetailOrg"
-                    android:layout_width="match_parent" android:layout_weight="0.82"
+                    android:layout_width="match_parent" android:layout_weight="0.38"
                     android:layout_height="match_parent" android:text="Org" android:gravity="center" android:textAlignment="textStart" android:textStyle="bold"/>
-                <ImageView android:id="@+id/imgplayerOrgLogo"
+                <!--<ImageView android:id="@+id/imgplayerOrgLogo"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" android:layout_weight="0.88" />
+                    android:layout_height="match_parent" android:layout_weight="0.88" />-->
             </LinearLayout>
 
             <LinearLayout
