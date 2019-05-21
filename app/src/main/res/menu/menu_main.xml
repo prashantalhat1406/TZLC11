@@ -24,9 +24,16 @@
         android:orderInCategory="100"
         android:title="Reports"
         app:showAsAction="never" />
+
     <item
         android:id="@+id/tzlcLeagueTable"
         android:orderInCategory="100"
         android:title="League Table"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/tzlcsignout"
+        android:orderInCategory="100"
+        android:title="Signout"
         app:showAsAction="never" />
 </menu>
