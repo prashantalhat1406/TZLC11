@@ -509,7 +509,8 @@ public class tzlc_match_details_tabs extends AppCompatActivity {
                                 switch (which)
                                 {
                                     case DialogInterface.BUTTON_POSITIVE :
-                                        Intent statsAdd = new Intent(tzlc_match_details_tabs.this, tzlc_stats_add.class);
+                                        //Intent statsAdd = new Intent(tzlc_match_details_tabs.this, tzlc_stats_add.class);
+                                        Intent statsAdd = new Intent(tzlc_match_details_tabs.this, tzlc_stats_add_tzlc12n.class);
                                         Bundle extras  = new Bundle();
                                         extras.putLong("matchID", matchID);
                                         extras.putInt("scrollIndex",scrollIndexL);

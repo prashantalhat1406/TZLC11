@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:orientation="vertical"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".tzlc_matchDisplay_New"
+    tools:showIn="@layout/activity_tzlc_match_display__new">
+
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="match_parent" android:layout_weight="0.142"
+        android:layout_height="match_parent">
+
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="SUN"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="MON"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="TUE"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="WED"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="THU"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="FRI"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="SAT"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="match_parent" android:layout_weight="0.142"
+        android:layout_height="match_parent">
+
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="SUN"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="MON"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="TUE"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="WED"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="THU"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="FRI"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="SAT"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="match_parent" android:layout_weight="0.142"
+        android:layout_height="match_parent">
+
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="SUN"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="MON"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="TUE"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="WED"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="THU"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="FRI"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="SAT"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="match_parent" android:layout_weight="0.142"
+        android:layout_height="match_parent">
+
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="SUN"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="MON"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="TUE"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="WED"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="THU"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="FRI"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="SAT"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="match_parent" android:layout_weight="0.142"
+        android:layout_height="match_parent">
+
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="SUN"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="MON"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="TUE"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="WED"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="THU"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="FRI"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="SAT"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="match_parent" android:layout_weight="0.142"
+        android:layout_height="match_parent">
+
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="SUN"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="MON"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="TUE"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="WED"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="THU"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="FRI"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="SAT"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="match_parent" android:layout_weight="0.142"
+        android:layout_height="match_parent">
+
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="SUN"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="MON"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="TUE"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="WED"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="THU"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="FRI"/>
+        </LinearLayout>
+        <LinearLayout android:layout_weight="0.142"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" android:text="SAT"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

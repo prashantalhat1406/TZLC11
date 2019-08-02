@@ -89,6 +89,7 @@ public class tzlc_match_details extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(tzlc_match_details.this, tzlc_stats_add.class);
+                //Intent i = new Intent(tzlc_match_details.this, tzlc_stats_add_tzlc12n.class);
                 //i.putExtra("matchID", matchID);
                 Bundle extras  = new Bundle();
                 extras.putLong("matchID", matchID);
