@@ -13,6 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".tzlc_stats_add_tzlc12n"
+            android:label="@string/title_activity_tzlc_stats_add__tzlc12_n"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".tzlc_stats_completed_passes"
             android:label="@string/title_activity_tzlc_match_add_passes"
             android:parentActivityName=".tzlc_stats_add"
