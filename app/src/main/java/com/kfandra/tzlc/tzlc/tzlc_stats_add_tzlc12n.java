@@ -43,6 +43,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
     private long matchStartTime = 0L;
     private boolean awayPossession=false;
     private boolean start=true;
+    int halftime=0, resetCount =0;
 
 
     public boolean isColorDark(int color){
@@ -339,7 +340,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
         startPause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(start) {
+                if(start)
+                {
                     startPause.setImageResource(R.drawable.pause);
                     buthomeDFK.setEnabled(true);
                     buthomeCor.setEnabled(true);
@@ -417,7 +419,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.tzlc_stats_menu,menu);
+        inflater.inflate(R.menu.tzlc_stats_menu_tzlc12,menu);
         undoMenu = menu;
         return true;
         //return super.onCreateOptionsMenu(menu);
@@ -439,7 +441,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
 
 
         switch (id) {
-            case R.id.saveStats:
+            case R.id.saveStatstalc12:
 
                 DialogInterface.OnClickListener dialog = new DialogInterface.OnClickListener() {
                     @Override
@@ -471,9 +473,9 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 builder.setMessage("Do you want to save Match Stats ???").setNegativeButton("No",dialog).setPositiveButton("Yes",dialog).show();
                 break;
 
-            //case R.id.undo : undoHandler(undo);item.setEnabled(false); break;
+            case R.id.undotzlc12 : /*undoHandler(undo);item.setEnabled(false); */ break;
 
-            case R.id.color : Intent jerseyColor = new Intent(tzlc_stats_add_tzlc12n.this, tzlc_change_jersey_color.class);
+            case R.id.colortzlc12 : Intent jerseyColor = new Intent(tzlc_stats_add_tzlc12n.this, tzlc_change_jersey_color.class);
                 Bundle extras  = new Bundle();
                 extras.putLong("matchID", matchID);
                 extras.putInt("homeColor", homeColor);
@@ -484,7 +486,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 startActivityForResult(jerseyColor,100);
                 break;
 
-            case R.id.resetTimers :
+            case R.id.resetTimerstzlc12 :
 
                 DialogInterface.OnClickListener resetdialog = new DialogInterface.OnClickListener() {
                     @Override
@@ -492,7 +494,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         switch (which)
                         {
                             case DialogInterface.BUTTON_POSITIVE :
-                                /*matchSwapBuff = 0L;
+                                matchSwapBuff = 0L;
                                 matchStartTime = SystemClock.uptimeMillis();
                                 timerMatch.setText("" + String.format("%02d", 0) + " : " + String.format("%02d", 0));
                                 if (matchTime < 2700)
@@ -506,7 +508,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                                         resetReason[resetCount],
                                         "--NA--");
                                 datasource.addHighlight(highlight);
-                                resetCount++;*/
+                                resetCount++;
                                 break;
                             case DialogInterface.BUTTON_NEGATIVE : break;
                         }
@@ -517,17 +519,53 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 resetbuilder.setMessage("Are you sure you want to reset Timer ??").setPositiveButton("Yes",resetdialog).setNegativeButton("No",resetdialog).show();
 
                 break;
-            case R.id.completedPasses :
-                /*Intent completedPasses = new Intent(tzlc_stats_add_tzlc12n.this, tzlc_stats_completed_passes.class);
-                Bundle extras_passes  = new Bundle();
-                extras_passes.putLong("matchID", matchID);
-                extras_passes.putInt("matchTime",matchTime+halftime);
-                extras_passes.putInt("homeColor",temphomeColor);
-                extras_passes.putInt("awayColor",tempawayColor);
-                extras_passes.putString("homeClub",datasource.getClub( m.getHomeClubID()).getClubShortName()) ;
-                extras_passes.putString("awayClub",datasource.getClub( m.getAwayClubID()).getClubShortName());
-                completedPasses.putExtras(extras_passes);
-                startActivityForResult(completedPasses,100);*/
+            case R.id.pausestarttzlc12 :
+                if(start)
+                {
+                    //startPause.setImageResource(R.drawable.pause);
+                    item.setIcon(R.drawable.pause);
+
+                    buthomeDFK.setEnabled(true);
+                    buthomeCor.setEnabled(true);
+                    buthomeLC.setEnabled(true);
+                    buthomeTI.setEnabled(true);
+                    buthomePOPScored.setEnabled(true);
+                    buthomePOPMissed.setEnabled(true);
+
+                    butawayDFK.setEnabled(true);
+                    butawayCor.setEnabled(true);
+                    butawayLC.setEnabled(true);
+                    butawayTI.setEnabled(true);
+                    butawayPOPScored.setEnabled(true);
+                    butawayPOPMissed.setEnabled(true);
+
+                    matchStartTime = SystemClock.uptimeMillis();
+                    matchTimeHandler.postDelayed(updateMatchTimerThread,0);
+                    start =false;
+                    awayPossession = !awayPossession;
+                }
+                else{
+                    //startPause.setImageResource(R.drawable.start);
+                    item.setIcon(R.drawable.start);
+
+                    buthomeDFK.setEnabled(false);
+                    buthomeCor.setEnabled(false);
+                    buthomeLC.setEnabled(false);
+                    buthomeTI.setEnabled(false);
+                    buthomePOPScored.setEnabled(false);
+                    buthomePOPMissed.setEnabled(false);
+
+                    butawayDFK.setEnabled(false);
+                    butawayCor.setEnabled(false);
+                    butawayLC.setEnabled(false);
+                    butawayTI.setEnabled(false);
+                    butawayPOPScored.setEnabled(false);
+                    butawayPOPMissed.setEnabled(false);
+
+                    matchSwapBuff += matchTimeInMillisecond;
+                    matchTimeHandler.removeCallbacks(updateMatchTimerThread);
+                    start = true;
+                }
                 break;
         }
 

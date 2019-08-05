@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/pausestarttzlc12" android:title="Pause" android:icon="@drawable/start" app:showAsAction="always"/>
+    <item android:id="@+id/saveStatstalc12" android:title="Save" android:icon="@android:drawable/ic_menu_save" app:showAsAction="never"/>
+    <item android:id="@+id/undotzlc12" android:title="Undo" android:icon="@drawable/undo" app:showAsAction="always"/>
+    <item android:id="@+id/colortzlc12" android:title="Change Color"  app:showAsAction="never"/>
+    <item android:id="@+id/resetTimerstzlc12" android:title="RESET"  app:showAsAction="never"/>
+</menu>
