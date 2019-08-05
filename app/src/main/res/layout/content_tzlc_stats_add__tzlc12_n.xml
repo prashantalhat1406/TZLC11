@@ -35,12 +35,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent" android:layout_weight="0.3" android:orientation="vertical">
-            <TextView android:id="@+id/txtstatsMatchType"
+            <TextView android:id="@+id/txtstatsMatchTypeTZLC12"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" android:layout_weight="0.5" android:text="Match Type" android:gravity="center"/>
 
             <TextView
-                android:id="@+id/txtstatsMatchTimer"
+                android:id="@+id/txtstatsMatchTimerTZLC12"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"
@@ -264,7 +264,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/butstatsHomeDFK"
+                    android:id="@+id/butstatsHomeDFKTZLC12"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
@@ -281,7 +281,7 @@
                     android:textStyle="bold"/>
 
                 <Button
-                    android:id="@+id/butstatsAwayDFK"
+                    android:id="@+id/butstatsAwayDFKTZLC12"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
@@ -297,7 +297,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/butstatsHomeCorner"
+                    android:id="@+id/butstatsHomeCornerTZLC12"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
@@ -314,7 +314,7 @@
                     android:textStyle="bold"/>
 
                 <Button
-                    android:id="@+id/butstatsAwayCorner"
+                    android:id="@+id/butstatsAwayCornerTZLC12"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
@@ -330,7 +330,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/butstatsHomePOPSc"
+                    android:id="@+id/butstatsHomePOPScore"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
@@ -347,7 +347,7 @@
                     android:textStyle="bold"/>
 
                 <Button
-                    android:id="@+id/butstatsAwayPOPSc"
+                    android:id="@+id/butstatsAwayPOPScore"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
@@ -395,7 +395,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/butstatsHomeLC"
+                    android:id="@+id/butstatsHomeLCTZLC12"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
@@ -412,7 +412,7 @@
                     android:textStyle="bold"/>
 
                 <Button
-                    android:id="@+id/butstatsAwayLC"
+                    android:id="@+id/butstatsAwayLCTZLC12"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
@@ -428,7 +428,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/butstatsHomeThrowIn"
+                    android:id="@+id/butstatsHomeThrowInTZLC12"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
@@ -445,7 +445,7 @@
                     android:textStyle="bold"/>
 
                 <Button
-                    android:id="@+id/butstatsAwayThrowIn"
+                    android:id="@+id/butstatsAwayThrowInTZLC12"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
@@ -461,7 +461,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/butstatsHomePOPMs"
+                    android:id="@+id/butstatsHomePOPMiss"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
@@ -478,7 +478,7 @@
                     android:textStyle="bold"/>
 
                 <Button
-                    android:id="@+id/butstatsAwayPOPMs"
+                    android:id="@+id/butstatsAwayPOPMiss"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
@@ -494,9 +494,17 @@
     <LinearLayout
         android:layout_width="match_parent" android:layout_weight="0.14"
         android:layout_height="match_parent" >
-        <Button
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="match_parent" android:layout_weight="0.2"
+            android:layout_height="match_parent" android:text="" />
+
+        <ImageButton android:id="@+id/butstatsPauseTZLC12"
+            android:layout_width="match_parent" android:layout_weight="0.2" android:src="@drawable/pause" android:scaleType="fitXY"
             android:layout_height="match_parent" android:text="Pause"/>
+
+        <TextView
+            android:layout_width="match_parent" android:layout_weight="0.2"
+            android:layout_height="match_parent" android:text="" />
     </LinearLayout>
 
 

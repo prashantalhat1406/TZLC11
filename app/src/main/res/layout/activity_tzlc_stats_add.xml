@@ -21,8 +21,8 @@
     </android.support.design.widget.AppBarLayout>
 
     <!--<include layout="@layout/content_tzlc_stats_add" />-->
-    <!-- <include layout="@layout/content_tzlc_stats_add"/> -->
-    <include layout="@layout/content_tzlc_stats_add_tzlc12"/>
+    <include layout="@layout/content_tzlc_stats_add"/>
+
 
     <!--<android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
