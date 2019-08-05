@@ -9,7 +9,7 @@
     tools:showIn="@layout/activity_tzlc_stats_add__tzlc12_n">
 
 
-    <LinearLayout android:layout_weight="0.13"  android:id="@+id/layoutHeader"
+    <LinearLayout android:layout_weight="0.14"  android:id="@+id/layoutHeader"
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -76,7 +76,7 @@
         android:background="@android:color/darker_gray"/>
 
     <LinearLayout android:id="@+id/layoutActions"
-        android:layout_width="match_parent" android:layout_weight="0.12"  android:orientation="horizontal"
+        android:layout_width="match_parent" android:layout_weight="0.11"  android:orientation="horizontal"
         android:layout_height="match_parent">
 
         <LinearLayout android:id="@+id/layoutActionsHome"
@@ -133,10 +133,12 @@
         <LinearLayout android:id="@+id/layoutActionsSave"
             android:layout_width="match_parent" android:orientation="vertical" android:layout_weight="0.14"
             android:layout_height="match_parent">
-
-            <Button
-                android:layout_width="match_parent"
+            <Button android:id="@+id/butStatsActionSave"
+                android:layout_width="match_parent" android:layout_weight="0.06" android:padding="0dp"
                 android:layout_height="match_parent" android:text="Save"/>
+            <Button android:id="@+id/butStatsActionClear"
+                android:layout_width="match_parent" android:layout_weight="0.12" android:padding="0dp"
+                android:layout_height="match_parent" android:text="Clear"/>
         </LinearLayout>
 
         <LinearLayout android:id="@+id/layoutActionsAway"
@@ -193,16 +195,31 @@
     </LinearLayout>
 
     <LinearLayout android:id="@+id/layoutPossesion"
-        android:layout_width="match_parent" android:layout_weight="0.1"  android:orientation="horizontal"
+        android:layout_width="match_parent" android:layout_weight="0.11"  android:orientation="horizontal"
         android:layout_height="match_parent">
 
-        <ImageButton android:id="@+id/imgButHome"
+        <!--<ImageButton android:id="@+id/imgButHome"
             android:layout_width="match_parent" android:layout_weight="0.5" android:src="@drawable/home" android:scaleType="fitXY" android:background="@color/fui_transparent"
             android:layout_height="match_parent" />
 
         <ImageButton android:id="@+id/imgButAway"
             android:layout_width="match_parent" android:layout_weight="0.5" android:src="@drawable/away" android:scaleType="fitXY" android:background="@color/fui_transparent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent" /> -->
+        <ToggleButton
+            android:layout_width="match_parent" android:layout_weight="0.1"
+            android:layout_height="match_parent" android:background="@drawable/hh1"/>
+
+        <ToggleButton
+            android:layout_width="match_parent" android:layout_weight="0.1"
+            android:layout_height="match_parent" android:background="@drawable/hh2"/>
+
+        <ToggleButton
+            android:layout_width="match_parent" android:layout_weight="0.1"
+            android:layout_height="match_parent" android:background="@drawable/ha2"/>
+
+        <ToggleButton
+            android:layout_width="match_parent" android:layout_weight="0.1"
+            android:layout_height="match_parent" android:background="@drawable/ha1"/>
 
     </LinearLayout>
 
@@ -472,6 +489,14 @@
 
         </LinearLayout>
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_weight="0.14"
+        android:layout_height="match_parent" >
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:text="Pause"/>
     </LinearLayout>
 
 
