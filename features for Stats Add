@@ -1,0 +1,7 @@
+1. Make toggle button change color
+2. make drop down items of same color as that of club
+3. update stats display page to include new stats. also make sure to remove older ones
+4. name should change on toggle button depending on club possession
+5. implement clear function on stats add
+6. when radio button is selected rest all should be disabled.
+7. Increase font size of goal count
