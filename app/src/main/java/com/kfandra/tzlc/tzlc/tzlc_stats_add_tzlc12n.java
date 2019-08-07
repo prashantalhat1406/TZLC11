@@ -19,6 +19,8 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
@@ -28,6 +30,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
     private Stats stat;
     private Button buthomeDFK, buthomeCor, buthomeLC, buthomeTI, buthomePOPScored, buthomePOPMissed;
     private Button butawayDFK, butawayCor, butawayLC, butawayTI, butawayPOPScored, butawayPOPMissed;
+    private Button clear, save;
     private ImageButton startPause;
     Match m;
     private int undo;
@@ -44,7 +47,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
     private boolean awayPossession=false;
     private boolean start=true;
     int halftime=0, resetCount =0;
-
+    private RadioGroup homeActions, awayActions;
 
     public boolean isColorDark(int color){
         double darkness = 1-(0.299* Color.red(color) + 0.587*Color.green(color) + 0.114*Color.blue(color))/255;
@@ -149,7 +152,49 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
         TextView matchType = findViewById(R.id.txtstatsMatchTypeTZLC12);
         matchType.setText(""+adapter.getItem( m.getType()));
 
-        //Buttons Code starts
+
+
+        homeActions = findViewById(R.id.rdgrpHomeActions);
+        awayActions = findViewById(R.id.rdgrpAwayActions);
+        homeActions.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                /*for(int i=0;i < awayActions.getChildCount();i++)
+                    ((RadioButton)awayActions.getChildAt(i)).setEnabled(false);*/
+            }
+        });
+
+        awayActions.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                /*for(int i=0;i < homeActions.getChildCount();i++)
+                    ((RadioButton)homeActions.getChildAt(i)).setEnabled(false); */
+            }
+        });
+
+        clear = findViewById(R.id.butStatsActionClear);
+        clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*for(int i=0;i < awayActions.getChildCount();i++){
+                    ((RadioButton)awayActions.getChildAt(i)).setChecked(false);
+                    ((RadioButton)awayActions.getChildAt(i)).setEnabled(true);
+                }
+
+                for(int i=0;i < homeActions.getChildCount();i++) {
+                    ((RadioButton) homeActions.getChildAt(i)).setChecked(false);
+                    ((RadioButton) homeActions.getChildAt(i)).setEnabled(true);
+                }*/
+            }
+        });
+        save = findViewById(R.id.butStatsActionSave);
+
+
+
+
+        //Stats Buttons Code starts
 
         homeScore = findViewById(R.id.txtstatsHomeClubScore);
         homeScore.setText(""+stat.getHome_Score());
@@ -244,11 +289,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
         });
 
 
-
-
-
-
-
+        //Away Clubs stats start from here **************************************************
         butawayDFK = findViewById(R.id.butstatsAwayDFKTZLC12);
         butawayDFK.setBackgroundTintList(ColorStateList.valueOf(awayColor));
         butawayDFK.setTextColor(awayTextColor);
@@ -290,8 +331,6 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 datasource.updateStats(stat);
             }
         });
-
-
 
         butawayTI = findViewById(R.id.butstatsAwayThrowInTZLC12);
         butawayTI.setBackgroundTintList(ColorStateList.valueOf(awayColor));
@@ -522,7 +561,6 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
             case R.id.pausestarttzlc12 :
                 if(start)
                 {
-                    //startPause.setImageResource(R.drawable.pause);
                     item.setIcon(R.drawable.pause);
 
                     buthomeDFK.setEnabled(true);
@@ -545,7 +583,6 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     awayPossession = !awayPossession;
                 }
                 else{
-                    //startPause.setImageResource(R.drawable.start);
                     item.setIcon(R.drawable.start);
 
                     buthomeDFK.setEnabled(false);
@@ -570,8 +607,6 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-        //return true;
-
     }
 
 }

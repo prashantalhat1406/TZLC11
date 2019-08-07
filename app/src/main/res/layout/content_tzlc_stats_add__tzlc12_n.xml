@@ -86,25 +86,26 @@
             <LinearLayout android:id="@+id/radiobuttonHome"
                 android:layout_width="match_parent" android:layout_weight="0.1"
                 android:layout_height="match_parent">
-                <RadioGroup
+
+                <RadioGroup android:id="@+id/rdgrpHomeActions"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" android:orientation="horizontal">
-                    <RadioButton
+                    <RadioButton android:id="@+id/rdbutHGoal"
                         android:layout_width="match_parent" android:layout_weight="1"
                         android:layout_height="match_parent"  android:text="G" android:button="@null" android:drawableBottom="@android:drawable/btn_radio"  android:gravity="center" android:textColor="@color/Brown" android:textStyle="bold" android:textSize="@dimen/tzlcTextSize"/>
-                    <RadioButton
+                    <RadioButton android:id="@+id/rdbutHAssist"
                         android:layout_width="match_parent" android:layout_weight="1"
                         android:layout_height="match_parent"  android:text="A" android:button="@null" android:drawableBottom="@android:drawable/btn_radio"  android:gravity="center" android:textColor="@color/Brown" android:textStyle="bold" android:textSize="@dimen/tzlcTextSize"/>
-                    <RadioButton
+                    <RadioButton android:id="@+id/rdbutHOwnGoal"
                         android:layout_width="match_parent" android:layout_weight="1"
                         android:layout_height="match_parent"  android:text="OG" android:button="@null" android:drawableBottom="@android:drawable/btn_radio"  android:gravity="center" android:textColor="@color/Brown" android:textStyle="bold" android:textSize="@dimen/tzlcTextSize"/>
-                    <RadioButton
+                    <RadioButton android:id="@+id/rdbutHRedCard"
                         android:layout_width="match_parent" android:layout_weight="1"
                         android:layout_height="match_parent"  android:text="R" android:button="@null" android:drawableBottom="@android:drawable/btn_radio"  android:gravity="center" android:textColor="@color/Red" android:textStyle="bold" android:textSize="@dimen/tzlcTextSize"/>
-                    <RadioButton
+                    <RadioButton android:id="@+id/rdbutHYellowCard"
                         android:layout_width="match_parent" android:layout_weight="1"
                         android:layout_height="match_parent"  android:text="Y" android:button="@null" android:drawableBottom="@android:drawable/btn_radio"  android:gravity="center" android:textColor="@color/Yellow" android:textStyle="bold"  android:textSize="@dimen/tzlcTextSize"/>
-                    <RadioButton
+                    <RadioButton android:id="@+id/rdbutHBlueCard"
                         android:layout_width="match_parent" android:layout_weight="1"
                         android:layout_height="match_parent"  android:text="B" android:button="@null" android:drawableBottom="@android:drawable/btn_radio"  android:gravity="center" android:textColor="@color/Navy" android:textStyle="bold"  android:textSize="@dimen/tzlcTextSize"/>
                 </RadioGroup>
@@ -149,25 +150,25 @@
                 android:layout_width="match_parent" android:layout_weight="0.1"
                 android:layout_height="match_parent">
 
-                <RadioGroup
+                <RadioGroup android:id="@+id/rdgrpAwayActions"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" android:orientation="horizontal">
-                    <RadioButton
+                    <RadioButton android:id="@+id/rdbutAGoal"
                         android:layout_width="match_parent" android:layout_weight="1"
                         android:layout_height="match_parent"  android:text="G" android:button="@null" android:drawableBottom="@android:drawable/btn_radio"  android:gravity="center" android:textColor="@color/Brown" android:textStyle="bold" android:textSize="@dimen/tzlcTextSize"/>
-                    <RadioButton
+                    <RadioButton android:id="@+id/rdbutAAssist"
                         android:layout_width="match_parent" android:layout_weight="1"
                         android:layout_height="match_parent"  android:text="A" android:button="@null" android:drawableBottom="@android:drawable/btn_radio"  android:gravity="center" android:textColor="@color/Brown" android:textStyle="bold" android:textSize="@dimen/tzlcTextSize"/>
-                    <RadioButton
+                    <RadioButton android:id="@+id/rdbutAOwnGoal"
                         android:layout_width="match_parent" android:layout_weight="1"
                         android:layout_height="match_parent"  android:text="OG" android:button="@null" android:drawableBottom="@android:drawable/btn_radio"  android:gravity="center" android:textColor="@color/Brown" android:textStyle="bold" android:textSize="@dimen/tzlcTextSize"/>
-                    <RadioButton
+                    <RadioButton android:id="@+id/rdbutARedCard"
                         android:layout_width="match_parent" android:layout_weight="1"
                         android:layout_height="match_parent"  android:text="R" android:button="@null" android:drawableBottom="@android:drawable/btn_radio"  android:gravity="center" android:textColor="@color/Red" android:textStyle="bold" android:textSize="@dimen/tzlcTextSize"/>
-                    <RadioButton
+                    <RadioButton android:id="@+id/rdbutAYellowCard"
                         android:layout_width="match_parent" android:layout_weight="1"
                         android:layout_height="match_parent"  android:text="Y" android:button="@null" android:drawableBottom="@android:drawable/btn_radio"  android:gravity="center" android:textColor="@color/Yellow" android:textStyle="bold"  android:textSize="@dimen/tzlcTextSize"/>
-                    <RadioButton
+                    <RadioButton android:id="@+id/rdbutABlueCard"
                         android:layout_width="match_parent" android:layout_weight="1"
                         android:layout_height="match_parent"  android:text="B" android:button="@null" android:drawableBottom="@android:drawable/btn_radio"  android:gravity="center" android:textColor="@color/Navy" android:textStyle="bold"  android:textSize="@dimen/tzlcTextSize"/>
                 </RadioGroup>
@@ -205,19 +206,19 @@
         <ImageButton android:id="@+id/imgButAway"
             android:layout_width="match_parent" android:layout_weight="0.5" android:src="@drawable/away" android:scaleType="fitXY" android:background="@color/fui_transparent"
             android:layout_height="match_parent" /> -->
-        <ToggleButton
+        <ToggleButton android:id="@+id/togHome1"
             android:layout_width="match_parent" android:layout_weight="0.1"
-            android:layout_height="match_parent" android:background="@drawable/hh1"/>
+            android:layout_height="match_parent" android:background="@drawable/hh1" android:text="AP" android:textSize="@dimen/tzlcStatsLabelSize"/>
 
-        <ToggleButton
+        <ToggleButton android:id="@+id/togHome2"
             android:layout_width="match_parent" android:layout_weight="0.1"
             android:layout_height="match_parent" android:background="@drawable/hh2"/>
 
-        <ToggleButton
+        <ToggleButton android:id="@+id/togAway2"
             android:layout_width="match_parent" android:layout_weight="0.1"
             android:layout_height="match_parent" android:background="@drawable/ha2"/>
 
-        <ToggleButton
+        <ToggleButton android:id="@+id/togAway1"
             android:layout_width="match_parent" android:layout_weight="0.1"
             android:layout_height="match_parent" android:background="@drawable/ha1"/>
 
