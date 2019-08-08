@@ -21,7 +21,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
+
+import java.util.List;
 
 public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
 
@@ -32,6 +35,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
     private Button butawayDFK, butawayCor, butawayLC, butawayTI, butawayPOPScored, butawayPOPMissed;
     private Button clear, save;
     private ImageButton startPause;
+    private Spinner spnHomePlayers, spnAwayPlayers;
+    private List<String> homePlayerNames, awayPlayerNames;
     Match m;
     private int undo;
     private Menu undoMenu;
@@ -151,6 +156,20 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(tzlc_stats_add_tzlc12n.this,R.array.matchType,android.R.layout.simple_spinner_item);
         TextView matchType = findViewById(R.id.txtstatsMatchTypeTZLC12);
         matchType.setText(""+adapter.getItem( m.getType()));
+
+        homePlayerNames = datasource.getAllPlayerNamesForClub(m.getHomeClubID(),matchID);
+        spnHomePlayers = findViewById(R.id.spnHomePlayers);
+        ArrayAdapter<String> adapterPlayerNames = new ArrayAdapter<String>(tzlc_stats_add_tzlc12n.this,R.layout.dropdownitem, homePlayerNames);
+        adapterPlayerNames.setDropDownViewResource(R.layout.dropdownitem);
+        adapterPlayerNames.insert("Please select Player",0);
+        spnHomePlayers.setAdapter(adapterPlayerNames);
+
+        awayPlayerNames = datasource.getAllPlayerNamesForClub(m.getAwayClubID(),matchID);
+        spnAwayPlayers = findViewById(R.id.spnAwayPlayers);
+        ArrayAdapter<String> adapterPlayerNames2 = new ArrayAdapter<String>(tzlc_stats_add_tzlc12n.this,R.layout.dropdownitem, awayPlayerNames);
+        adapterPlayerNames2.setDropDownViewResource(R.layout.dropdownitem);
+        adapterPlayerNames2.insert("Please select Player",0);
+        spnAwayPlayers.setAdapter(adapterPlayerNames2);
 
 
 
