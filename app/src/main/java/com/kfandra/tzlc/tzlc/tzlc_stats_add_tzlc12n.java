@@ -23,13 +23,14 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
 public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
 
     private tzlcDataSource datasource;
-    private long matchID,goalID,cardID;
+    private long matchID,lastGoalID,cardID;
     private Stats stat;
     private Button buthomeDFK, buthomeCor, buthomeLC, buthomeTI, buthomePOPScored, buthomePOPMissed;
     private Button butawayDFK, butawayCor, butawayLC, butawayTI, butawayPOPScored, butawayPOPMissed;
@@ -61,6 +62,17 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
         }else{
             return true; // It's a dark color
         }
+    }
+
+    public void clearActions()
+    {
+        spnHomePlayers.setSelection(0);
+        spnAwayPlayers.setSelection(0);
+
+        for(int i=0;i < homeActions.getChildCount();i++)
+            ((RadioButton)homeActions.getChildAt(i)).setChecked(false);
+        for(int i=0;i < awayActions.getChildCount();i++)
+            ((RadioButton)awayActions.getChildAt(i)).setChecked(false);
     }
 
     public void updateScreenColor(int tempHColor, int tempAColor)
@@ -187,8 +199,35 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     ((RadioButton)awayActions.getChildAt(i)).setChecked(false);
             }
         });
-        save = findViewById(R.id.butStatsActionSave);
 
+        save = findViewById(R.id.butStatsActionSave);
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RadioButton hGoal = findViewById(R.id.rdbutHGoal);
+                if ( hGoal.isChecked())
+                {
+                    if(!spnHomePlayers.getSelectedItem().toString().equals("Please select Player")) {
+                        Goal goal = new Goal();
+                        goal.setMatchID(matchID);
+                        goal.setPlayerID(datasource.getPlayerID(spnHomePlayers.getSelectedItem().toString()));
+                        goal.setAssistPlayerID(0);
+                        goal.setMatchTime(matchTime);
+                        goal.setVcmtime(0);
+                        goal.setAgainstClubID(m.getAwayClubID());
+                        goal.setOwnGoal(0);
+                        lastGoalID = datasource.addGoal(goal);
+                        Highlight highlight = new Highlight(matchID, goal.getAgainstClubID(), 0, matchTime, "GOAL", "--NA--");
+                        datasource.addHighlight(highlight);
+                        homeScore.setText("" + (Integer.parseInt(homeScore.getText().toString()) + 1));
+                        stat.setHome_Score(Integer.parseInt(homeScore.getText().toString()));
+                        datasource.updateStats(stat);
+                        clearActions();
+                    }else
+                        Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
 
 
@@ -467,7 +506,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
 
         Bundle b = data.getExtras();
         matchID = b.getLong("matchID",-1);
-        goalID = b.getLong("goalID",-1);
+        //goalID = b.getLong("goalID",-1);
         temphomeColor = b.getInt("homeColor",temphomeColor);
         tempawayColor = b.getInt("awayColor",tempawayColor);
     }
