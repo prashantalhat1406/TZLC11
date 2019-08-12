@@ -175,37 +175,16 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
 
         homeActions = findViewById(R.id.rdgrpHomeActions);
         awayActions = findViewById(R.id.rdgrpAwayActions);
-        homeActions.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
 
-                /*for(int i=0;i < awayActions.getChildCount();i++)
-                    ((RadioButton)awayActions.getChildAt(i)).setEnabled(false);*/
-            }
-        });
-
-        awayActions.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-
-                /*for(int i=0;i < homeActions.getChildCount();i++)
-                    ((RadioButton)homeActions.getChildAt(i)).setEnabled(false); */
-            }
-        });
 
         clear = findViewById(R.id.butStatsActionClear);
         clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*for(int i=0;i < awayActions.getChildCount();i++){
+                for(int i=0;i < homeActions.getChildCount();i++)
+                    ((RadioButton)homeActions.getChildAt(i)).setChecked(false);
+                for(int i=0;i < awayActions.getChildCount();i++)
                     ((RadioButton)awayActions.getChildAt(i)).setChecked(false);
-                    ((RadioButton)awayActions.getChildAt(i)).setEnabled(true);
-                }
-
-                for(int i=0;i < homeActions.getChildCount();i++) {
-                    ((RadioButton) homeActions.getChildAt(i)).setChecked(false);
-                    ((RadioButton) homeActions.getChildAt(i)).setEnabled(true);
-                }*/
             }
         });
         save = findViewById(R.id.butStatsActionSave);
