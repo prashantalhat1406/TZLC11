@@ -478,7 +478,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
             @Override public void onClick(View v)
             {
                 buthomeDFK.setText(""+(stat.getHome_DFK()+1));stat.setHome_DFK(stat.getHome_DFK()+1);
-                undo = R.id.butstatsHomeDFK; undoMenu.findItem(R.id.undo).setEnabled(true);
+                //undo = R.id.butstatsHomeDFK; undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
             }
         });
@@ -492,7 +492,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
             @Override public void onClick(View v)
             {
                 buthomeCor.setText(""+(stat.getHome_COR()+1));stat.setHome_COR(stat.getHome_COR()+1);
-                undo=R.id.butstatsHomeCor;undoMenu.findItem(R.id.undo).setEnabled(true);
+                //undo=R.id.butstatsHomeCor;undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
             }
         });
@@ -506,7 +506,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
             @Override public void onClick(View v)
             {
                 buthomeLC.setText(""+(stat.getHome_LC()+1));stat.setHome_LC(stat.getHome_LC()+1);
-                undo=R.id.butstatsHomeLC;undoMenu.findItem(R.id.undo).setEnabled(true);
+                //undo=R.id.butstatsHomeLC;undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
             }
         });
@@ -520,7 +520,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
             @Override public void onClick(View v)
             {
                 buthomeTI.setText(""+(stat.getHome_TI()+1));stat.setHome_TI(stat.getHome_TI()+1);
-                undo=R.id.butstatsHomeTI;undoMenu.findItem(R.id.undo).setEnabled(true);
+                //undo=R.id.butstatsHomeTI;undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
             }
         });
@@ -534,7 +534,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
             @Override public void onClick(View v)
             {
                 buthomePOPScored.setText(""+(stat.getHome_POP()+1));stat.setHome_POP(stat.getHome_POP()+1);
-                undo=R.id.butstatsHomePOPScore;undoMenu.findItem(R.id.undo).setEnabled(true);
+                //undo=R.id.butstatsHomePOPScore;undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
             }
         });
@@ -548,7 +548,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
             @Override public void onClick(View v)
             {
                 buthomePOPMissed.setText(""+(stat.getHome_TCK()+1));stat.setHome_TCK(stat.getHome_TCK()+1);
-                undo=R.id.butstatsHomePOPMiss;undoMenu.findItem(R.id.undo).setEnabled(true);
+                //undo=R.id.butstatsHomePOPMiss;undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
             }
         });
@@ -564,7 +564,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
             @Override public void onClick(View v)
             {
                 butawayDFK.setText(""+(stat.getAway_DFK()+1));stat.setAway_DFK(stat.getAway_DFK()+1);
-                undo=R.id.butstatsAwayDFK;undoMenu.findItem(R.id.undo).setEnabled(true);
+                //undo=R.id.butstatsAwayDFK;undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
             }
         });
@@ -578,7 +578,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
             @Override public void onClick(View v)
             {
                 butawayCor.setText(""+(stat.getAway_COR()+1));stat.setAway_COR(stat.getAway_COR()+1);
-                undo=R.id.butstatsAwayCor;undoMenu.findItem(R.id.undo).setEnabled(true);
+                //undo=R.id.butstatsAwayCor;undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
             }
         });
@@ -592,7 +592,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
             @Override public void onClick(View v)
             {
                 butawayLC.setText(""+(stat.getAway_LC()+1));stat.setAway_LC(stat.getAway_LC()+1);
-                undo=R.id.butstatsAwayLC;undoMenu.findItem(R.id.undo).setEnabled(true);
+                //undo=R.id.butstatsAwayLC;undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
             }
         });
@@ -606,7 +606,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
             @Override public void onClick(View v)
             {
                 butawayTI.setText(""+(stat.getAway_TI()+1));stat.setAway_TI(stat.getAway_TI()+1);
-                undo=R.id.butstatsAwayTI;undoMenu.findItem(R.id.undo).setEnabled(true);
+                //undo=R.id.butstatsAwayTI;undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
             }
         });
@@ -620,7 +620,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
             @Override public void onClick(View v)
             {
                 butawayPOPScored.setText(""+(stat.getAway_POP()+1));stat.setAway_POP(stat.getAway_POP()+1);
-                undo=R.id.butstatsAwayPOPScore;undoMenu.findItem(R.id.undo).setEnabled(true);
+                //undo=R.id.butstatsAwayPOPScore;undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
             }
         });
@@ -634,7 +634,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
             @Override public void onClick(View v)
             {
                 butawayPOPMissed.setText(""+(stat.getAway_TCK()+1));stat.setAway_TCK(stat.getAway_TCK()+1);
-                undo=R.id.butstatsAwayPOPMiss;undoMenu.findItem(R.id.undo).setEnabled(true);
+               // undo=R.id.butstatsAwayPOPMiss;undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
             }
         });
@@ -724,7 +724,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.tzlc_stats_menu_tzlc12,menu);
-        undoMenu = menu;
+        //undoMenu = menu;
         return true;
         //return super.onCreateOptionsMenu(menu);
     }
@@ -777,7 +777,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 builder.setMessage("Do you want to save Match Stats ???").setNegativeButton("No",dialog).setPositiveButton("Yes",dialog).show();
                 break;
 
-            case R.id.undotzlc12 : /*undoHandler(undo);item.setEnabled(false); */ break;
+            /*case R.id.undotzlc12 : undoHandler(undo);item.setEnabled(false);  break;*/
 
             case R.id.colortzlc12 : Intent jerseyColor = new Intent(tzlc_stats_add_tzlc12n.this, tzlc_change_jersey_color.class);
                 Bundle extras  = new Bundle();
