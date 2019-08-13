@@ -160,7 +160,7 @@ public class tzlc_match_details_stats extends Fragment {
         TextView homeClubOFF = rootView.findViewById(R.id.matchDetailsHomeOFF);
         homeClubOFF.setText(""+stat.getHome_OFF());
         TextView homeClubPOP = rootView.findViewById(R.id.matchDetailsHomePOP);
-        homeClubPOP.setText(""+stat.getHome_POP());
+        homeClubPOP.setText(""+(stat.getHome_POP()+stat.getHome_TCK())+" [ "+stat.getHome_POP()+ " ]");
 
 
         TextView awayClubScore = rootView.findViewById(R.id.matchDetailsAwayScore);
@@ -196,6 +196,7 @@ public class tzlc_match_details_stats extends Fragment {
         awayClubOFF.setText(""+stat.getAway_OFF());
         TextView awayClubPOP = rootView.findViewById(R.id.matchDetailsAwayPOP);
         awayClubPOP.setText(""+stat.getAway_POP());
+        awayClubPOP.setText(""+(stat.getAway_POP()+stat.getAway_TCK())+" [ "+stat.getAway_POP()+ " ]");
 
         return rootView;
     }

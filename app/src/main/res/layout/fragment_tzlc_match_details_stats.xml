@@ -220,7 +220,7 @@
 
 
             <TextView
-                android:id="@+id/matchDetailsHomeGK"
+                android:id="@+id/matchDetailsHomeGK" android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
@@ -228,7 +228,7 @@
                 android:text="Goal Kicks" />
 
             <TextView
-                android:id="@+id/matchDetailsHomeSOnT"
+                android:id="@+id/matchDetailsHomeSOnT" android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
@@ -236,7 +236,7 @@
                 android:text="Shot On Target" />
 
             <TextView
-                android:id="@+id/matchDetailsHomeSOffT"
+                android:id="@+id/matchDetailsHomeSOffT" android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
@@ -252,7 +252,7 @@
                 android:text="Late Challange" />
 
             <TextView
-                android:id="@+id/matchDetailsHomeTCK"
+                android:id="@+id/matchDetailsHomeTCK" android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
@@ -268,7 +268,7 @@
                 android:text="Throw In" />
 
             <TextView
-                android:id="@+id/matchDetailsHomeOFF"
+                android:id="@+id/matchDetailsHomeOFF" android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
@@ -320,14 +320,14 @@
 
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="match_parent" android:visibility="gone"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
                 android:gravity="center"
                 android:text="Goal Kicks" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="match_parent" android:visibility="gone"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
                 android:gravity="center"
@@ -348,7 +348,7 @@
                 android:text="Late Challenge" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="match_parent" android:visibility="gone"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
                 android:gravity="center"
@@ -362,7 +362,7 @@
                 android:text="Throw In" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="match_parent"  android:visibility="gone"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
                 android:gravity="center"
@@ -373,7 +373,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
                 android:gravity="center"
-                android:text="POP" />
+                android:text="POP [ scored ]" />
 
 
         </LinearLayout>
@@ -415,7 +415,7 @@
 
 
             <TextView
-                android:id="@+id/matchDetailsAwayGK"
+                android:id="@+id/matchDetailsAwayGK"  android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
@@ -423,7 +423,7 @@
                 android:text="Goal Kicks" />
 
             <TextView
-                android:id="@+id/matchDetailsAwaySOnT"
+                android:id="@+id/matchDetailsAwaySOnT"  android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
@@ -431,7 +431,7 @@
                 android:text="Shot On Target" />
 
             <TextView
-                android:id="@+id/matchDetailsAwaySOffT"
+                android:id="@+id/matchDetailsAwaySOffT"  android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
@@ -447,7 +447,7 @@
                 android:text="Late Challange" />
 
             <TextView
-                android:id="@+id/matchDetailsAwayTCK"
+                android:id="@+id/matchDetailsAwayTCK"  android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
@@ -463,7 +463,7 @@
                 android:text="Throw IN" />
 
             <TextView
-                android:id="@+id/matchDetailsAwayOFF"
+                android:id="@+id/matchDetailsAwayOFF"  android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
