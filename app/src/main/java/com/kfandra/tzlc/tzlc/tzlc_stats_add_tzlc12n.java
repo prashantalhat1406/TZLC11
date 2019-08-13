@@ -229,7 +229,6 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     }else
                         Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
                 }
-
                 if ( aGoal.isChecked())
                 {
                     if(!spnAwayPlayers.getSelectedItem().toString().equals("Please select Player")) {
@@ -251,6 +250,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     }else
                         Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
                 }
+
 
                 //Code for Adding OWN Goal
                 RadioButton hOwnGoal = findViewById(R.id.rdbutHOwnGoal);
@@ -276,7 +276,6 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     }else
                         Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
                 }
-
                 if ( aOwnGoal.isChecked())
                 {
                     if(!spnAwayPlayers.getSelectedItem().toString().equals("Please select Player")) {
@@ -299,6 +298,30 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
                 }
 
+                //Code for Assist
+                RadioButton hAssist = findViewById(R.id.rdbutHAssist);
+                RadioButton aAssist = findViewById(R.id.rdbutAAssist);
+                if(hAssist.isChecked())
+                {
+                    if(!spnHomePlayers.getSelectedItem().toString().equals("Please select Player")) {
+                        Goal goal = datasource.getGoal(lastGoalID);
+                        goal.setAssistPlayerID(datasource.getPlayerID(spnHomePlayers.getSelectedItem().toString()));
+                        datasource.updateGoal(goal);
+                        clearActions();
+                    }else
+                        Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
+                }
+                if(aAssist.isChecked())
+                {
+                    if(!spnAwayPlayers.getSelectedItem().toString().equals("Please select Player")) {
+                        Goal goal = datasource.getGoal(lastGoalID);
+                        goal.setAssistPlayerID(datasource.getPlayerID(spnAwayPlayers.getSelectedItem().toString()));
+                        datasource.updateGoal(goal);
+                        clearActions();
+                    }else
+                        Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
+                }
+
                 //Code for Cards
                 RadioButton hRedCard = findViewById(R.id.rdbutHRedCard);
                 RadioButton hYellowCard = findViewById(R.id.rdbutHYellowCard);
@@ -306,7 +329,6 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 RadioButton aRedCard = findViewById(R.id.rdbutARedCard);
                 RadioButton aYellowCard = findViewById(R.id.rdbutAYellowCard);
                 RadioButton aBlueCard = findViewById(R.id.rdbutABlueCard);
-
                 if( hRedCard.isChecked())
                 {
                     if(!spnHomePlayers.getSelectedItem().toString().equals("Please select Player")) {
@@ -361,7 +383,6 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     }else
                         Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
                 }
-
                 if( aRedCard.isChecked())
                 {
                     if(!spnAwayPlayers.getSelectedItem().toString().equals("Please select Player")) {
@@ -416,6 +437,23 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     }else
                         Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
                 }
+
+                //Code for Assist
+                RadioButton hSub = findViewById(R.id.rdbutHSub);
+                RadioButton aSub = findViewById(R.id.rdbutASub);
+                if(hSub.isChecked())
+                {
+                    Highlight highlight = new Highlight(matchID, m.getHomeClubID(), -100, matchTime, "", "");
+                    datasource.addHighlight(highlight);
+                    clearActions();
+                }
+                if(aSub.isChecked())
+                {
+                    Highlight highlight = new Highlight(matchID, m.getAwayClubID(), -100, matchTime, "", "");
+                    datasource.addHighlight(highlight);
+                    clearActions();
+                }
+
             }
         });
 
