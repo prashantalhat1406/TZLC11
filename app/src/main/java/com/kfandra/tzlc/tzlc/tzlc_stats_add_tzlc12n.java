@@ -204,6 +204,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Code for Adding Goal
                 RadioButton hGoal = findViewById(R.id.rdbutHGoal);
                 RadioButton aGoal = findViewById(R.id.rdbutAGoal);
                 if ( hGoal.isChecked())
@@ -215,7 +216,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         goal.setAssistPlayerID(0);
                         goal.setMatchTime(matchTime);
                         goal.setVcmtime(0);
-                        goal.setAgainstClubID(m.getAwayClubID());
+                        goal.setAgainstClubID(m.getHomeClubID());
                         goal.setOwnGoal(0);
                         lastGoalID = datasource.addGoal(goal);
                         Highlight highlight = new Highlight(matchID, goal.getAgainstClubID(), 0, matchTime, "GOAL", "--NA--");
@@ -237,13 +238,60 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         goal.setAssistPlayerID(0);
                         goal.setMatchTime(matchTime);
                         goal.setVcmtime(0);
-                        goal.setAgainstClubID(m.getHomeClubID());
+                        goal.setAgainstClubID(m.getAwayClubID());
                         goal.setOwnGoal(0);
                         lastGoalID = datasource.addGoal(goal);
                         Highlight highlight = new Highlight(matchID, goal.getAgainstClubID(), 0, matchTime, "GOAL", "--NA--");
                         datasource.addHighlight(highlight);
                         awayScore.setText("" + (Integer.parseInt(awayScore.getText().toString()) + 1));
                         stat.setAway_Score(Integer.parseInt(awayScore.getText().toString()));
+                        datasource.updateStats(stat);
+                        clearActions();
+                    }else
+                        Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
+                }
+
+                //Code for Adding OWN Goal
+                RadioButton hOwnGoal = findViewById(R.id.rdbutHOwnGoal);
+                RadioButton aOwnGoal = findViewById(R.id.rdbutAOwnGoal);
+                if ( hOwnGoal.isChecked())
+                {
+                    if(!spnHomePlayers.getSelectedItem().toString().equals("Please select Player")) {
+                        Goal goal = new Goal();
+                        goal.setMatchID(matchID);
+                        goal.setPlayerID(datasource.getPlayerID(spnHomePlayers.getSelectedItem().toString()));
+                        goal.setAssistPlayerID(0);
+                        goal.setMatchTime(matchTime);
+                        goal.setVcmtime(0);
+                        goal.setAgainstClubID(m.getAwayClubID());
+                        goal.setOwnGoal(1);
+                        lastGoalID = datasource.addGoal(goal);
+                        Highlight highlight = new Highlight(matchID, goal.getAgainstClubID(), 0, matchTime, "GOAL", "--NA--");
+                        datasource.addHighlight(highlight);
+                        awayScore.setText("" + (Integer.parseInt(awayScore.getText().toString()) + 1));
+                        stat.setAway_Score(Integer.parseInt(awayScore.getText().toString()));
+                        datasource.updateStats(stat);
+                        clearActions();
+                    }else
+                        Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
+                }
+
+                if ( aOwnGoal.isChecked())
+                {
+                    if(!spnAwayPlayers.getSelectedItem().toString().equals("Please select Player")) {
+                        Goal goal = new Goal();
+                        goal.setMatchID(matchID);
+                        goal.setPlayerID(datasource.getPlayerID(spnAwayPlayers.getSelectedItem().toString()));
+                        goal.setAssistPlayerID(0);
+                        goal.setMatchTime(matchTime);
+                        goal.setVcmtime(0);
+                        goal.setAgainstClubID(m.getHomeClubID());
+                        goal.setOwnGoal(1);
+                        lastGoalID = datasource.addGoal(goal);
+                        Highlight highlight = new Highlight(matchID, goal.getAgainstClubID(), 0, matchTime, "GOAL", "--NA--");
+                        datasource.addHighlight(highlight);
+                        homeScore.setText("" + (Integer.parseInt(homeScore.getText().toString()) + 1));
+                        stat.setHome_Score(Integer.parseInt(homeScore.getText().toString()));
                         datasource.updateStats(stat);
                         clearActions();
                     }else
