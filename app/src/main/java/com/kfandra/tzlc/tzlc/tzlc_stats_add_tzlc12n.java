@@ -30,7 +30,7 @@ import java.util.List;
 public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
 
     private tzlcDataSource datasource;
-    private long matchID,lastGoalID,cardID;
+    private long matchID,lastGoalID,lastCardID;
     private Stats stat;
     private Button buthomeDFK, buthomeCor, buthomeLC, buthomeTI, buthomePOPScored, buthomePOPMissed;
     private Button butawayDFK, butawayCor, butawayLC, butawayTI, butawayPOPScored, butawayPOPMissed;
@@ -54,6 +54,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
     private boolean start=true;
     int halftime=0, resetCount =0;
     private RadioGroup homeActions, awayActions;
+    public int completedPassesHome=0,completedPassesAway=0;
 
     public boolean isColorDark(int color){
         double darkness = 1-(0.299* Color.red(color) + 0.587*Color.green(color) + 0.114*Color.blue(color))/255;
@@ -298,6 +299,123 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
                 }
 
+                //Code for Cards
+                RadioButton hRedCard = findViewById(R.id.rdbutHRedCard);
+                RadioButton hYellowCard = findViewById(R.id.rdbutHYellowCard);
+                RadioButton hBlueCard = findViewById(R.id.rdbutHBlueCard);
+                RadioButton aRedCard = findViewById(R.id.rdbutARedCard);
+                RadioButton aYellowCard = findViewById(R.id.rdbutAYellowCard);
+                RadioButton aBlueCard = findViewById(R.id.rdbutABlueCard);
+
+                if( hRedCard.isChecked())
+                {
+                    if(!spnHomePlayers.getSelectedItem().toString().equals("Please select Player")) {
+                        Card card = new Card();
+                        card.setMatchID(matchID);
+                        card.setPlayerID(datasource.getPlayerID(spnHomePlayers.getSelectedItem().toString()));
+                        card.setTime(matchTime);
+                        card.setReason("");
+                        card.setType(1);
+                        card.setClubID(datasource.getPlayer(datasource.getPlayerID(spnHomePlayers.getSelectedItem().toString())).getClubId());
+                        lastCardID = datasource.addCard(card);
+                        Highlight highlight = new Highlight(matchID, card.getClubID(), -200, matchTime, "RC",
+                                datasource.getPlayer(card.getPlayerID()).getPlayerName().split("@")[0].substring(0, 2) + ". " + datasource.getPlayer(card.getPlayerID()).getPlayerName().split("@")[1]);
+                        datasource.addHighlight(highlight);
+                        clearActions();
+                    }else
+                        Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
+                }
+                if( hYellowCard.isChecked())
+                {
+                    if(!spnHomePlayers.getSelectedItem().toString().equals("Please select Player")) {
+                        Card card = new Card();
+                        card.setMatchID(matchID);
+                        card.setPlayerID(datasource.getPlayerID(spnHomePlayers.getSelectedItem().toString()));
+                        card.setTime(matchTime);
+                        card.setReason("");
+                        card.setType(0);
+                        card.setClubID(datasource.getPlayer(datasource.getPlayerID(spnHomePlayers.getSelectedItem().toString())).getClubId());
+                        lastCardID = datasource.addCard(card);
+                        Highlight highlight = new Highlight(matchID, card.getClubID(), -200, matchTime, "YC",
+                                datasource.getPlayer(card.getPlayerID()).getPlayerName().split("@")[0].substring(0, 2) + ". " + datasource.getPlayer(card.getPlayerID()).getPlayerName().split("@")[1]);
+                        datasource.addHighlight(highlight);
+                        clearActions();
+                    }else
+                        Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
+                }
+                if( hBlueCard.isChecked())
+                {
+                    if(!spnHomePlayers.getSelectedItem().toString().equals("Please select Player")) {
+                        Card card = new Card();
+                        card.setMatchID(matchID);
+                        card.setPlayerID(datasource.getPlayerID(spnHomePlayers.getSelectedItem().toString()));
+                        card.setTime(matchTime);
+                        card.setReason("");
+                        card.setType(2);
+                        card.setClubID(datasource.getPlayer(datasource.getPlayerID(spnHomePlayers.getSelectedItem().toString())).getClubId());
+                        lastCardID = datasource.addCard(card);
+                        Highlight highlight = new Highlight(matchID, card.getClubID(), -200, matchTime, "BC",
+                                datasource.getPlayer(card.getPlayerID()).getPlayerName().split("@")[0].substring(0, 2) + ". " + datasource.getPlayer(card.getPlayerID()).getPlayerName().split("@")[1]);
+                        datasource.addHighlight(highlight);
+                        clearActions();
+                    }else
+                        Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
+                }
+
+                if( aRedCard.isChecked())
+                {
+                    if(!spnAwayPlayers.getSelectedItem().toString().equals("Please select Player")) {
+                        Card card = new Card();
+                        card.setMatchID(matchID);
+                        card.setPlayerID(datasource.getPlayerID(spnAwayPlayers.getSelectedItem().toString()));
+                        card.setTime(matchTime);
+                        card.setReason("");
+                        card.setType(1);
+                        card.setClubID(datasource.getPlayer(datasource.getPlayerID(spnAwayPlayers.getSelectedItem().toString())).getClubId());
+                        lastCardID = datasource.addCard(card);
+                        Highlight highlight = new Highlight(matchID, card.getClubID(), -200, matchTime, "RC",
+                                datasource.getPlayer(card.getPlayerID()).getPlayerName().split("@")[0].substring(0, 2) + ". " + datasource.getPlayer(card.getPlayerID()).getPlayerName().split("@")[1]);
+                        datasource.addHighlight(highlight);
+                        clearActions();
+                    }else
+                        Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
+                }
+                if( aYellowCard.isChecked())
+                {
+                    if(!spnAwayPlayers.getSelectedItem().toString().equals("Please select Player")) {
+                        Card card = new Card();
+                        card.setMatchID(matchID);
+                        card.setPlayerID(datasource.getPlayerID(spnAwayPlayers.getSelectedItem().toString()));
+                        card.setTime(matchTime);
+                        card.setReason("");
+                        card.setType(0);
+                        card.setClubID(datasource.getPlayer(datasource.getPlayerID(spnAwayPlayers.getSelectedItem().toString())).getClubId());
+                        lastCardID = datasource.addCard(card);
+                        Highlight highlight = new Highlight(matchID, card.getClubID(), -200, matchTime, "YC",
+                                datasource.getPlayer(card.getPlayerID()).getPlayerName().split("@")[0].substring(0, 2) + ". " + datasource.getPlayer(card.getPlayerID()).getPlayerName().split("@")[1]);
+                        datasource.addHighlight(highlight);
+                        clearActions();
+                    }else
+                        Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
+                }
+                if( aBlueCard.isChecked())
+                {
+                    if(!spnAwayPlayers.getSelectedItem().toString().equals("Please select Player")) {
+                        Card card = new Card();
+                        card.setMatchID(matchID);
+                        card.setPlayerID(datasource.getPlayerID(spnAwayPlayers.getSelectedItem().toString()));
+                        card.setTime(matchTime);
+                        card.setReason("");
+                        card.setType(2);
+                        card.setClubID(datasource.getPlayer(datasource.getPlayerID(spnAwayPlayers.getSelectedItem().toString())).getClubId());
+                        lastCardID = datasource.addCard(card);
+                        Highlight highlight = new Highlight(matchID, card.getClubID(), -200, matchTime, "BC",
+                                datasource.getPlayer(card.getPlayerID()).getPlayerName().split("@")[0].substring(0, 2) + ". " + datasource.getPlayer(card.getPlayerID()).getPlayerName().split("@")[1]);
+                        datasource.addHighlight(highlight);
+                        clearActions();
+                    }else
+                        Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -597,7 +715,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         switch (which)
                         {
                             case DialogInterface.BUTTON_POSITIVE :
-                                /*stat.setMatchID(m.getId());
+                                stat.setMatchID(m.getId());
                                 stat.setMatchTime(matchTime);
                                 stat.setHome_TIME((stat.getHome_TIME()*1000)+completedPassesHome);
                                 stat.setAway_TIME((stat.getAway_TIME()*1000)+completedPassesAway);
@@ -611,7 +729,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                                 extras.putLong("matchID", matchID);
                                 returnI.putExtras(extras);
                                 setResult(100, returnI);
-                                finish();*/
+                                finish();
                                 break;
                             case DialogInterface.BUTTON_NEGATIVE : break;
                         }
