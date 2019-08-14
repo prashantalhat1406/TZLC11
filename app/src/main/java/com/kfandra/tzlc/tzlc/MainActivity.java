@@ -172,7 +172,7 @@ public class MainActivity extends AppCompatActivity {
         }
         datasource.close();
 
-
+/*
         //ImageView clubs =  findViewById(R.id.butClubs);
         Button clubs =  findViewById(R.id.butClubs);
         clubs.setOnClickListener(new View.OnClickListener() {
@@ -202,6 +202,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+*/
+        Intent i = new Intent(MainActivity.this, tzlc_match_display.class);
+        startActivity(i);
 
 
         /*authStateListener = new FirebaseAuth.AuthStateListener() {

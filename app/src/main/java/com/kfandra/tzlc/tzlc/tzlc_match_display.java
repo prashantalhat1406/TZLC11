@@ -214,6 +214,14 @@ public class tzlc_match_display extends AppCompatActivity {
         {
             case R.id.editScreen : break;
             case R.id.deleteScreen : break;
+            case R.id.players :
+                Intent playersD = new Intent(tzlc_match_display.this, tzlc_player_display.class);
+                startActivity(playersD);
+                break;
+            case R.id.clubs :
+                Intent clubsD = new Intent(tzlc_match_display.this, tzlc_club_display.class);
+                startActivity(clubsD);
+                break;
             case R.id.addScreen: passwordOK = false;
                 final EditText input = new EditText(tzlc_match_display.this);
                 DialogInterface.OnClickListener dialog = new DialogInterface.OnClickListener() {
