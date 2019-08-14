@@ -72,10 +72,16 @@ public class tzlc_match_details_stats extends Fragment {
         int homeTotalGoals=0,awayTotalGoals=0;
 
         for (Goal goal : goals) {
-            goalString = " "
+            if(goal.getOwnGoal() == 1)
+                goalString = " "
                     + datasource.getPlayer(goal.getPlayerID()).getPlayerName().split("@")[0].substring(0,2)+". "+datasource.getPlayer(goal.getPlayerID()).getPlayerName().split("@")[1]
                     /*+ " ( " + datasource.getPlayer(goal.getAssistPlayerID()).getPlayerName().split("@")[0].substring(0,2)+". "+datasource.getPlayer(goal.getAssistPlayerID()).getPlayerName().split("@")[1] + " )"*/
-                    + " (" + String.format("%02d", goal.getMatchTime()/60) + "')" + "\n";
+                    + " (" + String.format("%02d", goal.getMatchTime()/60) + "')" + " (OG)\n";
+            else
+                goalString = " "
+                        + datasource.getPlayer(goal.getPlayerID()).getPlayerName().split("@")[0].substring(0,2)+". "+datasource.getPlayer(goal.getPlayerID()).getPlayerName().split("@")[1]
+                        /*+ " ( " + datasource.getPlayer(goal.getAssistPlayerID()).getPlayerName().split("@")[0].substring(0,2)+". "+datasource.getPlayer(goal.getAssistPlayerID()).getPlayerName().split("@")[1] + " )"*/
+                        + " (" + String.format("%02d", goal.getMatchTime()/60) + "')" + "\n";
             if(goal.getAgainstClubID() == match.getHomeClubID())
             {homeGoals = homeGoals + goalString;homeTotalGoals=homeTotalGoals+1;}
             else
