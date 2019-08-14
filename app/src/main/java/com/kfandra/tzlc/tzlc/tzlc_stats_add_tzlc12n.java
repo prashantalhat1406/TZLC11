@@ -19,12 +19,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import java.util.List;
 
@@ -56,6 +58,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
     int halftime=0, resetCount =0;
     private RadioGroup homeActions, awayActions;
     public int completedPassesHome=0,completedPassesAway=0;
+    private ToggleButton t1, t2, t3, t4;
+    private String homeClubName, awayClubName;
 
     public boolean isColorDark(int color){
         double darkness = 1-(0.299* Color.red(color) + 0.587*Color.green(color) + 0.114*Color.blue(color))/255;
@@ -146,24 +150,27 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
         timerMatch = findViewById(R.id.txtstatsMatchTimerTZLC12);
         matchStartTime = SystemClock.uptimeMillis();
 
+        homeClubName =""+datasource.getClub( m.getHomeClubID()).getClubShortName();
+        awayClubName = ""+datasource.getClub( m.getAwayClubID()).getClubShortName();
+
         homeClub = findViewById(R.id.txtstatsHomeClub);
-        homeClub.setText(""+datasource.getClub( m.getHomeClubID()).getClubShortName());
+        homeClub.setText(homeClubName);
         homeClub.setTextColor(homeColor);
         TextView homeClub1 = findViewById(R.id.txtHomeClub1);
         TextView homeClub2 = findViewById(R.id.txtHomeClub2);
-        homeClub1.setText(""+datasource.getClub( m.getHomeClubID()).getClubShortName());
+        homeClub1.setText(homeClubName);
         homeClub1.setTextColor(homeColor);
-        homeClub2.setText(""+datasource.getClub( m.getHomeClubID()).getClubShortName());
+        homeClub2.setText(homeClubName);
         homeClub2.setTextColor(homeColor);
 
         awayClub = findViewById(R.id.txtstatsAwayClub);
-        awayClub.setText(""+datasource.getClub( m.getAwayClubID()).getClubShortName());
+        awayClub.setText(awayClubName);
         awayClub.setTextColor(awayColor);
         TextView awayClub1 = findViewById(R.id.txtAwayClub1);
         TextView awayClub2 = findViewById(R.id.txtAwayClub2);
-        awayClub1.setText(""+datasource.getClub( m.getAwayClubID()).getClubShortName());
+        awayClub1.setText(awayClubName);
         awayClub1.setTextColor(awayColor);
-        awayClub2.setText(""+datasource.getClub( m.getAwayClubID()).getClubShortName());
+        awayClub2.setText(awayClubName);
         awayClub2.setTextColor(awayColor);
 
 
@@ -497,6 +504,84 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     t.show();
                 }
 
+            }
+        });
+
+
+
+        t1 = findViewById(R.id.tog1);
+        t1.setText(homeClubName);
+        t1.setTextSize(24);
+        t1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                {
+                    t1.setTextOn(homeClubName);
+                    t1.setTextColor(homeColor);
+                }
+                else
+                {
+                    t1.setTextOff(awayClubName);
+                    t1.setTextColor(awayColor);
+                }
+            }
+        });
+
+        t2 = findViewById(R.id.tog2);
+        t2.setText(homeClubName);
+        t2.setTextSize(24);
+        t2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                {
+                    t2.setTextOn(homeClubName);
+                    t2.setTextColor(homeColor);
+                }
+                else
+                {
+                    t2.setTextOff(awayClubName);
+                    t2.setTextColor(awayColor);
+                }
+            }
+        });
+
+        t3 = findViewById(R.id.tog3);
+        t3.setText(awayClubName);
+        t3.setTextSize(24);
+        t3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                {
+                    t3.setTextOn(homeClubName);
+                    t3.setTextColor(homeColor);
+                }
+                else
+                {
+                    t3.setTextOff(awayClubName);
+                    t3.setTextColor(awayColor);
+                }
+            }
+        });
+
+        t4 = findViewById(R.id.tog4);
+        t4.setText(awayClubName);
+        t4.setTextSize(24);
+        t4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                {
+                    t4.setTextOn(homeClubName);
+                    t4.setTextColor(homeColor);
+                }
+                else
+                {
+                    t4.setTextOff(awayClubName);
+                    t4.setTextColor(awayColor);
+                }
             }
         });
 

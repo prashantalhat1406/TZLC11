@@ -29,7 +29,7 @@
                 android:textSize="18sp"
                 android:textStyle="normal|bold" />
             <TextView android:id="@+id/txtstatsHomeClubScore"
-                android:layout_width="match_parent" android:textStyle="bold" android:textSize="14dp"
+                android:layout_width="match_parent" android:textStyle="bold" android:textSize="@dimen/tzlcStatsTextSize"
                 android:layout_height="match_parent" android:layout_weight="0.5" android:text="Score" android:gravity="center"/>
         </LinearLayout>
         <LinearLayout
@@ -64,7 +64,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
             <TextView android:id="@+id/txtstatsAwayClubScore"
-                android:layout_width="match_parent" android:textStyle="bold" android:textSize="14dp"
+                android:layout_width="match_parent" android:textStyle="bold" android:textSize="@dimen/tzlcStatsTextSize"
                 android:layout_height="match_parent" android:layout_weight="0.5" android:text="Score" android:gravity="center"/>
         </LinearLayout>
 
@@ -212,19 +212,19 @@
         <ImageButton android:id="@+id/imgButAway"
             android:layout_width="match_parent" android:layout_weight="0.5" android:src="@drawable/away" android:scaleType="fitXY" android:background="@color/fui_transparent"
             android:layout_height="match_parent" /> -->
-        <ToggleButton android:id="@+id/togHome1"
+        <ToggleButton android:id="@+id/tog1"
             android:layout_width="match_parent" android:layout_weight="0.1"
             android:layout_height="match_parent" android:background="@drawable/hh1" android:text="AP" android:textSize="@dimen/tzlcStatsLabelSize"/>
 
-        <ToggleButton android:id="@+id/togHome2"
+        <ToggleButton android:id="@+id/tog2"
             android:layout_width="match_parent" android:layout_weight="0.1"
             android:layout_height="match_parent" android:background="@drawable/hh2"/>
 
-        <ToggleButton android:id="@+id/togAway2"
+        <ToggleButton android:id="@+id/tog3"
             android:layout_width="match_parent" android:layout_weight="0.1"
             android:layout_height="match_parent" android:background="@drawable/ha2"/>
 
-        <ToggleButton android:id="@+id/togAway1"
+        <ToggleButton android:id="@+id/tog4"
             android:layout_width="match_parent" android:layout_weight="0.1"
             android:layout_height="match_parent" android:background="@drawable/ha1"/>
 
