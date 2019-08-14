@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
 
     public static final int RC_SIGN_IN = 1;
 
-    private FirebaseAuth firebaseAuth;
-    private FirebaseAuth.AuthStateListener authStateListener;
+    //private FirebaseAuth firebaseAuth;
+    //private FirebaseAuth.AuthStateListener authStateListener;
 
     /*Collections.sort(myList, new Comparator<EmployeeClass>(){
         public int compare(EmployeeClass obj1, EmployeeClass obj2) {
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar =  findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        firebaseAuth = FirebaseAuth.getInstance();
+        //firebaseAuth = FirebaseAuth.getInstance();
 
 
 
@@ -183,14 +183,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        /*clubs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent().setType("*//*").setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(Intent.createChooser(intent,"Select DB File"),123);
-            }
-        });*/
-
         //ImageView matches = findViewById(R.id.butMatches);
         Button matches = findViewById(R.id.butMatches);
         matches.setOnClickListener(new View.OnClickListener() {
@@ -212,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        authStateListener = new FirebaseAuth.AuthStateListener() {
+        /*authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
@@ -234,7 +226,10 @@ public class MainActivity extends AppCompatActivity {
                 }
 
             }
-        };
+        }; */
+
+        /*Intent i = new Intent(MainActivity.this, tzlc_match_display.class);
+        startActivity(i);*/
 
 
 
@@ -391,12 +386,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        firebaseAuth.removeAuthStateListener(authStateListener);
+        //firebaseAuth.removeAuthStateListener(authStateListener);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        firebaseAuth.addAuthStateListener(authStateListener);
+        //firebaseAuth.addAuthStateListener(authStateListener);
     }
 }
