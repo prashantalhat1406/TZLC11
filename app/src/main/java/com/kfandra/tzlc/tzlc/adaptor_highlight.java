@@ -38,6 +38,7 @@ public class adaptor_highlight extends ArrayAdapter<Highlight> {
 
         TextView vcm = convertView.findViewById(R.id.highlightVCM);
         vcm.setText(""+String.format("%02d", (highlight.getVcmTime()/60))+":"+String.format("%02d", (highlight.getVcmTime()%60)));
+        vcm.setVisibility(View.INVISIBLE);
 
         TextView club = convertView.findViewById(R.id.highlightClub);
         if(highlight.getClubID() == -1)
