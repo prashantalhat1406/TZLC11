@@ -10,6 +10,11 @@
         android:layout_width="wrap_content" android:visibility="gone" android:gravity="center"
             android:layout_height="wrap_content" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
 
     <LinearLayout android:layout_weight="0.75"
         android:id="@+id/statH1"
@@ -129,6 +134,14 @@
     <LinearLayout  android:layout_weight="0.7"
         android:layout_width="match_parent" android:orientation="vertical" android:id="@+id/layoutPossessionStats"
         android:layout_height="match_parent" >
+
+        <TextView
+            android:layout_width="match_parent" android:layout_weight="0.51" android:gravity="center"
+            android:layout_height="match_parent" android:text="Possession Stats"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
 
         <LinearLayout
             android:layout_width="match_parent" android:layout_weight="0.5"
