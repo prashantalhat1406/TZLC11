@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.support.design.widget.FloatingActionButton;
@@ -28,6 +29,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
@@ -61,6 +63,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
     private ToggleButton t1, t2, t3, t4;
     private String homeClubName, awayClubName;
 
+
+
     public boolean isColorDark(int color){
         double darkness = 1-(0.299* Color.red(color) + 0.587*Color.green(color) + 0.114*Color.blue(color))/255;
         if(darkness<0.5){
@@ -69,6 +73,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
             return true; // It's a dark color
         }
     }
+
+
 
     public void clearActions()
     {
@@ -156,7 +162,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
         homeClub = findViewById(R.id.txtstatsHomeClub);
         homeClub.setText(homeClubName);
         homeClub.setTextColor(homeColor);
-        TextView homeClub1 = findViewById(R.id.txtHomeClub1);
+        final TextView homeClub1 = findViewById(R.id.txtHomeClub1);
         TextView homeClub2 = findViewById(R.id.txtHomeClub2);
         homeClub1.setText(homeClubName);
         homeClub1.setTextColor(homeColor);
@@ -509,6 +515,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
 
 
 
+
         t1 = findViewById(R.id.tog1);
         t1.setText(homeClubName);
         t1.setTextSize(24);
@@ -517,11 +524,14 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked)
                 {
+
                     t1.setTextOn(homeClubName);
                     t1.setTextColor(homeColor);
+
                 }
                 else
                 {
+
                     t1.setTextOff(awayClubName);
                     t1.setTextColor(awayColor);
                 }
@@ -536,11 +546,13 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked)
                 {
+
                     t2.setTextOn(homeClubName);
                     t2.setTextColor(homeColor);
                 }
                 else
                 {
+
                     t2.setTextOff(awayClubName);
                     t2.setTextColor(awayColor);
                 }
@@ -555,11 +567,13 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked)
                 {
+
                     t3.setTextOn(homeClubName);
                     t3.setTextColor(homeColor);
                 }
                 else
                 {
+
                     t3.setTextOff(awayClubName);
                     t3.setTextColor(awayColor);
                 }
@@ -574,11 +588,13 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked)
                 {
+
                     t4.setTextOn(homeClubName);
                     t4.setTextColor(homeColor);
                 }
                 else
                 {
+
                     t4.setTextOff(awayClubName);
                     t4.setTextColor(awayColor);
                 }
