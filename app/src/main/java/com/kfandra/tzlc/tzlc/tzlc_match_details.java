@@ -145,6 +145,8 @@ public class tzlc_match_details extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_edit_delete, menu);
+        menu.findItem(R.id.players).setVisible(false);
+        menu.findItem(R.id.clubs).setVisible(false);
         return true;
     }
 

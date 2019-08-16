@@ -214,6 +214,8 @@ public class tzlc_match_details_tabs extends AppCompatActivity {
 
         menu.findItem(R.id.editScreen).setVisible(false);
         menu.findItem(R.id.emailScreen).setVisible(false);
+        menu.findItem(R.id.players).setVisible(false);
+        menu.findItem(R.id.clubs).setVisible(false);
 
 
 

@@ -214,7 +214,7 @@
             android:layout_height="match_parent" /> -->
         <ToggleButton android:id="@+id/tog1"
             android:layout_width="match_parent" android:layout_weight="0.1"
-            android:layout_height="match_parent" android:background="@drawable/hh1" android:text="AP" android:textSize="@dimen/tzlcStatsLabelSize"/>
+            android:layout_height="match_parent" android:background="@drawable/hh1" android:text="AP" android:textSize="@dimen/listFirstLine"/>
 
         <ToggleButton android:id="@+id/tog2"
             android:layout_width="match_parent" android:layout_weight="0.1"

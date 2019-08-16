@@ -534,7 +534,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
 
         t1 = findViewById(R.id.tog1);
         t1.setText(homeClubName);
-        t1.setTextSize(24);
+        t1.setTextSize(30);
         t1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -574,7 +574,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
 
         t2 = findViewById(R.id.tog2);
         t2.setText(homeClubName);
-        t2.setTextSize(24);
+        t2.setTextSize(30);
         t2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -615,7 +615,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
 
         t3 = findViewById(R.id.tog3);
         t3.setText(awayClubName);
-        t3.setTextSize(24);
+        t3.setTextSize(30);
         t3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -654,7 +654,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
 
         t4 = findViewById(R.id.tog4);
         t4.setText(awayClubName);
-        t4.setTextSize(24);
+        t4.setTextSize(30);
         t4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
