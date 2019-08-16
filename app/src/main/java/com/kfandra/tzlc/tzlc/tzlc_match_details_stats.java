@@ -43,12 +43,14 @@ public class tzlc_match_details_stats extends Fragment {
         LinearLayout h1 = rootView.findViewById(R.id.statH1);
         LinearLayout h2 = rootView.findViewById(R.id.layoutStats);
         LinearLayout h3 = rootView.findViewById(R.id.layoutGoals);
+        LinearLayout lp = rootView.findViewById(R.id.layoutPossessionStats);
         if (stat.getHome_Score() == -1)
         {
             noStats.setVisibility(View.VISIBLE);
             h1.setVisibility(View.GONE);
             h2.setVisibility(View.GONE);
             h3.setVisibility(View.GONE);
+            lp.setVisibility(View.GONE);
         }
 
         Match match = datasource.getMatch(match_details.getMatchID());

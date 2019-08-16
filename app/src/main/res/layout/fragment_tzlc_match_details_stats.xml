@@ -7,7 +7,7 @@
     tools:context=".tzlc_match_details_stats">
 
     <TextView android:id="@+id/txtNoStats"  android:text="No Stats available" android:textSize="24dp" android:textStyle="bold"
-        android:layout_width="wrap_content" android:visibility="gone"
+        android:layout_width="wrap_content" android:visibility="gone" android:gravity="center"
             android:layout_height="wrap_content" />
 
 
@@ -127,7 +127,7 @@
         android:background="@android:color/darker_gray"/>
 
     <LinearLayout  android:layout_weight="0.7"
-        android:layout_width="match_parent" android:orientation="vertical" android:id="@+id/layoutPossession"
+        android:layout_width="match_parent" android:orientation="vertical" android:id="@+id/layoutPossessionStats"
         android:layout_height="match_parent" >
 
         <LinearLayout
