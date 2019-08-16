@@ -5,14 +5,12 @@ import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.SystemClock;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -30,6 +28,8 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
@@ -62,6 +62,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
     public int completedPassesHome=0,completedPassesAway=0;
     private ToggleButton t1, t2, t3, t4;
     private String homeClubName, awayClubName;
+    List<possesionTimer> possesionTimers;
+    int h1,h2,h3,h4,a1,a2,a3,a4;
 
 
 
@@ -71,6 +73,17 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
             return false; // It's a light color
         }else{
             return true; // It's a dark color
+        }
+    }
+
+    public void clearPossessionButtons(String buttonName)
+    {
+        switch (buttonName)
+        {
+            case "t1" : t2.setTextOff("");t2.setTextOn("");t3.setTextOff("");t3.setTextOn("");t4.setTextOff("");t4.setTextOn("");break;
+            case "t2" : t1.setTextOff("");t1.setTextOn("");t3.setTextOff("");t3.setTextOn("");t4.setTextOff("");t4.setTextOn("");break;
+            case "t3" : t1.setTextOff("");t1.setTextOn("");t2.setTextOff("");t2.setTextOn("");t4.setTextOff("");t4.setTextOn("");break;
+            case "t4" : t1.setTextOff("");t1.setTextOn("");t2.setTextOff("");t2.setTextOn("");t3.setTextOff("");t3.setTextOn("");break;
         }
     }
 
@@ -144,6 +157,9 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
 
         m = new Match();
         m = datasource.getMatch(matchID);
+
+        possesionTimers = new ArrayList<>();
+        possesionTimers.add( new possesionTimer("H2",0));
 
         homeColor =  datasource.getClub(m.getHomeClubID()).getClubColor();
         homeTextColor = (isColorDark(homeColor)?Color.WHITE:Color.BLACK);
@@ -524,16 +540,34 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked)
                 {
-
+                    possesionTimers.add( new possesionTimer("H1",matchTime));
                     t1.setTextOn(homeClubName);
                     t1.setTextColor(homeColor);
 
+                    t2.setText("");
+                    t2.setTextOff("");
+                    t2.setTextOn("");
+                    t3.setText("");
+                    t3.setTextOff("");
+                    t3.setTextOn("");
+                    t4.setText("");
+                    t4.setTextOff("");
+                    t4.setTextOn("");
                 }
                 else
                 {
-
+                    possesionTimers.add( new possesionTimer("A1",matchTime));
                     t1.setTextOff(awayClubName);
                     t1.setTextColor(awayColor);
+                    t2.setText("");
+                    t2.setTextOff("");
+                    t2.setTextOn("");
+                    t3.setText("");
+                    t3.setTextOff("");
+                    t3.setTextOn("");
+                    t4.setText("");
+                    t4.setTextOff("");
+                    t4.setTextOn("");
                 }
             }
         });
@@ -546,15 +580,35 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked)
                 {
-
+                    possesionTimers.add( new possesionTimer("H2",matchTime));
                     t2.setTextOn(homeClubName);
                     t2.setTextColor(homeColor);
+
+                    t1.setText("");
+                    t1.setTextOff("");
+                    t1.setTextOn("");
+                    t3.setText("");
+                    t3.setTextOff("");
+                    t3.setTextOn("");
+                    t4.setText("");
+                    t4.setTextOff("");
+                    t4.setTextOn("");
                 }
                 else
                 {
-
+                    possesionTimers.add( new possesionTimer("A2",matchTime));
                     t2.setTextOff(awayClubName);
                     t2.setTextColor(awayColor);
+
+                    t1.setText("");
+                    t1.setTextOff("");
+                    t1.setTextOn("");
+                    t3.setText("");
+                    t3.setTextOff("");
+                    t3.setTextOn("");
+                    t4.setText("");
+                    t4.setTextOff("");
+                    t4.setTextOn("");
                 }
             }
         });
@@ -567,15 +621,33 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked)
                 {
-
+                    possesionTimers.add( new possesionTimer("H3",matchTime));
                     t3.setTextOn(homeClubName);
                     t3.setTextColor(homeColor);
+                    t1.setText("");
+                    t1.setTextOff("");
+                    t1.setTextOn("");
+                    t2.setText("");
+                    t2.setTextOff("");
+                    t2.setTextOn("");
+                    t4.setText("");
+                    t4.setTextOff("");
+                    t4.setTextOn("");
                 }
                 else
                 {
-
+                    possesionTimers.add( new possesionTimer("A3",matchTime));
                     t3.setTextOff(awayClubName);
                     t3.setTextColor(awayColor);
+                    t1.setText("");
+                    t1.setTextOff("");
+                    t1.setTextOn("");
+                    t2.setText("");
+                    t2.setTextOff("");
+                    t2.setTextOn("");
+                    t4.setText("");
+                    t4.setTextOff("");
+                    t4.setTextOn("");
                 }
             }
         });
@@ -588,15 +660,33 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked)
                 {
-
+                    possesionTimers.add( new possesionTimer("H4",matchTime));
                     t4.setTextOn(homeClubName);
                     t4.setTextColor(homeColor);
+                    t1.setText("");
+                    t1.setTextOff("");
+                    t1.setTextOn("");
+                    t2.setText("");
+                    t2.setTextOff("");
+                    t2.setTextOn("");
+                    t3.setText("");
+                    t3.setTextOff("");
+                    t3.setTextOn("");
                 }
                 else
                 {
-
+                    possesionTimers.add( new possesionTimer("A4",matchTime));
                     t4.setTextOff(awayClubName);
                     t4.setTextColor(awayColor);
+                    t1.setText("");
+                    t1.setTextOff("");
+                    t1.setTextOn("");
+                    t2.setText("");
+                    t2.setTextOff("");
+                    t2.setTextOn("");
+                    t3.setText("");
+                    t3.setTextOff("");
+                    t3.setTextOn("");
                 }
             }
         });
@@ -903,7 +993,38 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                                 stat.setAway_TIME((stat.getAway_TIME()*1000)+completedPassesAway);
                                 stat.setHome_Score(Integer.parseInt(homeScore.getText().toString()));
                                 stat.setAway_Score(Integer.parseInt(awayScore.getText().toString()));
+                                /*Collections.sort(possesionTimers, new Comparator<possesionTimer>() {
+                                    @Override
+                                    public int compare(possesionTimer o1, possesionTimer o2) {
+                                        return o1.getLocation().compareTo(o2.getLocation());
+                                    }
+                                });*/
+                                List<possesionTimer> finalTime = new ArrayList<possesionTimer>();
+                                int i =0;
+                                for(i = 0; i<(possesionTimers.size()-1);i++)
+                                {
+                                    finalTime.add(new possesionTimer(possesionTimers.get(i).getLocation(), possesionTimers.get(i+1).getTimer()-possesionTimers.get(i).getTimer()));
+                                }
+                                finalTime.add(new possesionTimer(possesionTimers.get(i).getLocation(), matchTime-possesionTimers.get(i).getTimer()));
 
+                                for (possesionTimer possesionTimer : finalTime) {
+                                    Log.d(tzlc_stats_add_tzlc12n.class.getSimpleName(), ""+possesionTimer.getLocation()+" :: " + possesionTimer.getTimer());
+                                    switch (possesionTimer.getLocation())
+                                    {
+                                        case "H1" : h1=h1+possesionTimer.getTimer();break;
+                                        case "H2" : h2=h2+possesionTimer.getTimer();break;
+                                        case "H3" : h3=h3+possesionTimer.getTimer();break;
+                                        case "H4" : h4=h4+possesionTimer.getTimer();break;
+                                        case "A1" : a1=a1+possesionTimer.getTimer();break;
+                                        case "A2" : a2=a2+possesionTimer.getTimer();break;
+                                        case "A3" : a3=a3+possesionTimer.getTimer();break;
+                                        case "A4" : a4=a4+possesionTimer.getTimer();break;
+                                    }
+                                }
+                                stat.setHome_SOnT((h1*1000)+(h2));
+                                stat.setHome_SOffT((h3*1000)+(h4));
+                                stat.setAway_SOnT((a1*1000)+(a2));
+                                stat.setAway_SOffT((a3*1000)+(a4));
                                 datasource.addStats(stat);
 
                                 Intent returnI = new Intent();

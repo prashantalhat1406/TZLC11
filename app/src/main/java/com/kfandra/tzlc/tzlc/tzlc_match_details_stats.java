@@ -140,7 +140,8 @@ public class tzlc_match_details_stats extends Fragment {
         TextView homeClubPossession = rootView.findViewById(R.id.matchDetailsHomePossession);
         //homeClubPossession.setText(""+String.format("%.2f", (((double)stat.getHome_TIME()/(stat.getHome_TIME()+stat.getAway_TIME()))*100))+"%");
         //homeClubPossession.setText(""+stat.getHome_TIME());
-        homeClubPossession.setText(""+stat.getHome_TIME()%1000 + " [ " + stat.getHome_TIME()/1000 + " ]");
+        //homeClubPossession.setText(""+stat.getHome_TIME()%1000 + " [ " + stat.getHome_TIME()/1000 + " ]");
+        homeClubPossession.setText(""+stat.getHome_SOnT()/1000 + " , " + stat.getHome_SOnT()%1000 + " ,"+stat.getHome_SOffT()/1000 + " , " + stat.getHome_SOffT()%1000);
         TextView homeGoalDetails = rootView.findViewById(R.id.matchDetailsHomeGoals);
         homeGoalDetails.setText(homeGoals);
         TextView homeClubCards = rootView.findViewById(R.id.matchDetailsHomeCARDS);
@@ -175,7 +176,8 @@ public class tzlc_match_details_stats extends Fragment {
         TextView awayClubPossession = rootView.findViewById(R.id.matchDetailsAwayPossession);
         //awayClubPossession.setText(""+String.format("%.2f", (((double)stat.getAway_TIME()/(stat.getHome_TIME()+stat.getAway_TIME()))*100))+"%");
         //awayClubPossession.setText(""+stat.getAway_TIME());
-        awayClubPossession.setText(""+stat.getAway_TIME()%1000 + " [ " + stat.getAway_TIME()/1000 + " ]");
+        //awayClubPossession.setText(""+stat.getAway_TIME()%1000 + " [ " + stat.getAway_TIME()/1000 + " ]");
+        awayClubPossession.setText(""+stat.getAway_SOnT()/1000 + " , " + stat.getAway_SOnT()%1000 + " ,"+stat.getAway_SOffT()/1000 + " , " + stat.getAway_SOffT()%1000);
         TextView awayGoalDetails = rootView.findViewById(R.id.matchDetailsAwayGoals);
         awayGoalDetails.setText(awayGoals);
         TextView awayClubCards = rootView.findViewById(R.id.matchDetailsAwayCards);
