@@ -11,12 +11,11 @@
             android:layout_height="wrap_content" />
 
 
-    <LinearLayout
-
+    <LinearLayout android:layout_weight="0.75"
         android:id="@+id/statH1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="0.80"
+
         android:orientation="horizontal">
 
         <LinearLayout
@@ -41,16 +40,16 @@
                 android:gravity="center"
                 android:text="Score" />
 
-            <TextView
+            <!--<TextView
                 android:id="@+id/matchDetailsHomePossession"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="0.3"
+                android:layout_weight="0.2"
                 android:gravity="center"
-                android:text="Pssession" />
+                android:text="Pssession" />-->
         </LinearLayout>
 
-        <View
+        <View android:id="@+id/verticalLine"
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:background="@android:color/darker_gray"/>
@@ -76,12 +75,12 @@
                 android:gravity="center"
                 android:text="Score" />
 
-            <TextView
+            <!--<TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="0.3"
+                android:layout_weight="0.2"
                 android:gravity="center"
-                android:text="Passes [Failed]" />
+                android:text="Passes [Failed]" />-->
         </LinearLayout>
 
         <View
@@ -111,13 +110,13 @@
                 android:gravity="center"
                 android:text="Score" />
 
-            <TextView
+            <!--<TextView
                 android:id="@+id/matchDetailsAwayPossession"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="0.3"
+                android:layout_weight="0.2"
                 android:gravity="center"
-                android:text="Pssession" />
+                android:text="Pssession" />-->
         </LinearLayout>
 
     </LinearLayout>
@@ -127,10 +126,79 @@
         android:layout_height="1dp"
         android:background="@android:color/darker_gray"/>
 
+    <LinearLayout  android:layout_weight="0.7"
+        android:layout_width="match_parent" android:orientation="vertical" android:id="@+id/layoutPossession"
+        android:layout_height="match_parent" >
 
-    <LinearLayout android:id="@+id/layoutGoals"
+        <LinearLayout
+            android:layout_width="match_parent" android:layout_weight="0.5"
+            android:layout_height="match_parent">
+            <TextView android:id="@+id/txtvH1"
+                android:layout_width="match_parent" android:layout_weight="0.1"  android:gravity="center" android:text="50%"
+                android:layout_height="match_parent"  />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray"/>
+            <TextView android:id="@+id/txtvH2"
+                android:layout_width="match_parent" android:layout_weight="0.1"   android:gravity="center" android:text="50%"
+                android:layout_height="match_parent" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray"/>
+            <TextView android:id="@+id/txtvH3"
+                android:layout_width="match_parent" android:layout_weight="0.1"  android:gravity="center" android:text="50%"
+                android:layout_height="match_parent" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray"/>
+            <TextView android:id="@+id/txtvH4"
+                android:layout_width="match_parent" android:layout_weight="0.1"  android:gravity="center" android:text="50%"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent" android:layout_weight="0.5"
+            android:layout_height="match_parent">
+            <TextView android:id="@+id/txtvA1"
+                android:layout_width="match_parent" android:layout_weight="0.1"  android:gravity="center" android:text="50%"
+                android:layout_height="match_parent" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray"/>
+            <TextView android:id="@+id/txtvA2"
+                android:layout_width="match_parent" android:layout_weight="0.1"  android:gravity="center" android:text="50%"
+                android:layout_height="match_parent" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray"/>
+            <TextView android:id="@+id/txtvA3"
+                android:layout_width="match_parent" android:layout_weight="0.1"  android:gravity="center" android:text="50%"
+                android:layout_height="match_parent" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray"/>
+            <TextView android:id="@+id/txtvA4"
+                android:layout_width="match_parent" android:layout_weight="0.1"  android:gravity="center" android:text="50%"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <LinearLayout android:layout_weight="0.6"
+        android:id="@+id/layoutGoals"
         android:layout_width="match_parent" android:orientation="horizontal"
-        android:layout_height="match_parent" android:layout_weight="0.65">
+        android:layout_height="match_parent" >
 
         <LinearLayout android:orientation="vertical"
             android:layout_width="match_parent" android:layout_weight="0.3"
@@ -179,13 +247,13 @@
         android:layout_height="1dp"
         android:background="@android:color/darker_gray"/>
 
+    <LinearLayout android:layout_weight="0.5"
 
-    <LinearLayout
         android:id="@+id/layoutStats"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="5dp"
-        android:layout_weight="0.4"
+
         android:orientation="horizontal">
 
         <LinearLayout
