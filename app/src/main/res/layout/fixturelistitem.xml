@@ -21,7 +21,7 @@
                 android:layout_width="match_parent" android:layout_weight="0.6"
                 android:layout_height="match_parent" android:orientation="vertical">
                 <TextView android:id="@+id/fixtureDisplayDate"
-                    android:layout_width="match_parent" android:gravity="center" android:layout_weight="0.4" android:textSize="@dimen/listThirdLine" android:textColor="@color/Black"
+                    android:layout_width="match_parent" android:gravity="center" android:layout_weight="0.4" android:textSize="16dp" android:textColor="@color/Black"
                     android:layout_height="match_parent" android:text="01/12/2018" android:layout_gravity="center_horizontal" />
             </LinearLayout>
             <LinearLayout

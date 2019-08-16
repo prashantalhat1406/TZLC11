@@ -49,15 +49,25 @@ public class adaptor_match extends ArrayAdapter<Match> {
         datasource.open();
         Match m = matches.get(position);
 
-        /*if(datasource.isMatchHappened(m.getId()))
-            convertView.setBackgroundColor(Color.parseColor("#f09b11"));
+        if(datasource.isMatchHappened(m.getId()))
+            convertView.setBackgroundColor(Color.parseColor("#0e93cf"));
         else
-            convertView.setBackgroundColor(Color.parseColor("#f0fff0"));*/
+            convertView.setBackgroundColor(Color.parseColor("#E1F5FE"));
 
         //convertView.setBackground(ContextCompat.getDrawable(context,R.drawable.roundbutton));
 
         TextView matchdate = convertView.findViewById(R.id.fixtureDisplayDate);
         matchdate.setText(""+String.format("%02d", (m.getDate_number()%100))+"/"+String.format("%02d", ((m.getDate_number()/100)%100))+"/"+m.getDate_number()/10000);
+        try {
+            SimpleDateFormat format1 = new SimpleDateFormat("dd/MM/yyyy");
+            Date dt1 = format1.parse(matchdate.getText().toString());
+            DateFormat format2 = new SimpleDateFormat("dd-MMM-yyyy");
+            DateFormat format3 = new SimpleDateFormat("EEEE");
+            matchdate.setText(format2.format(dt1) + " , "+format3.format(dt1));
+        }catch(Exception e)
+        {
+
+        }
 
         TextView matchClubs = convertView.findViewById(R.id.fixtureName);
         matchClubs.setText(""+datasource.getClub(m.getHomeClubID()).getClubName() + " vs " + datasource.getClub(m.getAwayClubID()).getClubName());
@@ -69,7 +79,9 @@ public class adaptor_match extends ArrayAdapter<Match> {
         else
             matchDetails.setText(""+matchType.getItem(m.getType()) + ", NCL");
 
-        convertView.setBackgroundColor(context.getResources().getColor(R.color.listColorPrimary));
+        //convertView.setBackgroundColor(context.getResources().getColor(R.color.listColorPrimary));
+
+
 
 
         /*
