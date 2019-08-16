@@ -34,7 +34,8 @@ public class tzlc_match_display extends AppCompatActivity {
 
     public void populateMatchDisplayList(List<Match> matches)
     {
-        adaptor_match adaptor = new adaptor_match(tzlc_match_display.this, R.layout.matchdisplaylist, matches);
+        //adaptor_match adaptor = new adaptor_match(tzlc_match_display.this, R.layout.matchdisplaylist, matches);
+        adaptor_match adaptor = new adaptor_match(tzlc_match_display.this, R.layout.fixturelistitem, matches);
         lv.setAdapter(adaptor);
 
     }
