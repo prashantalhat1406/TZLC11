@@ -35,10 +35,11 @@ public class adaptor_highlight extends ArrayAdapter<Highlight> {
 
         TextView mt = convertView.findViewById(R.id.highlightMatchTime);
         mt.setText(""+String.format("%02d", (highlight.getSrTime()/60))+":"+String.format("%02d", (highlight.getSrTime()%60)));
+        mt.setVisibility(View.INVISIBLE);
 
         TextView vcm = convertView.findViewById(R.id.highlightVCM);
         vcm.setText(""+String.format("%02d", (highlight.getVcmTime()/60))+":"+String.format("%02d", (highlight.getVcmTime()%60)));
-        vcm.setVisibility(View.INVISIBLE);
+        //vcm.setVisibility(View.INVISIBLE);
 
         TextView club = convertView.findViewById(R.id.highlightClub);
         if(highlight.getClubID() == -1)
@@ -51,43 +52,35 @@ public class adaptor_highlight extends ArrayAdapter<Highlight> {
         }
 
         TextView hl = convertView.findViewById(R.id.highlightHL);
+        hl.setText(""+highlight.getHighlight());
 
-        if (highlight.getHighlight().equals("GOAL"))
+        /*if (highlight.getHighlight().equals("GOAL"))
         {
             hl.setText(""+highlight.getHighlight());
-            //hl.setTextColor(Color.MAGENTA);
+
         }
         else
-            hl.setText(""+highlight.getHighlight());
+            hl.setText(""+highlight.getHighlight());*/
 
         TextView hl2 = convertView.findViewById(R.id.highlightHL2);
         hl2.setText(highlight.getHighlight2());
-        hl2.setVisibility(View.GONE);
+        //hl2.setVisibility(View.GONE);
 
-        if(highlight.getVcmTime() == -100)
+      /*  if(highlight.getVcmTime() == -100)
         {
             vcm.setText("SUB");
-            //hl.setTextColor(Color.RED);
-            //hl2.setTextColor(Color.GREEN);
         }
 
         if(highlight.getVcmTime() == -200)
         {
             vcm.setText("CARD");
-            /*switch (highlight.getHighlight())
-            {
-                case "YC":hl.setTextColor(Color.YELLOW); break;
-                case "RC":hl.setTextColor(Color.RED); break;
-                case "BC":hl.setTextColor(Color.BLUE); break;
-            }*/
+
         }
 
         if(highlight.getVcmTime() == -300)
         {
             vcm.setText("TIME");
-            //hl.setTextColor(Color.CYAN);
-
-        }
+        }*/
 
         return  convertView; //super.getView(position, convertView, parent);
     }

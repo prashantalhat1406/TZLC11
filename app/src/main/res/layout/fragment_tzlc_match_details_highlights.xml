@@ -21,13 +21,14 @@
             android:text="Match Time"
             android:textStyle="bold"
             android:layout_gravity="center"
+            android:visibility="gone"
             android:gravity="center"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.2"
-            android:text="VCM"
-            android:visibility="gone"
+            android:text="Match Time"
+
             android:textStyle="bold"
             android:layout_gravity="center"
             android:gravity="center"/>

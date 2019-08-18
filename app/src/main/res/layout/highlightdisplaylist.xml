@@ -15,23 +15,24 @@
             android:layout_weight="0.2"
             android:text="Match Time"
             android:textSize="@dimen/tzlcTextSize"
+            android:visibility="gone"
             android:layout_gravity="center"
             android:gravity="center"/>
         <TextView
             android:id="@+id/highlightVCM"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.2"
+            android:layout_weight="0.23"
             android:textSize="@dimen/tzlcTextSize"
             android:text="Highlight"
-            android:visibility="gone"
             android:layout_gravity="center"
+
             android:gravity="center"/>
         <TextView
             android:id="@+id/highlightClub"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.2"
+            android:layout_weight="0.21"
             android:textSize="@dimen/tzlcTextSize"
             android:text="Club"
 
@@ -53,7 +54,7 @@
             android:id="@+id/highlightHL2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.2"
+            android:layout_weight="0.19"
             android:textSize="@dimen/tzlcTextSize"
             android:text="Highlight2"
 

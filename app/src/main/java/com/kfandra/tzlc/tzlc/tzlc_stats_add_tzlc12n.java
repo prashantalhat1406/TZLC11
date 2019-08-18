@@ -63,7 +63,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
     private ToggleButton t1, t2, t3, t4;
     private String homeClubName, awayClubName;
     List<possesionTimer> possesionTimers;
-    int h1,h2,h3,h4,a1,a2,a3,a4;
+    int h1=0,h2=0,h3=0,h4=0,a1=0,a2=0,a3=0,a4=0;
 
 
 
@@ -254,7 +254,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         goal.setAgainstClubID(m.getHomeClubID());
                         goal.setOwnGoal(0);
                         lastGoalID = datasource.addGoal(goal);
-                        Highlight highlight = new Highlight(matchID, goal.getAgainstClubID(), 0, matchTime, "GOAL", "--NA--");
+                        Highlight highlight = new Highlight(matchID, goal.getAgainstClubID(), matchTime, 0, "GOAL", ""+spnHomePlayers.getSelectedItem().toString());
                         datasource.addHighlight(highlight);
                         homeScore.setText("" + (Integer.parseInt(homeScore.getText().toString()) + 1));
                         stat.setHome_Score(Integer.parseInt(homeScore.getText().toString()));
@@ -278,7 +278,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         goal.setAgainstClubID(m.getAwayClubID());
                         goal.setOwnGoal(0);
                         lastGoalID = datasource.addGoal(goal);
-                        Highlight highlight = new Highlight(matchID, goal.getAgainstClubID(), 0, matchTime, "GOAL", "--NA--");
+                        Highlight highlight = new Highlight(matchID, goal.getAgainstClubID(), matchTime, 0, "GOAL", ""+spnAwayPlayers.getSelectedItem().toString());
                         datasource.addHighlight(highlight);
                         awayScore.setText("" + (Integer.parseInt(awayScore.getText().toString()) + 1));
                         stat.setAway_Score(Integer.parseInt(awayScore.getText().toString()));
@@ -307,7 +307,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         goal.setAgainstClubID(m.getAwayClubID());
                         goal.setOwnGoal(1);
                         lastGoalID = datasource.addGoal(goal);
-                        Highlight highlight = new Highlight(matchID, goal.getAgainstClubID(), 0, matchTime, "GOAL", "--NA--");
+                        Highlight highlight = new Highlight(matchID, goal.getAgainstClubID(), matchTime, 0, "GOAL", ""+spnHomePlayers.getSelectedItem().toString());
                         datasource.addHighlight(highlight);
                         awayScore.setText("" + (Integer.parseInt(awayScore.getText().toString()) + 1));
                         stat.setAway_Score(Integer.parseInt(awayScore.getText().toString()));
@@ -331,7 +331,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         goal.setAgainstClubID(m.getHomeClubID());
                         goal.setOwnGoal(1);
                         lastGoalID = datasource.addGoal(goal);
-                        Highlight highlight = new Highlight(matchID, goal.getAgainstClubID(), 0, matchTime, "GOAL", "--NA--");
+                        Highlight highlight = new Highlight(matchID, goal.getAgainstClubID(), 0, matchTime, "GOAL", ""+spnAwayPlayers.getSelectedItem().toString());
                         datasource.addHighlight(highlight);
                         homeScore.setText("" + (Integer.parseInt(homeScore.getText().toString()) + 1));
                         stat.setHome_Score(Integer.parseInt(homeScore.getText().toString()));
@@ -392,8 +392,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         card.setType(1);
                         card.setClubID(datasource.getPlayer(datasource.getPlayerID(spnHomePlayers.getSelectedItem().toString())).getClubId());
                         lastCardID = datasource.addCard(card);
-                        Highlight highlight = new Highlight(matchID, card.getClubID(), -200, matchTime, "RC",
-                                datasource.getPlayer(card.getPlayerID()).getPlayerName().split("@")[0].substring(0, 2) + ". " + datasource.getPlayer(card.getPlayerID()).getPlayerName().split("@")[1]);
+                        Highlight highlight = new Highlight(matchID, card.getClubID(), matchTime, -200, "Red Card",
+                                ""+spnHomePlayers.getSelectedItem().toString());
                         datasource.addHighlight(highlight);
                         clearActions();
                         Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, ""+datasource.getClub( m.getHomeClubID()).getClubShortName() + " : Red Card Added", Toast.LENGTH_SHORT);
@@ -413,8 +413,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         card.setType(0);
                         card.setClubID(datasource.getPlayer(datasource.getPlayerID(spnHomePlayers.getSelectedItem().toString())).getClubId());
                         lastCardID = datasource.addCard(card);
-                        Highlight highlight = new Highlight(matchID, card.getClubID(), -200, matchTime, "YC",
-                                datasource.getPlayer(card.getPlayerID()).getPlayerName().split("@")[0].substring(0, 2) + ". " + datasource.getPlayer(card.getPlayerID()).getPlayerName().split("@")[1]);
+                        Highlight highlight = new Highlight(matchID, card.getClubID(), matchTime, -200, "Yellwo Card",
+                                ""+spnHomePlayers.getSelectedItem().toString());
                         datasource.addHighlight(highlight);
                         clearActions();
                         Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, ""+datasource.getClub( m.getHomeClubID()).getClubShortName() + " : Yello Card Added", Toast.LENGTH_SHORT);
@@ -434,8 +434,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         card.setType(2);
                         card.setClubID(datasource.getPlayer(datasource.getPlayerID(spnHomePlayers.getSelectedItem().toString())).getClubId());
                         lastCardID = datasource.addCard(card);
-                        Highlight highlight = new Highlight(matchID, card.getClubID(), -200, matchTime, "BC",
-                                datasource.getPlayer(card.getPlayerID()).getPlayerName().split("@")[0].substring(0, 2) + ". " + datasource.getPlayer(card.getPlayerID()).getPlayerName().split("@")[1]);
+                        Highlight highlight = new Highlight(matchID, card.getClubID(), matchTime, -200, "Blue Card",
+                                ""+spnHomePlayers.getSelectedItem().toString());
                         datasource.addHighlight(highlight);
                         clearActions();
                         Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, ""+datasource.getClub( m.getHomeClubID()).getClubShortName() + " : Blue Card Added", Toast.LENGTH_SHORT);
@@ -455,8 +455,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         card.setType(1);
                         card.setClubID(datasource.getPlayer(datasource.getPlayerID(spnAwayPlayers.getSelectedItem().toString())).getClubId());
                         lastCardID = datasource.addCard(card);
-                        Highlight highlight = new Highlight(matchID, card.getClubID(), -200, matchTime, "RC",
-                                datasource.getPlayer(card.getPlayerID()).getPlayerName().split("@")[0].substring(0, 2) + ". " + datasource.getPlayer(card.getPlayerID()).getPlayerName().split("@")[1]);
+                        Highlight highlight = new Highlight(matchID, card.getClubID(), matchTime, -200, "Red Card",
+                                ""+spnAwayPlayers.getSelectedItem().toString());
                         datasource.addHighlight(highlight);
                         clearActions();
                         Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, ""+datasource.getClub( m.getAwayClubID()).getClubShortName() + " : Red Card Added", Toast.LENGTH_SHORT);
@@ -476,8 +476,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         card.setType(0);
                         card.setClubID(datasource.getPlayer(datasource.getPlayerID(spnAwayPlayers.getSelectedItem().toString())).getClubId());
                         lastCardID = datasource.addCard(card);
-                        Highlight highlight = new Highlight(matchID, card.getClubID(), -200, matchTime, "YC",
-                                datasource.getPlayer(card.getPlayerID()).getPlayerName().split("@")[0].substring(0, 2) + ". " + datasource.getPlayer(card.getPlayerID()).getPlayerName().split("@")[1]);
+                        Highlight highlight = new Highlight(matchID, card.getClubID(), matchTime, -200, "Yellwo Card",
+                                ""+spnAwayPlayers.getSelectedItem().toString());
                         datasource.addHighlight(highlight);
                         clearActions();
                         Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, ""+datasource.getClub( m.getAwayClubID()).getClubShortName() + " : Yellow Card Added", Toast.LENGTH_SHORT);
@@ -497,8 +497,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         card.setType(2);
                         card.setClubID(datasource.getPlayer(datasource.getPlayerID(spnAwayPlayers.getSelectedItem().toString())).getClubId());
                         lastCardID = datasource.addCard(card);
-                        Highlight highlight = new Highlight(matchID, card.getClubID(), -200, matchTime, "BC",
-                                datasource.getPlayer(card.getPlayerID()).getPlayerName().split("@")[0].substring(0, 2) + ". " + datasource.getPlayer(card.getPlayerID()).getPlayerName().split("@")[1]);
+                        Highlight highlight = new Highlight(matchID, card.getClubID(), matchTime, -200, "Blue Card",
+                                ""+spnAwayPlayers.getSelectedItem().toString());
                         datasource.addHighlight(highlight);
                         clearActions();
                         Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, ""+datasource.getClub( m.getAwayClubID()).getClubShortName() + " : Blue Card Added", Toast.LENGTH_SHORT);
@@ -513,7 +513,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 RadioButton aSub = findViewById(R.id.rdbutASub);
                 if(hSub.isChecked())
                 {
-                    Highlight highlight = new Highlight(matchID, m.getHomeClubID(), -100, matchTime, "", "");
+                    Highlight highlight = new Highlight(matchID, m.getHomeClubID(), matchTime, -100, "Sub", "");
                     datasource.addHighlight(highlight);
                     clearActions();
                     Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, ""+datasource.getClub( m.getHomeClubID()).getClubShortName() + " : Sub Added", Toast.LENGTH_SHORT);
@@ -522,7 +522,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 }
                 if(aSub.isChecked())
                 {
-                    Highlight highlight = new Highlight(matchID, m.getAwayClubID(), -100, matchTime, "", "");
+                    Highlight highlight = new Highlight(matchID, m.getAwayClubID(), matchTime, -100, "Sub", "");
                     datasource.addHighlight(highlight);
                     clearActions();
                     Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, ""+datasource.getClub( m.getAwayClubID()).getClubShortName() + " : Sub Added", Toast.LENGTH_SHORT);
