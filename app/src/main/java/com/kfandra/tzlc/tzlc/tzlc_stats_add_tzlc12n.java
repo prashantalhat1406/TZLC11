@@ -718,6 +718,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 buthomeDFK.setText(""+(stat.getHome_DFK()+1));stat.setHome_DFK(stat.getHome_DFK()+1);
                 //undo = R.id.butstatsHomeDFK; undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
+                Highlight highlight = new Highlight(matchID,m.getHomeClubID() ,matchTime, 0,"DFK", "");
+                datasource.addHighlight(highlight);
             }
         });
 
@@ -732,6 +734,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 buthomeCor.setText(""+(stat.getHome_COR()+1));stat.setHome_COR(stat.getHome_COR()+1);
                 //undo=R.id.butstatsHomeCor;undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
+                Highlight highlight = new Highlight(matchID,m.getHomeClubID() ,matchTime, 0,"Cornor", "");
+                datasource.addHighlight(highlight);
             }
         });
 
@@ -746,6 +750,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 buthomeGK.setText(""+(stat.getHome_GK()+1));stat.setHome_GK(stat.getHome_GK()+1);
                 //undo=R.id.butstatsHomeTI;undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
+                Highlight highlight = new Highlight(matchID,m.getHomeClubID() ,matchTime, 0,"GK", "");
+                datasource.addHighlight(highlight);
             }
         });
 
@@ -760,6 +766,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 buthomeOff.setText(""+(stat.getHome_OFF()+1));stat.setHome_OFF(stat.getHome_OFF()+1);
                 //undo=R.id.butstatsHomeTI;undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
+                Highlight highlight = new Highlight(matchID,m.getHomeClubID() ,matchTime, 0,"Offside", "");
+                datasource.addHighlight(highlight);
             }
         });
 
@@ -774,6 +782,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 buthomeLC.setText(""+(stat.getHome_LC()+1));stat.setHome_LC(stat.getHome_LC()+1);
                 //undo=R.id.butstatsHomeLC;undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
+                Highlight highlight = new Highlight(matchID,m.getHomeClubID() ,matchTime, 0,"Late Challange", "");
+                datasource.addHighlight(highlight);
             }
         });
 
@@ -788,6 +798,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 buthomeTI.setText(""+(stat.getHome_TI()+1));stat.setHome_TI(stat.getHome_TI()+1);
                 //undo=R.id.butstatsHomeTI;undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
+                Highlight highlight = new Highlight(matchID,m.getHomeClubID() ,matchTime, 0,"Throw In", "");
+                datasource.addHighlight(highlight);
             }
         });
 
@@ -803,6 +815,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 buthomePOPScored.setText(""+(stat.getHome_POP()+1));stat.setHome_POP(stat.getHome_POP()+1);
                 //undo=R.id.butstatsHomePOPScore;undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
+                Highlight highlight = new Highlight(matchID,m.getHomeClubID() ,matchTime, 0,"POP Scored", "");
+                datasource.addHighlight(highlight);
             }
         });
 
@@ -817,6 +831,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 buthomePOPMissed.setText(""+(stat.getHome_TCK()+1));stat.setHome_TCK(stat.getHome_TCK()+1);
                 //undo=R.id.butstatsHomePOPMiss;undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
+                Highlight highlight = new Highlight(matchID,m.getHomeClubID() ,matchTime, 0,"POP Missed", "");
+                datasource.addHighlight(highlight);
             }
         });
 
@@ -833,6 +849,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 butawayDFK.setText(""+(stat.getAway_DFK()+1));stat.setAway_DFK(stat.getAway_DFK()+1);
                 //undo=R.id.butstatsAwayDFK;undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
+                Highlight highlight = new Highlight(matchID,m.getAwayClubID() ,matchTime, 0,"DFK", "");
+                datasource.addHighlight(highlight);
             }
         });
 
@@ -847,6 +865,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 butawayCor.setText(""+(stat.getAway_COR()+1));stat.setAway_COR(stat.getAway_COR()+1);
                 //undo=R.id.butstatsAwayCor;undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
+                Highlight highlight = new Highlight(matchID,m.getAwayClubID() ,matchTime, 0,"Cornor", "");
+                datasource.addHighlight(highlight);
             }
         });
 
@@ -861,6 +881,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 butawayLC.setText(""+(stat.getAway_LC()+1));stat.setAway_LC(stat.getAway_LC()+1);
                 //undo=R.id.butstatsAwayLC;undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
+                Highlight highlight = new Highlight(matchID,m.getAwayClubID() ,matchTime, 0,"Late Challange", "");
+                datasource.addHighlight(highlight);
             }
         });
 
@@ -875,6 +897,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 butawayGK.setText(""+(stat.getAway_GK()+1));stat.setAway_GK(stat.getAway_GK()+1);
                 //undo=R.id.butstatsAwayLC;undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
+                Highlight highlight = new Highlight(matchID,m.getAwayClubID() ,matchTime, 0,"GK", "");
+                datasource.addHighlight(highlight);
             }
         });
 
@@ -889,6 +913,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 butawayOff.setText(""+(stat.getAway_OFF()+1));stat.setAway_OFF(stat.getAway_OFF()+1);
                 //undo=R.id.butstatsAwayLC;undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
+                Highlight highlight = new Highlight(matchID,m.getAwayClubID() ,matchTime, 0,"Offside", "");
+                datasource.addHighlight(highlight);
             }
         });
 
@@ -903,6 +929,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 butawayTI.setText(""+(stat.getAway_TI()+1));stat.setAway_TI(stat.getAway_TI()+1);
                 //undo=R.id.butstatsAwayTI;undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
+                Highlight highlight = new Highlight(matchID,m.getAwayClubID() ,matchTime, 0,"Throw In", "");
+                datasource.addHighlight(highlight);
             }
         });
 
@@ -917,6 +945,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 butawayPOPScored.setText(""+(stat.getAway_POP()+1));stat.setAway_POP(stat.getAway_POP()+1);
                 //undo=R.id.butstatsAwayPOPScore;undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
+                Highlight highlight = new Highlight(matchID,m.getAwayClubID() ,matchTime, 0,"POP Scored", "");
+                datasource.addHighlight(highlight);
             }
         });
 
@@ -931,6 +961,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 butawayPOPMissed.setText(""+(stat.getAway_TCK()+1));stat.setAway_TCK(stat.getAway_TCK()+1);
                // undo=R.id.butstatsAwayPOPMiss;undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
+                Highlight highlight = new Highlight(matchID,m.getAwayClubID() ,matchTime, 0,"POP Missed", "");
+                datasource.addHighlight(highlight);
             }
         });
 
