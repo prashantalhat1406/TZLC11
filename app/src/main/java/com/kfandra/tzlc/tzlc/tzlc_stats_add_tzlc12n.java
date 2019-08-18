@@ -37,8 +37,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
     private tzlcDataSource datasource;
     private long matchID,lastGoalID,lastCardID;
     private Stats stat;
-    private Button buthomeDFK, buthomeCor, buthomeLC, buthomeTI, buthomePOPScored, buthomePOPMissed;
-    private Button butawayDFK, butawayCor, butawayLC, butawayTI, butawayPOPScored, butawayPOPMissed;
+    private Button buthomeDFK, buthomeCor, buthomeLC, buthomeTI, buthomePOPScored, buthomePOPMissed,buthomeGK,buthomeOff;
+    private Button butawayDFK, butawayCor, butawayLC, butawayTI, butawayPOPScored, butawayPOPMissed,butawayGK,butawayOff;
     private Button clear, save;
     private ImageButton startPause;
     private Spinner spnHomePlayers, spnAwayPlayers;
@@ -109,6 +109,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
         buthomeDFK.setBackgroundTintList(ColorStateList.valueOf(tempHColor));buthomeDFK.setTextColor(temphomeTextColor);
         buthomeCor.setBackgroundTintList(ColorStateList.valueOf(tempHColor));buthomeCor.setTextColor(temphomeTextColor);
         buthomeLC.setBackgroundTintList(ColorStateList.valueOf(tempHColor));buthomeLC.setTextColor(temphomeTextColor);
+        buthomeGK.setBackgroundTintList(ColorStateList.valueOf(tempHColor));buthomeGK.setTextColor(temphomeTextColor);
+        buthomeOff.setBackgroundTintList(ColorStateList.valueOf(tempHColor));buthomeOff.setTextColor(temphomeTextColor);
         buthomeTI.setBackgroundTintList(ColorStateList.valueOf(tempHColor));buthomeTI.setTextColor(temphomeTextColor);
         buthomePOPScored.setBackgroundTintList(ColorStateList.valueOf(tempHColor));buthomePOPScored.setTextColor(temphomeTextColor);
         buthomePOPMissed.setBackgroundTintList(ColorStateList.valueOf(tempHColor));buthomePOPMissed.setTextColor(temphomeTextColor);
@@ -124,6 +126,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
         butawayDFK.setBackgroundTintList(ColorStateList.valueOf(tempAColor));butawayDFK.setTextColor(tempawayTextColor);
         butawayCor.setBackgroundTintList(ColorStateList.valueOf(tempAColor));butawayCor.setTextColor(tempawayTextColor);
         butawayLC.setBackgroundTintList(ColorStateList.valueOf(tempAColor));butawayLC.setTextColor(tempawayTextColor);
+        butawayGK.setBackgroundTintList(ColorStateList.valueOf(tempAColor));butawayGK.setTextColor(tempawayTextColor);
+        butawayOff.setBackgroundTintList(ColorStateList.valueOf(tempAColor));butawayOff.setTextColor(tempawayTextColor);
         butawayTI.setBackgroundTintList(ColorStateList.valueOf(tempAColor));butawayTI.setTextColor(tempawayTextColor);
         butawayPOPScored.setBackgroundTintList(ColorStateList.valueOf(tempAColor));butawayPOPScored.setTextColor(tempawayTextColor);
         butawayPOPMissed.setBackgroundTintList(ColorStateList.valueOf(tempAColor));butawayPOPMissed.setTextColor(tempawayTextColor);
@@ -731,6 +735,34 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
             }
         });
 
+        buthomeGK = findViewById(R.id.butstatsHomeGKTZLC12);
+        buthomeGK.setBackgroundTintList(ColorStateList.valueOf(homeColor));
+        buthomeGK.setTextColor(homeTextColor);
+        buthomeGK.setText(""+(stat.getHome_GK()));
+        buthomeGK.setOnClickListener(new View.OnClickListener()
+        {
+            @Override public void onClick(View v)
+            {
+                buthomeGK.setText(""+(stat.getHome_GK()+1));stat.setHome_GK(stat.getHome_GK()+1);
+                //undo=R.id.butstatsHomeTI;undoMenu.findItem(R.id.undo).setEnabled(true);
+                datasource.updateStats(stat);
+            }
+        });
+
+        buthomeOff = findViewById(R.id.butstatsHomeOffTZLC12);
+        buthomeOff.setBackgroundTintList(ColorStateList.valueOf(homeColor));
+        buthomeOff.setTextColor(homeTextColor);
+        buthomeOff.setText(""+(stat.getHome_OFF()));
+        buthomeOff.setOnClickListener(new View.OnClickListener()
+        {
+            @Override public void onClick(View v)
+            {
+                buthomeOff.setText(""+(stat.getHome_OFF()+1));stat.setHome_OFF(stat.getHome_OFF()+1);
+                //undo=R.id.butstatsHomeTI;undoMenu.findItem(R.id.undo).setEnabled(true);
+                datasource.updateStats(stat);
+            }
+        });
+
         buthomeLC = findViewById(R.id.butstatsHomeLCTZLC12);
         buthomeLC.setBackgroundTintList(ColorStateList.valueOf(homeColor));
         buthomeLC.setTextColor(homeTextColor);
@@ -758,6 +790,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 datasource.updateStats(stat);
             }
         });
+
 
         buthomePOPScored = findViewById(R.id.butstatsHomePOPScore);
         buthomePOPScored.setBackgroundTintList(ColorStateList.valueOf(homeColor));
@@ -831,6 +864,34 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
             }
         });
 
+        butawayGK = findViewById(R.id.butstatsAwayGKTZLC12);
+        butawayGK.setBackgroundTintList(ColorStateList.valueOf(awayColor));
+        butawayGK.setTextColor(awayTextColor);
+        butawayGK.setText(""+(stat.getAway_GK()));
+        butawayGK.setOnClickListener(new View.OnClickListener()
+        {
+            @Override public void onClick(View v)
+            {
+                butawayGK.setText(""+(stat.getAway_GK()+1));stat.setAway_GK(stat.getAway_GK()+1);
+                //undo=R.id.butstatsAwayLC;undoMenu.findItem(R.id.undo).setEnabled(true);
+                datasource.updateStats(stat);
+            }
+        });
+
+        butawayOff = findViewById(R.id.butstatsAwayOffTZLC12);
+        butawayOff.setBackgroundTintList(ColorStateList.valueOf(awayColor));
+        butawayOff.setTextColor(awayTextColor);
+        butawayOff.setText(""+(stat.getAway_OFF()));
+        butawayOff.setOnClickListener(new View.OnClickListener()
+        {
+            @Override public void onClick(View v)
+            {
+                butawayOff.setText(""+(stat.getAway_OFF()+1));stat.setAway_OFF(stat.getAway_OFF()+1);
+                //undo=R.id.butstatsAwayLC;undoMenu.findItem(R.id.undo).setEnabled(true);
+                datasource.updateStats(stat);
+            }
+        });
+
         butawayTI = findViewById(R.id.butstatsAwayThrowInTZLC12);
         butawayTI.setBackgroundTintList(ColorStateList.valueOf(awayColor));
         butawayTI.setTextColor(awayTextColor);
@@ -885,6 +946,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     buthomeCor.setEnabled(true);
                     buthomeLC.setEnabled(true);
                     buthomeTI.setEnabled(true);
+                    buthomeGK.setEnabled(true);
+                    buthomeOff.setEnabled(true);
                     buthomePOPScored.setEnabled(true);
                     buthomePOPMissed.setEnabled(true);
 
@@ -892,6 +955,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     butawayCor.setEnabled(true);
                     butawayLC.setEnabled(true);
                     butawayTI.setEnabled(true);
+                    butawayGK.setEnabled(true);
+                    butawayOff.setEnabled(true);
                     butawayPOPScored.setEnabled(true);
                     butawayPOPMissed.setEnabled(true);
 
@@ -907,6 +972,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     buthomeCor.setEnabled(false);
                     buthomeLC.setEnabled(false);
                     buthomeTI.setEnabled(false);
+                    buthomeGK.setEnabled(false);
+                    buthomeOff.setEnabled(false);
                     buthomePOPScored.setEnabled(false);
                     buthomePOPMissed.setEnabled(false);
 
@@ -914,6 +981,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     butawayCor.setEnabled(false);
                     butawayLC.setEnabled(false);
                     butawayTI.setEnabled(false);
+                    butawayGK.setEnabled(false);
+                    butawayOff.setEnabled(false);
                     butawayPOPScored.setEnabled(false);
                     butawayPOPMissed.setEnabled(false);
 
@@ -1097,6 +1166,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     buthomeCor.setEnabled(true);
                     buthomeLC.setEnabled(true);
                     buthomeTI.setEnabled(true);
+                    buthomeGK.setEnabled(true);
+                    buthomeOff.setEnabled(true);
                     buthomePOPScored.setEnabled(true);
                     buthomePOPMissed.setEnabled(true);
 
@@ -1104,6 +1175,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     butawayCor.setEnabled(true);
                     butawayLC.setEnabled(true);
                     butawayTI.setEnabled(true);
+                    butawayGK.setEnabled(true);
+                    butawayOff.setEnabled(true);
                     butawayPOPScored.setEnabled(true);
                     butawayPOPMissed.setEnabled(true);
 
@@ -1119,6 +1192,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     buthomeCor.setEnabled(false);
                     buthomeLC.setEnabled(false);
                     buthomeTI.setEnabled(false);
+                    buthomeGK.setEnabled(false);
+                    buthomeOff.setEnabled(false);
                     buthomePOPScored.setEnabled(false);
                     buthomePOPMissed.setEnabled(false);
 
@@ -1126,6 +1201,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     butawayCor.setEnabled(false);
                     butawayLC.setEnabled(false);
                     butawayTI.setEnabled(false);
+                    butawayGK.setEnabled(false);
+                    butawayOff.setEnabled(false);
                     butawayPOPScored.setEnabled(false);
                     butawayPOPMissed.setEnabled(false);
 
