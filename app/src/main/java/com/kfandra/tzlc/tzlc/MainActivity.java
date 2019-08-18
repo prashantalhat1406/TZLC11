@@ -9,6 +9,7 @@ import android.content.pm.PackageManager;
 //import android.os.Build;
 import android.os.Bundle;
 //import android.support.v4.app.ActivityCompat;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -18,10 +19,16 @@ import android.view.View;
 //import android.widget.ImageButton;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 //import android.widget.Toast;
+
+import com.firebase.ui.auth.AuthUI;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 //
 public class MainActivity extends AppCompatActivity {
@@ -29,6 +36,11 @@ public class MainActivity extends AppCompatActivity {
             "android.permission.READ_EXTERNAL_STORAGE",
             "android.permission.WRITE_EXTERNAL_STORAGE"
     };
+
+    public static final int RC_SIGN_IN = 1;
+
+    //private FirebaseAuth firebaseAuth;
+    //private FirebaseAuth.AuthStateListener authStateListener;
 
     /*Collections.sort(myList, new Comparator<EmployeeClass>(){
         public int compare(EmployeeClass obj1, EmployeeClass obj2) {
@@ -62,6 +74,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar =  findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        //firebaseAuth = FirebaseAuth.getInstance();
+
+
 
     if (!checkWriteExternalPermission())
         ask();
@@ -156,7 +172,7 @@ public class MainActivity extends AppCompatActivity {
         }
         datasource.close();
 
-
+/*
         //ImageView clubs =  findViewById(R.id.butClubs);
         Button clubs =  findViewById(R.id.butClubs);
         clubs.setOnClickListener(new View.OnClickListener() {
@@ -166,14 +182,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
-        /*clubs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent().setType("*//*").setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(Intent.createChooser(intent,"Select DB File"),123);
-            }
-        });*/
 
         //ImageView matches = findViewById(R.id.butMatches);
         Button matches = findViewById(R.id.butMatches);
@@ -194,6 +202,37 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+*/
+        Intent i = new Intent(MainActivity.this, tzlc_match_display.class);
+        startActivity(i);
+
+
+        /*authStateListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if(user != null){
+                    //signed in
+                    Toast.makeText(MainActivity.this, user.getDisplayName() + " Signed  IN", Toast.LENGTH_LONG).show();
+                }else{
+                    //signed out
+                    startActivityForResult(
+                            AuthUI.getInstance()
+                                .createSignInIntentBuilder()
+                                .setIsSmartLockEnabled(false)
+                                .setAvailableProviders(Arrays.asList(
+                                        new AuthUI.IdpConfig.EmailBuilder().build(),
+                                        new AuthUI.IdpConfig.GoogleBuilder().build()
+                                ))
+                            .build(),RC_SIGN_IN
+                    );
+                }
+
+            }
+        }; */
+
+        /*Intent i = new Intent(MainActivity.this, tzlc_match_display.class);
+        startActivity(i);*/
 
 
 
@@ -223,11 +262,30 @@ public class MainActivity extends AppCompatActivity {
         tzlcDataSource datasource;
         datasource = new tzlcDataSource(this);
         datasource.open();
+        Intent i;
 
-        if(id == R.id.tzlcReports)
+        switch (id)
         {
-            Intent i = new Intent(MainActivity.this, tzlc_Reports.class);
-            startActivity(i);
+            case R.id.tzlcReports :
+                i = new Intent(MainActivity.this, tzlc_Reports.class);
+                startActivity(i);
+                break;
+
+            case R.id.tzlcLeagueTable :
+                i = new Intent(MainActivity.this, tzlc_LeagueTable.class);
+                startActivity(i);
+                break;
+
+            case R.id.tzlcsignout :
+                AuthUI.getInstance().signOut(this);
+                break;
+
+
+        }
+
+        /*if(id == R.id.tzlcReports)
+        {
+
             //Toast.makeText(this,"Reports",Toast.LENGTH_SHORT).show();
         }
 
@@ -236,7 +294,11 @@ public class MainActivity extends AppCompatActivity {
             Intent i = new Intent(MainActivity.this, tzlc_LeagueTable.class);
             startActivity(i);
             //Toast.makeText(this,"Reports",Toast.LENGTH_SHORT).show();
-        }
+        }*/
+
+
+
+
 
 
         /*if (id == R.id.clubData) {
@@ -322,5 +384,17 @@ public class MainActivity extends AppCompatActivity {
 
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        //firebaseAuth.removeAuthStateListener(authStateListener);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //firebaseAuth.addAuthStateListener(authStateListener);
     }
 }

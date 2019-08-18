@@ -4,4 +4,8 @@
     <dimen name="tzlcStatsTextSize">28dp</dimen>
     <dimen name="tzlcListViewItemHeight">55dp</dimen>
     <dimen name="tzlcStatsLabelSize">15dp</dimen>
+    <dimen name="listTopFont">24dp</dimen>
+    <dimen name="listFirstLine">22dp</dimen>
+    <dimen name="listSecondLine">18dp</dimen>
+    <dimen name="listThirdLine">14dp</dimen>
 </resources>

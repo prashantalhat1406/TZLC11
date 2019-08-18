@@ -24,7 +24,7 @@
             android:layout_weight="0.2"
             android:textSize="@dimen/tzlcTextSize"
             android:text="Highlight"
-
+            android:visibility="gone"
             android:layout_gravity="center"
             android:gravity="center"/>
         <TextView

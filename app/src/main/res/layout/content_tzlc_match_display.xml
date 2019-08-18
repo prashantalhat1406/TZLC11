@@ -105,8 +105,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="0.1"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="10.0sp"
+        android:divider="@android:color/black"
+        android:dividerHeight="1dp"
         />
 
 </LinearLayout>

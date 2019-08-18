@@ -38,10 +38,10 @@ public class adaptor_match extends ArrayAdapter<Match> {
             convertView = LayoutInflater.from(getContext()).
                     inflate(R.layout.matchdisplaylist,parent,false);
         }*/
-        if(convertView == null){
-            convertView = LayoutInflater.from(getContext()).
-                    inflate(R.layout.matchdisplaylist_new,parent,false);
-        }
+        if(convertView == null)
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.fixturelistitem,parent,false);
+            //convertView = LayoutInflater.from(getContext()).inflate(R.layout.matchdisplaylist_new,parent,false);
+
 
 
 
@@ -50,16 +50,41 @@ public class adaptor_match extends ArrayAdapter<Match> {
         Match m = matches.get(position);
 
         if(datasource.isMatchHappened(m.getId()))
-            convertView.setBackgroundColor(Color.parseColor("#f09b11"));
+            convertView.setBackgroundColor(Color.parseColor("#0e93cf"));
         else
-            convertView.setBackgroundColor(Color.parseColor("#f0fff0"));
+            convertView.setBackgroundColor(Color.parseColor("#E1F5FE"));
 
         //convertView.setBackground(ContextCompat.getDrawable(context,R.drawable.roundbutton));
 
-        TextView md = convertView.findViewById(R.id.matchDisplayDate);
-        md.setText(""+String.format("%02d", (m.getDate_number()%100))+"/"+String.format("%02d", ((m.getDate_number()/100)%100))+"/"+m.getDate_number()/10000);
+        TextView matchdate = convertView.findViewById(R.id.fixtureDisplayDate);
+        matchdate.setText(""+String.format("%02d", (m.getDate_number()%100))+"/"+String.format("%02d", ((m.getDate_number()/100)%100))+"/"+m.getDate_number()/10000);
+        try {
+            SimpleDateFormat format1 = new SimpleDateFormat("dd/MM/yyyy");
+            Date dt1 = format1.parse(matchdate.getText().toString());
+            DateFormat format2 = new SimpleDateFormat("dd-MMM-yyyy");
+            DateFormat format3 = new SimpleDateFormat("EEEE");
+            matchdate.setText(format2.format(dt1) + " , "+format3.format(dt1));
+        }catch(Exception e)
+        {
+
+        }
+
+        TextView matchClubs = convertView.findViewById(R.id.fixtureName);
+        matchClubs.setText(""+datasource.getClub(m.getHomeClubID()).getClubName() + " vs " + datasource.getClub(m.getAwayClubID()).getClubName());
+
+        ArrayAdapter<CharSequence> matchType = ArrayAdapter.createFromResource(getContext(),R.array.matchType,android.R.layout.simple_spinner_item);
+        TextView matchDetails = convertView.findViewById(R.id.fixtureDisplayType);
+        if(m.getHomeClubID() == 1 || m.getHomeClubID() == 5 || m.getHomeClubID() == 8)
+            matchDetails.setText(""+matchType.getItem(m.getType()) + ", PAPAL");
+        else
+            matchDetails.setText(""+matchType.getItem(m.getType()) + ", NCL");
+
+        //convertView.setBackgroundColor(context.getResources().getColor(R.color.listColorPrimary));
 
 
+
+
+        /*
         TextView mday = convertView.findViewById(R.id.matchDisplayDay);
         try {
             SimpleDateFormat format1 = new SimpleDateFormat("dd/MM/yyyy");
@@ -70,8 +95,10 @@ public class adaptor_match extends ArrayAdapter<Match> {
         {
 
         }
+        */
 
 
+        /*
         TextView homeClub = convertView.findViewById(R.id.matchDisplayHome);
         TextView awayClub = convertView.findViewById(R.id.matchDisplayAway);
         if (m.getHomeClubID() == 0 || m.getAwayClubID() == 0)
@@ -86,9 +113,10 @@ public class adaptor_match extends ArrayAdapter<Match> {
             String aC = "" + "<font color='" + datasource.getClub(m.getAwayClubID()).getClubColor() + "'>" + datasource.getClub(m.getAwayClubID()).getClubShortName() + "</font>";
             awayClub.setText(Html.fromHtml(aC));
         }
-
+        */
+/*
         TextView mt = convertView.findViewById(R.id.matchDisplayType);
-        ArrayAdapter<CharSequence> matchType = ArrayAdapter.createFromResource(getContext(),R.array.matchType,android.R.layout.simple_spinner_item);
+
         ArrayAdapter<CharSequence> matchSubType = ArrayAdapter.createFromResource(getContext(),R.array.matchSubTypeShort,android.R.layout.simple_spinner_item);
 
         if(matchSubType.getItem(m.getSubtype()).equals( "NA"))
@@ -114,7 +142,7 @@ public class adaptor_match extends ArrayAdapter<Match> {
         {
             homeClubScore.setText(""+stat.getHome_Score());
             awayClubScore.setText(""+stat.getAway_Score());
-        }
+        }*/
 
 
         /*
