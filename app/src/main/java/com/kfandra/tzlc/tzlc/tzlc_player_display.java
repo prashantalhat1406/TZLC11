@@ -133,6 +133,8 @@ public class tzlc_player_display extends AppCompatActivity {
         menu.findItem(R.id.addScreen).setVisible(true);
         menu.findItem(R.id.deleteScreen).setVisible(false);
         menu.findItem(R.id.editScreen).setVisible(false);
+        menu.findItem(R.id.players).setVisible(false);
+        menu.findItem(R.id.clubs).setVisible(false);
 
         return true;
     }
