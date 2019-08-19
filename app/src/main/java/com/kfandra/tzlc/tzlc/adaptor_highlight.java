@@ -25,21 +25,34 @@ public class adaptor_highlight extends ArrayAdapter<Highlight> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         if(convertView == null){
-            convertView = LayoutInflater.from(getContext()).
-                    inflate(R.layout.highlightdisplaylist,parent,false);
+            //convertView = LayoutInflater.from(getContext()).inflate(R.layout.highlightdisplaylist,parent,false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.highlightlistitem_new,parent,false);
         }
 
         tzlcDataSource datasource= new tzlcDataSource(getContext());
         datasource.open();
         Highlight highlight = highlights.get(position);
 
-        TextView mt = convertView.findViewById(R.id.highlightMatchTime);
+        TextView highlightEvent = convertView.findViewById(R.id.HLEvent);
+        highlightEvent.setText(""+highlight.getHighlight());
+
+        TextView highlightClub = convertView.findViewById(R.id.HLClub);
+        highlightClub.setText("" + datasource.getClub(highlight.getClubID()).getClubShortName());
+        highlightClub.setTextColor(datasource.getClub(highlight.getClubID()).getClubColor());
+
+        TextView highlightDetail = convertView.findViewById(R.id.HLDetail);
+        highlightDetail.setText(""+highlight.getHighlight2());
+
+        TextView highlightTime = convertView.findViewById(R.id.HLTime);
+        //highlightTime.setText(""+highlight.getVcmTime());
+        highlightTime.setText(""+String.format("%02d", (highlight.getVcmTime()/60))+":"+String.format("%02d", (highlight.getVcmTime()%60)));
+
+        /*TextView mt = convertView.findViewById(R.id.highlightMatchTime);
         mt.setText(""+String.format("%02d", (highlight.getSrTime()/60))+":"+String.format("%02d", (highlight.getSrTime()%60)));
         mt.setVisibility(View.INVISIBLE);
 
         TextView vcm = convertView.findViewById(R.id.highlightVCM);
         vcm.setText(""+String.format("%02d", (highlight.getVcmTime()/60))+":"+String.format("%02d", (highlight.getVcmTime()%60)));
-        //vcm.setVisibility(View.INVISIBLE);
 
         TextView club = convertView.findViewById(R.id.highlightClub);
         if(highlight.getClubID() == -1)
@@ -54,33 +67,9 @@ public class adaptor_highlight extends ArrayAdapter<Highlight> {
         TextView hl = convertView.findViewById(R.id.highlightHL);
         hl.setText(""+highlight.getHighlight());
 
-        /*if (highlight.getHighlight().equals("GOAL"))
-        {
-            hl.setText(""+highlight.getHighlight());
-
-        }
-        else
-            hl.setText(""+highlight.getHighlight());*/
-
         TextView hl2 = convertView.findViewById(R.id.highlightHL2);
-        hl2.setText(highlight.getHighlight2());
-        //hl2.setVisibility(View.GONE);
+        hl2.setText(highlight.getHighlight2());*/
 
-      /*  if(highlight.getVcmTime() == -100)
-        {
-            vcm.setText("SUB");
-        }
-
-        if(highlight.getVcmTime() == -200)
-        {
-            vcm.setText("CARD");
-
-        }
-
-        if(highlight.getVcmTime() == -300)
-        {
-            vcm.setText("TIME");
-        }*/
 
         return  convertView; //super.getView(position, convertView, parent);
     }
