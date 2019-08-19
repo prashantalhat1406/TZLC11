@@ -64,6 +64,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
     private String homeClubName, awayClubName;
     List<possesionTimer> possesionTimers;
     int h1=0,h2=0,h3=0,h4=0,a1=0,a2=0,a3=0,a4=0;
+    int hh1=0,hh2=0,hh3=0,hh4=0,ha1=0,ha2=0,ha3=0,ha4=0;
+    String lastPossession="";
 
 
 
@@ -554,13 +556,22 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     t4.setText("");
                     t4.setTextOff("");
                     t4.setTextOn("");
-                    t2.setChecked(false);
+                    /*t2.setChecked(false);
                     t3.setChecked(false);
-                    t4.setChecked(false);
+                    t4.setChecked(false);*/
 
-                    possesionTimers.add( new possesionTimer("H1",matchTime));
-                    t1.setTextOn(homeClubName);
-                    t1.setTextColor(homeColor);
+                    if(resetCount > 0)
+                    {
+                        possesionTimers.add(new possesionTimer("A1", matchTime));
+                        t1.setTextOn(awayClubName);
+                        t1.setTextColor(awayColor);
+                        lastPossession="A1";
+                    }else {
+                        possesionTimers.add(new possesionTimer("H1", matchTime));
+                        t1.setTextOn(homeClubName);
+                        t1.setTextColor(homeColor);
+                        lastPossession="H1";
+                    }
                 }
                 else
                 {
@@ -574,13 +585,22 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     t4.setText("");
                     t4.setTextOff("");
                     t4.setTextOn("");
-                    t2.setChecked(false);
+                    /*t2.setChecked(false);
                     t3.setChecked(false);
-                    t4.setChecked(false);
+                    t4.setChecked(false);*/
 
-                    possesionTimers.add( new possesionTimer("A4",matchTime));
-                    t1.setTextOff(awayClubName);
-                    t1.setTextColor(awayColor);
+                    if(resetCount > 0)
+                    {
+                        possesionTimers.add(new possesionTimer("H4", matchTime));
+                        t1.setTextOff(homeClubName);
+                        t1.setTextColor(homeColor);
+                        lastPossession="H4";
+                    }else {
+                        possesionTimers.add(new possesionTimer("A4", matchTime));
+                        t1.setTextOff(awayClubName);
+                        t1.setTextColor(awayColor);
+                        lastPossession="A4";
+                    }
                 }
 
             }
@@ -603,13 +623,24 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     t4.setText("");
                     t4.setTextOff("");
                     t4.setTextOn("");
-                    t1.setChecked(false);
+                    /*t1.setChecked(false);
                     t3.setChecked(false);
-                    t4.setChecked(false);
+                    t4.setChecked(false);*/
 
-                    possesionTimers.add( new possesionTimer("H2",matchTime));
-                    t2.setTextOn(homeClubName);
-                    t2.setTextColor(homeColor);
+
+
+                    if(resetCount > 0)
+                    {
+                        possesionTimers.add(new possesionTimer("A2", matchTime));
+                        t2.setTextOn(awayClubName);
+                        t2.setTextColor(awayColor);
+                        lastPossession="A2";
+                    }else {
+                        possesionTimers.add(new possesionTimer("H2", matchTime));
+                        t2.setTextOn(homeClubName);
+                        t2.setTextColor(homeColor);
+                        lastPossession="H2";
+                    }
 
 
                 }
@@ -624,14 +655,23 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     t4.setText("");
                     t4.setTextOff("");
                     t4.setTextOn("");
-                    t1.setChecked(false);
+                    /*t1.setChecked(false);
                     t3.setChecked(false);
-                    t4.setChecked(false);
+                    t4.setChecked(false);*/
 
-                    possesionTimers.add( new possesionTimer("A3",matchTime));
-                    t2.setTextOff(awayClubName);
-                    t2.setTextColor(awayColor);
+                    if(resetCount > 0)
+                    {
+                        possesionTimers.add(new possesionTimer("H3", matchTime));
+                        t2.setTextOff(homeClubName);
+                        t2.setTextColor(homeColor);
+                        lastPossession="H3";
 
+                    }else {
+                        possesionTimers.add(new possesionTimer("A3", matchTime));
+                        t2.setTextOff(awayClubName);
+                        t2.setTextColor(awayColor);
+                        lastPossession="A3";
+                    }
 
                 }
 
@@ -656,13 +696,24 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     t4.setText("");
                     t4.setTextOff("");
                     t4.setTextOn("");
-                    t1.setChecked(false);
+                    /*t1.setChecked(false);
                     t2.setChecked(false);
-                    t4.setChecked(false);
+                    t4.setChecked(false);*/
 
-                    possesionTimers.add( new possesionTimer("H3",matchTime));
-                    t3.setTextOn(homeClubName);
-                    t3.setTextColor(homeColor);
+
+                    if(resetCount > 0)
+                    {
+                        possesionTimers.add(new possesionTimer("A3", matchTime));
+                        t3.setTextOn(awayClubName);
+                        t3.setTextColor(awayColor);
+                        lastPossession="A3";
+
+                    }else {
+                        possesionTimers.add(new possesionTimer("H3", matchTime));
+                        t3.setTextOn(homeClubName);
+                        t3.setTextColor(homeColor);
+                        lastPossession="H3";
+                    }
                 }
                 else
                 {
@@ -676,13 +727,24 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     t4.setText("");
                     t4.setTextOff("");
                     t4.setTextOn("");
-                    t1.setChecked(false);
+                    /*t1.setChecked(false);
                     t2.setChecked(false);
-                    t4.setChecked(false);
+                    t4.setChecked(false);*/
 
-                    possesionTimers.add( new possesionTimer("A2",matchTime));
-                    t3.setTextOff(awayClubName);
-                    t3.setTextColor(awayColor);
+
+
+                    if(resetCount > 0)
+                    {
+                        possesionTimers.add(new possesionTimer("H2", matchTime));
+                        t3.setTextOff(homeClubName);
+                        t3.setTextColor(homeColor);
+                        lastPossession="H2";
+                    }else {
+                        possesionTimers.add(new possesionTimer("A2", matchTime));
+                        t3.setTextOff(awayClubName);
+                        t3.setTextColor(awayColor);
+                        lastPossession="A2";
+                    }
                 }
 
             }
@@ -706,13 +768,25 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     t3.setText("");
                     t3.setTextOff("");
                     t3.setTextOn("");
-                    t1.setChecked(false);
+                    /*t1.setChecked(false);
                     t2.setChecked(false);
-                    t3.setChecked(false);
+                    t3.setChecked(false);*/
 
-                    possesionTimers.add( new possesionTimer("H4",matchTime));
-                    t4.setTextOn(homeClubName);
-                    t4.setTextColor(homeColor);
+
+
+
+                    if(resetCount > 0)
+                    {
+                        possesionTimers.add(new possesionTimer("A4", matchTime));
+                        t4.setTextOn(awayClubName);
+                        t4.setTextColor(awayColor);
+                        lastPossession="A4";
+                    }else {
+                        possesionTimers.add(new possesionTimer("H4", matchTime));
+                        t4.setTextOn(homeClubName);
+                        t4.setTextColor(homeColor);
+                        lastPossession="H4";
+                    }
                 }
                 else
                 {
@@ -726,13 +800,23 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     t3.setText("");
                     t3.setTextOff("");
                     t3.setTextOn("");
-                    t1.setChecked(false);
+                    /*t1.setChecked(false);
                     t2.setChecked(false);
-                    t3.setChecked(false);
+                    t3.setChecked(false);*/
 
-                    possesionTimers.add( new possesionTimer("A1",matchTime));
-                    t4.setTextOff(awayClubName);
-                    t4.setTextColor(awayColor);
+                    if(resetCount > 0)
+                    {
+                        possesionTimers.add(new possesionTimer("H1", matchTime));
+                        t4.setTextOff(homeClubName);
+                        t4.setTextColor(homeColor);
+                        lastPossession="H1";
+                    }else {
+
+                        possesionTimers.add(new possesionTimer("A1", matchTime));
+                        t4.setTextOff(awayClubName);
+                        t4.setTextColor(awayColor);
+                        lastPossession="A1";
+                    }
                 }
 
             }
@@ -1181,10 +1265,10 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                                         case "A4" : a4=a4+possesionTimer.getTimer();break;
                                     }
                                 }
-                                stat.setHome_SOnT((h1*1000)+(h2));
-                                stat.setHome_SOffT((h3*1000)+(h4));
-                                stat.setAway_SOnT((a1*1000)+(a2));
-                                stat.setAway_SOffT((a3*1000)+(a4));
+                                stat.setHome_SOnT(((h1+hh1)*1000)+(h2+hh2));
+                                stat.setHome_SOffT(((h3+hh3)*1000)+(h4+hh4));
+                                stat.setAway_SOnT(((a1+ha1)*1000)+(a2+ha2));
+                                stat.setAway_SOffT(((a3+ha3)*1000)+(a4+ha4));
                                 datasource.addStats(stat);
 
                                 Intent returnI = new Intent();
@@ -1237,6 +1321,51 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                                         resetReason[resetCount],
                                         "--NA--");
                                 datasource.addHighlight(highlight);
+
+
+
+                                if(resetCount ==0 )
+                                {
+                                    possesionTimers.add(new possesionTimer(lastPossession, matchTime));
+
+                                    List<possesionTimer> finalTime = new ArrayList<possesionTimer>();
+                                    int i =0;
+                                    for(i = 0; i<(possesionTimers.size()-1);i++)
+                                    {
+                                        finalTime.add(new possesionTimer(possesionTimers.get(i).getLocation(), possesionTimers.get(i+1).getTimer()-possesionTimers.get(i).getTimer()));
+                                    }
+                                    finalTime.add(new possesionTimer(possesionTimers.get(i).getLocation(), matchTime-possesionTimers.get(i).getTimer()));
+
+                                    for (possesionTimer possesionTimer : finalTime) {
+                                        Log.d(tzlc_stats_add_tzlc12n.class.getSimpleName(), ""+possesionTimer.getLocation()+" :: " + possesionTimer.getTimer());
+                                        switch (possesionTimer.getLocation())
+                                        {
+                                            case "H1" : h1=h1+possesionTimer.getTimer();break;
+                                            case "H2" : h2=h2+possesionTimer.getTimer();break;
+                                            case "H3" : h3=h3+possesionTimer.getTimer();break;
+                                            case "H4" : h4=h4+possesionTimer.getTimer();break;
+                                            case "A1" : a1=a1+possesionTimer.getTimer();break;
+                                            case "A2" : a2=a2+possesionTimer.getTimer();break;
+                                            case "A3" : a3=a3+possesionTimer.getTimer();break;
+                                            case "A4" : a4=a4+possesionTimer.getTimer();break;
+                                        }
+                                    }
+
+                                    hh1 = h1;
+                                    hh2 = h2;
+                                    hh3 = h3;
+                                    hh4 = h4;
+                                    ha1 = a1;
+                                    ha2 = a2;
+                                    ha3 = a3;
+                                    ha4 = a4;
+                                }else
+                                {
+                                    t1.setEnabled(false);
+                                    t2.setEnabled(false);
+                                    t3.setEnabled(false);
+                                    t4.setEnabled(false);
+                                }
                                 resetCount++;
                                 break;
                             case DialogInterface.BUTTON_NEGATIVE : break;

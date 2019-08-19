@@ -214,31 +214,44 @@ public class tzlc_match_details_stats extends Fragment {
         awayColor = datasource.getClub(match.getAwayClubID()).getClubColor();
         TextView hp1 = rootView.findViewById(R.id.txtvH1);
         hp1.setTextColor(homeColor);
-        hp1.setText(""+String.format("%.2f", (((double)(stat.getHome_SOnT()/1000)/((stat.getHome_SOnT()/1000)+(stat.getAway_SOnT()/1000)))*100))+"%");
+        //hp1.setText(""+String.format("%.2f", (((double)(stat.getHome_SOnT()/1000)/((stat.getHome_SOnT()/1000)+(stat.getAway_SOnT()/1000)))*100))+"%");
+        hp1.setText(""+ (stat.getHome_SOnT()/1000)/60+":"+(stat.getHome_SOnT()/1000)%60);
         TextView ap1 = rootView.findViewById(R.id.txtvA1);
         ap1.setTextColor(awayColor);
-        ap1.setText(""+String.format("%.2f", (((double)(stat.getAway_SOnT()/1000)/((stat.getHome_SOnT()/1000)+(stat.getAway_SOnT()/1000)))*100))+"%");
+        //ap1.setText(""+String.format("%.2f", (((double)(stat.getAway_SOnT()/1000)/((stat.getHome_SOnT()/1000)+(stat.getAway_SOnT()/1000)))*100))+"%");
+        //ap1.setText(""+stat.getAway_SOnT()/1000);
+        ap1.setText(""+(stat.getAway_SOffT()%1000)/60+":"+(stat.getAway_SOffT()%1000)%60);
+
 
         TextView hp2 = rootView.findViewById(R.id.txtvH2);
         hp2.setTextColor(homeColor);
-        hp2.setText(""+String.format("%.2f", (((double)(stat.getHome_SOnT()%1000)/((stat.getHome_SOnT()%1000)+(stat.getAway_SOnT()%1000)))*100))+"%");
+        //hp2.setText(""+String.format("%.2f", (((double)(stat.getHome_SOnT()%1000)/((stat.getHome_SOnT()%1000)+(stat.getAway_SOnT()%1000)))*100))+"%");
+        hp2.setText(""+(stat.getHome_SOnT()%1000)/60+":"+(stat.getHome_SOnT()%1000)%60);
         TextView ap2 = rootView.findViewById(R.id.txtvA2);
         ap2.setTextColor(awayColor);
-        ap2.setText(""+String.format("%.2f", (((double)(stat.getAway_SOnT()%1000)/((stat.getHome_SOnT()%1000)+(stat.getAway_SOnT()%1000)))*100))+"%");
+        //ap2.setText(""+String.format("%.2f", (((double)(stat.getAway_SOnT()%1000)/((stat.getHome_SOnT()%1000)+(stat.getAway_SOnT()%1000)))*100))+"%");
+        //ap2.setText(""+stat.getAway_SOnT()%1000);
+        ap2.setText(""+(stat.getAway_SOffT()/1000)/60+":"+(stat.getAway_SOffT()/1000)%60);
 
         TextView hp3 = rootView.findViewById(R.id.txtvH3);
         hp3.setTextColor(homeColor);
-        hp3.setText(""+String.format("%.2f", (((double)(stat.getHome_SOffT()/1000)/((stat.getHome_SOffT()/1000)+(stat.getAway_SOffT()/1000)))*100))+"%");
+        //hp3.setText(""+String.format("%.2f", (((double)(stat.getHome_SOffT()/1000)/((stat.getHome_SOffT()/1000)+(stat.getAway_SOffT()/1000)))*100))+"%");
+        hp3.setText(""+(stat.getHome_SOffT()/1000)/60+":"+(stat.getHome_SOffT()/1000)%60);
         TextView ap3 = rootView.findViewById(R.id.txtvA3);
         ap3.setTextColor(awayColor);
-        ap3.setText(""+String.format("%.2f", (((double)(stat.getAway_SOffT()/1000)/((stat.getHome_SOffT()/1000)+(stat.getAway_SOffT()/1000)))*100))+"%");
+        //ap3.setText(""+String.format("%.2f", (((double)(stat.getAway_SOffT()/1000)/((stat.getHome_SOffT()/1000)+(stat.getAway_SOffT()/1000)))*100))+"%");
+        //ap3.setText(""+stat.getAway_SOffT()/1000);
+        ap3.setText(""+(stat.getAway_SOnT()%1000)/60+":"+(stat.getAway_SOnT()%1000)%60);
 
         TextView hp4 = rootView.findViewById(R.id.txtvH4);
         hp4.setTextColor(homeColor);
-        hp4.setText(""+String.format("%.2f", (((double)(stat.getHome_SOffT()%1000)/((stat.getHome_SOffT()%1000)+(stat.getAway_SOffT()%1000)))*100))+"%");
+        //hp4.setText(""+String.format("%.2f", (((double)(stat.getHome_SOffT()%1000)/((stat.getHome_SOffT()%1000)+(stat.getAway_SOffT()%1000)))*100))+"%");
+        hp4.setText(""+(stat.getHome_SOffT()%1000)/60+":"+(stat.getHome_SOffT()%1000)%60);
         TextView ap4 = rootView.findViewById(R.id.txtvA4);
         ap4.setTextColor(awayColor);
-        ap4.setText(""+String.format("%.2f", (((double)(stat.getAway_SOffT()%1000)/((stat.getHome_SOffT()%1000)+(stat.getAway_SOffT()%1000)))*100))+"%");
+        //ap4.setText(""+String.format("%.2f", (((double)(stat.getAway_SOffT()%1000)/((stat.getHome_SOffT()%1000)+(stat.getAway_SOffT()%1000)))*100))+"%");
+        //ap4.setText(""+stat.getAway_SOffT()%1000);
+        ap4.setText(""+(stat.getAway_SOnT()/1000)/60+":"+(stat.getAway_SOnT()/1000)%60);
 
         return rootView;
     }
