@@ -16,6 +16,11 @@ public class Stats {
     private int home_TCK=0;
     private int home_POP=0;
     private int home_TIME=0;
+    private int home_H1=0;
+    private int home_H2=0;
+    private int home_H3=0;
+    private int home_H4=0;
+    private int home_Passes=0;
     private int away_Score=-1;
     private int away_TI=0;
     private int away_DFK=0;
@@ -28,10 +33,53 @@ public class Stats {
     private int away_TCK=0;
     private int away_POP=0;
     private int away_TIME=0;
+    private int away_A1=0;
+    private int away_A2=0;
+    private int away_A3=0;
+    private int away_A4=0;
+    private int away_Passes=0;
 
     public Stats() {
     }
 
+    public Stats(long matchID, int matchTime, int home_Score, int home_TI, int home_DFK, int home_SOnT, int home_SOffT, int home_GK, int home_OFF, int home_LC, int home_COR, int home_TCK, int home_POP, int home_TIME, int home_H1, int home_H2, int home_H3, int home_H4, int home_Passes, int away_Score, int away_TI, int away_DFK, int away_SOnT, int away_SOffT, int away_GK, int away_OFF, int away_LC, int away_COR, int away_TCK, int away_POP, int away_TIME, int away_A1, int away_A2, int away_A3, int away_A4, int away_Passes) {
+        this.matchID = matchID;
+        this.matchTime = matchTime;
+        this.home_Score = home_Score;
+        this.home_TI = home_TI;
+        this.home_DFK = home_DFK;
+        this.home_SOnT = home_SOnT;
+        this.home_SOffT = home_SOffT;
+        this.home_GK = home_GK;
+        this.home_OFF = home_OFF;
+        this.home_LC = home_LC;
+        this.home_COR = home_COR;
+        this.home_TCK = home_TCK;
+        this.home_POP = home_POP;
+        this.home_TIME = home_TIME;
+        this.home_H1 = home_H1;
+        this.home_H2 = home_H2;
+        this.home_H3 = home_H3;
+        this.home_H4 = home_H4;
+        this.home_Passes = home_Passes;
+        this.away_Score = away_Score;
+        this.away_TI = away_TI;
+        this.away_DFK = away_DFK;
+        this.away_SOnT = away_SOnT;
+        this.away_SOffT = away_SOffT;
+        this.away_GK = away_GK;
+        this.away_OFF = away_OFF;
+        this.away_LC = away_LC;
+        this.away_COR = away_COR;
+        this.away_TCK = away_TCK;
+        this.away_POP = away_POP;
+        this.away_TIME = away_TIME;
+        this.away_A1 = away_A1;
+        this.away_A2 = away_A2;
+        this.away_A3 = away_A3;
+        this.away_A4 = away_A4;
+        this.away_Passes = away_Passes;
+    }
 
     public Stats(long matchID, int matchTime, int home_Score, int home_TI, int home_DFK, int home_SOnT, int home_SOffT, int home_GK, int home_OFF, int home_LC, int home_COR, int home_TCK, int home_POP, int home_TIME, int away_Score, int away_TI, int away_DFK, int away_SOnT, int away_SOffT, int away_GK, int away_OFF, int away_LC, int away_COR, int away_TCK, int away_POP, int away_TIME) {
         this.matchID = matchID;
@@ -60,6 +108,22 @@ public class Stats {
         this.away_TCK = away_TCK;
         this.away_POP = away_POP;
         this.away_TIME = away_TIME;
+    }
+
+    public int getHome_Passes() {
+        return home_Passes;
+    }
+
+    public void setHome_Passes(int home_Passes) {
+        this.home_Passes = home_Passes;
+    }
+
+    public int getAway_Passes() {
+        return away_Passes;
+    }
+
+    public void setAway_Passes(int away_Passes) {
+        this.away_Passes = away_Passes;
     }
 
     public long getId() {
@@ -276,5 +340,68 @@ public class Stats {
 
     public void setAway_TIME(int away_TIME) {
         this.away_TIME = away_TIME;
+    }
+
+    public int getHome_H1() { return home_H1;
+    }
+
+    public void setHome_H1(int home_H1) {
+        this.home_H1 = home_H1;
+    }
+
+    public int getHome_H2() {
+        return home_H2;
+    }
+
+    public void setHome_H2(int home_H2) {
+        this.home_H2 = home_H2;
+    }
+
+    public int getHome_H3() {
+        return home_H3;
+    }
+
+    public void setHome_H3(int home_H3) {
+        this.home_H3 = home_H3;
+    }
+
+    public int getHome_H4() {
+        return home_H4;
+    }
+
+    public void setHome_H4(int home_H4) {
+        this.home_H4 = home_H4;
+    }
+
+    public int getAway_A1() {
+        return away_A1;
+    }
+
+    public void setAway_A1(int away_A1) {
+        this.away_A1 = away_A1;
+    }
+
+    public int getAway_A2() {
+        return away_A2;
+    }
+
+    public void setAway_A2(int away_A2) {
+        this.away_A2 = away_A2;
+    }
+
+    public int getAway_A3() {
+        return away_A3;
+    }
+
+    public void setAway_A3(int away_A3) {
+        this.away_A3 = away_A3;
+    }
+
+    public int getAway_A4() {
+        return away_A4;
+    }
+
+    public void setAway_A4(int away_A4) {
+        this.away_A4 = away_A4;
     }
 }

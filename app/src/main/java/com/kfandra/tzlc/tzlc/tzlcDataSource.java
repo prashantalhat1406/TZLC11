@@ -1396,6 +1396,11 @@ public class tzlcDataSource
         value.put(tzlcDBContract.StatDB.COLUMN_HOME_TCK, stat.getHome_TCK());
         value.put(tzlcDBContract.StatDB.COLUMN_HOME_POP, stat.getHome_POP());
         value.put(tzlcDBContract.StatDB.COLUMN_HOME_TIME, stat.getHome_TIME());
+        value.put(tzlcDBContract.StatDB.COLUMN_HOME_H1, stat.getHome_H1());
+        value.put(tzlcDBContract.StatDB.COLUMN_HOME_H2, stat.getHome_H2());
+        value.put(tzlcDBContract.StatDB.COLUMN_HOME_H3, stat.getHome_H3());
+        value.put(tzlcDBContract.StatDB.COLUMN_HOME_H4, stat.getHome_H4());
+        value.put(tzlcDBContract.StatDB.COLUMN_HOME_PASSES, stat.getHome_Passes());
         value.put(tzlcDBContract.StatDB.COLUMN_AWAY_SCORE, stat.getAway_Score());
         value.put(tzlcDBContract.StatDB.COLUMN_AWAY_TI, stat.getAway_TI());
         value.put(tzlcDBContract.StatDB.COLUMN_AWAY_DFK, stat.getAway_DFK());
@@ -1408,7 +1413,11 @@ public class tzlcDataSource
         value.put(tzlcDBContract.StatDB.COLUMN_AWAY_TCK, stat.getAway_TCK());
         value.put(tzlcDBContract.StatDB.COLUMN_AWAY_POP, stat.getAway_POP());
         value.put(tzlcDBContract.StatDB.COLUMN_AWAY_TIME, stat.getAway_TIME());
-
+        value.put(tzlcDBContract.StatDB.COLUMN_AWAY_A1, stat.getAway_A1());
+        value.put(tzlcDBContract.StatDB.COLUMN_AWAY_A2, stat.getAway_A2());
+        value.put(tzlcDBContract.StatDB.COLUMN_AWAY_A3, stat.getAway_A3());
+        value.put(tzlcDBContract.StatDB.COLUMN_AWAY_A4, stat.getAway_A4());
+        value.put(tzlcDBContract.StatDB.COLUMN_AWAY_PASSES, stat.getAway_Passes());
         return  value;
     }
 
@@ -1450,6 +1459,11 @@ public class tzlcDataSource
                         cursor.getInt(cursor.getColumnIndex(tzlcDBContract.StatDB.COLUMN_HOME_TCK)),
                         cursor.getInt(cursor.getColumnIndex(tzlcDBContract.StatDB.COLUMN_HOME_POP)),
                         cursor.getInt(cursor.getColumnIndex(tzlcDBContract.StatDB.COLUMN_HOME_TIME)),
+                        cursor.getInt(cursor.getColumnIndex(tzlcDBContract.StatDB.COLUMN_HOME_H1)),
+                        cursor.getInt(cursor.getColumnIndex(tzlcDBContract.StatDB.COLUMN_HOME_H2)),
+                        cursor.getInt(cursor.getColumnIndex(tzlcDBContract.StatDB.COLUMN_HOME_H3)),
+                        cursor.getInt(cursor.getColumnIndex(tzlcDBContract.StatDB.COLUMN_HOME_H4)),
+                        cursor.getInt(cursor.getColumnIndex(tzlcDBContract.StatDB.COLUMN_HOME_PASSES)),
                         cursor.getInt(cursor.getColumnIndex(tzlcDBContract.StatDB.COLUMN_AWAY_SCORE)),
                         cursor.getInt(cursor.getColumnIndex(tzlcDBContract.StatDB.COLUMN_AWAY_TI)),
                         cursor.getInt(cursor.getColumnIndex(tzlcDBContract.StatDB.COLUMN_AWAY_DFK)),
@@ -1461,7 +1475,12 @@ public class tzlcDataSource
                         cursor.getInt(cursor.getColumnIndex(tzlcDBContract.StatDB.COLUMN_AWAY_COR)),
                         cursor.getInt(cursor.getColumnIndex(tzlcDBContract.StatDB.COLUMN_AWAY_TCK)),
                         cursor.getInt(cursor.getColumnIndex(tzlcDBContract.StatDB.COLUMN_AWAY_POP)),
-                        cursor.getInt(cursor.getColumnIndex(tzlcDBContract.StatDB.COLUMN_AWAY_TIME))
+                        cursor.getInt(cursor.getColumnIndex(tzlcDBContract.StatDB.COLUMN_AWAY_TIME)),
+                        cursor.getInt(cursor.getColumnIndex(tzlcDBContract.StatDB.COLUMN_AWAY_A1)),
+                        cursor.getInt(cursor.getColumnIndex(tzlcDBContract.StatDB.COLUMN_AWAY_A2)),
+                        cursor.getInt(cursor.getColumnIndex(tzlcDBContract.StatDB.COLUMN_AWAY_A3)),
+                        cursor.getInt(cursor.getColumnIndex(tzlcDBContract.StatDB.COLUMN_AWAY_A4)),
+                        cursor.getInt(cursor.getColumnIndex(tzlcDBContract.StatDB.COLUMN_AWAY_PASSES))
                 );
                 stat.setId(cursor.getLong((cursor.getColumnIndex(tzlcDBContract.StatDB._ID))));
                 Log.d(tzlcDataSource.class.getSimpleName(), "Stat  Fetched " +stat.getMatchID());
