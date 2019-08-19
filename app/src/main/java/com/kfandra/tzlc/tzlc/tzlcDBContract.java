@@ -195,6 +195,11 @@ public class tzlcDBContract{
                     StatDB.COLUMN_HOME_TCK + " INTEGER NOT NULL, " +
                     StatDB.COLUMN_HOME_POP + " INTEGER NOT NULL, " +
                     StatDB.COLUMN_HOME_TIME + " INTEGER NOT NULL, " +
+                    StatDB.COLUMN_HOME_H1 + " INTEGER NOT NULL, " +
+                    StatDB.COLUMN_HOME_H2 + " INTEGER NOT NULL, " +
+                    StatDB.COLUMN_HOME_H3 + " INTEGER NOT NULL, " +
+                    StatDB.COLUMN_HOME_H4 + " INTEGER NOT NULL, " +
+                    StatDB.COLUMN_HOME_PASSES + " INTEGER NOT NULL, " +
                     StatDB.COLUMN_AWAY_SCORE + " INTEGER NOT NULL, " +
                     StatDB.COLUMN_AWAY_TI + " INTEGER NOT NULL, " +
                     StatDB.COLUMN_AWAY_DFK + " INTEGER NOT NULL, " +
@@ -207,6 +212,11 @@ public class tzlcDBContract{
                     StatDB.COLUMN_AWAY_TCK + " INTEGER NOT NULL, " +
                     StatDB.COLUMN_AWAY_POP + " INTEGER NOT NULL, " +
                     StatDB.COLUMN_AWAY_TIME + " INTEGER NOT NULL, " +
+                    StatDB.COLUMN_AWAY_A1 + " INTEGER NOT NULL, " +
+                    StatDB.COLUMN_AWAY_A2 + " INTEGER NOT NULL, " +
+                    StatDB.COLUMN_AWAY_A3 + " INTEGER NOT NULL, " +
+                    StatDB.COLUMN_AWAY_A4 + " INTEGER NOT NULL, " +
+                    StatDB.COLUMN_AWAY_PASSES + " INTEGER NOT NULL, " +
                     "UNIQUE ( " + StatDB._ID + " ) ON CONFLICT REPLACE )";
 
     public static class StatDB implements BaseColumns
@@ -226,6 +236,11 @@ public class tzlcDBContract{
         public static final String COLUMN_HOME_TCK = "home_tck";
         public static final String COLUMN_HOME_POP = "home_pop";
         public static final String COLUMN_HOME_TIME = "home_time";
+        public static final String COLUMN_HOME_H1 = "home_h1";
+        public static final String COLUMN_HOME_H2 = "home_h2";
+        public static final String COLUMN_HOME_H3 = "home_h3";
+        public static final String COLUMN_HOME_H4 = "home_h4";
+        public static final String COLUMN_HOME_PASSES = "home_passes";
         public static final String COLUMN_AWAY_SCORE = "away_score";
         public static final String COLUMN_AWAY_TI = "away_ti";
         public static final String COLUMN_AWAY_DFK = "away_dfk";
@@ -238,6 +253,11 @@ public class tzlcDBContract{
         public static final String COLUMN_AWAY_TCK = "away_tck";
         public static final String COLUMN_AWAY_POP = "away_pop";
         public static final String COLUMN_AWAY_TIME = "away_time";
+        public static final String COLUMN_AWAY_A1 = "away_a1";
+        public static final String COLUMN_AWAY_A2 = "away_a2";
+        public static final String COLUMN_AWAY_A3 = "away_a3";
+        public static final String COLUMN_AWAY_A4 = "away_a4";
+        public static final String COLUMN_AWAY_PASSES = "away_passes";
     }
 
     static final String CREATE_HIGHLIGHT_TABLE =

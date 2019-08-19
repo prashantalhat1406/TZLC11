@@ -8,7 +8,7 @@
     tools:context=".tzlc_highlight_display" android:orientation="vertical"
     tools:showIn="@layout/activity_tzlc_highlight_display">
 
-    <LinearLayout android:layout_weight="0.88"
+    <!--<LinearLayout android:layout_weight="0.88"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal" android:layout_marginTop="5dp"
@@ -50,15 +50,8 @@
             android:layout_gravity="center"
             android:gravity="center"/>
 
-        <!--<TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.2"
-            android:text="Highlight2"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:gravity="center"/>-->
-    </LinearLayout>
+
+    </LinearLayout> -->
 
     <ListView android:layout_weight="0.12"
         android:id="@+id/displayHighlightList"

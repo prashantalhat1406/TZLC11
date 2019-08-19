@@ -16,11 +16,9 @@
         android:background="@android:color/darker_gray"/>
 
 
-    <LinearLayout android:layout_weight="0.75"
-        android:id="@+id/statH1"
+    <LinearLayout android:layout_weight="0.86" android:id="@+id/statH1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         android:orientation="horizontal">
 
         <LinearLayout
@@ -37,13 +35,13 @@
                 android:gravity="center" android:textStyle="bold"
                 android:text="Home" />
 
-            <TextView
+            <!--<TextView
                 android:id="@+id/matchDetailsHomeScore"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
                 android:gravity="center"
-                android:text="Score" />
+                android:text="Score" /> -->
 
             <!--<TextView
                 android:id="@+id/matchDetailsHomePossession"
@@ -59,7 +57,7 @@
             android:layout_height="match_parent"
             android:background="@android:color/darker_gray"/>
 
-        <LinearLayout
+        <!-- <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.3"
@@ -80,13 +78,13 @@
                 android:gravity="center"
                 android:text="Score" />
 
-            <!--<TextView
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
                 android:gravity="center"
-                android:text="Passes [Failed]" />-->
-        </LinearLayout>
+                android:text="Passes [Failed]" />
+        </LinearLayout> -->
 
         <View
             android:layout_width="1dp"
@@ -105,15 +103,15 @@
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
                 android:gravity="center" android:textStyle="bold"
-                android:text="Home" />
+                android:text="Away" />
 
-            <TextView
+            <!--<TextView
                 android:id="@+id/matchDetailsAwayScore"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
                 android:gravity="center"
-                android:text="Score" />
+                android:text="Score" />-->
 
             <!--<TextView
                 android:id="@+id/matchDetailsAwayPossession"
@@ -131,13 +129,13 @@
         android:layout_height="1dp"
         android:background="@android:color/darker_gray"/>
 
-    <LinearLayout  android:layout_weight="0.7"
-        android:layout_width="match_parent" android:orientation="vertical" android:id="@+id/layoutPossessionStats"
+    <LinearLayout  android:layout_weight="0.8" android:id="@+id/layoutPossessionStats"
+        android:layout_width="match_parent" android:orientation="vertical"
         android:layout_height="match_parent" >
 
         <TextView
             android:layout_width="match_parent" android:layout_weight="0.51" android:gravity="center"
-            android:layout_height="match_parent" android:text="Possession Stats"/>
+            android:layout_height="match_parent" android:text="Possession"/>
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -208,8 +206,18 @@
         android:layout_height="1dp"
         android:background="@android:color/darker_gray"/>
 
-    <LinearLayout android:layout_weight="0.6"
-        android:id="@+id/layoutGoals"
+    <LinearLayout android:layout_weight="0.66" android:id="@+id/layoutFormation"
+        android:layout_width="match_parent" android:orientation="horizontal"
+        android:layout_height="match_parent" >
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <LinearLayout android:layout_weight="0.7" android:id="@+id/layoutGoals"
         android:layout_width="match_parent" android:orientation="horizontal"
         android:layout_height="match_parent" >
 
@@ -260,9 +268,7 @@
         android:layout_height="1dp"
         android:background="@android:color/darker_gray"/>
 
-    <LinearLayout android:layout_weight="0.5"
-
-        android:id="@+id/layoutStats"
+    <LinearLayout android:layout_weight="0.6" android:id="@+id/layoutStats"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="5dp"
@@ -563,6 +569,5 @@
         </LinearLayout>
 
     </LinearLayout>
-
 
 </LinearLayout>
