@@ -544,9 +544,6 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked)
                 {
-                    possesionTimers.add( new possesionTimer("H1",matchTime));
-                    t1.setTextOn(homeClubName);
-                    t1.setTextColor(homeColor);
 
                     t2.setText("");
                     t2.setTextOff("");
@@ -557,12 +554,17 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     t4.setText("");
                     t4.setTextOff("");
                     t4.setTextOn("");
+                    t2.setChecked(false);
+                    t3.setChecked(false);
+                    t4.setChecked(false);
+
+                    possesionTimers.add( new possesionTimer("H1",matchTime));
+                    t1.setTextOn(homeClubName);
+                    t1.setTextColor(homeColor);
                 }
                 else
                 {
-                    possesionTimers.add( new possesionTimer("A1",matchTime));
-                    t1.setTextOff(awayClubName);
-                    t1.setTextColor(awayColor);
+
                     t2.setText("");
                     t2.setTextOff("");
                     t2.setTextOn("");
@@ -572,7 +574,15 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     t4.setText("");
                     t4.setTextOff("");
                     t4.setTextOn("");
+                    t2.setChecked(false);
+                    t3.setChecked(false);
+                    t4.setChecked(false);
+
+                    possesionTimers.add( new possesionTimer("A1",matchTime));
+                    t1.setTextOff(awayClubName);
+                    t1.setTextColor(awayColor);
                 }
+
             }
         });
 
@@ -584,10 +594,27 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked)
                 {
+                    t1.setText("");
+                    t1.setTextOff("");
+                    t1.setTextOn("");
+                    t3.setText("");
+                    t3.setTextOff("");
+                    t3.setTextOn("");
+                    t4.setText("");
+                    t4.setTextOff("");
+                    t4.setTextOn("");
+                    t1.setChecked(false);
+                    t3.setChecked(false);
+                    t4.setChecked(false);
+
                     possesionTimers.add( new possesionTimer("H2",matchTime));
                     t2.setTextOn(homeClubName);
                     t2.setTextColor(homeColor);
 
+
+                }
+                else
+                {
                     t1.setText("");
                     t1.setTextOff("");
                     t1.setTextOn("");
@@ -597,23 +624,17 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     t4.setText("");
                     t4.setTextOff("");
                     t4.setTextOn("");
-                }
-                else
-                {
+                    t1.setChecked(false);
+                    t3.setChecked(false);
+                    t4.setChecked(false);
+
                     possesionTimers.add( new possesionTimer("A2",matchTime));
                     t2.setTextOff(awayClubName);
                     t2.setTextColor(awayColor);
 
-                    t1.setText("");
-                    t1.setTextOff("");
-                    t1.setTextOn("");
-                    t3.setText("");
-                    t3.setTextOff("");
-                    t3.setTextOn("");
-                    t4.setText("");
-                    t4.setTextOff("");
-                    t4.setTextOn("");
+
                 }
+
             }
         });
 
@@ -625,24 +646,27 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked)
                 {
+
+                    t1.setText("");
+                    t1.setTextOff("");
+                    t1.setTextOn("");
+                    t2.setText("");
+                    t2.setTextOff("");
+                    t2.setTextOn("");
+                    t4.setText("");
+                    t4.setTextOff("");
+                    t4.setTextOn("");
+                    t1.setChecked(false);
+                    t2.setChecked(false);
+                    t4.setChecked(false);
+
                     possesionTimers.add( new possesionTimer("H3",matchTime));
                     t3.setTextOn(homeClubName);
                     t3.setTextColor(homeColor);
-                    t1.setText("");
-                    t1.setTextOff("");
-                    t1.setTextOn("");
-                    t2.setText("");
-                    t2.setTextOff("");
-                    t2.setTextOn("");
-                    t4.setText("");
-                    t4.setTextOff("");
-                    t4.setTextOn("");
                 }
                 else
                 {
-                    possesionTimers.add( new possesionTimer("A3",matchTime));
-                    t3.setTextOff(awayClubName);
-                    t3.setTextColor(awayColor);
+
                     t1.setText("");
                     t1.setTextOff("");
                     t1.setTextOn("");
@@ -652,7 +676,15 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     t4.setText("");
                     t4.setTextOff("");
                     t4.setTextOn("");
+                    t1.setChecked(false);
+                    t2.setChecked(false);
+                    t4.setChecked(false);
+
+                    possesionTimers.add( new possesionTimer("A3",matchTime));
+                    t3.setTextOff(awayClubName);
+                    t3.setTextColor(awayColor);
                 }
+
             }
         });
 
@@ -664,24 +696,27 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked)
                 {
+
+                    t1.setText("");
+                    t1.setTextOff("");
+                    t1.setTextOn("");
+                    t2.setText("");
+                    t2.setTextOff("");
+                    t2.setTextOn("");
+                    t3.setText("");
+                    t3.setTextOff("");
+                    t3.setTextOn("");
+                    t1.setChecked(false);
+                    t2.setChecked(false);
+                    t3.setChecked(false);
+
                     possesionTimers.add( new possesionTimer("H4",matchTime));
                     t4.setTextOn(homeClubName);
                     t4.setTextColor(homeColor);
-                    t1.setText("");
-                    t1.setTextOff("");
-                    t1.setTextOn("");
-                    t2.setText("");
-                    t2.setTextOff("");
-                    t2.setTextOn("");
-                    t3.setText("");
-                    t3.setTextOff("");
-                    t3.setTextOn("");
                 }
                 else
                 {
-                    possesionTimers.add( new possesionTimer("A4",matchTime));
-                    t4.setTextOff(awayClubName);
-                    t4.setTextColor(awayColor);
+
                     t1.setText("");
                     t1.setTextOff("");
                     t1.setTextOn("");
@@ -691,7 +726,15 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     t3.setText("");
                     t3.setTextOff("");
                     t3.setTextOn("");
+                    t1.setChecked(false);
+                    t2.setChecked(false);
+                    t3.setChecked(false);
+
+                    possesionTimers.add( new possesionTimer("A4",matchTime));
+                    t4.setTextOff(awayClubName);
+                    t4.setTextColor(awayColor);
                 }
+
             }
         });
 
