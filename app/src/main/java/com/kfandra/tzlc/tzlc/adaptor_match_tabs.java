@@ -24,7 +24,7 @@ public class adaptor_match_tabs extends FragmentStatePagerAdapter {
             case 3: tzlc_match_details_cards t4 = new tzlc_match_details_cards(); return t4;
             case 4: tzlc_match_details_mo t5 = new tzlc_match_details_mo(); return t5;
             case 5: tzlc_match_details_highlights t6 = new tzlc_match_details_highlights(); return t6;
-            case 6: tzlc_match_details_subs t7 = new tzlc_match_details_subs(); return t7;
+            case 6: tzlc_match_details_squad t7 = new tzlc_match_details_squad(); return t7;
             default : return null;
         }
     }

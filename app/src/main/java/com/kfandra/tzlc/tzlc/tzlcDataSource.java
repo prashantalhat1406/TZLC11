@@ -1571,7 +1571,7 @@ public class tzlcDataSource
 
                 );
                 squad.setId(cursor.getLong((cursor.getColumnIndex(tzlcDBContract.SquadDB._ID))));
-                Log.d(tzlcDataSource.class.getSimpleName(), "Squad Fetched ");
+                Log.d(tzlcDataSource.class.getSimpleName(), "squad Fetched ");
                 squads.add(squad);
             }
         }
@@ -1586,7 +1586,7 @@ public class tzlcDataSource
         ContentValues value = createContentForSquad(squad);
 
         long rowID =  database.insert(tzlcDBContract.SquadDB.TABLE_NAME,null, value);
-        Log.d(tzlcDataSource.class.getSimpleName(), "Squad added " + rowID);
+        Log.d(tzlcDataSource.class.getSimpleName(), "squad added " + rowID);
     }
 
     public List<Squad> getAllSquadForMatch(long matchID)    {
