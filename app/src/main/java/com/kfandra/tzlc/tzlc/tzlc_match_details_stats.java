@@ -125,19 +125,19 @@ public class tzlc_match_details_stats extends Fragment {
 
 
         TextView homeClub = rootView.findViewById(R.id.matchDetailsHomeClub);
-        homeClub.setText("" + datasource.getClub(match.getHomeClubID()).getClubName());
+        homeClub.setText("" + datasource.getClub(match.getHomeClubID()).getClubName()+"     ("+htHome+") "+stat.getHome_Score());
         homeClub.setTextSize(16);
         homeClub.setTextColor(datasource.getClub(match.getHomeClubID()).getClubColor());
         TextView awayClub = rootView.findViewById(R.id.matchDetailsAwayClub);
-        awayClub.setText("" + datasource.getClub(match.getAwayClubID()).getClubName());
+        awayClub.setText("" + datasource.getClub(match.getAwayClubID()).getClubName()+"     ("+htAway+") "+stat.getAway_Score());
         awayClub.setTextSize(16);
         awayClub.setTextColor(datasource.getClub(match.getAwayClubID()).getClubColor());
-        TextView matchtype = rootView.findViewById(R.id.matchDetailsMatchType);
-        ArrayAdapter<CharSequence> adapterMatchSubType = ArrayAdapter.createFromResource(getContext(), R.array.matchTypeShort, android.R.layout.simple_spinner_item);
-        matchtype.setText("" + adapterMatchSubType.getItem(match.getType()));
+        //TextView matchtype = rootView.findViewById(R.id.matchDetailsMatchType);
+        //ArrayAdapter<CharSequence> adapterMatchSubType = ArrayAdapter.createFromResource(getContext(), R.array.matchTypeShort, android.R.layout.simple_spinner_item);
+        //matchtype.setText("" + adapterMatchSubType.getItem(match.getType()));
 
-        TextView homeClubScore = rootView.findViewById(R.id.matchDetailsHomeScore);
-        homeClubScore.setText("("+htHome+") "+stat.getHome_Score());
+        //TextView homeClubScore = rootView.findViewById(R.id.matchDetailsHomeScore);
+        //homeClubScore.setText("("+htHome+") "+stat.getHome_Score());
         //homeClubScore.setText(""+homeTotalGoals);
         //TextView homeClubPossession = rootView.findViewById(R.id.matchDetailsHomePossession);
         //homeClubPossession.setText(""+String.format("%.2f", (((double)stat.getHome_TIME()/(stat.getHome_TIME()+stat.getAway_TIME()))*100))+"%");
@@ -172,8 +172,8 @@ public class tzlc_match_details_stats extends Fragment {
         homeClubPOP.setText(""+(stat.getHome_POP()+stat.getHome_TCK())+" [ "+stat.getHome_POP()+ " ]");
 
 
-        TextView awayClubScore = rootView.findViewById(R.id.matchDetailsAwayScore);
-        awayClubScore.setText("("+htAway+") "+stat.getAway_Score());
+        //TextView awayClubScore = rootView.findViewById(R.id.matchDetailsAwayScore);
+        //awayClubScore.setText("("+htAway+") "+stat.getAway_Score());
         //awayClubScore.setText(""+awayTotalGoals);
         //TextView awayClubPossession = rootView.findViewById(R.id.matchDetailsAwayPossession);
         //awayClubPossession.setText(""+String.format("%.2f", (((double)stat.getAway_TIME()/(stat.getHome_TIME()+stat.getAway_TIME()))*100))+"%");
