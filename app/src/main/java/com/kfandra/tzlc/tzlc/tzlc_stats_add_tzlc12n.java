@@ -1237,20 +1237,18 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                                 stat.setAway_TIME((stat.getAway_TIME()*1000)+completedPassesAway);
                                 stat.setHome_Score(Integer.parseInt(homeScore.getText().toString()));
                                 stat.setAway_Score(Integer.parseInt(awayScore.getText().toString()));
-                                /*Collections.sort(possesionTimers, new Comparator<possesionTimer>() {
-                                    @Override
-                                    public int compare(possesionTimer o1, possesionTimer o2) {
-                                        return o1.getLocation().compareTo(o2.getLocation());
-                                    }
-                                });*/
                                 possesionTimers.add(new possesionTimer(lastPossession, matchTime));
                                 List<possesionTimer> finalTime = new ArrayList<possesionTimer>();
                                 int i =0;
                                 for(i = 0; i<(possesionTimers.size()-1);i++)
                                 {
-                                    finalTime.add(new possesionTimer(possesionTimers.get(i).getLocation(), possesionTimers.get(i+1).getTimer()-possesionTimers.get(i).getTimer()));
+                                    if(possesionTimers.get(i+1).getTimer() < possesionTimers.get(i).getTimer())
+                                        finalTime.add(new possesionTimer(possesionTimers.get(i).getLocation(), 0));
+                                    else
+                                        finalTime.add(new possesionTimer(possesionTimers.get(i).getLocation(), possesionTimers.get(i+1).getTimer()-possesionTimers.get(i).getTimer()));
                                 }
-                                finalTime.add(new possesionTimer(possesionTimers.get(i).getLocation(), matchTime-possesionTimers.get(i).getTimer()));
+
+                                h1=0;h2=0;h3=0;h4=0;a1=0;a2=0;a3=0;a4=0;
 
                                 for (possesionTimer possesionTimer : finalTime) {
                                     Log.d(tzlc_stats_add_tzlc12n.class.getSimpleName(), ""+possesionTimer.getLocation()+" :: " + possesionTimer.getTimer());
@@ -1266,15 +1264,15 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                                         case "A4" : a4=a4+possesionTimer.getTimer();break;
                                     }
                                 }
-                                stat.setHome_H1(h1+hh1);
-                                stat.setHome_H2(h2+hh2);
-                                stat.setHome_H3(h3+hh3);
-                                stat.setHome_H4(h4+hh4);
+                                stat.setHome_H1(h1);
+                                stat.setHome_H2(h2);
+                                stat.setHome_H3(h3);
+                                stat.setHome_H4(h4);
 
-                                stat.setAway_A1(a1+ha1);
-                                stat.setAway_A2(a2+ha2);
-                                stat.setAway_A3(a3+ha3);
-                                stat.setAway_A4(a4+ha4);
+                                stat.setAway_A1(a1);
+                                stat.setAway_A2(a2);
+                                stat.setAway_A3(a3);
+                                stat.setAway_A4(a4);
 
                                 datasource.addStats(stat);
 
@@ -1323,10 +1321,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                                     halftime = 2700;
                                 halftime=0;
                                 String resetReason [] = getResources().getStringArray(R.array.resetTime);
-                                Highlight highlight = new Highlight(matchID,-1 , -300,
-                                        matchTime,
-                                        resetReason[resetCount],
-                                        "--NA--");
+                                Highlight highlight = new Highlight(matchID,-1 , matchTime,0 , resetReason[resetCount],"--NA--");
                                 datasource.addHighlight(highlight);
 
 
@@ -1334,14 +1329,13 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                                 if(resetCount ==0 )
                                 {
                                     possesionTimers.add(new possesionTimer(lastPossession, matchTime));
-
                                     List<possesionTimer> finalTime = new ArrayList<possesionTimer>();
                                     int i =0;
                                     for(i = 0; i<(possesionTimers.size()-1);i++)
                                     {
                                         finalTime.add(new possesionTimer(possesionTimers.get(i).getLocation(), possesionTimers.get(i+1).getTimer()-possesionTimers.get(i).getTimer()));
                                     }
-                                    finalTime.add(new possesionTimer(possesionTimers.get(i).getLocation(), matchTime-possesionTimers.get(i).getTimer()));
+
 
                                     for (possesionTimer possesionTimer : finalTime) {
                                         Log.d(tzlc_stats_add_tzlc12n.class.getSimpleName(), ""+possesionTimer.getLocation()+" :: " + possesionTimer.getTimer());
