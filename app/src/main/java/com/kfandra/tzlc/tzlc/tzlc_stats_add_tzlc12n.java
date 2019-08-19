@@ -1243,6 +1243,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                                         return o1.getLocation().compareTo(o2.getLocation());
                                     }
                                 });*/
+                                possesionTimers.add(new possesionTimer(lastPossession, matchTime));
                                 List<possesionTimer> finalTime = new ArrayList<possesionTimer>();
                                 int i =0;
                                 for(i = 0; i<(possesionTimers.size()-1);i++)
@@ -1265,6 +1266,27 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                                         case "A4" : a4=a4+possesionTimer.getTimer();break;
                                     }
                                 }
+                                stat.setHome_H1(h1+hh1);
+                                stat.setHome_H2(h2+hh2);
+                                stat.setHome_H3(h3+hh3);
+                                stat.setHome_H4(h4+hh4);
+
+                                stat.setAway_A1(a1+ha1);
+                                stat.setAway_A2(a2+ha2);
+                                stat.setAway_A3(a3+ha3);
+                                stat.setAway_A4(a4+ha4);
+
+                                /*stat.setHome_H1((h1*1000)+hh1);
+                                stat.setHome_H2((h2*1000)+hh2);
+                                stat.setHome_H3((h3*1000)+hh3);
+                                stat.setHome_H4((h4*1000)+hh4);
+
+                                stat.setAway_A1((a1*1000)+ha1);
+                                stat.setAway_A2((a2*1000)+ha2);
+                                stat.setAway_A3((a3*1000)+ha3);
+                                stat.setAway_A4((a4*1000)+ha4);*/
+
+
                                 stat.setHome_SOnT(((h1+hh1)*1000)+(h2+hh2));
                                 stat.setHome_SOffT(((h3+hh3)*1000)+(h4+hh4));
                                 stat.setAway_SOnT(((a1+ha1)*1000)+(a2+ha2));
