@@ -1075,6 +1075,22 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed() {
+        DialogInterface.OnClickListener dialog = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which)
+                {
+                    case DialogInterface.BUTTON_POSITIVE : break;
+                    case DialogInterface.BUTTON_NEGATIVE : break;
+                }
+            }
+        };
+        AlertDialog.Builder builder = new AlertDialog.Builder(tzlc_stats_add_tzlc12n.this);
+        builder.setMessage("Please save Stats to exit this screen !!").setPositiveButton("Ok",dialog).show();
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
