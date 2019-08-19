@@ -14,7 +14,7 @@
                 android:layout_width="match_parent" android:layout_weight="0.8"
                 android:layout_height="match_parent" android:orientation="vertical">
                 <TextView android:id="@+id/HLClub"
-                    android:layout_width="match_parent" android:gravity="center" android:layout_weight="0.4" android:textSize="@dimen/listThirdLine" android:textColor="@color/Black"
+                    android:layout_width="match_parent" android:gravity="center" android:layout_weight="0.4" android:textSize="@dimen/tzlcTextSize" android:textColor="@color/Black"
                     android:layout_height="match_parent" android:text="MR" android:layout_gravity="center_horizontal" />
             </LinearLayout>
 
@@ -22,7 +22,7 @@
                 android:layout_width="match_parent" android:layout_weight="0.8"
                 android:layout_height="match_parent" android:orientation="vertical">
                 <TextView android:id="@+id/HLTime"
-                    android:layout_width="match_parent" android:gravity="center" android:layout_weight="0.4" android:textSize="@dimen/listThirdLine" android:textColor="@color/Black"
+                    android:layout_width="match_parent" android:gravity="center" android:layout_weight="0.4" android:textSize="@dimen/tzlcTextSize" android:textColor="@color/Black"
                     android:layout_height="match_parent" android:text="22:30" android:layout_gravity="center_horizontal" />
             </LinearLayout>
 
@@ -30,7 +30,7 @@
                 android:layout_width="match_parent" android:layout_weight="0.7"
                 android:layout_height="match_parent" android:orientation="vertical">
                 <TextView android:id="@+id/HLEvent"
-                    android:layout_width="match_parent" android:gravity="center" android:layout_weight="0.4" android:textSize="@dimen/listThirdLine" android:textColor="@color/Black"
+                    android:layout_width="match_parent" android:gravity="center" android:layout_weight="0.4" android:textSize="@dimen/tzlcTextSize" android:textColor="@color/Black"
                     android:layout_height="match_parent" android:text="GOAL" android:layout_gravity="center_horizontal" />
             </LinearLayout>
 
@@ -38,7 +38,7 @@
                 android:layout_width="match_parent" android:orientation="vertical" android:layout_weight="0.4"
                 android:layout_height="match_parent">
                 <TextView android:id="@+id/HLDetail"
-                    android:layout_width="match_parent" android:gravity="center" android:layout_weight="0.5" android:textSize="@dimen/listThirdLine" android:textColor="@color/Black"
+                    android:layout_width="match_parent" android:gravity="center" android:layout_weight="0.5" android:textSize="@dimen/tzlcTextSize" android:textColor="@color/Black"
                     android:layout_height="match_parent" android:text="CLM, NCL" />
             </LinearLayout>
         </LinearLayout>
