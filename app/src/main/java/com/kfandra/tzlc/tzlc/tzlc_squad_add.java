@@ -26,9 +26,6 @@ public class tzlc_squad_add extends AppCompatActivity {
     private long matchID;
     Match m;
     private ListView homeList, awayList;
-    private List<Squad> playingPlayersHome, playingPlayersAway;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +42,6 @@ public class tzlc_squad_add extends AppCompatActivity {
 
         m = new Match();
         m = datasource.getMatch(matchID);
-
-        playingPlayersHome = new ArrayList<>();
-        playingPlayersAway = new ArrayList<>();
 
         homePlayers = new ArrayList<>();
         awayPlayers = new ArrayList<>();
@@ -82,19 +76,6 @@ public class tzlc_squad_add extends AppCompatActivity {
                     homePlayers.get(position).setAbsent(1);
                 else
                     homePlayers.get(position).setAbsent(0);
-
-                /*if(!cb.isChecked()) {
-                    if (!playingPlayersHome.contains(homePlayers.get(position))) {
-                        homePlayers.get(position).setAbsent(1);
-                        playingPlayersHome.add(homePlayers.get(position));
-                    }
-                }else
-                {
-                    if (playingPlayersHome.contains(homePlayers.get(position))) {
-                        homePlayers.get(position).setAbsent(0);
-                        playingPlayersHome.remove(homePlayers.get(position));
-                    }
-                }*/
             }
         });
 
@@ -128,19 +109,7 @@ public class tzlc_squad_add extends AppCompatActivity {
                     awayPlayers.get(position).setAbsent(1);
                 else
                     awayPlayers.get(position).setAbsent(0);
-                /*
-                if(!cb.isChecked()) {
-                    if (!playingPlayersAway.contains(awayPlayers.get(position))) {
-                        awayPlayers.get(position).setAbsent(1);
-                        playingPlayersAway.add(awayPlayers.get(position));
-                    }
-                }else
-                {
-                    if (playingPlayersAway.contains(awayPlayers.get(position))) {
-                        awayPlayers.get(position).setAbsent(0);
-                        playingPlayersAway.remove(awayPlayers.get(position));
-                    }
-                }*/
+
             }
         });
 
