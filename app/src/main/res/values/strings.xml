@@ -67,5 +67,6 @@
     <string name="title_activity_tzlc_match_add_passes">Completed Passes</string>
     <string name="title_activity_tzlc_stats_add__tzlc12_n">Record Stats for Match</string>
     <string name="title_activity_tzlc_squad_display">Squad</string>
-    <string name="title_activity_tzlc_formation_add">TZLC Add Formation</string>
+    <string name="title_activity_tzlc_formation_add">tzlc_formation_add</string>
+
 </resources>

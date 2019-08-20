@@ -595,7 +595,8 @@ public class tzlc_match_details_tabs extends AppCompatActivity {
                         break;
 
                     case 6: //squads
-                        Intent squadAdd = new Intent(tzlc_match_details_tabs.this, tzlc_squad_add.class);
+                        //Intent squadAdd = new Intent(tzlc_match_details_tabs.this, tzlc_squad_add.class);
+                        Intent squadAdd = new Intent(tzlc_match_details_tabs.this, tzlc_formation_add.class);
                         squadAdd.putExtra("matchID", matchID);
                         extras.putInt("scrollIndex",scrollIndexL);
                         startActivityForResult(squadAdd,100);

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".tzlc_formation_add" android:orientation="vertical"
+    tools:showIn="@layout/activity_tzlc_formation_add">
+
+    <LinearLayout android:id="@+id/layoutFormationClubs" android:layout_weight="0.9"
+        android:layout_width="match_parent" android:orientation="horizontal"
+        android:layout_height="match_parent">
+        <RadioGroup
+            android:layout_width="match_parent" android:orientation="horizontal"
+            android:layout_height="match_parent">
+            <RadioButton android:id="@+id/rdbFormationHomeClub" android:layout_weight="0.5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"  android:text="Home Club"/>
+
+            <RadioButton android:id="@+id/rdbFormationAwayClub" android:layout_weight="0.5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"  android:text="Away Club"/>
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/layoutFormationDetails" android:layout_weight="0.9"
+        android:layout_width="match_parent" android:orientation="horizontal"
+        android:layout_height="match_parent">
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="match_parent" android:layout_weight="0.5"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent" android:layout_weight="0.6" android:text="Select Formation" android:gravity="center"
+                android:layout_height="match_parent" />
+            <Spinner android:id="@+id/spnFormations"
+                android:layout_width="match_parent" android:layout_weight="0.4"
+                android:layout_height="match_parent"></Spinner>
+
+        </LinearLayout>
+        <RadioGroup android:orientation="horizontal"
+            android:layout_width="match_parent" android:layout_weight="0.5"
+            android:layout_height="match_parent">
+            <RadioButton
+                android:layout_width="match_parent" android:layout_weight="0.1" android:text="Att"
+                android:layout_height="match_parent" />
+            <RadioButton
+                android:layout_width="match_parent" android:layout_weight="0.1" android:text="Nor"
+                android:layout_height="match_parent" />
+            <RadioButton
+                android:layout_width="match_parent" android:layout_weight="0.1" android:text="Def"
+                android:layout_height="match_parent" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/layoutFormationLayout" android:layout_weight="0.3"
+        android:layout_width="match_parent" android:orientation="horizontal"
+        android:layout_height="match_parent">
+        <ListView android:id="@+id/lstFormationSquad"
+            android:layout_width="match_parent" android:layout_weight="0.7"
+            android:layout_height="match_parent"></ListView>
+        <LinearLayout
+            android:layout_width="match_parent" android:layout_weight="0.3" android:orientation="vertical"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_weight="0.1" android:orientation="horizontal" android:gravity="center|center_horizontal"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="100dp" android:background="@color/Green"
+                    android:layout_height="50dp"  android:text="GK" android:gravity="center" android:layout_gravity="center"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_weight="0.1" android:orientation="horizontal" android:gravity="center|center_horizontal"
+                android:layout_height="match_parent">
+                <TextView android:layout_weight="0.1" android:id="@+id/formationRB"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"  android:text="RB" android:gravity="center" android:layout_gravity="center"/>
+                <TextView android:layout_weight="0.1" android:id="@+id/formationRCD"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"  android:text="RCD" android:gravity="center" android:layout_gravity="center"/>
+                <TextView android:layout_weight="0.1" android:id="@+id/formationCD"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"  android:text="CD" android:gravity="center" android:layout_gravity="center"/>
+                <TextView android:layout_weight="0.1" android:id="@+id/formationLCD"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"  android:text="LCD" android:gravity="center" android:layout_gravity="center"/>
+                <TextView android:layout_weight="0.1" android:id="@+id/formationLB"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"  android:text="LB" android:gravity="center" android:layout_gravity="center"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_weight="0.1" android:orientation="horizontal" android:gravity="center|center_horizontal"
+                android:layout_height="match_parent">
+                <TextView android:layout_weight="0.1" android:id="@+id/formationRM"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"  android:text="RM" android:gravity="center" android:layout_gravity="center"/>
+                <TextView android:layout_weight="0.1" android:id="@+id/formationRCM"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"  android:text="RCM" android:gravity="center" android:layout_gravity="center"/>
+                <TextView android:layout_weight="0.1" android:id="@+id/formationCM"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"  android:text="CM" android:gravity="center" android:layout_gravity="center"/>
+                <TextView android:layout_weight="0.1" android:id="@+id/formationLCM"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"  android:text="LCM" android:gravity="center" android:layout_gravity="center"/>
+                <TextView android:layout_weight="0.1" android:id="@+id/formationLM"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"  android:text="LM" android:gravity="center" android:layout_gravity="center"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_weight="0.1" android:orientation="horizontal" android:gravity="center|center_horizontal"
+                android:layout_height="match_parent">
+                <TextView android:layout_weight="0.1" android:id="@+id/formationRST"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"  android:text="RST" android:gravity="center" android:layout_gravity="center"/>
+                <TextView android:layout_weight="0.1" android:id="@+id/formationST"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"  android:text="ST" android:gravity="center" android:layout_gravity="center"/>
+                <TextView android:layout_weight="0.1" android:id="@+id/formationLST"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"  android:text="LST" android:gravity="center" android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout android:id="@+id/layoutFormationButtons" android:layout_weight="0.9"
+        android:layout_width="match_parent" android:orientation="horizontal"
+        android:layout_height="match_parent">
+        <Button
+            android:layout_width="match_parent" android:layout_weight="0.5" android:text="Save"
+             android:layout_height="match_parent" />
+
+        <Button
+            android:layout_width="match_parent" android:layout_weight="0.5" android:text="Cancel"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</LinearLayout>
