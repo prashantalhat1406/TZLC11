@@ -55,12 +55,6 @@ public class tzlc_match_details_squad extends Fragment {
         adaptor_squad_display awayadaptor = new adaptor_squad_display(getContext(), R.layout.squadaddlistitem, squadAwayList);
         ListView awayList = (ListView) rootView.findViewById(R.id.tablstAwaySquadDisplay);
         awayList.setAdapter(awayadaptor);
-        //datasource= new tzlcDataSource(getContext());
-        //datasource.open();
-        //squadList = datasource.getAllSquadForMatch(match_details.getMatchID());
-        //adaptor_highlight adaptor = new adaptor_highlight(getContext(), R.layout.highlightdisplaylist, highlightList);
-        //ListView lv = (ListView) rootView.findViewById(R.id.tabMatchDetailsHighlightList);
-        //lv.setAdapter(adaptor);
         return rootView;
     }
 

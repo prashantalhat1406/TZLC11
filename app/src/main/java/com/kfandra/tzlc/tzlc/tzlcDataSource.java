@@ -681,6 +681,7 @@ public class tzlcDataSource
         }
 
         for (Player clubPlayer : clubPlayers) { matchPlayers.add(clubPlayer); }
+        for (Player loanPlayer : loanPlayers) { matchPlayers.add(loanPlayer); }
 
         return matchPlayers;
     }
