@@ -13,9 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".tzlc_squad_display"
+            android:label="@string/title_activity_tzlc_squad_display"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".tzlc_stats_add_tzlc12n"
             android:label="@string/title_activity_tzlc_stats_add__tzlc12_n"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".tzlc_stats_completed_passes"
             android:label="@string/title_activity_tzlc_match_add_passes"

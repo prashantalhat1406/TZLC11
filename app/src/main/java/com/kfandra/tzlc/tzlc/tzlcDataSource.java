@@ -553,6 +553,8 @@ public class tzlcDataSource
         value.put(tzlcDBContract.PlayerDB.COLUMN_CURRENT_VALUE,p.getCurrentValue());
         value.put(tzlcDBContract.PlayerDB.COLUMN_ORGANIZATION,p.getOrgID());
         value.put(tzlcDBContract.PlayerDB.COLUMN_SENIALWOMBATS,p.getSenialwombat());
+        value.put(tzlcDBContract.PlayerDB.COLUMN_ABSENT,p.getAbsent());
+        value.put(tzlcDBContract.PlayerDB.COLUMN_POSITION,p.getPosition());
 
         return value;
     }
@@ -592,6 +594,8 @@ public class tzlcDataSource
                 p.setId(cursor.getLong((cursor.getColumnIndex(tzlcDBContract.PlayerDB._ID))));
                 p.setOrgID((cursor.getLong((cursor.getColumnIndex(tzlcDBContract.PlayerDB.COLUMN_ORGANIZATION)))));
                 p.setSenialwombat((cursor.getInt((cursor.getColumnIndex(tzlcDBContract.PlayerDB.COLUMN_SENIALWOMBATS)))));
+                p.setAbsent((cursor.getInt((cursor.getColumnIndex(tzlcDBContract.PlayerDB.COLUMN_ABSENT)))));
+                p.setPosition((cursor.getInt((cursor.getColumnIndex(tzlcDBContract.PlayerDB.COLUMN_POSITION)))));
                 Log.d(tzlcDataSource.class.getSimpleName(), "Player  Fetched " +p.getPlayerName()+"," +p.getClubId()+","+p.getCurrentValue());
                 players.add(p);
             }
@@ -679,6 +683,8 @@ public class tzlcDataSource
                 player.setCurrentValue(cursor.getInt(cursor.getColumnIndex(tzlcDBContract.PlayerDB.COLUMN_CURRENT_VALUE)));
                 player.setOrgID(cursor.getLong(cursor.getColumnIndex(tzlcDBContract.PlayerDB.COLUMN_ORGANIZATION)));
                 player.setSenialwombat(cursor.getInt(cursor.getColumnIndex(tzlcDBContract.PlayerDB.COLUMN_SENIALWOMBATS)));
+                player.setAbsent(cursor.getInt(cursor.getColumnIndex(tzlcDBContract.PlayerDB.COLUMN_ABSENT)));
+                player.setPosition(cursor.getInt(cursor.getColumnIndex(tzlcDBContract.PlayerDB.COLUMN_POSITION)));
                 player.setId(cursor.getLong((cursor.getColumnIndex(tzlcDBContract.PlayerDB._ID))));
 
                 Log.d(tzlcDataSource.class.getSimpleName(), "Data Fetched " + player.getPlayerName()+","+player.getClubId()+","+player.getCurrentValue());

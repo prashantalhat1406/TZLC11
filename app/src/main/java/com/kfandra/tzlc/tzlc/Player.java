@@ -12,6 +12,8 @@ public class Player
     private int totalLoan;
     private long orgID;
     private int senialwombat;
+    private int absent;
+    private int position;
 
     public Player() {
     }
@@ -20,6 +22,22 @@ public class Player
         this.playerName = playerName;
         this.clubId = clubId;
         this.currentValue = currentValue;
+    }
+
+    public int getAbsent() {
+        return absent;
+    }
+
+    public void setAbsent(int absent) {
+        this.absent = absent;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
     }
 
     public int getSenialwombat() {return senialwombat;}

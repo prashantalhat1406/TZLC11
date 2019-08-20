@@ -592,6 +592,13 @@ public class tzlc_match_details_tabs extends AppCompatActivity {
                         highlightAdd.putExtras(extras);
                         startActivityForResult(highlightAdd,100);
                         break;
+
+                    case 6: //loans
+                        Intent squadAdd = new Intent(tzlc_match_details_tabs.this, tzlc_squad_add.class);
+                        loanAdd.putExtra("matchID", matchID);
+                        extras.putInt("scrollIndex",scrollIndexL);
+                        startActivity(loanAdd);
+                        break;
                 }
                 break;
 

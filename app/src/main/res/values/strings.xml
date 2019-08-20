@@ -66,4 +66,5 @@
     <string name="title_activity_tzlc_change_jersey_color">tzlc_change_jersey_color</string>
     <string name="title_activity_tzlc_match_add_passes">Completed Passes</string>
     <string name="title_activity_tzlc_stats_add__tzlc12_n">Record Stats for Match</string>
+    <string name="title_activity_tzlc_squad_display">tzlc_squad_display</string>
 </resources>

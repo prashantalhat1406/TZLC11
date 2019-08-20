@@ -68,6 +68,8 @@ public class tzlcDBContract{
                     PlayerDB.COLUMN_CURRENT_VALUE + " INTEGER NOT NULL, " +
                     PlayerDB.COLUMN_ORGANIZATION + " INTEGER NOT NULL, " +
                     PlayerDB.COLUMN_SENIALWOMBATS + " INTEGER NOT NULL, " +
+                    PlayerDB.COLUMN_ABSENT + " INTEGER NOT NULL, " +
+                    PlayerDB.COLUMN_POSITION + " INTEGER NOT NULL, " +
                     "UNIQUE ( " + PlayerDB._ID + " ) ON CONFLICT REPLACE )";
 
     public static class PlayerDB implements BaseColumns
@@ -78,6 +80,8 @@ public class tzlcDBContract{
         public static final String COLUMN_CURRENT_VALUE = "value";
         public static final String COLUMN_ORGANIZATION = "org";
         public static final String COLUMN_SENIALWOMBATS = "sw";
+        public static final String COLUMN_ABSENT = "absent";
+        public static final String COLUMN_POSITION = "position";
     }
 
     static final String CREATE_MO_TABLE =

@@ -1,8 +1,10 @@
 package com.kfandra.tzlc.tzlc;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,6 +40,14 @@ public class tzlc_match_details_highlights extends Fragment {
         ListView lv = (ListView) rootView.findViewById(R.id.tabMatchDetailsHighlightList);
         lv.setAdapter(adaptor);
         return rootView;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        FragmentTransaction fragmentTransaction  = getFragmentManager().beginTransaction();
+        fragmentTransaction.detach(tzlc_match_details_highlights.this).attach(tzlc_match_details_highlights.this).commit();
+
+        super.onAttach(context);
     }
 
 }
