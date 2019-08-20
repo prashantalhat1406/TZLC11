@@ -173,7 +173,8 @@ public class tzlc_match_details_tabs extends AppCompatActivity {
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        if(tabID == 1 || tabID == 3 || tabID == 5 || tabID == 6)
+        //if(tabID == 1 || tabID == 3 || tabID == 5 || tabID == 6)
+        if(tabID == 1 || tabID == 3 || tabID == 5 )
             menu.findItem(R.id.addScreen).setVisible(false );
         else
             menu.findItem(R.id.addScreen).setVisible(true );
@@ -593,11 +594,11 @@ public class tzlc_match_details_tabs extends AppCompatActivity {
                         startActivityForResult(highlightAdd,100);
                         break;
 
-                    case 6: //loans
+                    case 6: //squads
                         Intent squadAdd = new Intent(tzlc_match_details_tabs.this, tzlc_squad_add.class);
-                        loanAdd.putExtra("matchID", matchID);
+                        squadAdd.putExtra("matchID", matchID);
                         extras.putInt("scrollIndex",scrollIndexL);
-                        startActivity(loanAdd);
+                        startActivityForResult(squadAdd,100);
                         break;
                 }
                 break;

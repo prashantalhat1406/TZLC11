@@ -8,7 +8,6 @@ import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -667,6 +666,23 @@ public class tzlcDataSource
         }
 
         return playerNames;
+    }
+
+    public List<Player> getAllMatchPlayers(long clubID,long matchId)    {
+        List<Player> matchPlayers = new ArrayList<>();
+        List<Player> clubPlayers =  getAllPlayersForClub(clubID);
+        List<Player> loanPlayers = new ArrayList<>();
+        List<Loan> loans = getAllLoansForClubForMatch(clubID,matchId);
+        for (Loan loan : loans) {
+            Player p = new Player();
+            p.setId(loan.getLoanPlayerID());
+            p.setClubId(loan.getHomeClubID());
+            loanPlayers.add(p);
+        }
+
+        for (Player clubPlayer : clubPlayers) { matchPlayers.add(clubPlayer); }
+
+        return matchPlayers;
     }
 
     public Player getPlayer(long playerID)    {
@@ -1560,7 +1576,8 @@ public class tzlcDataSource
         ContentValues value = new ContentValues();
         value.put(tzlcDBContract.SquadDB.COLUMN_MATCH_ID,squad.getMatchID());
         value.put(tzlcDBContract.SquadDB.COLUMN_CLUB_ID,squad.getClubID());
-        value.put(tzlcDBContract.SquadDB.COLUMN_ABSENT_PLAYER,squad.getAbsentPlayer());
+        value.put(tzlcDBContract.SquadDB.COLUMN_PLAYER_ID,squad.getPlayerID());
+        value.put(tzlcDBContract.SquadDB.COLUMN_ABSENT,squad.getAbsent());
         return value;
     }
 
@@ -1573,8 +1590,8 @@ public class tzlcDataSource
                 Squad squad  = new Squad(
                         cursor.getLong(cursor.getColumnIndex(tzlcDBContract.SquadDB.COLUMN_MATCH_ID)),
                         cursor.getLong(cursor.getColumnIndex(tzlcDBContract.SquadDB.COLUMN_CLUB_ID)),
-                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.SquadDB.COLUMN_ABSENT_PLAYER))
-
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.SquadDB.COLUMN_PLAYER_ID)),
+                        cursor.getInt(cursor.getColumnIndex(tzlcDBContract.SquadDB.COLUMN_ABSENT))
                 );
                 squad.setId(cursor.getLong((cursor.getColumnIndex(tzlcDBContract.SquadDB._ID))));
                 Log.d(tzlcDataSource.class.getSimpleName(), "squad Fetched ");
@@ -1590,14 +1607,44 @@ public class tzlcDataSource
 
     public void addSquad(Squad squad) {
         ContentValues value = createContentForSquad(squad);
-
         long rowID =  database.insert(tzlcDBContract.SquadDB.TABLE_NAME,null, value);
         Log.d(tzlcDataSource.class.getSimpleName(), "squad added " + rowID);
     }
 
+    public void updateSquad(Squad squad)    {
+        ContentValues value = createContentForSquad(squad);
+        String selection = tzlcDBContract.SquadDB._ID + " = ?";
+        String[] selectionargs = {String.valueOf(squad.getId())};
+        int count = database.update(tzlcDBContract.SquadDB.TABLE_NAME,value,selection,selectionargs);
+        Log.d(tzlcDataSource.class.getSimpleName(), "Squad record updated " + count);
+    }
+
+    /*public void deletePlayer(long playerID)    {
+        String selection = tzlcDBContract.PlayerDB._ID + " = ?";
+        String[] selectionargs = {String.valueOf(playerID)};
+        int count = database.delete(tzlcDBContract.PlayerDB.TABLE_NAME,selection,selectionargs);
+        Log.d(tzlcDataSource.class.getSimpleName(), "Player deleted " + count);
+    }*/
+
     public List<Squad> getAllSquadForMatch(long matchID)    {
         List<Squad> squads = new ArrayList<>();
         String selectQuery = "SELECT * FROM squadDB WHERE matchID = "+ matchID+ "";
+        Cursor cursor = database.rawQuery(selectQuery, null);
+        squads = createSquadList(cursor);
+        return squads;
+    }
+
+    public List<Squad> getAllSquadForMatchandClub(long matchID, long clubID)    {
+        List<Squad> squads = new ArrayList<>();
+        String selectQuery = "SELECT * FROM squadDB WHERE matchID = "+ matchID+ " AND clubID = "+ clubID+ "";
+        Cursor cursor = database.rawQuery(selectQuery, null);
+        squads = createSquadList(cursor);
+        return squads;
+    }
+
+    public List<Squad> getAvailableSquadForMatchandClub(long matchID, long clubID)    {
+        List<Squad> squads = new ArrayList<>();
+        String selectQuery = "SELECT * FROM squadDB WHERE matchID = "+ matchID+ " AND clubID = "+ clubID+ " AND absent = "+ 0 + "";
         Cursor cursor = database.rawQuery(selectQuery, null);
         squads = createSquadList(cursor);
         return squads;

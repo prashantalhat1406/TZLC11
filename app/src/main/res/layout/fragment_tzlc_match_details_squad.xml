@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" android:orientation="horizontal"
+    tools:context=".tzlc_match_details_squad">
+
+    <!-- TODO: Update blank fragment layout -->
+    <!--<TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:gravity="center"
+        android:text="Squad List will appear here" /> -->
+    <!--<Button android:layout_weight="0.5" android:id="@+id/butsquad"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:text="Squad"/>
+    <Button android:layout_weight="0.5" android:id="@+id/butFormation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:text="Formation"/> -->
+
+    <LinearLayout android:layout_weight="0.5"
+        android:layout_width="match_parent" android:orientation="vertical"
+        android:layout_height="match_parent">
+        <TextView android:layout_weight="0.9" android:id="@+id/txtsquadDisplayHomeClub"
+            android:layout_width="match_parent" android:gravity="center" android:textSize="@dimen/listFirstLine"
+            android:layout_height="match_parent"  android:text="Home Club"/>
+        <ListView android:id="@+id/tablstHomeSquadDisplay" android:layout_weight="0.1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </ListView>
+    </LinearLayout>
+
+    <View
+        android:layout_width="1dp" android:paddingTop="5dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/darker_gray"/>
+
+    <LinearLayout android:layout_weight="0.5" android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView android:layout_weight="0.9" android:id="@+id/txtsquadDisplayAwayClub"
+            android:layout_width="match_parent" android:gravity="center" android:textSize="@dimen/listFirstLine"
+            android:layout_height="match_parent"  android:text="Away Club"/>
+        <ListView android:id="@+id/tablstAwaySquadDisplay" android:layout_weight="0.1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </ListView>
+    </LinearLayout>
+
+</LinearLayout>

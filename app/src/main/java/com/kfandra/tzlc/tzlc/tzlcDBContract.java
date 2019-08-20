@@ -293,7 +293,8 @@ public class tzlcDBContract{
                     SquadDB._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     SquadDB.COLUMN_MATCH_ID + " INTEGER NOT NULL, " +
                     SquadDB.COLUMN_CLUB_ID + " INTEGER NOT NULL, " +
-                    SquadDB.COLUMN_ABSENT_PLAYER + " INTEGER NOT NULL, " +
+                    SquadDB.COLUMN_PLAYER_ID + " INTEGER NOT NULL, " +
+                    SquadDB.COLUMN_ABSENT + " INTEGER NOT NULL, " +
                     "UNIQUE ( " + SquadDB._ID + " ) ON CONFLICT REPLACE )";
 
     public static class SquadDB implements BaseColumns
@@ -301,7 +302,8 @@ public class tzlcDBContract{
         public static final String TABLE_NAME = "squadDB";
         public static final String COLUMN_MATCH_ID = "matchID";
         public static final String COLUMN_CLUB_ID = "clubID";
-        public static final String COLUMN_ABSENT_PLAYER = "absentPlayer";
+        public static final String COLUMN_PLAYER_ID = "playerID";
+        public static final String COLUMN_ABSENT = "absent";
     }
 
     static final String CREATE_SUBSTITUTE_TABLE =

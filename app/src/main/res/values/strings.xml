@@ -56,7 +56,7 @@
     <string name="title_activity_tab">TabActivity</string>
     <string name="title_activity_tzlc_player_details">tzlc_player_details</string>
     <string name="title_activity_match_tab">matchTab</string>
-    <string name="title_activity_tzlc_squad_add">tzlc_squad_add</string>
+    <string name="title_activity_tzlc_squad_add">TZLC Add Squad for Match</string>
     <string name="title_activity_tzlc_match_details_tabs">tzlc_match_details_tabs</string>
     <string name="title_activity_tz">tz</string>
     <string name="title_activity_tzlc_sub_add">tzlc_sub_add</string>
@@ -66,5 +66,5 @@
     <string name="title_activity_tzlc_change_jersey_color">tzlc_change_jersey_color</string>
     <string name="title_activity_tzlc_match_add_passes">Completed Passes</string>
     <string name="title_activity_tzlc_stats_add__tzlc12_n">Record Stats for Match</string>
-    <string name="title_activity_tzlc_squad_display">tzlc_squad_display</string>
+    <string name="title_activity_tzlc_squad_display">Squad</string>
 </resources>

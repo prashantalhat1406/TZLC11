@@ -1,20 +1,35 @@
 package com.kfandra.tzlc.tzlc;
 
-import java.util.List;
-
 public class Squad {
     private long id;
     private long matchID;
     private long clubID;
-    private long absentPlayer;
+    private long playerID;
+    private int absent;
+
 
     public Squad() {
     }
 
-    public Squad(long matchID, long clubID, long absentPlayer) {
+    public Squad(long matchID, long clubID, long playerID) {
         this.matchID = matchID;
         this.clubID = clubID;
-        this.absentPlayer = absentPlayer;
+        this.playerID = playerID;
+    }
+
+    public Squad(long matchID, long clubID, long playerID, int absent) {
+        this.matchID = matchID;
+        this.clubID = clubID;
+        this.playerID = playerID;
+        this.absent = absent;
+    }
+
+    public int getAbsent() {
+        return absent;
+    }
+
+    public void setAbsent(int absent) {
+        this.absent = absent;
     }
 
     public long getId() {
@@ -41,11 +56,11 @@ public class Squad {
         this.clubID = clubID;
     }
 
-    public long getAbsentPlayer() {
-        return absentPlayer;
+    public long getPlayerID() {
+        return playerID;
     }
 
-    public void setAbsentPlayer(long absentPlayer) {
-        this.absentPlayer = absentPlayer;
+    public void setPlayerID(long playerID) {
+        this.playerID = playerID;
     }
 }

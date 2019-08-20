@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="75dp" android:descendantFocusability="blocksDescendants">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:layout_weight="0.4">
+            <TextView
+                android:layout_width="match_parent" android:gravity="center" android:layout_weight="0.9" android:textSize="@dimen/listSecondLine" android:textColor="@color/Black"
+                android:layout_height="match_parent" android:text="" android:textStyle="bold"/>
+            <CheckBox android:layout_weight="0.9" android:id="@+id/chkSquadAbsent"
+                android:layout_width="match_parent" android:gravity="center" android:layout_gravity="center_horizontal" android:focusable="false" android:clickable="false"
+                android:layout_height="match_parent" />
+            <TextView android:id="@+id/txtsquadPlayerName"
+                android:layout_width="match_parent" android:gravity="center" android:layout_weight="0.12" android:textSize="@dimen/listSecondLine" android:textColor="@color/Black"
+                android:layout_height="match_parent" android:text="Pr. Alhat" android:textStyle="bold"/>
+        </LinearLayout>
+
+</LinearLayout>
