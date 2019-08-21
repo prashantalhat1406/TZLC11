@@ -1579,6 +1579,7 @@ public class tzlcDataSource
         value.put(tzlcDBContract.SquadDB.COLUMN_CLUB_ID,squad.getClubID());
         value.put(tzlcDBContract.SquadDB.COLUMN_PLAYER_ID,squad.getPlayerID());
         value.put(tzlcDBContract.SquadDB.COLUMN_ABSENT,squad.getAbsent());
+        value.put(tzlcDBContract.SquadDB.COLUMN_POSITION,squad.getPosition());
         return value;
     }
 
@@ -1592,7 +1593,8 @@ public class tzlcDataSource
                         cursor.getLong(cursor.getColumnIndex(tzlcDBContract.SquadDB.COLUMN_MATCH_ID)),
                         cursor.getLong(cursor.getColumnIndex(tzlcDBContract.SquadDB.COLUMN_CLUB_ID)),
                         cursor.getLong(cursor.getColumnIndex(tzlcDBContract.SquadDB.COLUMN_PLAYER_ID)),
-                        cursor.getInt(cursor.getColumnIndex(tzlcDBContract.SquadDB.COLUMN_ABSENT))
+                        cursor.getInt(cursor.getColumnIndex(tzlcDBContract.SquadDB.COLUMN_ABSENT)),
+                        cursor.getInt(cursor.getColumnIndex(tzlcDBContract.SquadDB.COLUMN_POSITION))
                 );
                 squad.setId(cursor.getLong((cursor.getColumnIndex(tzlcDBContract.SquadDB._ID))));
                 Log.d(tzlcDataSource.class.getSimpleName(), "squad Fetched ");
@@ -1624,7 +1626,8 @@ public class tzlcDataSource
                         cursor.getLong(cursor.getColumnIndex(tzlcDBContract.SquadDB.COLUMN_MATCH_ID)),
                         cursor.getLong(cursor.getColumnIndex(tzlcDBContract.SquadDB.COLUMN_CLUB_ID)),
                         cursor.getLong(cursor.getColumnIndex(tzlcDBContract.SquadDB.COLUMN_PLAYER_ID)),
-                        cursor.getInt(cursor.getColumnIndex(tzlcDBContract.SquadDB.COLUMN_ABSENT))
+                        cursor.getInt(cursor.getColumnIndex(tzlcDBContract.SquadDB.COLUMN_ABSENT)),
+                        cursor.getInt(cursor.getColumnIndex(tzlcDBContract.SquadDB.COLUMN_POSITION))
                 );
                 squad.setId(cursor.getLong((cursor.getColumnIndex(tzlcDBContract.SquadDB._ID))));
             }
@@ -1643,13 +1646,6 @@ public class tzlcDataSource
         int count = database.update(tzlcDBContract.SquadDB.TABLE_NAME,value,selection,selectionargs);
         Log.d(tzlcDataSource.class.getSimpleName(), "Squad record updated " + count);
     }
-
-    /*public void deletePlayer(long playerID)    {
-        String selection = tzlcDBContract.PlayerDB._ID + " = ?";
-        String[] selectionargs = {String.valueOf(playerID)};
-        int count = database.delete(tzlcDBContract.PlayerDB.TABLE_NAME,selection,selectionargs);
-        Log.d(tzlcDataSource.class.getSimpleName(), "Player deleted " + count);
-    }*/
 
     public List<Squad> getAllSquadForMatch(long matchID)    {
         List<Squad> squads = new ArrayList<>();

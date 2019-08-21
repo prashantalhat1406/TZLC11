@@ -6,6 +6,7 @@ public class Squad {
     private long clubID;
     private long playerID;
     private int absent;
+    private int position;
 
 
     public Squad() {
@@ -22,6 +23,22 @@ public class Squad {
         this.clubID = clubID;
         this.playerID = playerID;
         this.absent = absent;
+    }
+
+    public Squad(long matchID, long clubID, long playerID, int absent, int position) {
+        this.matchID = matchID;
+        this.clubID = clubID;
+        this.playerID = playerID;
+        this.absent = absent;
+        this.position = position;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
     }
 
     public int getAbsent() {

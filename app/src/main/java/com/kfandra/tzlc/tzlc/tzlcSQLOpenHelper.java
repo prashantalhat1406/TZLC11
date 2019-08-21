@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class tzlcSQLOpenHelper extends SQLiteOpenHelper
 {
     private static final String DATABASE_NAME = "tzlcTest.db";
-    private static final int VERSION_NUMBER = 28;
+    private static final int VERSION_NUMBER = 29;
 
     public tzlcSQLOpenHelper(Context context) {
         super(context, DATABASE_NAME, null, VERSION_NUMBER);

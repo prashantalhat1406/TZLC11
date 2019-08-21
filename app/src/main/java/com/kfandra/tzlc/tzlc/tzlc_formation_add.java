@@ -2,6 +2,7 @@ package com.kfandra.tzlc.tzlc;
 
 import android.content.ClipData;
 import android.content.ClipDescription;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -11,6 +12,7 @@ import android.view.DragEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -22,13 +24,13 @@ import java.util.List;
 
 public class tzlc_formation_add extends AppCompatActivity implements View.OnDragListener {
 
-    private List<Player> homePlayerNames, awayPlayerNames;
     private List<Squad> homePlayers, awayPlayers;
     private tzlcDataSource datasource;
     private long matchID;
     Match m;
     private ListView homeList, awayList;
     private int def=0,mid=0,str=0;
+    private Long[] postitions;
 
 
     @Override
@@ -51,6 +53,44 @@ public class tzlc_formation_add extends AppCompatActivity implements View.OnDrag
                 TextView h = (TextView) v;
                 String name = datasource.getPlayer(squad.getPlayerID()).getPlayerName();
                 h.setText(""+name.split("@")[0].substring(0,2)+". "+name.split("@")[1]);
+                switch(h.getId())
+                {
+                    case R.id.formationGK :  postitions[0] = squad.getId();break;
+                    case R.id.formationRB :  postitions[1] = squad.getId();break;
+                    case R.id.formationRCD :  postitions[2] = squad.getId();break;
+                    case R.id.formationCD :  postitions[3] = squad.getId();break;
+                    case R.id.formationLCD :  postitions[4] = squad.getId();break;
+                    case R.id.formationLB :  postitions[5] = squad.getId();break;
+                    case R.id.formationRM :  postitions[6] = squad.getId();break;
+                    case R.id.formationRCM :  postitions[7] = squad.getId();break;
+                    case R.id.formationCM :  postitions[8] = squad.getId();break;
+                    case R.id.formationLCM :  postitions[9] = squad.getId();break;
+                    case R.id.formationLM :  postitions[10] = squad.getId();break;
+                    case R.id.formationRST :  postitions[11] = squad.getId();break;
+                    case R.id.formationST :  postitions[12] = squad.getId();break;
+                    case R.id.formationLST :  postitions[13] = squad.getId();break;
+
+                }
+                //Player p = datasource.getPlayer(squad.getPlayerID());
+                /*switch(h.getId())
+                {
+                    case R.id.formationGK :  p.setPosition(1);break;
+                    case R.id.formationRB :  p.setPosition(2);break;
+                    case R.id.formationRCD :  p.setPosition(3);break;
+                    case R.id.formationCD :  p.setPosition(4);break;
+                    case R.id.formationLCD :  p.setPosition(5);break;
+                    case R.id.formationLB :  p.setPosition(6);break;
+                    case R.id.formationRM :  p.setPosition(7);break;
+                    case R.id.formationRCM :  p.setPosition(8);break;
+                    case R.id.formationCM :  p.setPosition(9);break;
+                    case R.id.formationLCM :  p.setPosition(10);break;
+                    case R.id.formationLM :  p.setPosition(11);break;
+                    case R.id.formationRST :  p.setPosition(12);break;
+                    case R.id.formationST :  p.setPosition(13);break;
+                    case R.id.formationLST :  p.setPosition(14);break;
+
+                }*/
+                //datasource.updatePlayer(p);
                 //h.setText(""+ datasource.getPlayer(squad.getPlayerID()).getPlayerName()
                 // );
                 //Toast.makeText(this, "Dragged data is " + datasource.getPlayerID(datasource.getPlayer(squad.getPlayerID()).getPlayerName()), Toast.LENGTH_LONG).show();
@@ -79,6 +119,7 @@ public class tzlc_formation_add extends AppCompatActivity implements View.OnDrag
 
         m = new Match();
         m = datasource.getMatch(matchID);
+        postitions = new Long[14];
 
         homePlayers = new ArrayList<>();
         homePlayers = datasource.getAllSquadForMatchandClub(matchID, m.getHomeClubID());
@@ -135,6 +176,25 @@ public class tzlc_formation_add extends AppCompatActivity implements View.OnDrag
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
+            }
+        });
+
+        Button save = findViewById(R.id.butFormationSave);
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //int i =1;
+                for(int i =0 ; i<postitions.length;i++)
+                {
+                    Squad squad = datasource.getSquad(postitions[i]);
+                    squad.setPosition(i+1);
+                    datasource.updateSquad(squad);
+                }
+
+                Intent returnI = new Intent();
+                returnI.putExtra("matchID", matchID);
+                setResult(100, returnI);
+                finish();
             }
         });
 

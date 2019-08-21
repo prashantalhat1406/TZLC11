@@ -95,7 +95,7 @@ public class tzlc_match_details_tabs extends AppCompatActivity {
         tabs.addTab(tabs.newTab().setCustomView(highlight));*/
 
         //String [] images={"stats","goal","loan","cards","referee","tv","subs"};
-        String [] images={"stats","goal","loan","cards","referee","tv","squad"};
+        String [] images={"stats","goal","loan","cards","referee","tv","squad","squad"};
         //String [] images={"Stats","Goals","Loans","Cards","MO's","Highlight"};
 
         for (int i = 0; i < images.length; i++) {
@@ -595,11 +595,17 @@ public class tzlc_match_details_tabs extends AppCompatActivity {
                         break;
 
                     case 6: //squads
-                        //Intent squadAdd = new Intent(tzlc_match_details_tabs.this, tzlc_squad_add.class);
-                        Intent squadAdd = new Intent(tzlc_match_details_tabs.this, tzlc_formation_add.class);
+                        Intent squadAdd = new Intent(tzlc_match_details_tabs.this, tzlc_squad_add.class);
+                        //Intent squadAdd = new Intent(tzlc_match_details_tabs.this, tzlc_formation_add.class);
                         squadAdd.putExtra("matchID", matchID);
                         extras.putInt("scrollIndex",scrollIndexL);
                         startActivityForResult(squadAdd,100);
+                        break;
+                    case 7: //Formation
+                        Intent formationAdd = new Intent(tzlc_match_details_tabs.this, tzlc_formation_add.class);
+                        formationAdd.putExtra("matchID", matchID);
+                        extras.putInt("scrollIndex",scrollIndexL);
+                        startActivityForResult(formationAdd,100);
                         break;
                 }
                 break;
