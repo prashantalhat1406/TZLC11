@@ -67,8 +67,8 @@
             <LinearLayout
                 android:layout_width="match_parent" android:layout_weight="0.1" android:orientation="horizontal" android:gravity="center|center_horizontal"
                 android:layout_height="match_parent">
-                <TextView
-                    android:layout_width="100dp" android:background="@color/Green"
+                <TextView android:id="@+id/formationGK"
+                    android:layout_width="100dp" android:background="#DCDCDC"
                     android:layout_height="50dp"  android:text="GK" android:gravity="center" android:layout_gravity="center"/>
             </LinearLayout>
             <LinearLayout

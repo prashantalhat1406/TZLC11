@@ -1612,6 +1612,30 @@ public class tzlcDataSource
         Log.d(tzlcDataSource.class.getSimpleName(), "squad added " + rowID);
     }
 
+    public Squad getSquad(long squadID)    {
+        Squad squad = new Squad();
+        String selectQuery = "SELECT * FROM squadDB WHERE _ID = "+ squadID+ "";
+        Cursor cursor = database.rawQuery(selectQuery, null);
+        try{
+            while(cursor.moveToNext())
+            {
+
+                squad=  new Squad(
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.SquadDB.COLUMN_MATCH_ID)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.SquadDB.COLUMN_CLUB_ID)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.SquadDB.COLUMN_PLAYER_ID)),
+                        cursor.getInt(cursor.getColumnIndex(tzlcDBContract.SquadDB.COLUMN_ABSENT))
+                );
+                squad.setId(cursor.getLong((cursor.getColumnIndex(tzlcDBContract.SquadDB._ID))));
+            }
+        }
+        finally {
+            if(cursor != null && !cursor.isClosed())
+                cursor.close();
+        }
+        return squad;
+    }
+
     public void updateSquad(Squad squad)    {
         ContentValues value = createContentForSquad(squad);
         String selection = tzlcDBContract.SquadDB._ID + " = ?";
