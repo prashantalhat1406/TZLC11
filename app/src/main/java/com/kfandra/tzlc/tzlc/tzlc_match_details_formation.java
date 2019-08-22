@@ -37,6 +37,8 @@ public class tzlc_match_details_formation extends Fragment {
         datasource.open();
 
         RadioButton homeFormation = rootView.findViewById(R.id.rdbFormationDisplayHomeClub);
+        homeFormation.setText(datasource.getClub(datasource.getMatch(match_details.getMatchID()).getHomeClubID()).getClubName());
+
         homeFormation.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -48,6 +50,7 @@ public class tzlc_match_details_formation extends Fragment {
             }
         });
         RadioButton awayFormation = rootView.findViewById(R.id.rdbFormationDisplayAwayClub);
+        awayFormation.setText(datasource.getClub(datasource.getMatch(match_details.getMatchID()).getAwayClubID()).getClubName());
         awayFormation.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
