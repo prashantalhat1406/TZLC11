@@ -58,7 +58,7 @@ public class tzlc_formation_add extends AppCompatActivity implements View.OnDrag
                     case R.id.formationRCD : rcd = squad.getId();break;
                     case R.id.formationCD :  cd = squad.getId();break;
                     case R.id.formationLCD :  lcd = squad.getId();break;
-                    case R.id.formationLB :  rb = squad.getId();break;
+                    case R.id.formationLB :  lb = squad.getId();break;
                     case R.id.formationRM :  rm = squad.getId();break;
                     case R.id.formationRCM :  rcm = squad.getId();break;
                     case R.id.formationCM :  cm = squad.getId();break;
