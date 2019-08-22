@@ -1570,6 +1570,57 @@ public class tzlcDataSource
         return highlights;
     }
 
+    public List<Highlight> getHighlightsOf(String event,long matchID)    {
+        List<Highlight> highlights = new ArrayList<>();
+        //String selectQuery = "SELECT * FROM highlightDB WHERE matchID = "+ matchID+ "";
+        String selectQuery = "";
+        if(event.equalsIgnoreCase("ALL"))
+            selectQuery = "SELECT * FROM highlightDB  WHERE highlight LIKE '%%' AND matchID = " + matchID + "";
+        else
+            selectQuery = "SELECT * FROM highlightDB  WHERE highlight LIKE '%" + event + "%' AND matchID = " + matchID + "";
+        Cursor cursor = database.rawQuery(selectQuery, null);
+        try{
+            while(cursor.moveToNext())
+            {
+                Highlight highlight  = new Highlight(
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.HighlightDB.COLUMN_MATCH_ID)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.HighlightDB.COLUMN_CLUB_ID)),
+                        cursor.getInt(cursor.getColumnIndex(tzlcDBContract.HighlightDB.COLUMN_VCM_TIME)),
+                        cursor.getInt(cursor.getColumnIndex(tzlcDBContract.HighlightDB.COLUMN_SR_TIME)),
+                        cursor.getString(cursor.getColumnIndex(tzlcDBContract.HighlightDB.COLUMN_HIGHLIGHT)),
+                        cursor.getString(cursor.getColumnIndex(tzlcDBContract.HighlightDB.COLUMN_HIGHLIGHT2))
+                );
+                highlight.setId(cursor.getLong((cursor.getColumnIndex(tzlcDBContract.HighlightDB._ID))));
+                Log.d(tzlcDataSource.class.getSimpleName(), "Highlight  Fetched " +highlight.getMatchID()+"," +highlight.getVcmTime()+","+highlight.getSrTime()+","+highlight.getHighlight());
+                highlights.add(highlight);
+            }
+        }
+        finally {
+            if(cursor != null && !cursor.isClosed())
+                cursor.close();
+        }
+        return highlights;
+    }
+
+    public List<String> getUnquieHighlights()
+    {
+        List<String> unquieHLs = new ArrayList<>();
+        unquieHLs.add("ALL");
+        String selectQuery = "SELECT DISTINCT (highlight) FROM highlightDB";
+        Cursor cursor = database.rawQuery(selectQuery, null);
+        try{
+
+            while(cursor.moveToNext()){
+                unquieHLs.add(cursor.getString(cursor.getColumnIndex(tzlcDBContract.HighlightDB.COLUMN_HIGHLIGHT)));
+            }
+        }
+        finally {
+            if(cursor != null && !cursor.isClosed())
+                cursor.close();
+        }
+        return unquieHLs;
+    }
+
 
 
     //SQUAD

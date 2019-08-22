@@ -7,6 +7,30 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".tzlc_highlight_display" android:orientation="vertical"
     tools:showIn="@layout/activity_tzlc_highlight_display">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <LinearLayout android:id="@+id/layoutHightLightFilter"
+        android:layout_width="match_parent" android:layout_weight="0.9" android:orientation="horizontal"
+        android:layout_height="match_parent">
+        <TextView android:layout_weight="0.5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <LinearLayout android:layout_weight="0.5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView android:layout_weight="0.1"
+                android:layout_width="match_parent" android:gravity="center" android:layout_gravity="center"
+                android:layout_height="match_parent" android:text="Filter"/>
+            <Spinner android:id="@+id/spnHighlightFilter" android:layout_weight="0.1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></Spinner>
+        </LinearLayout>
+
+    </LinearLayout>
+
 
     <LinearLayout android:layout_weight="0.9"
         android:layout_width="match_parent"

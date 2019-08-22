@@ -415,11 +415,11 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         card.setType(0);
                         card.setClubID(datasource.getPlayer(datasource.getPlayerID(spnHomePlayers.getSelectedItem().toString())).getClubId());
                         lastCardID = datasource.addCard(card);
-                        Highlight highlight = new Highlight(matchID, card.getClubID(), matchTime, -200, "Yellwo Card",
+                        Highlight highlight = new Highlight(matchID, card.getClubID(), matchTime, -200, "Yellow Card",
                                 ""+spnHomePlayers.getSelectedItem().toString());
                         datasource.addHighlight(highlight);
                         clearActions();
-                        Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, ""+datasource.getClub( m.getHomeClubID()).getClubShortName() + " : Yello Card Added", Toast.LENGTH_SHORT);
+                        Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, ""+datasource.getClub( m.getHomeClubID()).getClubShortName() + " : Yellow Card Added", Toast.LENGTH_SHORT);
                         t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
                         t.show();
                     }else
