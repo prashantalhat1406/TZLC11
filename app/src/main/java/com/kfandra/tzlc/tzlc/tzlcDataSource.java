@@ -1672,6 +1672,138 @@ public class tzlcDataSource
     }
 
 
+    //FORMATION
+    public ContentValues createContentForFormation(Formation formation)    {
+        ContentValues value = new ContentValues();
+        value.put(tzlcDBContract.FormationDB.COLUMN_MATCH_ID,formation.getMatchID());
+        value.put(tzlcDBContract.FormationDB.COLUMN_CLUB_ID,formation.getClubID());
+        value.put(tzlcDBContract.FormationDB.COLUMN_FORMATIONS,formation.getFormations());
+        value.put(tzlcDBContract.FormationDB.COLUMN_TYPE,formation.getFormationType());
+        value.put(tzlcDBContract.FormationDB.COLUMN_GK,formation.getGk());
+        value.put(tzlcDBContract.FormationDB.COLUMN_RB,formation.getRb());
+        value.put(tzlcDBContract.FormationDB.COLUMN_RCD,formation.getRcd());
+        value.put(tzlcDBContract.FormationDB.COLUMN_CD,formation.getCd());
+        value.put(tzlcDBContract.FormationDB.COLUMN_LCD,formation.getLcd());
+        value.put(tzlcDBContract.FormationDB.COLUMN_LB,formation.getLb());
+        value.put(tzlcDBContract.FormationDB.COLUMN_RM,formation.getRm());
+        value.put(tzlcDBContract.FormationDB.COLUMN_RCM,formation.getRcm());
+        value.put(tzlcDBContract.FormationDB.COLUMN_CM,formation.getCm());
+        value.put(tzlcDBContract.FormationDB.COLUMN_LCM,formation.getLcm());
+        value.put(tzlcDBContract.FormationDB.COLUMN_LM,formation.getLm());
+        value.put(tzlcDBContract.FormationDB.COLUMN_RST,formation.getRst());
+        value.put(tzlcDBContract.FormationDB.COLUMN_ST,formation.getSt());
+        value.put(tzlcDBContract.FormationDB.COLUMN_LST,formation.getLst());
+
+        return value;
+    }
+
+    public List<Formation> createFormationList(Cursor cursor){
+        List<Formation> formations = new ArrayList<>();
+
+        try{
+            while(cursor.moveToNext())
+            {
+                Formation formation  = new Formation(
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_MATCH_ID)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_CLUB_ID)),
+                        cursor.getInt(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_FORMATIONS)),
+                        cursor.getInt(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_TYPE)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_GK)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_RB)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_RCD)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_CD)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_LCD)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_LB)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_RM)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_RCM)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_CM)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_LCM)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_LM)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_RST)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_ST)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_LST))
+                );
+                formation.setId(cursor.getLong((cursor.getColumnIndex(tzlcDBContract.FormationDB._ID))));
+                Log.d(tzlcDataSource.class.getSimpleName(), "formation Fetched ");
+                formations.add(formation);
+            }
+        }
+        finally {
+            if(cursor != null && !cursor.isClosed())
+                cursor.close();
+        }
+        return formations;
+    }
+
+    public void addFormation(Formation formation) {
+        ContentValues value = createContentForFormation(formation);
+        long rowID =  database.insert(tzlcDBContract.FormationDB.TABLE_NAME,null, value);
+        Log.d(tzlcDataSource.class.getSimpleName(), "Formation added " + rowID);
+    }
+
+    public Formation getFormation(long formationID)    {
+        Formation formation = new Formation();
+        String selectQuery = "SELECT * FROM formationDB WHERE _ID = "+ formationID + "";
+        Cursor cursor = database.rawQuery(selectQuery, null);
+        try{
+            while(cursor.moveToNext())
+            {
+
+                formation=  new Formation(
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_MATCH_ID)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_CLUB_ID)),
+                        cursor.getInt(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_FORMATIONS)),
+                        cursor.getInt(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_TYPE)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_GK)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_RB)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_RCD)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_CD)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_LCD)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_LB)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_RM)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_RCM)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_CM)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_LCM)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_LM)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_RST)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_ST)),
+                        cursor.getLong(cursor.getColumnIndex(tzlcDBContract.FormationDB.COLUMN_LST))
+                );
+                formation.setId(cursor.getLong((cursor.getColumnIndex(tzlcDBContract.FormationDB._ID))));
+            }
+        }
+        finally {
+            if(cursor != null && !cursor.isClosed())
+                cursor.close();
+        }
+        return formation;
+    }
+
+    public void updateFormation(Formation formation)    {
+        ContentValues value = createContentForFormation(formation);
+        String selection = tzlcDBContract.FormationDB._ID + " = ?";
+        String[] selectionargs = {String.valueOf(formation.getId())};
+        int count = database.update(tzlcDBContract.FormationDB.TABLE_NAME,value,selection,selectionargs);
+        Log.d(tzlcDataSource.class.getSimpleName(), "Formation record updated " + count);
+    }
+
+    public List<Formation> getAllFormationForMatch(long matchID)    {
+        List<Formation> formations = new ArrayList<>();
+        String selectQuery = "SELECT * FROM formationDB WHERE matchID = "+ matchID+ "";
+        Cursor cursor = database.rawQuery(selectQuery, null);
+        formations = createFormationList(cursor);
+        return formations;
+    }
+
+    public List<Formation> getFormationForMatchandClub(long matchID, long clubID)    {
+        List<Formation> formations = new ArrayList<>();
+        String selectQuery = "SELECT * FROM formationDB WHERE matchID = "+ matchID+ " AND clubID = "+ clubID+ "";
+        Cursor cursor = database.rawQuery(selectQuery, null);
+        formations = createFormationList(cursor);
+        return formations;
+    }
+
+
     //SUBSTITUTE
     public ContentValues createContentForSubstitute(Substitute substitute)    {
         ContentValues value = new ContentValues();

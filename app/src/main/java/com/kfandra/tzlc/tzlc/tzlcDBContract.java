@@ -308,6 +308,54 @@ public class tzlcDBContract{
         public static final String COLUMN_POSITION = "position";
     }
 
+    static final String CREATE_FORMATION_TABLE =
+            "CREATE TABLE " + FormationDB.TABLE_NAME +
+                    " ( " +
+                    FormationDB._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                    FormationDB.COLUMN_MATCH_ID + " INTEGER NOT NULL, " +
+                    FormationDB.COLUMN_CLUB_ID + " INTEGER NOT NULL, " +
+                    FormationDB.COLUMN_FORMATIONS + " INTEGER NOT NULL, " +
+                    FormationDB.COLUMN_TYPE + " INTEGER NOT NULL, " +
+                    FormationDB.COLUMN_GK + " INTEGER NOT NULL, " +
+                    FormationDB.COLUMN_RB + " INTEGER NOT NULL, " +
+                    FormationDB.COLUMN_RCD + " INTEGER NOT NULL, " +
+                    FormationDB.COLUMN_CD + " INTEGER NOT NULL, " +
+                    FormationDB.COLUMN_LCD + " INTEGER NOT NULL, " +
+                    FormationDB.COLUMN_LB + " INTEGER NOT NULL, " +
+                    FormationDB.COLUMN_RM + " INTEGER NOT NULL, " +
+                    FormationDB.COLUMN_RCM + " INTEGER NOT NULL, " +
+                    FormationDB.COLUMN_CM + " INTEGER NOT NULL, " +
+                    FormationDB.COLUMN_LCM + " INTEGER NOT NULL, " +
+                    FormationDB.COLUMN_LM + " INTEGER NOT NULL, " +
+                    FormationDB.COLUMN_RST + " INTEGER NOT NULL, " +
+                    FormationDB.COLUMN_ST + " INTEGER NOT NULL, " +
+                    FormationDB.COLUMN_LST + " INTEGER NOT NULL, " +
+                    FormationDB.COLUMN_CLUB_ID + " INTEGER NOT NULL, " +
+                    "UNIQUE ( " + FormationDB._ID + " ) ON CONFLICT REPLACE )";
+
+    public static class FormationDB implements BaseColumns
+    {
+        public static final String TABLE_NAME = "formationDB";
+        public static final String COLUMN_MATCH_ID = "matchID";
+        public static final String COLUMN_CLUB_ID = "clubID";
+        public static final String COLUMN_FORMATIONS = "formations";
+        public static final String COLUMN_TYPE = "type";
+        public static final String COLUMN_GK = "gk";
+        public static final String COLUMN_RB = "rb";
+        public static final String COLUMN_RCD = "rcd";
+        public static final String COLUMN_CD = "cd";
+        public static final String COLUMN_LCD = "lcd";
+        public static final String COLUMN_LB = "lb";
+        public static final String COLUMN_RM = "rm";
+        public static final String COLUMN_RCM = "rcm";
+        public static final String COLUMN_CM = "cm";
+        public static final String COLUMN_LCM = "lcm";
+        public static final String COLUMN_LM = "lm";
+        public static final String COLUMN_RST = "rst";
+        public static final String COLUMN_ST = "st";
+        public static final String COLUMN_LST = "lst";
+    }
+
     static final String CREATE_SUBSTITUTE_TABLE =
             "CREATE TABLE " + SubDB.TABLE_NAME +
                     " ( " +

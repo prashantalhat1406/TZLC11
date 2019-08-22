@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class tzlcSQLOpenHelper extends SQLiteOpenHelper
 {
     private static final String DATABASE_NAME = "tzlcTest.db";
-    private static final int VERSION_NUMBER = 29;
+    private static final int VERSION_NUMBER = 30;
 
     public tzlcSQLOpenHelper(Context context) {
         super(context, DATABASE_NAME, null, VERSION_NUMBER);
@@ -26,6 +26,7 @@ public class tzlcSQLOpenHelper extends SQLiteOpenHelper
         db.execSQL(tzlcDBContract.CREATE_STAT_TABLE);
         db.execSQL(tzlcDBContract.CREATE_HIGHLIGHT_TABLE);
         db.execSQL(tzlcDBContract.CREATE_SQUAD_TABLE);
+        db.execSQL(tzlcDBContract.CREATE_FORMATION_TABLE);
         db.execSQL(tzlcDBContract.CREATE_SUBSTITUTE_TABLE);
         db.execSQL(tzlcDBContract.CREATE_EXPENSE_TABLE);
     }
@@ -43,6 +44,7 @@ public class tzlcSQLOpenHelper extends SQLiteOpenHelper
         db.execSQL("DROP TABLE IF EXISTS " + tzlcDBContract.StatDB.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + tzlcDBContract.HighlightDB.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + tzlcDBContract.SquadDB.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + tzlcDBContract.FormationDB.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + tzlcDBContract.SubDB.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + tzlcDBContract.SaiSevaExpenseDB.TABLE_NAME);
         onCreate(db);
