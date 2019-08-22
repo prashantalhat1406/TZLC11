@@ -330,7 +330,6 @@ public class tzlcDBContract{
                     FormationDB.COLUMN_RST + " INTEGER NOT NULL, " +
                     FormationDB.COLUMN_ST + " INTEGER NOT NULL, " +
                     FormationDB.COLUMN_LST + " INTEGER NOT NULL, " +
-                    FormationDB.COLUMN_CLUB_ID + " INTEGER NOT NULL, " +
                     "UNIQUE ( " + FormationDB._ID + " ) ON CONFLICT REPLACE )";
 
     public static class FormationDB implements BaseColumns

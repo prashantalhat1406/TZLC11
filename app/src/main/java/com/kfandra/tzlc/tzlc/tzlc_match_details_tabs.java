@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import java.io.File;
@@ -95,7 +96,7 @@ public class tzlc_match_details_tabs extends AppCompatActivity {
         tabs.addTab(tabs.newTab().setCustomView(highlight));*/
 
         //String [] images={"stats","goal","loan","cards","referee","tv","subs"};
-        String [] images={"stats","goal","loan","cards","referee","tv","squad","squad"};
+        String [] images={"stats","goal","loan","cards","referee","tv","squad","subs"};
         //String [] images={"Stats","Goals","Loans","Cards","MO's","Highlight"};
 
         for (int i = 0; i < images.length; i++) {
@@ -603,6 +604,12 @@ public class tzlc_match_details_tabs extends AppCompatActivity {
                         break;
                     case 7: //Formation
                         Intent formationAdd = new Intent(tzlc_match_details_tabs.this, tzlc_formation_add.class);
+                        RadioButton hRDB = findViewById(R.id.rdbFormationDisplayHomeClub);
+                        RadioButton aRDB = findViewById(R.id.rdbFormationDisplayAwayClub);
+                        if(hRDB.isChecked())
+                            formationAdd.putExtra("clubID", datasource.getMatch(matchID).getHomeClubID());
+                        if(aRDB.isChecked())
+                            formationAdd.putExtra("clubID", datasource.getMatch(matchID).getAwayClubID());
                         formationAdd.putExtra("matchID", matchID);
                         extras.putInt("scrollIndex",scrollIndexL);
                         startActivityForResult(formationAdd,100);

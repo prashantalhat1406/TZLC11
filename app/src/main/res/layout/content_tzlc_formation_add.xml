@@ -8,7 +8,7 @@
     tools:context=".tzlc_formation_add" android:orientation="vertical"
     tools:showIn="@layout/activity_tzlc_formation_add">
 
-    <LinearLayout android:id="@+id/layoutFormationClubs" android:layout_weight="0.9"
+    <!--<LinearLayout android:id="@+id/layoutFormationClubs" android:layout_weight="0.9"
         android:layout_width="match_parent" android:orientation="horizontal"
         android:layout_height="match_parent">
         <RadioGroup
@@ -23,33 +23,33 @@
                 android:layout_height="match_parent"  android:text="Away Club"/>
         </RadioGroup>
 
-    </LinearLayout>
+    </LinearLayout>-->
 
-    <LinearLayout android:id="@+id/layoutFormationDetails" android:layout_weight="0.9"
+    <LinearLayout android:id="@+id/layoutFormationDetails" android:layout_weight="0.91"
         android:layout_width="match_parent" android:orientation="horizontal"
         android:layout_height="match_parent">
         <LinearLayout android:orientation="horizontal"
             android:layout_width="match_parent" android:layout_weight="0.5"
             android:layout_height="match_parent">
             <TextView
-                android:layout_width="match_parent" android:layout_weight="0.6" android:text="Select Formation" android:gravity="center"
+                android:layout_width="match_parent" android:layout_weight="0.6" android:text="Select Formation" android:gravity="center" android:textColor="@color/Black"
                 android:layout_height="match_parent" />
             <Spinner android:id="@+id/spnFormations"
                 android:layout_width="match_parent" android:layout_weight="0.4"
                 android:layout_height="match_parent"></Spinner>
 
         </LinearLayout>
-        <RadioGroup android:orientation="horizontal"
+        <RadioGroup android:orientation="horizontal" android:id="@+id/rdgformationType"
             android:layout_width="match_parent" android:layout_weight="0.5"
             android:layout_height="match_parent">
-            <RadioButton
-                android:layout_width="match_parent" android:layout_weight="0.1" android:text="Att"
+            <RadioButton android:id="@+id/rdbFormationA"
+                android:layout_width="match_parent" android:layout_weight="0.1" android:text="Attacking"
                 android:layout_height="match_parent" />
-            <RadioButton
-                android:layout_width="match_parent" android:layout_weight="0.1" android:text="Nor"
+            <RadioButton android:id="@+id/rdbFormationN"
+                android:layout_width="match_parent" android:layout_weight="0.1" android:text="Normal"
                 android:layout_height="match_parent" />
-            <RadioButton
-                android:layout_width="match_parent" android:layout_weight="0.1" android:text="Def"
+            <RadioButton android:id="@+id/rdbFormationD"
+                android:layout_width="match_parent" android:layout_weight="0.1" android:text="Defensive"
                 android:layout_height="match_parent" />
         </RadioGroup>
 
@@ -68,7 +68,7 @@
                 android:layout_width="match_parent" android:layout_weight="0.1" android:orientation="horizontal" android:gravity="center|center_horizontal"
                 android:layout_height="match_parent">
                 <TextView android:id="@+id/formationGK"
-                    android:layout_width="100dp" android:background="#DCDCDC"
+                    android:layout_width="100dp"
                     android:layout_height="50dp"  android:text="GK" android:gravity="center" android:layout_gravity="center"/>
             </LinearLayout>
             <LinearLayout
@@ -123,18 +123,18 @@
                     android:layout_height="match_parent"  android:text="LST" android:gravity="center" android:layout_gravity="center"/>
 
             </LinearLayout>
-
         </LinearLayout>
 
     </LinearLayout>
-    <LinearLayout android:id="@+id/layoutFormationButtons" android:layout_weight="0.9"
+
+    <LinearLayout android:id="@+id/layoutFormationButtons" android:layout_weight="0.94"
         android:layout_width="match_parent" android:orientation="horizontal"
         android:layout_height="match_parent">
         <Button android:id="@+id/butFormationSave"
             android:layout_width="match_parent" android:layout_weight="0.5" android:text="Save"
              android:layout_height="match_parent" />
 
-        <Button
+        <Button android:id="@+id/butFormationCancel"
             android:layout_width="match_parent" android:layout_weight="0.5" android:text="Cancel"
             android:layout_height="match_parent" />
 
