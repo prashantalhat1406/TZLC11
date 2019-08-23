@@ -1,6 +1,6 @@
 Varun@Kuzhikattil,8,1,0
 Manoj@Uniyal,8,1,0
-Abinash@Mishra GK,8,1,0
+Abinash@Mishra,8,1,0
 Pulkit@Saraswat,8,2,0
 Priank@Gurhani,8,2,0
 Aviank@Ghanaria,8,1,0
@@ -18,7 +18,7 @@ Shashank@Korada,8,3,0
 Sagar@Pise,5,3,0
 Suraj@Patil,5,1,0
 Sharad@Yeole,5,1,0
-Abhay@Mishra,5,1,0
+Aybhay@Mishra,5,1,0
 Sean@Mathew,5,2,0
 Gururaj@Patil,5,1,0
 Sumanta@Boruah,5,3,0
