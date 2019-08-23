@@ -51,10 +51,13 @@ public class tzlc_squad_add extends AppCompatActivity {
         if(squadPlayers.size() == 0)
         {
             players = datasource.getAllMatchPlayers(clubID, matchID);
-            for (Player homePlayerName : players) {
+            for (Player player : players) {
                 Squad squad = new Squad();
-                squad.setPlayerID(homePlayerName.getId());
-                squad.setClubID(homePlayerName.getClubId());
+                squad.setPlayerID(player.getId());
+                if(clubID == 1 || clubID == 2)
+                    squad.setClubID(player.getOrgID());
+                else
+                    squad.setClubID(player.getClubId());
                 squad.setAbsent(0);
                 squad.setMatchID(matchID);
                 datasource.addSquad(squad);
