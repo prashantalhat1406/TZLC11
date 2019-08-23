@@ -44,6 +44,7 @@ public class tzlc_match_details_stats extends Fragment {
         LinearLayout h2 = rootView.findViewById(R.id.layoutStats);
         LinearLayout h3 = rootView.findViewById(R.id.layoutGoals);
         LinearLayout lp = rootView.findViewById(R.id.layoutPossessionStats);
+        LinearLayout layoutFormation = rootView.findViewById(R.id.layoutFormation);
         if (stat.getHome_Score() == -1)
         {
             noStats.setVisibility(View.VISIBLE);
@@ -51,6 +52,7 @@ public class tzlc_match_details_stats extends Fragment {
             h2.setVisibility(View.GONE);
             h3.setVisibility(View.GONE);
             lp.setVisibility(View.GONE);
+            layoutFormation.setVisibility(View.GONE);
         }
 
         Match match = datasource.getMatch(match_details.getMatchID());
@@ -100,8 +102,11 @@ public class tzlc_match_details_stats extends Fragment {
             {awayGoals = awayGoals + goalString;awayTotalGoals=awayTotalGoals+1;}
 
         }
-        homeGoals = homeGoals.substring(0,homeGoals.length()-2);
-        awayGoals = awayGoals.substring(0,awayGoals.length()-2);
+        if(homeGoals.length() > 0)
+            homeGoals = homeGoals.substring(0, homeGoals.length() - 2);
+        if(awayGoals.length() > 0)
+            awayGoals = awayGoals.substring(0, awayGoals.length() - 2);
+
 
 
         int[] homeCards = new int[] {0,0,0}, awayCards = new int[] {0,0,0};

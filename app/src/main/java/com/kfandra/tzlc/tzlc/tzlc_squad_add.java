@@ -50,7 +50,7 @@ public class tzlc_squad_add extends AppCompatActivity {
         squadlist = findViewById(R.id.lstSquadList);
         if(squadPlayers.size() == 0)
         {
-            players = datasource.getAllMatchPlayers(m.getHomeClubID(), matchID);
+            players = datasource.getAllMatchPlayers(clubID, matchID);
             for (Player homePlayerName : players) {
                 Squad squad = new Squad();
                 squad.setPlayerID(homePlayerName.getId());
@@ -80,7 +80,6 @@ public class tzlc_squad_add extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 for (Squad squad : squadPlayers) {
-                    Log.d(tzlc_squad_add.class.getSimpleName(), "Home : "+ datasource.getPlayer(squad.getPlayerID()).getPlayerName());
                     datasource.updateSquad(squad);
                 }
 

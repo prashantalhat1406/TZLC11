@@ -3,6 +3,7 @@ package com.kfandra.tzlc.tzlc;
 import android.content.ClipData;
 import android.content.ClipDescription;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -103,7 +104,7 @@ public class tzlc_formation_add extends AppCompatActivity implements View.OnDrag
 
         playerList = findViewById(R.id.lstFormationSquad);
 
-        adaptor_squad_display squadadaptor = new adaptor_squad_display(tzlc_formation_add.this, R.layout.fixturelistitem, playersSquad);
+        adaptor_squad_display squadadaptor = new adaptor_squad_display(tzlc_formation_add.this, R.layout.squadaddlistitem, playersSquad);
         playerList.setAdapter(squadadaptor);
         playerList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override

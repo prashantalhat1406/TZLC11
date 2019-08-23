@@ -176,7 +176,7 @@ public class tzlc_match_details_tabs extends AppCompatActivity {
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         //if(tabID == 1 || tabID == 3 || tabID == 5 || tabID == 6)
-        if(tabID == 1 || tabID == 3 || tabID == 5 )
+        if(tabID == 3 )
             menu.findItem(R.id.addScreen).setVisible(false );
         else
             menu.findItem(R.id.addScreen).setVisible(true );
