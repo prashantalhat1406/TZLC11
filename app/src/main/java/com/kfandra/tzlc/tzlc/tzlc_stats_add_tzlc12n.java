@@ -266,7 +266,11 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
                         t.show();
                     }else
-                        Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
+                    {
+                        Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT);
+                        t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
+                        t.show();
+                    }
                 }
                 if ( aGoal.isChecked())
                 {
@@ -290,7 +294,11 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
                         t.show();
                     }else
-                        Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
+                    {
+                        Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT);
+                        t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
+                        t.show();
+                    }
                 }
 
 
@@ -319,7 +327,11 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
                         t.show();
                     }else
-                        Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
+                    {
+                        Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT);
+                        t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
+                        t.show();
+                    }
                 }
                 if ( aOwnGoal.isChecked())
                 {
@@ -343,7 +355,11 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
                         t.show();
                     }else
-                        Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
+                    {
+                        Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT);
+                        t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
+                        t.show();
+                    }
                 }
 
                 //Code for Assist
@@ -373,7 +389,11 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
                         t.show();
                     }else
-                        Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
+                    {
+                        Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT);
+                        t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
+                        t.show();
+                    }
                 }
 
                 //Code for Cards
@@ -402,7 +422,11 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
                         t.show();
                     }else
-                        Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
+                    {
+                        Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT);
+                        t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
+                        t.show();
+                    }
                 }
                 if( hYellowCard.isChecked())
                 {
@@ -423,7 +447,11 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
                         t.show();
                     }else
-                        Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
+                    {
+                        Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT);
+                        t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
+                        t.show();
+                    }
                 }
                 if( hBlueCard.isChecked())
                 {
@@ -444,7 +472,11 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
                         t.show();
                     }else
-                        Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
+                    {
+                        Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT);
+                        t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
+                        t.show();
+                    }
                 }
                 if( aRedCard.isChecked())
                 {
@@ -465,7 +497,11 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
                         t.show();
                     }else
-                        Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
+                    {
+                        Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT);
+                        t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
+                        t.show();
+                    }
                 }
                 if( aYellowCard.isChecked())
                 {
@@ -486,7 +522,11 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
                         t.show();
                     }else
-                        Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
+                    {
+                        Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT);
+                        t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
+                        t.show();
+                    }
                 }
                 if( aBlueCard.isChecked())
                 {
@@ -507,7 +547,11 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
                         t.show();
                     }else
-                        Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
+                    {
+                        Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT);
+                        t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
+                        t.show();
+                    }
                 }
 
                 //Code for Assist
