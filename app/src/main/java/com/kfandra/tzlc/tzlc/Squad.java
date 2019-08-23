@@ -6,7 +6,7 @@ public class Squad {
     private long clubID;
     private long playerID;
     private int absent;
-    private int position;
+    private int position=0;
 
 
     public Squad() {

@@ -59,9 +59,13 @@ public class tzlc_match_details_stats extends Fragment {
 
         Formation homeFormation = datasource.getFormation(match.getId(),match.getHomeClubID());
         showHomeFormation(homeFormation,rootView);
+        List<Squad> homeSquad = datasource.getAvailableSquadForMatchandClub(match.getId(),match.getHomeClubID());
+        showHomeSubs(rootView,homeSquad);
 
         Formation awayFormation = datasource.getFormation(match.getId(),match.getAwayClubID());
         showAwayFormation(awayFormation,rootView);
+        List<Squad> awaySquad = datasource.getAvailableSquadForMatchandClub(match.getId(),match.getAwayClubID());
+        showAwaySubs(rootView,awaySquad);
 
         int htHome=0, htAway=0;
         for (Highlight highlight : highlights) {
@@ -271,6 +275,29 @@ public class tzlc_match_details_stats extends Fragment {
                 showHomeStrLine(3,rootView,homeFormation);
                 break;
         }
+
+
+    }
+
+    private void showHomeSubs(View rootView, List<Squad> homeSquad) {
+        TextView subs = rootView.findViewById(R.id.txtHomeSubs);
+        subs.setText("Subs : ");
+        for (Squad squad : homeSquad) {
+            if(squad.getPosition()==0)
+                subs.setText(subs.getText() + datasource.getPlayer(squad.getPlayerID()).getPlayerName().split("@")[1] + " , ");
+        }
+        subs.setText(subs.getText().toString().substring(0,subs.getText().toString().length()-2));
+
+    }
+
+    private void showAwaySubs(View rootView, List<Squad> awaySquad) {
+        TextView subs = rootView.findViewById(R.id.txtAwaySubs);
+        subs.setText("Subs : ");
+        for (Squad squad : awaySquad) {
+            if(squad.getPosition()==0)
+                subs.setText(subs.getText() + datasource.getPlayer(squad.getPlayerID()).getPlayerName().split("@")[1] + " , ");
+        }
+        subs.setText(subs.getText().toString().substring(0,subs.getText().toString().length()-2));
 
     }
 

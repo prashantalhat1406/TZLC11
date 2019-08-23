@@ -53,21 +53,22 @@ public class tzlc_formation_add extends AppCompatActivity implements View.OnDrag
                 h.setText(""+name.split("@")[0].substring(0,2)+". "+name.split("@")[1]);
                 switch(h.getId())
                 {
-                    case R.id.formationGK :  gk = squad.getId();break;
-                    case R.id.formationRB :  rb = squad.getId();break;
-                    case R.id.formationRCD : rcd = squad.getId();break;
-                    case R.id.formationCD :  cd = squad.getId();break;
-                    case R.id.formationLCD :  lcd = squad.getId();break;
-                    case R.id.formationLB :  lb = squad.getId();break;
-                    case R.id.formationRM :  rm = squad.getId();break;
-                    case R.id.formationRCM :  rcm = squad.getId();break;
-                    case R.id.formationCM :  cm = squad.getId();break;
-                    case R.id.formationLCM :  lcm = squad.getId();break;
-                    case R.id.formationLM :  lm = squad.getId();break;
-                    case R.id.formationRST :  rst = squad.getId();break;
-                    case R.id.formationST :  st = squad.getId();break;
-                    case R.id.formationLST :  lst = squad.getId();break;
+                    case R.id.formationGK :  gk = squad.getId(); squad.setPosition(1);break;
+                    case R.id.formationRB :  rb = squad.getId();squad.setPosition(1);break;
+                    case R.id.formationRCD : rcd = squad.getId();squad.setPosition(1);break;
+                    case R.id.formationCD :  cd = squad.getId();squad.setPosition(1);break;
+                    case R.id.formationLCD :  lcd = squad.getId();squad.setPosition(1);break;
+                    case R.id.formationLB :  lb = squad.getId();squad.setPosition(1);break;
+                    case R.id.formationRM :  rm = squad.getId();squad.setPosition(1);break;
+                    case R.id.formationRCM :  rcm = squad.getId();squad.setPosition(1);break;
+                    case R.id.formationCM :  cm = squad.getId();squad.setPosition(1);break;
+                    case R.id.formationLCM :  lcm = squad.getId();squad.setPosition(1);break;
+                    case R.id.formationLM :  lm = squad.getId();squad.setPosition(1);break;
+                    case R.id.formationRST :  rst = squad.getId();squad.setPosition(1);break;
+                    case R.id.formationST :  st = squad.getId();squad.setPosition(1);break;
+                    case R.id.formationLST :  lst = squad.getId();squad.setPosition(1);break;
                 }
+                datasource.updateSquad(squad);
                 v.invalidate();
                 return true;
             case DragEvent.ACTION_DRAG_LOCATION:

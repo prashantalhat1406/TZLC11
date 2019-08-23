@@ -96,67 +96,86 @@
         android:layout_height="match_parent" >
 
         <LinearLayout android:layout_weight="0.5" android:id="@+id/layoutFormationHome"
-            android:layout_width="match_parent" android:orientation="horizontal"
+            android:layout_width="match_parent" android:orientation="vertical"
             android:layout_height="match_parent">
-            <LinearLayout
-                android:layout_width="match_parent" android:layout_weight="0.1" android:orientation="horizontal" android:gravity="center|center_horizontal"
+
+            <LinearLayout android:layout_weight="0.2"
+                android:layout_width="match_parent" android:orientation="horizontal"
                 android:layout_height="match_parent">
-                <TextView android:id="@+id/statsHomeFormationGK"  android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"  android:text="GK" android:gravity="center" android:layout_gravity="center"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent" android:layout_weight="0.1" android:orientation="vertical" android:gravity="center|center_horizontal"
-                android:layout_height="match_parent">
-                <TextView android:layout_weight="0.1" android:id="@+id/statsHomeFormationLB" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="LB" android:gravity="center" android:layout_gravity="center"/>
-                <TextView android:layout_weight="0.1" android:id="@+id/statsHomeFormationLCD" android:textSize="@dimen/statsFormation"  android:textColor="@color/Black"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="LCD" android:gravity="center" android:layout_gravity="center"/>
-                <TextView android:layout_weight="0.1" android:id="@+id/statsHomeFormationCD" android:textSize="@dimen/statsFormation"  android:textColor="@color/Black"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="CD" android:gravity="center" android:layout_gravity="center"/>
-                <TextView android:layout_weight="0.1" android:id="@+id/statsHomeFormationRCD" android:textSize="@dimen/statsFormation"  android:textColor="@color/Black"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="RCD" android:gravity="center" android:layout_gravity="center"/>
-                <TextView android:layout_weight="0.1" android:id="@+id/statsHomeFormationRB" android:textSize="@dimen/statsFormation"  android:textColor="@color/Black"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="RB" android:gravity="center" android:layout_gravity="center"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent" android:layout_weight="0.1" android:orientation="vertical" android:gravity="center|center_horizontal"
-                android:layout_height="match_parent">
-                <TextView android:layout_weight="0.1" android:id="@+id/statsHomeFormationLM" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="LM" android:gravity="center" android:layout_gravity="center"/>
-                <TextView android:layout_weight="0.1" android:id="@+id/statsHomeFormationLCM" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="LCM" android:gravity="center" android:layout_gravity="center"/>
-                <TextView android:layout_weight="0.1" android:id="@+id/statsHomeFormationCM" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="CM" android:gravity="center" android:layout_gravity="center"/>
-                <TextView android:layout_weight="0.1" android:id="@+id/statsHomeFormationRCM" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="RCM" android:gravity="center" android:layout_gravity="center"/>
-                <TextView android:layout_weight="0.1" android:id="@+id/statsHomeFormationRM" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="RM" android:gravity="center" android:layout_gravity="center"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent" android:layout_weight="0.1" android:orientation="vertical" android:gravity="center|center_horizontal"
-                android:layout_height="match_parent">
-                <TextView android:layout_weight="0.1" android:id="@+id/statsHomeFormationLST" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="LST" android:gravity="center" android:layout_gravity="center"/>
-                <TextView android:layout_weight="0.1" android:id="@+id/statsHomeFormationST" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="ST" android:gravity="center" android:layout_gravity="center"/>
-                <TextView android:layout_weight="0.1" android:id="@+id/statsHomeFormationRST" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="RST" android:gravity="center" android:layout_gravity="center"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent" android:layout_weight="0.1" android:orientation="horizontal" android:gravity="center|center_horizontal"
+                    android:layout_height="match_parent">
+                    <TextView android:id="@+id/statsHomeFormationGK"  android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
+                        android:layout_width="100dp"
+                        android:layout_height="50dp"  android:text="GK" android:gravity="center" android:layout_gravity="center"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent" android:layout_weight="0.1" android:orientation="vertical" android:gravity="center|center_horizontal"
+                    android:layout_height="match_parent">
+                    <TextView android:layout_weight="0.1" android:id="@+id/statsHomeFormationLB" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"  android:text="LB" android:gravity="center" android:layout_gravity="center"/>
+                    <TextView android:layout_weight="0.1" android:id="@+id/statsHomeFormationLCD" android:textSize="@dimen/statsFormation"  android:textColor="@color/Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"  android:text="LCD" android:gravity="center" android:layout_gravity="center"/>
+                    <TextView android:layout_weight="0.1" android:id="@+id/statsHomeFormationCD" android:textSize="@dimen/statsFormation"  android:textColor="@color/Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"  android:text="CD" android:gravity="center" android:layout_gravity="center"/>
+                    <TextView android:layout_weight="0.1" android:id="@+id/statsHomeFormationRCD" android:textSize="@dimen/statsFormation"  android:textColor="@color/Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"  android:text="RCD" android:gravity="center" android:layout_gravity="center"/>
+                    <TextView android:layout_weight="0.1" android:id="@+id/statsHomeFormationRB" android:textSize="@dimen/statsFormation"  android:textColor="@color/Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"  android:text="RB" android:gravity="center" android:layout_gravity="center"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent" android:layout_weight="0.1" android:orientation="vertical" android:gravity="center|center_horizontal"
+                    android:layout_height="match_parent">
+                    <TextView android:layout_weight="0.1" android:id="@+id/statsHomeFormationLM" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"  android:text="LM" android:gravity="center" android:layout_gravity="center"/>
+                    <TextView android:layout_weight="0.1" android:id="@+id/statsHomeFormationLCM" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"  android:text="LCM" android:gravity="center" android:layout_gravity="center"/>
+                    <TextView android:layout_weight="0.1" android:id="@+id/statsHomeFormationCM" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"  android:text="CM" android:gravity="center" android:layout_gravity="center"/>
+                    <TextView android:layout_weight="0.1" android:id="@+id/statsHomeFormationRCM" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"  android:text="RCM" android:gravity="center" android:layout_gravity="center"/>
+                    <TextView android:layout_weight="0.1" android:id="@+id/statsHomeFormationRM" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"  android:text="RM" android:gravity="center" android:layout_gravity="center"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent" android:layout_weight="0.1" android:orientation="vertical" android:gravity="center|center_horizontal"
+                    android:layout_height="match_parent">
+                    <TextView android:layout_weight="0.1" android:id="@+id/statsHomeFormationLST" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"  android:text="LST" android:gravity="center" android:layout_gravity="center"/>
+                    <TextView android:layout_weight="0.1" android:id="@+id/statsHomeFormationST" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"  android:text="ST" android:gravity="center" android:layout_gravity="center"/>
+                    <TextView android:layout_weight="0.1" android:id="@+id/statsHomeFormationRST" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"  android:text="RST" android:gravity="center" android:layout_gravity="center"/>
+                </LinearLayout>
+
             </LinearLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"/>
+
+            <LinearLayout android:layout_weight="0.8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView android:id="@+id/txtHomeSubs" android:textColor="@color/Black" android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:text="Subs"/>
+            </LinearLayout>
 
 
         </LinearLayout>
@@ -167,67 +186,85 @@
             android:background="@android:color/darker_gray"/>
 
         <LinearLayout android:layout_weight="0.5" android:id="@+id/layoutFormationAway"
-            android:layout_width="match_parent" android:orientation="horizontal"
+            android:layout_width="match_parent" android:orientation="vertical"
             android:layout_height="match_parent">
 
-            <LinearLayout
-                android:layout_width="match_parent" android:layout_weight="0.1" android:orientation="vertical" android:gravity="center|center_horizontal"
+            <LinearLayout android:layout_weight="0.2"
+                android:layout_width="match_parent" android:orientation="horizontal"
                 android:layout_height="match_parent">
-                <TextView android:layout_weight="0.1" android:id="@+id/statsAwayFormationRST" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="RST" android:gravity="center" android:layout_gravity="center"/>
-                <TextView android:layout_weight="0.1" android:id="@+id/statsAwayFormationST" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="ST" android:gravity="center" android:layout_gravity="center"/>
-                <TextView android:layout_weight="0.1" android:id="@+id/statsAwayFormationLST" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="LST" android:gravity="center" android:layout_gravity="center"/>
+                <LinearLayout
+                    android:layout_width="match_parent" android:layout_weight="0.1" android:orientation="vertical" android:gravity="center|center_horizontal"
+                    android:layout_height="match_parent">
+                    <TextView android:layout_weight="0.1" android:id="@+id/statsAwayFormationRST" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"  android:text="RST" android:gravity="center" android:layout_gravity="center"/>
+                    <TextView android:layout_weight="0.1" android:id="@+id/statsAwayFormationST" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"  android:text="ST" android:gravity="center" android:layout_gravity="center"/>
+                    <TextView android:layout_weight="0.1" android:id="@+id/statsAwayFormationLST" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"  android:text="LST" android:gravity="center" android:layout_gravity="center"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent" android:layout_weight="0.1" android:orientation="vertical" android:gravity="center|center_horizontal"
+                    android:layout_height="match_parent">
+                    <TextView android:layout_weight="0.1" android:id="@+id/statsAwayFormationRM" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"  android:text="RM" android:gravity="center" android:layout_gravity="center"/>
+                    <TextView android:layout_weight="0.1" android:id="@+id/statsAwayFormationRCM" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"  android:text="RCM" android:gravity="center" android:layout_gravity="center"/>
+                    <TextView android:layout_weight="0.1" android:id="@+id/statsAwayFormationCM" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"  android:text="CM" android:gravity="center" android:layout_gravity="center"/>
+                    <TextView android:layout_weight="0.1" android:id="@+id/statsAwayFormationLCM" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"  android:text="LCM" android:gravity="center" android:layout_gravity="center"/>
+                    <TextView android:layout_weight="0.1" android:id="@+id/statsAwayFormationLM" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"  android:text="LM" android:gravity="center" android:layout_gravity="center"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent" android:layout_weight="0.1" android:orientation="vertical" android:gravity="center|center_horizontal"
+                    android:layout_height="match_parent">
+                    <TextView android:layout_weight="0.1" android:id="@+id/statsAwayFormationRB" android:textSize="@dimen/statsFormation"  android:textColor="@color/Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"  android:text="RB" android:gravity="center" android:layout_gravity="center"/>
+                    <TextView android:layout_weight="0.1" android:id="@+id/statsAwayFormationRCD" android:textSize="@dimen/statsFormation"  android:textColor="@color/Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"  android:text="RCD" android:gravity="center" android:layout_gravity="center"/>
+                    <TextView android:layout_weight="0.1" android:id="@+id/statsAwayFormationCD" android:textSize="@dimen/statsFormation"  android:textColor="@color/Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"  android:text="CD" android:gravity="center" android:layout_gravity="center"/>
+                    <TextView android:layout_weight="0.1" android:id="@+id/statsAwayFormationLCD" android:textSize="@dimen/statsFormation"  android:textColor="@color/Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"  android:text="LCD" android:gravity="center" android:layout_gravity="center"/>
+                    <TextView android:layout_weight="0.1" android:id="@+id/statsAwayFormationLB" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"  android:text="LB" android:gravity="center" android:layout_gravity="center"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent" android:layout_weight="0.1" android:orientation="horizontal" android:gravity="center|center_horizontal"
+                    android:layout_height="match_parent">
+                    <TextView android:id="@+id/statsAwayFormationGK"  android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
+                        android:layout_width="100dp"
+                        android:layout_height="50dp"  android:text="GK" android:gravity="center" android:layout_gravity="center"/>
+                </LinearLayout>
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent" android:layout_weight="0.1" android:orientation="vertical" android:gravity="center|center_horizontal"
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"/>
+
+            <LinearLayout android:layout_weight="0.8"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent">
-                <TextView android:layout_weight="0.1" android:id="@+id/statsAwayFormationRM" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
+                <TextView android:id="@+id/txtAwaySubs" android:textColor="@color/Black" android:gravity="center_vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="RM" android:gravity="center" android:layout_gravity="center"/>
-                <TextView android:layout_weight="0.1" android:id="@+id/statsAwayFormationRCM" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="RCM" android:gravity="center" android:layout_gravity="center"/>
-                <TextView android:layout_weight="0.1" android:id="@+id/statsAwayFormationCM" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="CM" android:gravity="center" android:layout_gravity="center"/>
-                <TextView android:layout_weight="0.1" android:id="@+id/statsAwayFormationLCM" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="LCM" android:gravity="center" android:layout_gravity="center"/>
-                <TextView android:layout_weight="0.1" android:id="@+id/statsAwayFormationLM" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="LM" android:gravity="center" android:layout_gravity="center"/>
+                    android:layout_height="match_parent" android:text="Subs"/>
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent" android:layout_weight="0.1" android:orientation="vertical" android:gravity="center|center_horizontal"
-                android:layout_height="match_parent">
-                <TextView android:layout_weight="0.1" android:id="@+id/statsAwayFormationRB" android:textSize="@dimen/statsFormation"  android:textColor="@color/Black"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="RB" android:gravity="center" android:layout_gravity="center"/>
-                <TextView android:layout_weight="0.1" android:id="@+id/statsAwayFormationRCD" android:textSize="@dimen/statsFormation"  android:textColor="@color/Black"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="RCD" android:gravity="center" android:layout_gravity="center"/>
-                <TextView android:layout_weight="0.1" android:id="@+id/statsAwayFormationCD" android:textSize="@dimen/statsFormation"  android:textColor="@color/Black"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="CD" android:gravity="center" android:layout_gravity="center"/>
-                <TextView android:layout_weight="0.1" android:id="@+id/statsAwayFormationLCD" android:textSize="@dimen/statsFormation"  android:textColor="@color/Black"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="LCD" android:gravity="center" android:layout_gravity="center"/>
-                <TextView android:layout_weight="0.1" android:id="@+id/statsAwayFormationLB" android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="LB" android:gravity="center" android:layout_gravity="center"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent" android:layout_weight="0.1" android:orientation="horizontal" android:gravity="center|center_horizontal"
-                android:layout_height="match_parent">
-                <TextView android:id="@+id/statsAwayFormationGK"  android:textSize="@dimen/statsFormation" android:textColor="@color/Black"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"  android:text="GK" android:gravity="center" android:layout_gravity="center"/>
-            </LinearLayout>
+
 
         </LinearLayout>
 
