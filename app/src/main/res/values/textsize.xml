@@ -8,4 +8,5 @@
     <dimen name="listFirstLine">22dp</dimen>
     <dimen name="listSecondLine">18dp</dimen>
     <dimen name="listThirdLine">14dp</dimen>
+    <dimen name="statsFormation">12dp</dimen>
 </resources>
