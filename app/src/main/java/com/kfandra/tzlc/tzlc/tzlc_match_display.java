@@ -168,7 +168,7 @@ public class tzlc_match_display extends AppCompatActivity {
 
         }
         catch (Exception e){
-            Log.d(displaySummaryExpenses.class.getSimpleName(), "" +e );
+            Log.d(tzlc_match_display.class.getSimpleName(), "" +e );
         }
         super.onResume();
 

@@ -19,13 +19,11 @@ public class adaptor_match_tabs extends FragmentStatePagerAdapter {
         switch (i)
         {
             case 0: tzlc_match_details_stats t1 = new tzlc_match_details_stats(); return t1;
-            case 1: tzlc_match_details_goals t2 = new tzlc_match_details_goals(); return t2;
-            case 2: tzlc_match_details_loans t3 = new tzlc_match_details_loans(); return t3;
-            case 3: tzlc_match_details_cards t4 = new tzlc_match_details_cards(); return t4;
-            case 4: tzlc_match_details_mo t5 = new tzlc_match_details_mo(); return t5;
-            case 5: tzlc_match_details_highlights t6 = new tzlc_match_details_highlights(); return t6;
-            case 6: tzlc_match_details_squad t7 = new tzlc_match_details_squad(); return t7;
-            case 7: tzlc_match_details_formation t8 = new tzlc_match_details_formation(); return t8;
+            case 1: tzlc_match_details_loans t3 = new tzlc_match_details_loans(); return t3;
+            case 2: tzlc_match_details_mo t5 = new tzlc_match_details_mo(); return t5;
+            case 3: tzlc_match_details_highlights t6 = new tzlc_match_details_highlights(); return t6;
+            case 4: tzlc_match_details_squad t7 = new tzlc_match_details_squad(); return t7;
+            case 5: tzlc_match_details_formation t8 = new tzlc_match_details_formation(); return t8;
             default : return null;
         }
     }

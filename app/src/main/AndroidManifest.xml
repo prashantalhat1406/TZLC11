@@ -72,46 +72,6 @@
                 android:value="com.kfandra.tzlc.tzlc.MainActivity" />
         </activity>
         <activity
-            android:name=".saiSeva"
-            android:label="@string/title_activity_sai_seva"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:parentActivityName=".MainActivity"
-                android:value="com.kfandra.tzlc.tzlc.MainActivity" />
-        </activity>
-        <activity
-            android:name=".addExpenseDetails"
-            android:label="@string/title_activity_add_expense_details"
-            android:parentActivityName=".saiSeva"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.kfandra.tzlc.tzlc.saiSeva" />
-        </activity>
-        <activity
-            android:name=".editExpenseDetails"
-            android:label="@string/title_activity_edit_expense_details"
-            android:parentActivityName=".saiSeva"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.kfandra.tzlc.tzlc.saiSeva" />
-        </activity>
-        <activity
-            android:name=".displaySummaryExpenses"
-            android:label="@string/title_activity_display_summary_expenses"
-            android:parentActivityName=".saiSeva"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.kfandra.tzlc.tzlc.saiSeva" />
-        </activity>
-        <activity
             android:name=".tzlc_match_display"
             android:label="@string/title_activity_tzlc_match_display"
             android:parentActivityName=".MainActivity"

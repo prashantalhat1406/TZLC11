@@ -97,7 +97,7 @@ public class tzlc_player_display extends AppCompatActivity {
 
         }
         catch (Exception e){
-            Log.d(displaySummaryExpenses.class.getSimpleName(), "" +e );
+            Log.d(tzlc_player_display.class.getSimpleName(), "" +e );
         }
 
 
@@ -115,7 +115,7 @@ public class tzlc_player_display extends AppCompatActivity {
             populatePlayerDisplayList(datasource.getAllPlayers());
         }
         catch (Exception e){
-            Log.d(displaySummaryExpenses.class.getSimpleName(), "" +e );
+            Log.d(tzlc_player_display.class.getSimpleName(), "" +e );
         }
 
     }

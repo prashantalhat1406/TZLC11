@@ -96,7 +96,8 @@ public class tzlc_match_details_tabs extends AppCompatActivity {
         tabs.addTab(tabs.newTab().setCustomView(highlight));*/
 
         //String [] images={"stats","goal","loan","cards","referee","tv","subs"};
-        String [] images={"stats","goal","loan","cards","referee","tv","squad","subs"};
+        //String [] images={"stats","goal","loan","cards","referee","tv","squad","subs"};
+        String [] images={"stats","loan","referee","tv","squad","subs"};
         //String [] images={"Stats","Goals","Loans","Cards","MO's","Highlight"};
 
         for (int i = 0; i < images.length; i++) {
@@ -548,7 +549,7 @@ public class tzlc_match_details_tabs extends AppCompatActivity {
 
                         break;
 
-                    case 1:
+                    /*case 1:
                         Intent goalAdd = new Intent(tzlc_match_details_tabs.this, tzlc_goal_add.class);
                         extras  = new Bundle();
                         extras.putLong("matchID", matchID);
@@ -556,15 +557,15 @@ public class tzlc_match_details_tabs extends AppCompatActivity {
                         extras.putInt("scrollIndex",scrollIndexL);
                         goalAdd.putExtras(extras);
                         startActivityForResult(goalAdd,100);
-                        break;
-                    case 2: //loans
+                        break;*/
+                    case 1: //loans
                         Intent loanAdd = new Intent(tzlc_match_details_tabs.this, tzlc_loan_add.class);
                         loanAdd.putExtra("matchID", matchID);
                         extras.putInt("scrollIndex",scrollIndexL);
                         startActivity(loanAdd);
                         break;
 
-                    case 3: // cards
+                    /*case 3: // cards
                         Intent cardAdd = new Intent(tzlc_match_details_tabs.this, tzlc_card_add.class);
                         extras  = new Bundle();
                         extras.putLong("matchID", matchID);
@@ -572,8 +573,8 @@ public class tzlc_match_details_tabs extends AppCompatActivity {
                         extras.putInt("matchTime",-1);
                         cardAdd.putExtras(extras);
                         startActivityForResult(cardAdd,100);
-                        break;
-                    case 4: //mo
+                        break;*/
+                    case 2: //mo
 
 
                             Intent moAdd = new Intent(tzlc_match_details_tabs.this, tzlc_mo_add.class);
@@ -585,7 +586,7 @@ public class tzlc_match_details_tabs extends AppCompatActivity {
                             startActivity(moAdd);
 
                         break;
-                    case 5: //highlight
+                    case 3: //highlight
                         Intent highlightAdd = new Intent(tzlc_match_details_tabs.this, tzlc_highlight_add.class);
                         extras  = new Bundle();
                         extras.putLong("matchID", matchID);
@@ -595,7 +596,7 @@ public class tzlc_match_details_tabs extends AppCompatActivity {
                         startActivityForResult(highlightAdd,100);
                         break;
 
-                    case 6: //squads
+                    case 4: //squads
                         Intent squadAdd = new Intent(tzlc_match_details_tabs.this, tzlc_squad_add.class);
                         //Intent squadAdd = new Intent(tzlc_match_details_tabs.this, tzlc_formation_add.class);
                         squadAdd.putExtra("matchID", matchID);
@@ -608,7 +609,7 @@ public class tzlc_match_details_tabs extends AppCompatActivity {
                         extras.putInt("scrollIndex",scrollIndexL);
                         startActivityForResult(squadAdd,100);
                         break;
-                    case 7: //Formation
+                    case 5: //Formation
                         Intent formationAdd = new Intent(tzlc_match_details_tabs.this, tzlc_formation_add.class);
                         RadioButton hRDB = findViewById(R.id.rdbFormationDisplayHomeClub);
                         RadioButton aRDB = findViewById(R.id.rdbFormationDisplayAwayClub);
