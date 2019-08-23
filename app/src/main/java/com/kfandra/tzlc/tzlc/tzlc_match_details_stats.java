@@ -78,18 +78,21 @@ public class tzlc_match_details_stats extends Fragment {
                 goalString = " "
                     + datasource.getPlayer(goal.getPlayerID()).getPlayerName().split("@")[0].substring(0,2)+". "+datasource.getPlayer(goal.getPlayerID()).getPlayerName().split("@")[1]
                     /*+ " ( " + datasource.getPlayer(goal.getAssistPlayerID()).getPlayerName().split("@")[0].substring(0,2)+". "+datasource.getPlayer(goal.getAssistPlayerID()).getPlayerName().split("@")[1] + " )"*/
-                    + " (" + String.format("%02d", goal.getMatchTime()/60) + "')" + " (OG)\n";
+                    + " (" + String.format("%02d", goal.getMatchTime()/60) + "')" + " (OG) , ";
             else
                 goalString = " "
                         + datasource.getPlayer(goal.getPlayerID()).getPlayerName().split("@")[0].substring(0,2)+". "+datasource.getPlayer(goal.getPlayerID()).getPlayerName().split("@")[1]
                         /*+ " ( " + datasource.getPlayer(goal.getAssistPlayerID()).getPlayerName().split("@")[0].substring(0,2)+". "+datasource.getPlayer(goal.getAssistPlayerID()).getPlayerName().split("@")[1] + " )"*/
-                        + " (" + String.format("%02d", goal.getMatchTime()/60) + "')" + "\n";
+                        + " (" + String.format("%02d", goal.getMatchTime()/60) + "')" + " , ";
             if(goal.getAgainstClubID() == match.getHomeClubID())
             {homeGoals = homeGoals + goalString;homeTotalGoals=homeTotalGoals+1;}
             else
             {awayGoals = awayGoals + goalString;awayTotalGoals=awayTotalGoals+1;}
 
         }
+        homeGoals = homeGoals.substring(0,homeGoals.length()-2);
+        awayGoals = awayGoals.substring(0,awayGoals.length()-2);
+
 
         int[] homeCards = new int[] {0,0,0}, awayCards = new int[] {0,0,0};
         List <Card> cards = datasource.getAllCardsForMatch(match_details.getMatchID());
