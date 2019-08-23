@@ -1585,7 +1585,7 @@ public class tzlcDataSource
         String selection = tzlcDBContract.SquadDB._ID + " = ?";
         String[] selectionargs = {String.valueOf(squad.getId())};
         int count = database.update(tzlcDBContract.SquadDB.TABLE_NAME,value,selection,selectionargs);
-        Log.d(tzlcDataSource.class.getSimpleName(), "Squad record updated " + count);
+        Log.d(tzlcDataSource.class.getSimpleName(), "Squad record updated " + squad.getPlayerID());
     }
 
     public List<Squad> getAllSquadForMatch(long matchID)    {

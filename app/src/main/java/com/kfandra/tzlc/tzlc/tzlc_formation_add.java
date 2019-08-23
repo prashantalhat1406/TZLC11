@@ -3,11 +3,11 @@ package com.kfandra.tzlc.tzlc;
 import android.content.ClipData;
 import android.content.ClipDescription;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.DragEvent;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -32,6 +32,7 @@ public class tzlc_formation_add extends AppCompatActivity implements View.OnDrag
     Spinner formationSpinner;
     private Long[] postitions;
     private long gk,rb,rcd,cd,lcd,lb,rm,rcm,cm,lcm,lm,rst,st,lst;
+    private List<Integer> selected;
 
 
     @Override
@@ -48,30 +49,87 @@ public class tzlc_formation_add extends AppCompatActivity implements View.OnDrag
 
             case DragEvent.ACTION_DROP:
                 ClipData.Item item = event.getClipData().getItemAt(0);
+
                 Squad squad =  datasource.getSquad(Long.parseLong(item.getText().toString()));
+                int playerID = (int)squad.getPlayerID();
                 TextView h = (TextView) v;
-                String name = datasource.getPlayer(squad.getPlayerID()).getPlayerName();
-                h.setText(""+name.split("@")[0].substring(0,2)+". "+name.split("@")[1]);
-                switch(h.getId())
+                if(!selected.contains(playerID)) {
+                    if(((TextView) v).getText().toString().contains(".")) {
+                        Integer existing =  (int)datasource.getPlayerID( ((TextView) v).getText().toString());
+                        selected.remove(existing);
+                    }
+                    String name = datasource.getPlayer(squad.getPlayerID()).getPlayerName();
+                    h.setText("" + name.split("@")[0].substring(0, 2) + ". " + name.split("@")[1]);
+                    h.setBackground(getDrawable(R.drawable.formationgreen));
+                    switch (h.getId()) {
+                        case R.id.formationGK:
+                            gk = squad.getId();
+                            squad.setPosition(1);
+                            break;
+                        case R.id.formationRB:
+                            rb = squad.getId();
+                            squad.setPosition(1);
+                            break;
+                        case R.id.formationRCD:
+                            rcd = squad.getId();
+                            squad.setPosition(1);
+                            break;
+                        case R.id.formationCD:
+                            cd = squad.getId();
+                            squad.setPosition(1);
+                            break;
+                        case R.id.formationLCD:
+                            lcd = squad.getId();
+                            squad.setPosition(1);
+                            break;
+                        case R.id.formationLB:
+                            lb = squad.getId();
+                            squad.setPosition(1);
+                            break;
+                        case R.id.formationRM:
+                            rm = squad.getId();
+                            squad.setPosition(1);
+                            break;
+                        case R.id.formationRCM:
+                            rcm = squad.getId();
+                            squad.setPosition(1);
+                            break;
+                        case R.id.formationCM:
+                            cm = squad.getId();
+                            squad.setPosition(1);
+                            break;
+                        case R.id.formationLCM:
+                            lcm = squad.getId();
+                            squad.setPosition(1);
+                            break;
+                        case R.id.formationLM:
+                            lm = squad.getId();
+                            squad.setPosition(1);
+                            break;
+                        case R.id.formationRST:
+                            rst = squad.getId();
+                            squad.setPosition(1);
+                            break;
+                        case R.id.formationST:
+                            st = squad.getId();
+                            squad.setPosition(1);
+                            break;
+                        case R.id.formationLST:
+                            lst = squad.getId();
+                            squad.setPosition(1);
+                            break;
+                    }
+                    datasource.updateSquad(squad);
+                    selected.add((int) squad.getPlayerID());
+                    v.invalidate();
+                    return true;
+                }else
                 {
-                    case R.id.formationGK :  gk = squad.getId(); squad.setPosition(1);break;
-                    case R.id.formationRB :  rb = squad.getId();squad.setPosition(1);break;
-                    case R.id.formationRCD : rcd = squad.getId();squad.setPosition(1);break;
-                    case R.id.formationCD :  cd = squad.getId();squad.setPosition(1);break;
-                    case R.id.formationLCD :  lcd = squad.getId();squad.setPosition(1);break;
-                    case R.id.formationLB :  lb = squad.getId();squad.setPosition(1);break;
-                    case R.id.formationRM :  rm = squad.getId();squad.setPosition(1);break;
-                    case R.id.formationRCM :  rcm = squad.getId();squad.setPosition(1);break;
-                    case R.id.formationCM :  cm = squad.getId();squad.setPosition(1);break;
-                    case R.id.formationLCM :  lcm = squad.getId();squad.setPosition(1);break;
-                    case R.id.formationLM :  lm = squad.getId();squad.setPosition(1);break;
-                    case R.id.formationRST :  rst = squad.getId();squad.setPosition(1);break;
-                    case R.id.formationST :  st = squad.getId();squad.setPosition(1);break;
-                    case R.id.formationLST :  lst = squad.getId();squad.setPosition(1);break;
+                    Toast t =  Toast.makeText(tzlc_formation_add.this, "Error !!! Player Already added", Toast.LENGTH_SHORT);
+                    t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
+                    t.show();
+                    return false;
                 }
-                datasource.updateSquad(squad);
-                v.invalidate();
-                return true;
             case DragEvent.ACTION_DRAG_LOCATION:
                 return true;
         }
@@ -96,6 +154,7 @@ public class tzlc_formation_add extends AppCompatActivity implements View.OnDrag
         m = new Match();
         m = datasource.getMatch(matchID);
         postitions = new Long[14];
+        selected = new ArrayList<>();
 
         formationList = datasource.getFormationForMatchandClub(matchID,clubID);
 
