@@ -34,59 +34,9 @@
                 android:layout_weight="0.3"
                 android:gravity="center" android:textStyle="bold"
                 android:text="Home" />
-
-            <!--<TextView
-                android:id="@+id/matchDetailsHomeScore"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.3"
-                android:gravity="center"
-                android:text="Score" /> -->
-
-            <!--<TextView
-                android:id="@+id/matchDetailsHomePossession"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.2"
-                android:gravity="center"
-                android:text="Pssession" />-->
         </LinearLayout>
 
         <View android:id="@+id/verticalLine"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="@android:color/darker_gray"/>
-
-        <!-- <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.3"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/matchDetailsMatchType"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.3"
-                android:gravity="center"
-                android:text="Club" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.3"
-                android:gravity="center"
-                android:text="Score" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.2"
-                android:gravity="center"
-                android:text="Passes [Failed]" />
-        </LinearLayout> -->
-
-        <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:background="@android:color/darker_gray"/>
@@ -104,23 +54,46 @@
                 android:layout_weight="0.3"
                 android:gravity="center" android:textStyle="bold"
                 android:text="Away" />
-
-            <!--<TextView
-                android:id="@+id/matchDetailsAwayScore"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.3"
-                android:gravity="center"
-                android:text="Score" />-->
-
-            <!--<TextView
-                android:id="@+id/matchDetailsAwayPossession"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.2"
-                android:gravity="center"
-                android:text="Pssession" />-->
         </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_weight="0.8" android:id="@+id/layoutGoals"
+        android:layout_width="match_parent" android:orientation="horizontal"
+        android:layout_height="match_parent" >
+
+        <LinearLayout android:orientation="vertical"
+            android:layout_width="match_parent" android:layout_weight="0.3"
+            android:layout_height="match_parent">
+            <TextView android:id="@+id/matchDetailsHomeGoals"
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/darker_gray"/>
+
+        <LinearLayout android:orientation="vertical"
+            android:layout_width="match_parent" android:layout_weight="0.3"
+            android:layout_height="match_parent">
+            <TextView android:id="@+id/matchDetailsAwayGoals"
+                android:layout_width="match_parent" android:gravity="center"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <LinearLayout android:layout_weight="0.56" android:id="@+id/layoutFormation"
+        android:layout_width="match_parent" android:orientation="horizontal"
+        android:layout_height="match_parent" >
 
     </LinearLayout>
 
@@ -197,68 +170,6 @@
             <TextView android:id="@+id/txtvA4"
                 android:layout_width="match_parent" android:layout_weight="0.1"  android:gravity="center" android:text="50%"
                 android:layout_height="match_parent" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"/>
-
-    <LinearLayout android:layout_weight="0.66" android:id="@+id/layoutFormation"
-        android:layout_width="match_parent" android:orientation="horizontal"
-        android:layout_height="match_parent" >
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"/>
-
-    <LinearLayout android:layout_weight="0.7" android:id="@+id/layoutGoals"
-        android:layout_width="match_parent" android:orientation="horizontal"
-        android:layout_height="match_parent" >
-
-        <LinearLayout android:orientation="vertical"
-            android:layout_width="match_parent" android:layout_weight="0.3"
-            android:layout_height="match_parent">
-            <TextView android:id="@+id/matchDetailsHomeGoals"
-                android:layout_width="match_parent" android:gravity="center"
-                android:layout_height="match_parent" />
-        </LinearLayout>
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="@android:color/darker_gray"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.3"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.3"
-                android:gravity="center"
-                android:text="Goals" />
-        </LinearLayout>
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="@android:color/darker_gray"/>
-
-        <LinearLayout android:orientation="vertical"
-            android:layout_width="match_parent" android:layout_weight="0.3"
-            android:layout_height="match_parent">
-            <TextView android:id="@+id/matchDetailsAwayGoals"
-                android:layout_width="match_parent" android:gravity="center"
-                android:layout_height="match_parent" />
-
         </LinearLayout>
 
     </LinearLayout>
