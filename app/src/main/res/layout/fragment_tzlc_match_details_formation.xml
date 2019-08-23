@@ -4,6 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" android:orientation="vertical"
     tools:context=".tzlc_match_details_formation">
+    <View
+        android:layout_width="match_parent" android:paddingTop="5dp"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
 
     <LinearLayout
         android:layout_width="match_parent" android:orientation="vertical"
@@ -12,20 +17,30 @@
             android:layout_width="match_parent" android:orientation="horizontal"
             android:layout_height="match_parent" >
             <TextView android:id="@+id/formationInfo" android:layout_weight="0.5" android:text="Formation Type" android:textSize="@dimen/listFirstLine"
-                    android:layout_width="match_parent" android:gravity="center" android:layout_gravity="center"
+                    android:layout_width="match_parent" android:gravity="center" android:layout_gravity="center" android:textColor="@color/Black"
                     android:layout_height="match_parent" />
+            <View
+                android:layout_width="1dp" android:paddingTop="5dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray"/>
+
             <RadioGroup android:layout_weight="0.5"
                 android:layout_width="match_parent" android:orientation="horizontal"
                 android:layout_height="match_parent">
                 <RadioButton android:id="@+id/rdbFormationDisplayHomeClub"
-                    android:layout_width="match_parent" android:layout_weight="0.1" android:text="HomeClub"
+                    android:layout_width="match_parent" android:layout_weight="0.1" android:text="HomeClub" android:textSize="@dimen/listSecondLine"
                     android:layout_height="match_parent" />
                 <RadioButton android:id="@+id/rdbFormationDisplayAwayClub"
-                    android:layout_width="match_parent" android:layout_weight="0.1" android:text="AwayClub"
+                    android:layout_width="match_parent" android:layout_weight="0.1" android:text="AwayClub" android:textSize="@dimen/listSecondLine"
                     android:layout_height="match_parent" />
             </RadioGroup>
 
         </LinearLayout>
+        <View
+            android:layout_width="match_parent" android:paddingTop="5dp"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+
         <LinearLayout android:layout_weight="0.1"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -35,58 +50,58 @@
                 <LinearLayout
                     android:layout_width="match_parent" android:layout_weight="0.1" android:orientation="horizontal" android:gravity="center|center_horizontal"
                     android:layout_height="match_parent">
-                    <TextView android:id="@+id/formationDisplayGK"
+                    <TextView android:id="@+id/formationDisplayGK"  android:textSize="@dimen/listSecondLine" android:textColor="@color/Black"
                         android:layout_width="100dp"
                         android:layout_height="50dp"  android:text="GK" android:gravity="center" android:layout_gravity="center"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent" android:layout_weight="0.1" android:orientation="horizontal" android:gravity="center|center_horizontal"
                     android:layout_height="match_parent">
-                    <TextView android:layout_weight="0.1" android:id="@+id/formationDisplayRB"
+                    <TextView android:layout_weight="0.1" android:id="@+id/formationDisplayRB" android:textSize="@dimen/listSecondLine"  android:textColor="@color/Black"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"  android:text="RB" android:gravity="center" android:layout_gravity="center"/>
-                    <TextView android:layout_weight="0.1" android:id="@+id/formationDisplayRCD"
+                    <TextView android:layout_weight="0.1" android:id="@+id/formationDisplayRCD" android:textSize="@dimen/listSecondLine"  android:textColor="@color/Black"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"  android:text="RCD" android:gravity="center" android:layout_gravity="center"/>
-                    <TextView android:layout_weight="0.1" android:id="@+id/formationDisplayCD"
+                    <TextView android:layout_weight="0.1" android:id="@+id/formationDisplayCD" android:textSize="@dimen/listSecondLine"  android:textColor="@color/Black"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"  android:text="CD" android:gravity="center" android:layout_gravity="center"/>
-                    <TextView android:layout_weight="0.1" android:id="@+id/formationDisplayLCD"
+                    <TextView android:layout_weight="0.1" android:id="@+id/formationDisplayLCD" android:textSize="@dimen/listSecondLine"  android:textColor="@color/Black"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"  android:text="LCD" android:gravity="center" android:layout_gravity="center"/>
-                    <TextView android:layout_weight="0.1" android:id="@+id/formationDisplayLB"
+                    <TextView android:layout_weight="0.1" android:id="@+id/formationDisplayLB" android:textSize="@dimen/listSecondLine" android:textColor="@color/Black"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"  android:text="LB" android:gravity="center" android:layout_gravity="center"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent" android:layout_weight="0.1" android:orientation="horizontal" android:gravity="center|center_horizontal"
                     android:layout_height="match_parent">
-                    <TextView android:layout_weight="0.1" android:id="@+id/formationDisplayRM"
+                    <TextView android:layout_weight="0.1" android:id="@+id/formationDisplayRM" android:textSize="@dimen/listSecondLine" android:textColor="@color/Black"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"  android:text="RM" android:gravity="center" android:layout_gravity="center"/>
-                    <TextView android:layout_weight="0.1" android:id="@+id/formationDisplayRCM"
+                    <TextView android:layout_weight="0.1" android:id="@+id/formationDisplayRCM" android:textSize="@dimen/listSecondLine" android:textColor="@color/Black"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"  android:text="RCM" android:gravity="center" android:layout_gravity="center"/>
-                    <TextView android:layout_weight="0.1" android:id="@+id/formationDisplayCM"
+                    <TextView android:layout_weight="0.1" android:id="@+id/formationDisplayCM" android:textSize="@dimen/listSecondLine" android:textColor="@color/Black"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"  android:text="CM" android:gravity="center" android:layout_gravity="center"/>
-                    <TextView android:layout_weight="0.1" android:id="@+id/formationDisplayLCM"
+                    <TextView android:layout_weight="0.1" android:id="@+id/formationDisplayLCM" android:textSize="@dimen/listSecondLine" android:textColor="@color/Black"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"  android:text="LCM" android:gravity="center" android:layout_gravity="center"/>
-                    <TextView android:layout_weight="0.1" android:id="@+id/formationDisplayLM"
+                    <TextView android:layout_weight="0.1" android:id="@+id/formationDisplayLM" android:textSize="@dimen/listSecondLine" android:textColor="@color/Black"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"  android:text="LM" android:gravity="center" android:layout_gravity="center"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent" android:layout_weight="0.1" android:orientation="horizontal" android:gravity="center|center_horizontal"
                     android:layout_height="match_parent">
-                    <TextView android:layout_weight="0.1" android:id="@+id/formationDisplayRST"
+                    <TextView android:layout_weight="0.1" android:id="@+id/formationDisplayRST" android:textSize="@dimen/listSecondLine" android:textColor="@color/Black"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"  android:text="RST" android:gravity="center" android:layout_gravity="center"/>
-                    <TextView android:layout_weight="0.1" android:id="@+id/formationDisplayST"
+                    <TextView android:layout_weight="0.1" android:id="@+id/formationDisplayST" android:textSize="@dimen/listSecondLine" android:textColor="@color/Black"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"  android:text="ST" android:gravity="center" android:layout_gravity="center"/>
-                    <TextView android:layout_weight="0.1" android:id="@+id/formationDisplayLST"
+                    <TextView android:layout_weight="0.1" android:id="@+id/formationDisplayLST" android:textSize="@dimen/listSecondLine" android:textColor="@color/Black"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"  android:text="LST" android:gravity="center" android:layout_gravity="center"/>
 

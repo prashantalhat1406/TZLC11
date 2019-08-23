@@ -126,19 +126,16 @@ public class tzlc_formation_add extends AppCompatActivity implements View.OnDrag
 
                 switch (position){
                     case 0:
-                        Toast.makeText(tzlc_formation_add.this,"4-4-2",Toast.LENGTH_SHORT) .show();
                         showDefLine(4);
                         showMidLine(4);
                         showStrLine(2);
                         break;
                     case 1:
-                        Toast.makeText(tzlc_formation_add.this,"3-5-2",Toast.LENGTH_SHORT) .show();
                         showDefLine(3);
                         showMidLine(5);
                         showStrLine(2);
                         break;
                     case 2:
-                        Toast.makeText(tzlc_formation_add.this,"4-3-3",Toast.LENGTH_SHORT) .show();
                         showDefLine(4);
                         showMidLine(3);
                         showStrLine(3);
