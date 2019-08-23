@@ -66,7 +66,7 @@
             android:layout_width="match_parent" android:layout_weight="0.3"
             android:layout_height="match_parent">
             <TextView android:id="@+id/matchDetailsHomeGoals"
-                android:layout_width="match_parent" android:gravity="center"
+                android:layout_width="match_parent" android:gravity="center" android:textColor="@color/Black"
                 android:layout_height="match_parent" />
         </LinearLayout>
 
@@ -79,7 +79,7 @@
             android:layout_width="match_parent" android:layout_weight="0.3"
             android:layout_height="match_parent">
             <TextView android:id="@+id/matchDetailsAwayGoals"
-                android:layout_width="match_parent" android:gravity="center"
+                android:layout_width="match_parent" android:gravity="center" android:textColor="@color/Black"
                 android:layout_height="match_parent" />
 
         </LinearLayout>
@@ -243,8 +243,9 @@
         android:layout_height="match_parent" >
 
         <TextView
-            android:layout_width="match_parent" android:layout_weight="0.51" android:gravity="center"
+            android:layout_width="match_parent" android:layout_weight="0.51" android:gravity="center"  android:textColor="@color/Black"
             android:layout_height="match_parent" android:text="Possession"/>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -333,7 +334,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
-                android:gravity="center"
+                android:gravity="center" android:textColor="@color/Black"
                 android:text="CARDS" />
 
             <TextView
@@ -341,7 +342,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
-                android:gravity="center"
+                android:gravity="center" android:textColor="@color/Black"
                 android:text="DFK" />
 
             <TextView
@@ -349,7 +350,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
-                android:gravity="center"
+                android:gravity="center" android:textColor="@color/Black"
                 android:text="Corners" />
 
 
@@ -358,7 +359,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
-                android:gravity="center"
+                android:gravity="center" android:textColor="@color/Black"
                 android:text="Goal Kicks" />
 
             <TextView
@@ -366,7 +367,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
-                android:gravity="center"
+                android:gravity="center" android:textColor="@color/Black"
                 android:text="Shot On Target" />
 
             <TextView
@@ -374,7 +375,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
-                android:gravity="center"
+                android:gravity="center" android:textColor="@color/Black"
                 android:text="Shot Off Target" />
 
             <TextView
@@ -382,7 +383,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
-                android:gravity="center"
+                android:gravity="center" android:textColor="@color/Black"
                 android:text="Late Challange" />
 
             <TextView
@@ -390,7 +391,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
-                android:gravity="center"
+                android:gravity="center" android:textColor="@color/Black"
                 android:text="Tackles" />
 
             <TextView
@@ -398,7 +399,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
-                android:gravity="center"
+                android:gravity="center" android:textColor="@color/Black"
                 android:text="Throw In" />
 
             <TextView
@@ -406,7 +407,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
-                android:gravity="center"
+                android:gravity="center" android:textColor="@color/Black"
                 android:text="Offside" />
 
             <TextView
@@ -414,7 +415,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
-                android:gravity="center"
+                android:gravity="center" android:textColor="@color/Black"
                 android:text="POP" />
 
 
@@ -435,21 +436,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
-                android:gravity="center"
+                android:gravity="center"  android:textColor="@color/Black"
                 android:text="Cards" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
-                android:gravity="center"
+                android:gravity="center" android:textColor="@color/Black"
                 android:text="Free Kicks" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
-                android:gravity="center"
+                android:gravity="center" android:textColor="@color/Black"
                 android:text="Corner" />
 
 
@@ -457,55 +458,55 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
-                android:gravity="center"
+                android:gravity="center" android:textColor="@color/Black"
                 android:text="Goal Kicks" />
 
             <TextView
                 android:layout_width="match_parent" android:visibility="gone"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
-                android:gravity="center"
+                android:gravity="center" android:textColor="@color/Black"
                 android:text="Shots [ On Target ]" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="0.3"
+                android:layout_weight="0.3" android:textColor="@color/Black"
                 android:gravity="center" android:visibility="gone"
                 android:text="Shot Off Target" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="0.3"
+                android:layout_weight="0.3" android:textColor="@color/Black"
                 android:gravity="center"
                 android:text="Late Challenge" />
 
             <TextView
                 android:layout_width="match_parent" android:visibility="gone"
                 android:layout_height="match_parent"
-                android:layout_weight="0.3"
+                android:layout_weight="0.3" android:textColor="@color/Black"
                 android:gravity="center"
                 android:text="Tackles" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="0.3"
+                android:layout_weight="0.3" android:textColor="@color/Black"
                 android:gravity="center"
                 android:text="Throw In" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="0.3"
+                android:layout_weight="0.3" android:textColor="@color/Black"
                 android:gravity="center"
                 android:text="Offside" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="0.3"
+                android:layout_weight="0.3" android:textColor="@color/Black"
                 android:gravity="center"
                 android:text="POP [ scored ]" />
 
@@ -528,7 +529,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
-                android:gravity="center"
+                android:gravity="center" android:textColor="@color/Black"
                 android:text="CARDS" />
 
             <TextView
@@ -536,7 +537,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
-                android:gravity="center"
+                android:gravity="center" android:textColor="@color/Black"
                 android:text="DFK" />
 
             <TextView
@@ -544,7 +545,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
-                android:gravity="center"
+                android:gravity="center" android:textColor="@color/Black"
                 android:text="Corner" />
 
 
@@ -553,7 +554,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
-                android:gravity="center"
+                android:gravity="center" android:textColor="@color/Black"
                 android:text="Goal Kicks" />
 
             <TextView
@@ -561,7 +562,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
-                android:gravity="center"
+                android:gravity="center" android:textColor="@color/Black"
                 android:text="Shot On Target" />
 
             <TextView
@@ -569,7 +570,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
-                android:gravity="center"
+                android:gravity="center" android:textColor="@color/Black"
                 android:text="Shot Off Target" />
 
             <TextView
@@ -577,7 +578,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
-                android:gravity="center"
+                android:gravity="center" android:textColor="@color/Black"
                 android:text="Late Challange" />
 
             <TextView
@@ -585,7 +586,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
-                android:gravity="center"
+                android:gravity="center" android:textColor="@color/Black"
                 android:text="Tackles" />
 
             <TextView
@@ -593,7 +594,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
-                android:gravity="center"
+                android:gravity="center" android:textColor="@color/Black"
                 android:text="Throw IN" />
 
             <TextView
@@ -601,7 +602,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
-                android:gravity="center"
+                android:gravity="center" android:textColor="@color/Black"
                 android:text="Offside" />
 
             <TextView
@@ -609,7 +610,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
-                android:gravity="center"
+                android:gravity="center" android:textColor="@color/Black"
                 android:text="POP" />
 
 

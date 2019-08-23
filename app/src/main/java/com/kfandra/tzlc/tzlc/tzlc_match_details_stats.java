@@ -57,6 +57,12 @@ public class tzlc_match_details_stats extends Fragment {
         List <Goal> goals = datasource.getAllGoalsForMatch(match_details.getMatchID());
         List <Highlight> highlights = datasource.getAllHighlights(match_details.getMatchID());
 
+        Formation homeFormation = datasource.getFormation(match.getId(),match.getHomeClubID());
+        showHomeFormation(homeFormation,rootView);
+
+        Formation awayFormation = datasource.getFormation(match.getId(),match.getAwayClubID());
+        showAwayFormation(awayFormation,rootView);
+
         int htHome=0, htAway=0;
         for (Highlight highlight : highlights) {
             if(highlight.getHighlight().equals("GOAL"))
@@ -246,5 +252,287 @@ public class tzlc_match_details_stats extends Fragment {
 
         return rootView;
     }
+
+    private void showHomeFormation(Formation homeFormation,View rootView) {
+        switch (homeFormation.getFormations()){
+            case 0:
+                showHomeDefLine(4,rootView,homeFormation);
+                showHomeMidLine(4,rootView,homeFormation);
+                showHomeStrLine(2,rootView,homeFormation);
+                break;
+            case 1:
+                showHomeDefLine(3,rootView,homeFormation);
+                showHomeMidLine(5,rootView,homeFormation);
+                showHomeStrLine(2,rootView,homeFormation);
+                break;
+            case 2:
+                showHomeDefLine(4,rootView,homeFormation);
+                showHomeMidLine(3,rootView,homeFormation);
+                showHomeStrLine(3,rootView,homeFormation);
+                break;
+        }
+
+    }
+
+    private void showHomeMidLine(int positions, View rootView, Formation formation) {
+        //String name = datasource.getPlayer(datasource.getSquad(formation.getRm()).getPlayerID()).getPlayerName().split("@")[1];
+        //playerName.setText(""+name.split("@")[0].substring(0,2)+". "+name.split("@")[1]);
+
+        TextView t1 = rootView.findViewById(R.id.statsHomeFormationRM);
+        if(datasource.getPlayer(datasource.getSquad(formation.getRm()).getPlayerID()).getPlayerName() != null)
+            t1.setText(""+ datasource.getPlayer(datasource.getSquad(formation.getRm()).getPlayerID()).getPlayerName().split("@")[1]);
+        TextView t2 = rootView.findViewById(R.id.statsHomeFormationRCM);
+        if(datasource.getPlayer(datasource.getSquad(formation.getRcm()).getPlayerID()).getPlayerName() != null)
+            t2.setText(""+ datasource.getPlayer(datasource.getSquad(formation.getRcm()).getPlayerID()).getPlayerName().split("@")[1]);
+        TextView t3 = rootView.findViewById(R.id.statsHomeFormationCM);
+        if(datasource.getPlayer(datasource.getSquad(formation.getCm()).getPlayerID()).getPlayerName() != null)
+            t3.setText(""+ datasource.getPlayer(datasource.getSquad(formation.getCm()).getPlayerID()).getPlayerName().split("@")[1]);
+        TextView t4 = rootView.findViewById(R.id.statsHomeFormationLCM);
+        if(datasource.getPlayer(datasource.getSquad(formation.getLcm()).getPlayerID()).getPlayerName() != null)
+            t4.setText(""+ datasource.getPlayer(datasource.getSquad(formation.getLcm()).getPlayerID()).getPlayerName().split("@")[1]);
+        TextView t5 = rootView.findViewById(R.id.statsHomeFormationLM);
+        if(datasource.getPlayer(datasource.getSquad(formation.getLm()).getPlayerID()).getPlayerName() != null)
+            t5.setText(""+ datasource.getPlayer(datasource.getSquad(formation.getLm()).getPlayerID()).getPlayerName().split("@")[1]);
+
+        switch (positions){
+            case 5 :
+                t1.setVisibility(View.VISIBLE);
+                t2.setVisibility(View.VISIBLE);
+                t3.setVisibility(View.VISIBLE);
+                t4.setVisibility(View.VISIBLE);
+                t5.setVisibility(View.VISIBLE);
+                break;
+            case 4 :
+                t1.setVisibility(View.VISIBLE);
+                t2.setVisibility(View.VISIBLE);
+                t3.setVisibility(View.GONE);
+                t4.setVisibility(View.VISIBLE);
+                t5.setVisibility(View.VISIBLE);
+                break;
+            case 3 :
+                t1.setVisibility(View.GONE);
+                t2.setVisibility(View.VISIBLE);
+                t3.setVisibility(View.VISIBLE);
+                t4.setVisibility(View.VISIBLE);
+                t5.setVisibility(View.GONE);
+                break;
+        }
+
+    }
+
+    private void showHomeStrLine(int positions, View rootView, Formation formation) {
+
+        TextView t1 = rootView.findViewById(R.id.statsHomeFormationRST);
+        if(datasource.getPlayer(datasource.getSquad(formation.getRst()).getPlayerID()).getPlayerName() != null)
+            t1.setText(""+ datasource.getPlayer(datasource.getSquad(formation.getRst()).getPlayerID()).getPlayerName().split("@")[1]);
+        TextView t2 = rootView.findViewById(R.id.statsHomeFormationST);
+        if(datasource.getPlayer(datasource.getSquad(formation.getSt()).getPlayerID()).getPlayerName() != null)
+            t2.setText(""+ datasource.getPlayer(datasource.getSquad(formation.getSt()).getPlayerID()).getPlayerName().split("@")[1]);
+        TextView t3 = rootView.findViewById(R.id.statsHomeFormationLST);
+        if(datasource.getPlayer(datasource.getSquad(formation.getLst()).getPlayerID()).getPlayerName() != null)
+            t3.setText(""+ datasource.getPlayer(datasource.getSquad(formation.getLst()).getPlayerID()).getPlayerName().split("@")[1]);
+
+        switch (positions){
+            case 1 :
+                t1.setVisibility(View.GONE);
+                t2.setVisibility(View.VISIBLE);
+                t3.setVisibility(View.GONE);
+                break;
+            case 2 :
+                t1.setVisibility(View.VISIBLE);
+                t2.setVisibility(View.GONE);
+                t3.setVisibility(View.VISIBLE);
+                break;
+            case 3 :
+                t1.setVisibility(View.VISIBLE);
+                t2.setVisibility(View.VISIBLE);
+                t3.setVisibility(View.VISIBLE);
+                break;
+        }
+
+    }
+
+    private void showHomeDefLine(int positions, View rootView, Formation formation) {
+
+        TextView t1 = rootView.findViewById(R.id.statsHomeFormationRB);
+        if(datasource.getPlayer(datasource.getSquad(formation.getRb()).getPlayerID()).getPlayerName() != null)
+            t1.setText("" + datasource.getPlayer(datasource.getSquad(formation.getRb()).getPlayerID()).getPlayerName().split("@")[1]);
+        TextView t2 = rootView.findViewById(R.id.statsHomeFormationRCD);
+        if(datasource.getPlayer(datasource.getSquad(formation.getRcd()).getPlayerID()).getPlayerName() != null)
+            t2.setText("" + datasource.getPlayer(datasource.getSquad(formation.getRcd()).getPlayerID()).getPlayerName().split("@")[1]);
+        TextView t3 = rootView.findViewById(R.id.statsHomeFormationCD);
+        if(datasource.getPlayer(datasource.getSquad(formation.getCd()).getPlayerID()).getPlayerName() != null)
+            t3.setText("" + datasource.getPlayer(datasource.getSquad(formation.getCd()).getPlayerID()).getPlayerName().split("@")[1]);
+        TextView t4 = rootView.findViewById(R.id.statsHomeFormationLCD);
+        if(datasource.getPlayer(datasource.getSquad(formation.getLcd()).getPlayerID()).getPlayerName() != null)
+            t4.setText("" + datasource.getPlayer(datasource.getSquad(formation.getLcd()).getPlayerID()).getPlayerName().split("@")[1]);
+        TextView t5 = rootView.findViewById(R.id.statsHomeFormationLB);
+        if(datasource.getPlayer(datasource.getSquad(formation.getLb()).getPlayerID()).getPlayerName() != null)
+            t5.setText("" + datasource.getPlayer(datasource.getSquad(formation.getLb()).getPlayerID()).getPlayerName().split("@")[1]);
+        TextView gk = rootView.findViewById(R.id.statsHomeFormationGK);
+        if(datasource.getPlayer(datasource.getSquad(formation.getGk()).getPlayerID()).getPlayerName() != null)
+            gk.setText("" + datasource.getPlayer(datasource.getSquad(formation.getGk()).getPlayerID()).getPlayerName().split("@")[1]);
+
+        switch (positions){
+            case 4 :
+                t1.setVisibility(View.VISIBLE);
+                t2.setVisibility(View.VISIBLE);
+                t3.setVisibility(View.GONE);
+                t4.setVisibility(View.VISIBLE);
+                t5.setVisibility(View.VISIBLE);
+                break;
+            case 3 :
+                t1.setVisibility(View.GONE);
+                t2.setVisibility(View.VISIBLE);
+                t3.setVisibility(View.VISIBLE);
+                t4.setVisibility(View.VISIBLE);
+                t5.setVisibility(View.GONE);
+                break;
+        }
+
+    }
+
+    private void showAwayFormation(Formation awayFormation,View rootView) {
+        switch (awayFormation.getFormations()){
+            case 0:
+                showAwayDefLine(4,rootView,awayFormation);
+                showAwayMidLine(4,rootView,awayFormation);
+                showAwayStrLine(2,rootView,awayFormation);
+                break;
+            case 1:
+                showAwayDefLine(3,rootView,awayFormation);
+                showAwayMidLine(5,rootView,awayFormation);
+                showAwayStrLine(2,rootView,awayFormation);
+                break;
+            case 2:
+                showAwayDefLine(4,rootView,awayFormation);
+                showAwayMidLine(3,rootView,awayFormation);
+                showAwayStrLine(3,rootView,awayFormation);
+                break;
+        }
+
+    }
+
+    private void showAwayMidLine(int positions, View rootView, Formation formation) {
+        //String name = datasource.getPlayer(datasource.getSquad(formation.getRm()).getPlayerID()).getPlayerName().split("@")[1];
+        //playerName.setText(""+name.split("@")[0].substring(0,2)+". "+name.split("@")[1]);
+
+        TextView t1 = rootView.findViewById(R.id.statsAwayFormationRM);
+        if(datasource.getPlayer(datasource.getSquad(formation.getRm()).getPlayerID()).getPlayerName() != null)
+            t1.setText(""+ datasource.getPlayer(datasource.getSquad(formation.getRm()).getPlayerID()).getPlayerName().split("@")[1]);
+        TextView t2 = rootView.findViewById(R.id.statsAwayFormationRCM);
+        if(datasource.getPlayer(datasource.getSquad(formation.getRcm()).getPlayerID()).getPlayerName() != null)
+            t2.setText(""+ datasource.getPlayer(datasource.getSquad(formation.getRcm()).getPlayerID()).getPlayerName().split("@")[1]);
+        TextView t3 = rootView.findViewById(R.id.statsAwayFormationCM);
+        if(datasource.getPlayer(datasource.getSquad(formation.getCm()).getPlayerID()).getPlayerName() != null)
+            t3.setText(""+ datasource.getPlayer(datasource.getSquad(formation.getCm()).getPlayerID()).getPlayerName().split("@")[1]);
+        TextView t4 = rootView.findViewById(R.id.statsAwayFormationLCM);
+        if(datasource.getPlayer(datasource.getSquad(formation.getLcm()).getPlayerID()).getPlayerName() != null)
+            t4.setText(""+ datasource.getPlayer(datasource.getSquad(formation.getLcm()).getPlayerID()).getPlayerName().split("@")[1]);
+        TextView t5 = rootView.findViewById(R.id.statsAwayFormationLM);
+        if(datasource.getPlayer(datasource.getSquad(formation.getLm()).getPlayerID()).getPlayerName() != null)
+            t5.setText(""+ datasource.getPlayer(datasource.getSquad(formation.getLm()).getPlayerID()).getPlayerName().split("@")[1]);
+
+        switch (positions){
+            case 5 :
+                t1.setVisibility(View.VISIBLE);
+                t2.setVisibility(View.VISIBLE);
+                t3.setVisibility(View.VISIBLE);
+                t4.setVisibility(View.VISIBLE);
+                t5.setVisibility(View.VISIBLE);
+                break;
+            case 4 :
+                t1.setVisibility(View.VISIBLE);
+                t2.setVisibility(View.VISIBLE);
+                t3.setVisibility(View.GONE);
+                t4.setVisibility(View.VISIBLE);
+                t5.setVisibility(View.VISIBLE);
+                break;
+            case 3 :
+                t1.setVisibility(View.GONE);
+                t2.setVisibility(View.VISIBLE);
+                t3.setVisibility(View.VISIBLE);
+                t4.setVisibility(View.VISIBLE);
+                t5.setVisibility(View.GONE);
+                break;
+        }
+
+    }
+
+    private void showAwayStrLine(int positions, View rootView, Formation formation) {
+
+        TextView t1 = rootView.findViewById(R.id.statsAwayFormationRST);
+        if(datasource.getPlayer(datasource.getSquad(formation.getRst()).getPlayerID()).getPlayerName() != null)
+            t1.setText(""+ datasource.getPlayer(datasource.getSquad(formation.getRst()).getPlayerID()).getPlayerName().split("@")[1]);
+        TextView t2 = rootView.findViewById(R.id.statsAwayFormationST);
+        if(datasource.getPlayer(datasource.getSquad(formation.getSt()).getPlayerID()).getPlayerName() != null)
+            t2.setText(""+ datasource.getPlayer(datasource.getSquad(formation.getSt()).getPlayerID()).getPlayerName().split("@")[1]);
+        TextView t3 = rootView.findViewById(R.id.statsAwayFormationLST);
+        if(datasource.getPlayer(datasource.getSquad(formation.getLst()).getPlayerID()).getPlayerName() != null)
+            t3.setText(""+ datasource.getPlayer(datasource.getSquad(formation.getLst()).getPlayerID()).getPlayerName().split("@")[1]);
+
+        switch (positions){
+            case 1 :
+                t1.setVisibility(View.GONE);
+                t2.setVisibility(View.VISIBLE);
+                t3.setVisibility(View.GONE);
+                break;
+            case 2 :
+                t1.setVisibility(View.VISIBLE);
+                t2.setVisibility(View.GONE);
+                t3.setVisibility(View.VISIBLE);
+                break;
+            case 3 :
+                t1.setVisibility(View.VISIBLE);
+                t2.setVisibility(View.VISIBLE);
+                t3.setVisibility(View.VISIBLE);
+                break;
+        }
+
+    }
+
+    private void showAwayDefLine(int positions, View rootView, Formation formation) {
+
+        TextView t1 = rootView.findViewById(R.id.statsAwayFormationRB);
+        if(datasource.getPlayer(datasource.getSquad(formation.getRb()).getPlayerID()).getPlayerName() != null)
+            t1.setText("" + datasource.getPlayer(datasource.getSquad(formation.getRb()).getPlayerID()).getPlayerName().split("@")[1]);
+        TextView t2 = rootView.findViewById(R.id.statsAwayFormationRCD);
+        if(datasource.getPlayer(datasource.getSquad(formation.getRcd()).getPlayerID()).getPlayerName() != null)
+            t2.setText("" + datasource.getPlayer(datasource.getSquad(formation.getRcd()).getPlayerID()).getPlayerName().split("@")[1]);
+        TextView t3 = rootView.findViewById(R.id.statsAwayFormationCD);
+        if(datasource.getPlayer(datasource.getSquad(formation.getCd()).getPlayerID()).getPlayerName() != null)
+            t3.setText("" + datasource.getPlayer(datasource.getSquad(formation.getCd()).getPlayerID()).getPlayerName().split("@")[1]);
+        TextView t4 = rootView.findViewById(R.id.statsAwayFormationLCD);
+        if(datasource.getPlayer(datasource.getSquad(formation.getLcd()).getPlayerID()).getPlayerName() != null)
+            t4.setText("" + datasource.getPlayer(datasource.getSquad(formation.getLcd()).getPlayerID()).getPlayerName().split("@")[1]);
+        TextView t5 = rootView.findViewById(R.id.statsAwayFormationLB);
+        if(datasource.getPlayer(datasource.getSquad(formation.getLb()).getPlayerID()).getPlayerName() != null)
+            t5.setText("" + datasource.getPlayer(datasource.getSquad(formation.getLb()).getPlayerID()).getPlayerName().split("@")[1]);
+        TextView gk = rootView.findViewById(R.id.statsAwayFormationGK);
+        if(datasource.getPlayer(datasource.getSquad(formation.getGk()).getPlayerID()).getPlayerName() != null)
+            gk.setText("" + datasource.getPlayer(datasource.getSquad(formation.getGk()).getPlayerID()).getPlayerName().split("@")[1]);
+
+        switch (positions){
+            case 4 :
+                t1.setVisibility(View.VISIBLE);
+                t2.setVisibility(View.VISIBLE);
+                t3.setVisibility(View.GONE);
+                t4.setVisibility(View.VISIBLE);
+                t5.setVisibility(View.VISIBLE);
+                break;
+            case 3 :
+                t1.setVisibility(View.GONE);
+                t2.setVisibility(View.VISIBLE);
+                t3.setVisibility(View.VISIBLE);
+                t4.setVisibility(View.VISIBLE);
+                t5.setVisibility(View.GONE);
+                break;
+        }
+
+    }
+
+
+
+
 
 }
