@@ -98,7 +98,7 @@ public class tzlc_formation_add extends AppCompatActivity implements View.OnDrag
         formationList = datasource.getFormationForMatchandClub(matchID,clubID);
 
         playersSquad = new ArrayList<>();
-        playersSquad = datasource.getAllSquadForMatchandClub(matchID, clubID);
+        playersSquad = datasource.getAvailableSquadForMatchandClub(matchID, clubID);
 
         playerList = findViewById(R.id.lstFormationSquad);
 
@@ -167,13 +167,6 @@ public class tzlc_formation_add extends AppCompatActivity implements View.OnDrag
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //int i =1;
-                /*for(int i =0 ; i<postitions.length;i++)
-                {
-                    Squad squad = datasource.getSquad(postitions[i]);
-                    squad.setPosition(i+1);
-                    datasource.updateSquad(squad);
-                }*/
 
                 Formation formation = new Formation();
                 formation.setClubID(clubID);
