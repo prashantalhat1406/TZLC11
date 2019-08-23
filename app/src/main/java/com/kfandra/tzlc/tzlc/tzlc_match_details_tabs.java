@@ -599,6 +599,12 @@ public class tzlc_match_details_tabs extends AppCompatActivity {
                         Intent squadAdd = new Intent(tzlc_match_details_tabs.this, tzlc_squad_add.class);
                         //Intent squadAdd = new Intent(tzlc_match_details_tabs.this, tzlc_formation_add.class);
                         squadAdd.putExtra("matchID", matchID);
+                        RadioButton hRDB1 = findViewById(R.id.rdbsquadHome);
+                        RadioButton aRDB1 = findViewById(R.id.rdbsquadAway);
+                        if(hRDB1.isChecked())
+                            squadAdd.putExtra("clubID", datasource.getMatch(matchID).getHomeClubID());
+                        if(aRDB1.isChecked())
+                            squadAdd.putExtra("clubID", datasource.getMatch(matchID).getAwayClubID());
                         extras.putInt("scrollIndex",scrollIndexL);
                         startActivityForResult(squadAdd,100);
                         break;

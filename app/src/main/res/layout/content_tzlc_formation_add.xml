@@ -68,59 +68,59 @@
                 android:layout_width="match_parent" android:layout_weight="0.1" android:orientation="horizontal" android:gravity="center|center_horizontal"
                 android:layout_height="match_parent">
                 <TextView android:id="@+id/formationGK"
-                    android:layout_width="100dp"
+                    android:layout_width="100dp" android:background="@drawable/formation"
                     android:layout_height="50dp"  android:text="GK" android:gravity="center" android:layout_gravity="center"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent" android:layout_weight="0.1" android:orientation="horizontal" android:gravity="center|center_horizontal"
                 android:layout_height="match_parent">
-                <TextView android:layout_weight="0.1" android:id="@+id/formationRB"
+                <TextView android:layout_weight="0.1" android:id="@+id/formationRB" android:background="@drawable/formation"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="RB" android:gravity="center" android:layout_gravity="center"/>
-                <TextView android:layout_weight="0.1" android:id="@+id/formationRCD"
+                    android:layout_height="50dp"  android:text="RB" android:gravity="center" android:layout_gravity="center"/>
+                <TextView android:layout_weight="0.1" android:id="@+id/formationRCD" android:background="@drawable/formation"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="RCD" android:gravity="center" android:layout_gravity="center"/>
-                <TextView android:layout_weight="0.1" android:id="@+id/formationCD"
+                    android:layout_height="50dp"  android:text="RCD" android:gravity="center" android:layout_gravity="center"/>
+                <TextView android:layout_weight="0.1" android:id="@+id/formationCD" android:background="@drawable/formation"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"  android:text="CD" android:gravity="center" android:layout_gravity="center"/>
-                <TextView android:layout_weight="0.1" android:id="@+id/formationLCD"
+                android:layout_height="50dp"  android:text="CD" android:gravity="center" android:layout_gravity="center"/>
+                <TextView android:layout_weight="0.1" android:id="@+id/formationLCD" android:background="@drawable/formation"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="LCD" android:gravity="center" android:layout_gravity="center"/>
-                <TextView android:layout_weight="0.1" android:id="@+id/formationLB"
+                    android:layout_height="50dp"  android:text="LCD" android:gravity="center" android:layout_gravity="center"/>
+                <TextView android:layout_weight="0.1" android:id="@+id/formationLB" android:background="@drawable/formation"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="LB" android:gravity="center" android:layout_gravity="center"/>
+                    android:layout_height="50dp"  android:text="LB" android:gravity="center" android:layout_gravity="center"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent" android:layout_weight="0.1" android:orientation="horizontal" android:gravity="center|center_horizontal"
                 android:layout_height="match_parent">
-                <TextView android:layout_weight="0.1" android:id="@+id/formationRM"
+                <TextView android:layout_weight="0.1" android:id="@+id/formationRM" android:background="@drawable/formation"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="RM" android:gravity="center" android:layout_gravity="center"/>
-                <TextView android:layout_weight="0.1" android:id="@+id/formationRCM"
+                    android:layout_height="50dp"  android:text="RM" android:gravity="center" android:layout_gravity="center"/>
+                <TextView android:layout_weight="0.1" android:id="@+id/formationRCM" android:background="@drawable/formation"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="RCM" android:gravity="center" android:layout_gravity="center"/>
-                <TextView android:layout_weight="0.1" android:id="@+id/formationCM"
+                    android:layout_height="50dp"  android:text="RCM" android:gravity="center" android:layout_gravity="center"/>
+                <TextView android:layout_weight="0.1" android:id="@+id/formationCM" android:background="@drawable/formation"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="CM" android:gravity="center" android:layout_gravity="center"/>
-                <TextView android:layout_weight="0.1" android:id="@+id/formationLCM"
+                    android:layout_height="50dp"  android:text="CM" android:gravity="center" android:layout_gravity="center"/>
+                <TextView android:layout_weight="0.1" android:id="@+id/formationLCM" android:background="@drawable/formation"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="LCM" android:gravity="center" android:layout_gravity="center"/>
-                <TextView android:layout_weight="0.1" android:id="@+id/formationLM"
+                    android:layout_height="50dp"  android:text="LCM" android:gravity="center" android:layout_gravity="center"/>
+                <TextView android:layout_weight="0.1" android:id="@+id/formationLM" android:background="@drawable/formation"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="LM" android:gravity="center" android:layout_gravity="center"/>
+                    android:layout_height="50dp"  android:text="LM" android:gravity="center" android:layout_gravity="center"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent" android:layout_weight="0.1" android:orientation="horizontal" android:gravity="center|center_horizontal"
                 android:layout_height="match_parent">
-                <TextView android:layout_weight="0.1" android:id="@+id/formationRST"
+                <TextView android:layout_weight="0.1" android:id="@+id/formationRST" android:background="@drawable/formation"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="RST" android:gravity="center" android:layout_gravity="center"/>
-                <TextView android:layout_weight="0.1" android:id="@+id/formationST"
+                    android:layout_height="50dp"  android:text="RST" android:gravity="center" android:layout_gravity="center"/>
+                <TextView android:layout_weight="0.1" android:id="@+id/formationST" android:background="@drawable/formation"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="ST" android:gravity="center" android:layout_gravity="center"/>
-                <TextView android:layout_weight="0.1" android:id="@+id/formationLST"
+                    android:layout_height="50dp"  android:text="ST" android:gravity="center" android:layout_gravity="center"/>
+                <TextView android:layout_weight="0.1" android:id="@+id/formationLST" android:background="@drawable/formation"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"  android:text="LST" android:gravity="center" android:layout_gravity="center"/>
+                    android:layout_height="50dp"  android:text="LST" android:gravity="center" android:layout_gravity="center"/>
 
             </LinearLayout>
         </LinearLayout>

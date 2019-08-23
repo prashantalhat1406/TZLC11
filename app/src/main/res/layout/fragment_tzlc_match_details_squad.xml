@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" android:orientation="horizontal"
+    android:layout_height="match_parent" android:orientation="vertical"
     tools:context=".tzlc_match_details_squad">
 
     <!-- TODO: Update blank fragment layout -->
@@ -17,6 +17,35 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" android:text="Formation"/> -->
 
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_weight="0.9"
+        android:layout_height="match_parent">
+        <RadioGroup
+            android:layout_width="match_parent" android:orientation="horizontal"
+            android:layout_height="match_parent">
+            <RadioButton android:layout_weight="0.1" android:id="@+id/rdbsquadHome"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"  android:text="Home Club"/>
+            <RadioButton android:layout_weight="0.1" android:id="@+id/rdbsquadAway"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:text="Away Club"/>
+        </RadioGroup>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent" android:paddingTop="5dp"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <LinearLayout android:layout_weight="0.1"
+        android:layout_width="match_parent" android:orientation="vertical"
+        android:layout_height="match_parent">
+        <ListView android:id="@+id/tablstSquadDisplay" android:layout_weight="0.1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </ListView>
+    </LinearLayout>
+    <!--
     <LinearLayout android:layout_weight="0.5"
         android:layout_width="match_parent" android:orientation="vertical"
         android:layout_height="match_parent">
@@ -29,10 +58,7 @@
         </ListView>
     </LinearLayout>
 
-    <View
-        android:layout_width="1dp" android:paddingTop="5dp"
-        android:layout_height="match_parent"
-        android:background="@android:color/darker_gray"/>
+
 
     <LinearLayout android:layout_weight="0.5" android:orientation="vertical"
         android:layout_width="match_parent"
@@ -45,5 +71,5 @@
             android:layout_height="match_parent">
         </ListView>
     </LinearLayout>
-
+-->
 </LinearLayout>

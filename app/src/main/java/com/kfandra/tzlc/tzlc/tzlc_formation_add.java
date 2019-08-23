@@ -310,5 +310,13 @@ public class tzlc_formation_add extends AppCompatActivity implements View.OnDrag
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent returnI = new Intent();
+        returnI.putExtra("matchID",matchID);
+        setResult(100,returnI);
+        finish();
+    }
+
 
 }
