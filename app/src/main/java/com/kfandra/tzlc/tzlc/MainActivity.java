@@ -172,6 +172,15 @@ public class MainActivity extends AppCompatActivity {
         }
         datasource.close();
 
+        ImageView matches = findViewById(R.id.butMatches);
+        matches.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, tzlc_match_display.class);
+                startActivity(i);
+            }
+        });
+
 /*
         //ImageView clubs =  findViewById(R.id.butClubs);
         Button clubs =  findViewById(R.id.butClubs);
@@ -203,8 +212,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 */
-        Intent i = new Intent(MainActivity.this, tzlc_match_display.class);
-        startActivity(i);
+        /*Intent i = new Intent(MainActivity.this, tzlc_match_display.class);
+        startActivity(i);*/
 
 
         /*authStateListener = new FirebaseAuth.AuthStateListener() {
