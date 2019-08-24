@@ -1192,6 +1192,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     matchSwapBuff += matchTimeInMillisecond;
                     matchTimeHandler.removeCallbacks(updateMatchTimerThread);
                     start = true;
+
+
                 }
             }
         });
@@ -1474,6 +1476,21 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     matchSwapBuff += matchTimeInMillisecond;
                     matchTimeHandler.removeCallbacks(updateMatchTimerThread);
                     start = true;
+
+                    /*DialogInterface.OnClickListener pausedialog = new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            switch (which)
+                            {
+                                case DialogInterface.BUTTON_POSITIVE : startPause.callOnClick(); break;
+                                case DialogInterface.BUTTON_NEGATIVE : start = false; startPause.callOnClick(); break;
+                            }
+                        }
+                    };
+                    AlertDialog.Builder pausebuilder = new AlertDialog.Builder(tzlc_stats_add_tzlc12n.this);
+                    pausebuilder.setMessage("Match Paused").setPositiveButton("Start match",pausedialog).setNegativeButton("Pause",pausedialog).show();
+                    */
+
                 }
                 break;
         }

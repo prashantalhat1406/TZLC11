@@ -97,7 +97,7 @@ public class tzlc_match_details_tabs extends AppCompatActivity {
 
         //String [] images={"stats","goal","loan","cards","referee","tv","subs"};
         //String [] images={"stats","goal","loan","cards","referee","tv","squad","subs"};
-        String [] images={"stats","loan","referee","tv","squad","subs"};
+        String [] images={"stats","loan","referee","tv","squad","formationlogo"};
         //String [] images={"Stats","Goals","Loans","Cards","MO's","Highlight"};
 
         for (int i = 0; i < images.length; i++) {
