@@ -201,6 +201,31 @@ public class tzlc_formation_add extends AppCompatActivity implements View.OnDrag
                         showMidLine(3);
                         showStrLine(3);
                         break;
+                    case 3:
+                        showDefLine(5);
+                        showMidLine(4);
+                        showStrLine(1);
+                        break;
+                    case 4:
+                        showDefLine(5);
+                        showMidLine(3);
+                        showStrLine(2);
+                        break;
+                    case 5:
+                        showDefLine(5);
+                        showMidLine(2);
+                        showStrLine(3);
+                        break;
+                    case 6:
+                        showDefLine(4);
+                        showMidLine(5);
+                        showStrLine(1);
+                        break;
+                    case 7:
+                        showDefLine(3);
+                        showMidLine(4);
+                        showStrLine(3);
+                        break;
                 }
             }
 
@@ -279,12 +304,19 @@ public class tzlc_formation_add extends AppCompatActivity implements View.OnDrag
         t5.setOnDragListener(this);
 
         switch (positions){
-            case 5 :
-                t1.setVisibility(View.VISIBLE);
+            case 2 :
+                t1.setVisibility(View.GONE);
+                t2.setVisibility(View.VISIBLE);
+                t3.setVisibility(View.GONE);
+                t4.setVisibility(View.VISIBLE);
+                t5.setVisibility(View.GONE);
+                break;
+            case 3 :
+                t1.setVisibility(View.GONE);
                 t2.setVisibility(View.VISIBLE);
                 t3.setVisibility(View.VISIBLE);
                 t4.setVisibility(View.VISIBLE);
-                t5.setVisibility(View.VISIBLE);
+                t5.setVisibility(View.GONE);
                 break;
             case 4 :
                 t1.setVisibility(View.VISIBLE);
@@ -293,12 +325,12 @@ public class tzlc_formation_add extends AppCompatActivity implements View.OnDrag
                 t4.setVisibility(View.VISIBLE);
                 t5.setVisibility(View.VISIBLE);
                 break;
-            case 3 :
-                t1.setVisibility(View.GONE);
+            case 5 :
+                t1.setVisibility(View.VISIBLE);
                 t2.setVisibility(View.VISIBLE);
                 t3.setVisibility(View.VISIBLE);
                 t4.setVisibility(View.VISIBLE);
-                t5.setVisibility(View.GONE);
+                t5.setVisibility(View.VISIBLE);
                 break;
         }
     }
@@ -344,6 +376,13 @@ public class tzlc_formation_add extends AppCompatActivity implements View.OnDrag
         TextView gk = findViewById(R.id.formationGK);
         gk.setOnDragListener(this);
         switch (positions){
+            case 3 :
+                t1.setVisibility(View.GONE);
+                t2.setVisibility(View.VISIBLE);
+                t3.setVisibility(View.VISIBLE);
+                t4.setVisibility(View.VISIBLE);
+                t5.setVisibility(View.GONE);
+                break;
             case 4 :
                 t1.setVisibility(View.VISIBLE);
                 t2.setVisibility(View.VISIBLE);
@@ -351,12 +390,12 @@ public class tzlc_formation_add extends AppCompatActivity implements View.OnDrag
                 t4.setVisibility(View.VISIBLE);
                 t5.setVisibility(View.VISIBLE);
                 break;
-            case 3 :
-                t1.setVisibility(View.GONE);
+            case 5 :
+                t1.setVisibility(View.VISIBLE);
                 t2.setVisibility(View.VISIBLE);
                 t3.setVisibility(View.VISIBLE);
                 t4.setVisibility(View.VISIBLE);
-                t5.setVisibility(View.GONE);
+                t5.setVisibility(View.VISIBLE);
                 break;
         }
     }
