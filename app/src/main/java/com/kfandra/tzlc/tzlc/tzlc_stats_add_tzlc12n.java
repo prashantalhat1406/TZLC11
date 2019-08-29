@@ -588,6 +588,9 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
         t1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                t2.setChecked(false);
+                t3.setChecked(false);
+                t4.setChecked(false);
                 if (isChecked)
                 {
 
@@ -656,6 +659,9 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
         t2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                t1.setChecked(false);
+                t3.setChecked(false);
+                t4.setChecked(false);
                 if (isChecked)
                 {
                     t1.setText("");
@@ -728,6 +734,9 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
         t3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                t1.setChecked(false);
+                t2.setChecked(false);
+                t4.setChecked(false);
                 if (isChecked)
                 {
 
@@ -800,6 +809,9 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
         t4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                t1.setChecked(false);
+                t2.setChecked(false);
+                t3.setChecked(false);
                 if (isChecked)
                 {
 
