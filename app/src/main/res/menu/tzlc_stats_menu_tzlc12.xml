@@ -6,4 +6,5 @@
     <!--<item android:id="@+id/undotzlc12" android:title="Undo" android:icon="@drawable/undo" app:showAsAction="always"/>-->
     <item android:id="@+id/colortzlc12" android:title="Change Color"  app:showAsAction="never"/>
     <item android:id="@+id/resetTimerstzlc12" android:title="RESET"  app:showAsAction="never"/>
+    <item android:id="@+id/completedPassestzlc12" android:title="Completed Passes"  app:showAsAction="never"/>
 </menu>

@@ -1257,6 +1257,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
         //goalID = b.getLong("goalID",-1);
         temphomeColor = b.getInt("homeColor",temphomeColor);
         tempawayColor = b.getInt("awayColor",tempawayColor);
+        completedPassesHome = b.getInt("homePasses",0);
+        completedPassesAway = b.getInt("awayPasses",0);
     }
 
     @Override
@@ -1504,6 +1506,20 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     */
 
                 }
+                break;
+
+            case R.id.completedPassestzlc12:
+
+                Intent completedPasses = new Intent(tzlc_stats_add_tzlc12n.this, tzlc_stats_completed_passes.class);
+                Bundle extras_passes  = new Bundle();
+                extras_passes.putLong("matchID", matchID);
+                extras_passes.putInt("matchTime",matchTime+halftime);
+                extras_passes.putInt("homeColor",temphomeColor);
+                extras_passes.putInt("awayColor",tempawayColor);
+                extras_passes.putString("homeClub",datasource.getClub( m.getHomeClubID()).getClubShortName()) ;
+                extras_passes.putString("awayClub",datasource.getClub( m.getAwayClubID()).getClubShortName());
+                completedPasses.putExtras(extras_passes);
+                startActivityForResult(completedPasses,100);
                 break;
         }
 

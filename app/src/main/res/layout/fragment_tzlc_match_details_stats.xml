@@ -280,8 +280,12 @@
         android:layout_height="match_parent" >
 
         <TextView
-            android:layout_width="match_parent" android:layout_weight="0.51" android:gravity="center"  android:textColor="@color/Black"
-            android:layout_height="match_parent" android:text="Possession"/>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.51"
+            android:gravity="center"
+            android:text="Territory Stats"
+            android:textColor="@color/Black" />
 
         <View
             android:layout_width="match_parent"
