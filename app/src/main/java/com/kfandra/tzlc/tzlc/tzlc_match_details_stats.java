@@ -141,12 +141,12 @@ public class tzlc_match_details_stats extends Fragment {
 
 
         TextView homeClub = rootView.findViewById(R.id.matchDetailsHomeClub);
-        homeClub.setText("" + datasource.getClub(match.getHomeClubID()).getClubName()+"     ("+htHome+") "+stat.getHome_Score() + "    ,Passes [" + stat.getHome_TIME() +"]");
-        homeClub.setTextSize(16);
+        homeClub.setText("" + datasource.getClub(match.getHomeClubID()).getClubName()+"     ("+htHome+") "+stat.getHome_Score() + "    ,P [" + stat.getHome_TIME() +"]");
+        homeClub.setTextSize(12);
         homeClub.setTextColor(datasource.getClub(match.getHomeClubID()).getClubColor());
         TextView awayClub = rootView.findViewById(R.id.matchDetailsAwayClub);
-        awayClub.setText("" + datasource.getClub(match.getAwayClubID()).getClubName()+"     ("+htAway+") "+stat.getAway_Score()+ "    ,Passes [" + stat.getAway_TIME() +"]");
-        awayClub.setTextSize(16);
+        awayClub.setText("" + datasource.getClub(match.getAwayClubID()).getClubName()+"     ("+htAway+") "+stat.getAway_Score()+ "    ,P [" + stat.getAway_TIME() +"]");
+        awayClub.setTextSize(12);
         awayClub.setTextColor(datasource.getClub(match.getAwayClubID()).getClubColor());
         //TextView matchtype = rootView.findViewById(R.id.matchDetailsMatchType);
         //ArrayAdapter<CharSequence> adapterMatchSubType = ArrayAdapter.createFromResource(getContext(), R.array.matchTypeShort, android.R.layout.simple_spinner_item);
