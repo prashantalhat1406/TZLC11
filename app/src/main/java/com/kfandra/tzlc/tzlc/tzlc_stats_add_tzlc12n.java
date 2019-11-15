@@ -43,6 +43,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
     private ImageButton startPause;
     private Spinner spnHomePlayers, spnAwayPlayers;
     private List<String> homePlayerNames, awayPlayerNames;
+    private List<Squad> homeSquad,awaySquad;
     Match m;
     private int undo;
     private Menu undoMenu;
@@ -207,6 +208,14 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
         matchType.setText(""+adapter.getItem( m.getType()));
 
         homePlayerNames = datasource.getAllPlayerNamesForClub(m.getHomeClubID(),matchID);
+        homeSquad = new ArrayList<>();
+        homeSquad = datasource.getAvailableSquadForMatchandClub(matchID, m.getHomeClubID());
+        homePlayerNames.clear();
+
+        for (Squad squad : homeSquad) {
+            String name = datasource.getPlayer(squad.getPlayerID()).getPlayerName();
+            homePlayerNames.add(""+name.split("@")[0].substring(0,2)+". "+name.split("@")[1]);
+        }
         spnHomePlayers = findViewById(R.id.spnHomePlayers);
         ArrayAdapter<String> adapterPlayerNames = new ArrayAdapter<String>(tzlc_stats_add_tzlc12n.this,R.layout.dropdownitem, homePlayerNames);
         adapterPlayerNames.setDropDownViewResource(R.layout.dropdownitem);
@@ -214,6 +223,14 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
         spnHomePlayers.setAdapter(adapterPlayerNames);
 
         awayPlayerNames = datasource.getAllPlayerNamesForClub(m.getAwayClubID(),matchID);
+        awaySquad = new ArrayList<>();
+        awaySquad = datasource.getAvailableSquadForMatchandClub(matchID, m.getAwayClubID());
+        awayPlayerNames.clear();
+
+        for (Squad squad : awaySquad) {
+            String name = datasource.getPlayer(squad.getPlayerID()).getPlayerName();
+            awayPlayerNames.add(""+name.split("@")[0].substring(0,2)+". "+name.split("@")[1]);
+        }
         spnAwayPlayers = findViewById(R.id.spnAwayPlayers);
         ArrayAdapter<String> adapterPlayerNames2 = new ArrayAdapter<String>(tzlc_stats_add_tzlc12n.this,R.layout.dropdownitem, awayPlayerNames);
         adapterPlayerNames2.setDropDownViewResource(R.layout.dropdownitem);
