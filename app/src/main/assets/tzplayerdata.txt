@@ -21,6 +21,9 @@ Praveen@Sumathi,5,1,0
 Vishal@Jobanputra,5,1,0
 Partho@Moitra,5,1,0
 Kirod@Majhi,5,2,0
+Jaysheel@Utekar,5,1,0
+Ayush@Shah,5,1,0
+Saksham@Tiwari,5,1,0
 Amar.@Venkatramani,6,3,0
 Sameer.@Chavan,6,3,0
 Jatin@Bhana,6,3,0
@@ -55,6 +58,7 @@ Prashant@Alhat,7,1,0
 Heribert@Thomas,7,1,0
 Deepak@Soni,7,2,0
 Lokesh@Dubey,7,2,0
+Shahbaz@Khan,7,1,0
 Ajay@Sanghvi,9,2,0
 Atul@Shah,9,2,0
 Amit@Bhable,9,2,0
@@ -84,3 +88,5 @@ Kaiwalya@Kuber,10,3,0
 Vikrant@Ghotge,10,3,0
 Harjeet@Matharu,10,3,0
 Lalit@Zope,10,3,0
+Rushikesh@Jagtap,10,2,0
+Gaurav@Shah,10,2,0
