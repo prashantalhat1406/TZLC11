@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.SystemClock;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
@@ -169,7 +170,24 @@ public class tzlc_match_details_tabs extends AppCompatActivity {
         extras.putInt("scrollIndex",scrollIndexL);
         returnI.putExtras(extras);
         setResult(100,returnI);
-        finish();
+
+
+        DialogInterface.OnClickListener resetdialog = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which)
+                {
+                    case DialogInterface.BUTTON_POSITIVE :
+                        finish();
+                        break;
+                    case DialogInterface.BUTTON_NEGATIVE : break;
+                }
+            }
+        };
+        AlertDialog.Builder resetbuilder = new AlertDialog.Builder(tzlc_match_details_tabs.this);
+        resetbuilder.setTitle("Alert !!");
+        resetbuilder.setMessage("Are you sure you want to move out of Match ??").setPositiveButton("Yes",resetdialog).setNegativeButton("No",resetdialog).show();
+
     }
 
 
