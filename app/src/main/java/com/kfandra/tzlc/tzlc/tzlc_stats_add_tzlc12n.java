@@ -116,7 +116,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
         buthomeOff.setBackgroundTintList(ColorStateList.valueOf(tempHColor));buthomeOff.setTextColor(temphomeTextColor);
         buthomeTI.setBackgroundTintList(ColorStateList.valueOf(tempHColor));buthomeTI.setTextColor(temphomeTextColor);
         buthomePOPScored.setBackgroundTintList(ColorStateList.valueOf(tempHColor));buthomePOPScored.setTextColor(temphomeTextColor);
-        buthomePOPMissed.setBackgroundTintList(ColorStateList.valueOf(tempHColor));buthomePOPMissed.setTextColor(temphomeTextColor);
+        //buthomePOPMissed.setBackgroundTintList(ColorStateList.valueOf(tempHColor));buthomePOPMissed.setTextColor(temphomeTextColor);
         TextView homeClub = findViewById(R.id.txtstatsHomeClub);
         TextView homeClub1 = findViewById(R.id.txtHomeClub1);
         TextView homeClub2 = findViewById(R.id.txtHomeClub2);
@@ -133,7 +133,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
         butawayOff.setBackgroundTintList(ColorStateList.valueOf(tempAColor));butawayOff.setTextColor(tempawayTextColor);
         butawayTI.setBackgroundTintList(ColorStateList.valueOf(tempAColor));butawayTI.setTextColor(tempawayTextColor);
         butawayPOPScored.setBackgroundTintList(ColorStateList.valueOf(tempAColor));butawayPOPScored.setTextColor(tempawayTextColor);
-        butawayPOPMissed.setBackgroundTintList(ColorStateList.valueOf(tempAColor));butawayPOPMissed.setTextColor(tempawayTextColor);
+        //butawayPOPMissed.setBackgroundTintList(ColorStateList.valueOf(tempAColor));butawayPOPMissed.setTextColor(tempawayTextColor);
         TextView awayClub = findViewById(R.id.txtstatsAwayClub);
         TextView awayClub1 = findViewById(R.id.txtAwayClub1);
         TextView awayClub2 = findViewById(R.id.txtAwayClub2);
@@ -1015,12 +1015,12 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 buthomePOPScored.setText(""+(stat.getHome_POP()+1));stat.setHome_POP(stat.getHome_POP()+1);
                 //undo=R.id.butstatsHomePOPScore;undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
-                Highlight highlight = new Highlight(matchID,m.getHomeClubID() ,matchTime, 0,"POP Scored", "");
+                Highlight highlight = new Highlight(matchID,m.getHomeClubID() ,matchTime, 0,"POP", "");
                 datasource.addHighlight(highlight);
             }
         });
 
-        buthomePOPMissed = findViewById(R.id.butstatsHomePOPMiss);
+        /*buthomePOPMissed = findViewById(R.id.butstatsHomePOPMiss);
         buthomePOPMissed.setBackgroundTintList(ColorStateList.valueOf(homeColor));
         buthomePOPMissed.setTextColor(homeTextColor);
         buthomePOPMissed.setText(""+(stat.getHome_TCK())); //Using tackle variable to store POP miss
@@ -1034,7 +1034,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 Highlight highlight = new Highlight(matchID,m.getHomeClubID() ,matchTime, 0,"POP Missed", "");
                 datasource.addHighlight(highlight);
             }
-        });
+        });*/
 
 
         //Away Clubs stats start from here **************************************************
@@ -1145,12 +1145,12 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 butawayPOPScored.setText(""+(stat.getAway_POP()+1));stat.setAway_POP(stat.getAway_POP()+1);
                 //undo=R.id.butstatsAwayPOPScore;undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
-                Highlight highlight = new Highlight(matchID,m.getAwayClubID() ,matchTime, 0,"POP Scored", "");
+                Highlight highlight = new Highlight(matchID,m.getAwayClubID() ,matchTime, 0,"POP", "");
                 datasource.addHighlight(highlight);
             }
         });
 
-        butawayPOPMissed = findViewById(R.id.butstatsAwayPOPMiss);
+        /*butawayPOPMissed = findViewById(R.id.butstatsAwayPOPMiss);
         butawayPOPMissed.setBackgroundTintList(ColorStateList.valueOf(awayColor));
         butawayPOPMissed.setTextColor(awayTextColor);
         butawayPOPMissed.setText(""+(stat.getAway_TCK())); //use Tackle stat to store POP Miss
@@ -1164,7 +1164,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 Highlight highlight = new Highlight(matchID,m.getAwayClubID() ,matchTime, 0,"POP Missed", "");
                 datasource.addHighlight(highlight);
             }
-        });
+        }); */
 
 
         startPause = findViewById(R.id.butstatsPauseTZLC12);
@@ -1181,7 +1181,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     buthomeGK.setEnabled(true);
                     buthomeOff.setEnabled(true);
                     buthomePOPScored.setEnabled(true);
-                    buthomePOPMissed.setEnabled(true);
+                    //buthomePOPMissed.setEnabled(true);
 
                     butawayDFK.setEnabled(true);
                     butawayCor.setEnabled(true);
@@ -1190,7 +1190,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     butawayGK.setEnabled(true);
                     butawayOff.setEnabled(true);
                     butawayPOPScored.setEnabled(true);
-                    butawayPOPMissed.setEnabled(true);
+                    //butawayPOPMissed.setEnabled(true);
 
                     matchStartTime = SystemClock.uptimeMillis();
                     matchTimeHandler.postDelayed(updateMatchTimerThread,0);
@@ -1207,7 +1207,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     buthomeGK.setEnabled(false);
                     buthomeOff.setEnabled(false);
                     buthomePOPScored.setEnabled(false);
-                    buthomePOPMissed.setEnabled(false);
+                    //buthomePOPMissed.setEnabled(false);
 
                     butawayDFK.setEnabled(false);
                     butawayCor.setEnabled(false);
@@ -1216,7 +1216,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     butawayGK.setEnabled(false);
                     butawayOff.setEnabled(false);
                     butawayPOPScored.setEnabled(false);
-                    butawayPOPMissed.setEnabled(false);
+                    //butawayPOPMissed.setEnabled(false);
 
                     matchSwapBuff += matchTimeInMillisecond;
                     matchTimeHandler.removeCallbacks(updateMatchTimerThread);
@@ -1467,7 +1467,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     buthomeGK.setEnabled(true);
                     buthomeOff.setEnabled(true);
                     buthomePOPScored.setEnabled(true);
-                    buthomePOPMissed.setEnabled(true);
+                    //buthomePOPMissed.setEnabled(true);
 
                     butawayDFK.setEnabled(true);
                     butawayCor.setEnabled(true);
@@ -1476,7 +1476,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     butawayGK.setEnabled(true);
                     butawayOff.setEnabled(true);
                     butawayPOPScored.setEnabled(true);
-                    butawayPOPMissed.setEnabled(true);
+                    //butawayPOPMissed.setEnabled(true);
 
                     matchStartTime = SystemClock.uptimeMillis();
                     matchTimeHandler.postDelayed(updateMatchTimerThread,0);
@@ -1493,7 +1493,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     buthomeGK.setEnabled(false);
                     buthomeOff.setEnabled(false);
                     buthomePOPScored.setEnabled(false);
-                    buthomePOPMissed.setEnabled(false);
+                    //buthomePOPMissed.setEnabled(false);
 
                     butawayDFK.setEnabled(false);
                     butawayCor.setEnabled(false);
@@ -1502,7 +1502,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     butawayGK.setEnabled(false);
                     butawayOff.setEnabled(false);
                     butawayPOPScored.setEnabled(false);
-                    butawayPOPMissed.setEnabled(false);
+                    //butawayPOPMissed.setEnabled(false);
 
                     matchSwapBuff += matchTimeInMillisecond;
                     matchTimeHandler.removeCallbacks(updateMatchTimerThread);

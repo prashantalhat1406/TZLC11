@@ -382,9 +382,9 @@
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="POP Scored"
+                    android:text="POP"
                     android:textSize="@dimen/tzlcStatsLabelSize"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <Button
                     android:id="@+id/butstatsAwayPOPScore"
@@ -533,7 +533,7 @@
                 android:layout_weight="0.2" android:paddingBottom="5dp" android:paddingTop="5dp" android:paddingLeft="5dp" android:paddingRight="5dp"
                 android:orientation="horizontal">
 
-                <Button
+                <!--<Button
                     android:id="@+id/butstatsHomePOPMiss"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -556,7 +556,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
                     android:background="@drawable/roundbutton" android:textSize="@dimen/tzlcStatsTextSize" android:enabled="false"
-                    android:backgroundTint="@android:color/holo_blue_bright" />
+                    android:backgroundTint="@android:color/holo_blue_bright" />-->
 
             </LinearLayout>
 
