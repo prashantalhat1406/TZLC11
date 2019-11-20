@@ -615,17 +615,33 @@ public class tzlc_match_details_tabs extends AppCompatActivity {
                         break;
 
                     case 4: //squads
-                        Intent squadAdd = new Intent(tzlc_match_details_tabs.this, tzlc_squad_add.class);
-                        //Intent squadAdd = new Intent(tzlc_match_details_tabs.this, tzlc_formation_add.class);
-                        squadAdd.putExtra("matchID", matchID);
-                        RadioButton hRDB1 = findViewById(R.id.rdbsquadHome);
-                        RadioButton aRDB1 = findViewById(R.id.rdbsquadAway);
-                        if(hRDB1.isChecked())
-                            squadAdd.putExtra("clubID", datasource.getMatch(matchID).getHomeClubID());
-                        if(aRDB1.isChecked())
-                            squadAdd.putExtra("clubID", datasource.getMatch(matchID).getAwayClubID());
-                        extras.putInt("scrollIndex",scrollIndexL);
-                        startActivityForResult(squadAdd,100);
+
+                        DialogInterface.OnClickListener loancheckdialog = new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                switch (which)
+                                {
+                                    case DialogInterface.BUTTON_POSITIVE :
+                                        Intent squadAdd = new Intent(tzlc_match_details_tabs.this, tzlc_squad_add.class);
+                                        //Intent squadAdd = new Intent(tzlc_match_details_tabs.this, tzlc_formation_add.class);
+                                        squadAdd.putExtra("matchID", matchID);
+                                        RadioButton hRDB1 = findViewById(R.id.rdbsquadHome);
+                                        RadioButton aRDB1 = findViewById(R.id.rdbsquadAway);
+                                        if(hRDB1.isChecked())
+                                            squadAdd.putExtra("clubID", datasource.getMatch(matchID).getHomeClubID());
+                                        if(aRDB1.isChecked())
+                                            squadAdd.putExtra("clubID", datasource.getMatch(matchID).getAwayClubID());
+                                        //extras.putInt("scrollIndex",scrollIndexL);
+                                        startActivityForResult(squadAdd,100);
+                                        break;
+                                    case DialogInterface.BUTTON_NEGATIVE : break;
+                                }
+                            }
+                        };
+                        AlertDialog.Builder loancheckbuilder = new AlertDialog.Builder(tzlc_match_details_tabs.this);
+                        loancheckbuilder.setMessage("Have you finshed adding all Loans ?").setPositiveButton("Yes",loancheckdialog).setNegativeButton("No",loancheckdialog).show();
+
+
                         break;
                     case 5: //Formation
                         Intent formationAdd = new Intent(tzlc_match_details_tabs.this, tzlc_formation_add.class);
