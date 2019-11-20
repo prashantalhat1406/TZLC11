@@ -10,6 +10,8 @@ import android.os.SystemClock;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
@@ -19,6 +21,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -67,6 +70,8 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
     int h1=0,h2=0,h3=0,h4=0,a1=0,a2=0,a3=0,a4=0;
     int hh1=0,hh2=0,hh3=0,hh4=0,ha1=0,ha2=0,ha3=0,ha4=0;
     String lastPossession="";
+    public EditText vcmTime;
+    Boolean vcmHL = true;
 
 
 
@@ -258,6 +263,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                vcmHL = true;
                 //Code for Adding Goal
                 RadioButton hGoal = findViewById(R.id.rdbutHGoal);
                 RadioButton aGoal = findViewById(R.id.rdbutAGoal);
@@ -282,6 +288,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, ""+datasource.getClub( m.getHomeClubID()).getClubShortName() + " : Goal Added", Toast.LENGTH_SHORT);
                         t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
                         t.show();
+                        vcmHL = false;
                     }else
                     {
                         Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT);
@@ -310,6 +317,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, ""+datasource.getClub( m.getAwayClubID()).getClubShortName() + " : Goal Added", Toast.LENGTH_SHORT);
                         t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
                         t.show();
+                        vcmHL = false;
                     }else
                     {
                         Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT);
@@ -343,6 +351,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, ""+datasource.getClub( m.getHomeClubID()).getClubShortName() + " : Own Goal Added", Toast.LENGTH_SHORT);
                         t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
                         t.show();
+                        vcmHL = false;
                     }else
                     {
                         Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT);
@@ -371,6 +380,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, ""+datasource.getClub( m.getAwayClubID()).getClubShortName() + " : Own Goal Added", Toast.LENGTH_SHORT);
                         t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
                         t.show();
+                        vcmHL = false;
                     }else
                     {
                         Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT);
@@ -392,6 +402,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, ""+datasource.getClub( m.getHomeClubID()).getClubShortName() + " : Assist Added", Toast.LENGTH_SHORT);
                         t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
                         t.show();
+                        vcmHL = false;
                     }else
                         Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT).show();
                 }
@@ -405,6 +416,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, ""+datasource.getClub( m.getAwayClubID()).getClubShortName() + " : Assist Added", Toast.LENGTH_SHORT);
                         t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
                         t.show();
+                        vcmHL = false;
                     }else
                     {
                         Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT);
@@ -438,6 +450,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, ""+datasource.getClub( m.getHomeClubID()).getClubShortName() + " : Red Card Added", Toast.LENGTH_SHORT);
                         t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
                         t.show();
+                        vcmHL = false;
                     }else
                     {
                         Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT);
@@ -463,6 +476,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, ""+datasource.getClub( m.getHomeClubID()).getClubShortName() + " : Yellow Card Added", Toast.LENGTH_SHORT);
                         t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
                         t.show();
+                        vcmHL = false;
                     }else
                     {
                         Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT);
@@ -488,6 +502,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, ""+datasource.getClub( m.getHomeClubID()).getClubShortName() + " : Blue Card Added", Toast.LENGTH_SHORT);
                         t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
                         t.show();
+                        vcmHL = false;
                     }else
                     {
                         Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT);
@@ -513,6 +528,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, ""+datasource.getClub( m.getAwayClubID()).getClubShortName() + " : Red Card Added", Toast.LENGTH_SHORT);
                         t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
                         t.show();
+                        vcmHL = false;
                     }else
                     {
                         Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT);
@@ -538,6 +554,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, ""+datasource.getClub( m.getAwayClubID()).getClubShortName() + " : Yellow Card Added", Toast.LENGTH_SHORT);
                         t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
                         t.show();
+                        vcmHL = false;
                     }else
                     {
                         Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT);
@@ -563,6 +580,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, ""+datasource.getClub( m.getAwayClubID()).getClubShortName() + " : Blue Card Added", Toast.LENGTH_SHORT);
                         t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
                         t.show();
+                        vcmHL = false;
                     }else
                     {
                         Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, "Error !!! Please select Player.", Toast.LENGTH_SHORT);
@@ -582,6 +600,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, ""+datasource.getClub( m.getHomeClubID()).getClubShortName() + " : Sub Added", Toast.LENGTH_SHORT);
                     t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
                     t.show();
+                    vcmHL = false;
                 }
                 if(aSub.isChecked())
                 {
@@ -591,6 +610,23 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, ""+datasource.getClub( m.getAwayClubID()).getClubShortName() + " : Sub Added", Toast.LENGTH_SHORT);
                     t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
                     t.show();
+                    vcmHL = false;
+                }
+
+                if(vcmHL)
+                {
+                    String srt = vcmTime.getText().toString();
+                    String[] arr = srt.split(":");
+                    int vcmT = (Integer.parseInt(arr[0]) * 60) + Integer.parseInt(arr[1]);
+
+                    Highlight highlight = new Highlight(matchID, -1 , vcmT, -100, "Other HL", "");
+                    datasource.addHighlight(highlight);
+                    clearActions();
+                    Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, "Other HL Added", Toast.LENGTH_SHORT);
+                    t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
+                    t.show();
+                    vcmHL = false;
+                    vcmTime.setText("");
                 }
 
             }
@@ -1167,6 +1203,27 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
         }); */
 
 
+        vcmTime = findViewById(R.id.edtHighLightVCM);
+        vcmTime.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                String str = vcmTime.getText().toString();
+                if(str.length() == 2)
+                    vcmTime.append(":");
+            }
+        });
+
+
         startPause = findViewById(R.id.butstatsPauseTZLC12);
         startPause.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -1226,6 +1283,10 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 }
             }
         });
+
+        clear.requestFocus();
+
+
     }
 
     private Runnable updateMatchTimerThread = new Runnable() {

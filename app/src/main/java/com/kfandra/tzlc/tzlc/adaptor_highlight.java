@@ -37,8 +37,11 @@ public class adaptor_highlight extends ArrayAdapter<Highlight> {
         highlightEvent.setText(""+highlight.getHighlight());
 
         TextView highlightClub = convertView.findViewById(R.id.HLClub);
-        highlightClub.setText("" + datasource.getClub(highlight.getClubID()).getClubShortName());
-        highlightClub.setTextColor(datasource.getClub(highlight.getClubID()).getClubColor());
+        if(highlight.getClubID() != -1) {
+            highlightClub.setText("" + datasource.getClub(highlight.getClubID()).getClubShortName());
+            highlightClub.setTextColor(datasource.getClub(highlight.getClubID()).getClubColor());
+        }else
+            highlightClub.setText("" ); //Other Hightlight
 
         TextView highlightDetail = convertView.findViewById(R.id.HLDetail);
         highlightDetail.setText(""+highlight.getHighlight2());
