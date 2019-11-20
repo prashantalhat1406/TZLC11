@@ -48,7 +48,7 @@ public class adaptor_highlight extends ArrayAdapter<Highlight> {
 
         TextView highlightTime = convertView.findViewById(R.id.HLTime);
         //highlightTime.setText(""+highlight.getVcmTime());
-        highlightTime.setText(""+String.format("%02d", (highlight.getVcmTime()/60))+":"+String.format("%02d", (highlight.getVcmTime()%60)));
+        highlightTime.setText("" + String.format("%02d", (highlight.getVcmTime() / 60)) + ":" + String.format("%02d", (highlight.getVcmTime() % 60)));
 
         /*TextView mt = convertView.findViewById(R.id.highlightMatchTime);
         mt.setText(""+String.format("%02d", (highlight.getSrTime()/60))+":"+String.format("%02d", (highlight.getSrTime()%60)));
