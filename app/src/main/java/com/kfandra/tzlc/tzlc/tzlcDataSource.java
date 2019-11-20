@@ -521,7 +521,8 @@ public class tzlcDataSource
         String selectQuery;
 
         if (isSenialWombat(clubID))
-            selectQuery = "SELECT * FROM playerDB WHERE sw = 1  ORDER BY playerName ASC";
+            //selectQuery = "SELECT * FROM playerDB WHERE sw = 1  ORDER BY playerName ASC";
+            selectQuery = "SELECT * FROM playerDB WHERE sw = 0  ORDER BY playerName ASC";
         else {
             if (isOrgnization(clubID))
                 selectQuery = "SELECT * FROM playerDB WHERE org = " + clubID + " ORDER BY playerName ASC";

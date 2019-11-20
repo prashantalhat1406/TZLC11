@@ -58,7 +58,10 @@ public class tzlc_squad_add extends AppCompatActivity {
                     squad.setClubID(player.getOrgID());
                 else
                     squad.setClubID(player.getClubId());
-                squad.setAbsent(0);
+                if(clubID == 4)
+                    squad.setAbsent(1);
+                else
+                    squad.setAbsent(0);
                 squad.setMatchID(matchID);
                 datasource.addSquad(squad);
                 squadPlayers.add(squad);
