@@ -130,10 +130,15 @@ public class tzlc_mo_add extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                int motime;
 
                 String srt = moTime.getText().toString();
-                String[] arr = srt.split(":");
-                int motime = (Integer.parseInt(arr[0]) * 60) + Integer.parseInt(arr[1]);
+                if(srt.length() == 0 )
+                    motime = 0;
+                else {
+                    String[] arr = srt.split(":");
+                    motime = (Integer.parseInt(arr[0]) * 60) + Integer.parseInt(arr[1]);
+                }
 
                 MatchOffcial matchOffcial = new MatchOffcial();
                 matchOffcial.setClubID( datasource.getClubID(clubName.getSelectedItem().toString()));

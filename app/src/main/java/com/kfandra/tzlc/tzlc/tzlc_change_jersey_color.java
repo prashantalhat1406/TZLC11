@@ -114,4 +114,13 @@ public class tzlc_change_jersey_color extends AppCompatActivity {
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+        Intent returnI = new Intent();
+        returnI.putExtra("matchID",matchID);
+        setResult(100,returnI);
+        finish();
+    }
+
 }
