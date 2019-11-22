@@ -36,6 +36,7 @@
 
     <string-array name="MOJobProfile">
         <item>BB</item>
+        <item>BBPC</item>
         <item>VCM1</item>
         <item>VCM2</item>
         <item>VCM3</item>
