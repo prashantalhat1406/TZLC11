@@ -152,8 +152,20 @@ public class tzlc_player_display extends AppCompatActivity {
         {
             case R.id.editScreen : break;
             case R.id.deleteScreen : break;
-            case R.id.addScreen: Intent playerAdd = new Intent(tzlc_player_display.this, tzlc_player_add.class);
+            case R.id.addScreen:
+                Intent playerAdd = new Intent(tzlc_player_display.this, tzlc_player_add.class);
+                /*Bundle extras  = new Bundle();
+                extras.putInt("scrollIndex",clubs.getSelectedItemPosition());
+                playerAdd.putExtras(extras);*/
                 startActivity(playerAdd);
+
+                /*Intent moAdd = new Intent(tzlc_match_details_tabs.this, tzlc_mo_add.class);
+                //moAdd.putExtra("matchID", matchID);
+                extras  = new Bundle();
+                extras.putLong("matchID", matchID);
+                extras.putInt("scrollIndex",scrollIndexL);
+                moAdd.putExtras(extras);
+                startActivity(moAdd);*/
                 break;
 
         }
