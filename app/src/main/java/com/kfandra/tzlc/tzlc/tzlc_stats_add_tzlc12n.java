@@ -970,7 +970,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 buthomeCor.setText(""+(stat.getHome_COR()+1));stat.setHome_COR(stat.getHome_COR()+1);
                 //undo=R.id.butstatsHomeCor;undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
-                Highlight highlight = new Highlight(matchID,m.getHomeClubID() ,matchTime, 0,"Cornor", "");
+                Highlight highlight = new Highlight(matchID,m.getHomeClubID() ,matchTime, 0,"Corner", "");
                 datasource.addHighlight(highlight);
             }
         });
@@ -1101,7 +1101,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 butawayCor.setText(""+(stat.getAway_COR()+1));stat.setAway_COR(stat.getAway_COR()+1);
                 //undo=R.id.butstatsAwayCor;undoMenu.findItem(R.id.undo).setEnabled(true);
                 datasource.updateStats(stat);
-                Highlight highlight = new Highlight(matchID,m.getAwayClubID() ,matchTime, 0,"Cornor", "");
+                Highlight highlight = new Highlight(matchID,m.getAwayClubID() ,matchTime, 0,"Corner", "");
                 datasource.addHighlight(highlight);
             }
         });

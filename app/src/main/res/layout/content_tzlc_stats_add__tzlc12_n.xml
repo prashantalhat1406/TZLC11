@@ -562,7 +562,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
                     android:gravity="center"
-                    android:text="VAM1 Time"
+                    android:text="VCM1 Time"
                     android:textSize="@dimen/tzlcStatsLabelSize"
                     android:textStyle="bold"/>
                 <EditText android:id="@+id/edtHighLightVCM"
