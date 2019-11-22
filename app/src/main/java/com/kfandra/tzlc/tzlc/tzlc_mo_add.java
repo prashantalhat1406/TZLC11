@@ -16,6 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -69,12 +70,14 @@ public class tzlc_mo_add extends AppCompatActivity {
 
         ArrayAdapter<CharSequence> adapterjob = ArrayAdapter.createFromResource(this,R.array.MOJobProfile,R.layout.dropdownitem);
         adapterjob.setDropDownViewResource(R.layout.dropdownitem);
+        //adapterjob.insert("Please select Job Profile",0);
         jobprofile.setAdapter(adapterjob);
 
 
         final List<String> clubnames = datasource.getAllClubNamesApartFromMatchClubs(matchID);
         ArrayAdapter<String> adaptorClubs = new ArrayAdapter<String>(this,R.layout.dropdownitem,clubnames);
         adaptorClubs.setDropDownViewResource(R.layout.dropdownitem);
+        //adaptorClubs.insert("Please select Club",0);
         clubName.setAdapter(adaptorClubs);
 
 
@@ -87,6 +90,7 @@ public class tzlc_mo_add extends AppCompatActivity {
                 List<String> playernames = datasource.getAllPlayerNamesForClub(datasource.getClubID(clubName.getSelectedItem().toString()));
                 final ArrayAdapter<String> adapter = new ArrayAdapter<String>(tzlc_mo_add.this,R.layout.dropdownitem,playernames);
                 adapter.setDropDownViewResource(R.layout.dropdownitem);
+                //adapter.insert("Please select Player",0);
                 player.setAdapter(adapter);
             }
             @Override
@@ -161,6 +165,10 @@ public class tzlc_mo_add extends AppCompatActivity {
                     matchOffcial.setId(moID);
                     datasource.updateMatchOffcial(matchOffcial);
                 }
+
+                Toast.makeText(tzlc_mo_add.this,"MO Added",Toast.LENGTH_SHORT).show();
+
+
                 Intent returnI = new Intent();
                 returnI.putExtra("matchID",matchID);
                 setResult(100,returnI);
