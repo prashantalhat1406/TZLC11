@@ -125,7 +125,10 @@ public class tzlc_mo_add extends AppCompatActivity {
 
                 jobprofile.setSelection(matchOffcial.getJob());
 
-                moTime.setText(""+ String.format("%02d", (matchOffcial.getMoTime()/60))+ ":" + String.format("%02d", (matchOffcial.getMoTime()%60)));
+                if(matchOffcial.getMoTime() != 0 )
+                    moTime.setText(""+ String.format("%02d", (matchOffcial.getMoTime()/60))+ ":" + String.format("%02d", (matchOffcial.getMoTime()%60)));
+                else
+                    moTime.setText("");
 
         }
 

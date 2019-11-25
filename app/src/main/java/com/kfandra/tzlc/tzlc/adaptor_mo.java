@@ -52,9 +52,21 @@ public class adaptor_mo extends ArrayAdapter<MatchOffcial>  {
 
         TextView mot = convertView.findViewById(R.id.moTime);
         if(mo.getOnTime()==0)
-            {mot.setText("No" + "("+String.format("%02d", (mo.getMoTime()/60))+":"+String.format("%02d", (mo.getMoTime()%60))+")"); mot.setTextColor(Color.RED);}
+            {
+                if(mo.getMoTime() != 0)
+                    mot.setText("No" + "("+String.format("%02d", (mo.getMoTime()/60))+":"+String.format("%02d", (mo.getMoTime()%60))+")");
+                else
+                    mot.setText("No (--:--)");
+                mot.setTextColor(Color.RED);
+            }
         else
-            {mot.setText("Yes" + "("+String.format("%02d", (mo.getMoTime()/60))+":"+String.format("%02d", (mo.getMoTime()%60))+")");mot.setTextColor(Color.GREEN);}
+            {
+                if(mo.getMoTime() != 0)
+                    mot.setText("Yes" + "("+String.format("%02d", (mo.getMoTime()/60))+":"+String.format("%02d", (mo.getMoTime()%60))+")");
+                else
+                    mot.setText("Yes (--:--)");
+                mot.setTextColor(Color.GREEN);
+            }
 
         return  convertView; //super.getView(position, convertView, parent);
     }
