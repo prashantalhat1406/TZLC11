@@ -267,6 +267,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 //Code for Adding Goal
                 RadioButton hGoal = findViewById(R.id.rdbutHGoal);
                 RadioButton aGoal = findViewById(R.id.rdbutAGoal);
+
                 if ( hGoal.isChecked())
                 {
                     if(!spnHomePlayers.getSelectedItem().toString().equals("Please select Player")) {
@@ -616,17 +617,21 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                 if(vcmHL)
                 {
                     String srt = vcmTime.getText().toString();
-                    String[] arr = srt.split(":");
-                    int vcmT = (Integer.parseInt(arr[0]) * 60) + Integer.parseInt(arr[1]);
 
-                    Highlight highlight = new Highlight(matchID, -1 , vcmT, -100, "Other HL", "");
-                    datasource.addHighlight(highlight);
-                    clearActions();
-                    Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, "Other HL Added", Toast.LENGTH_SHORT);
-                    t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
-                    t.show();
-                    vcmHL = false;
-                    vcmTime.setText("");
+                    if(srt.length() > 0 ) {
+                        String[] arr = srt.split(":");
+
+                        int vcmT = (Integer.parseInt(arr[0]) * 60) + Integer.parseInt(arr[1]);
+
+                        Highlight highlight = new Highlight(matchID, -1, vcmT, -100, "Other HL", "");
+                        datasource.addHighlight(highlight);
+                        clearActions();
+                        Toast t = Toast.makeText(tzlc_stats_add_tzlc12n.this, "Other HL Added", Toast.LENGTH_SHORT);
+                        t.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 0);
+                        t.show();
+                        vcmHL = false;
+                        vcmTime.setText("");
+                    }
                 }
 
             }
