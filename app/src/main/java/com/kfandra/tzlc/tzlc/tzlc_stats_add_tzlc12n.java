@@ -1382,7 +1382,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(final MenuItem item) {
         int id = item.getItemId();
 
 
@@ -1569,6 +1569,9 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     matchTimeHandler.postDelayed(updateMatchTimerThread,0);
                     start =false;
                     awayPossession = !awayPossession;
+
+
+
                 }
                 else{
                     item.setIcon(R.drawable.start);
@@ -1608,6 +1611,10 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     AlertDialog.Builder pausebuilder = new AlertDialog.Builder(tzlc_stats_add_tzlc12n.this);
                     pausebuilder.setMessage("Match Paused").setPositiveButton("Start match",pausedialog).setNegativeButton("Pause",pausedialog).show();
                     */
+
+                    AlertDialog.Builder pausebuilder = new AlertDialog.Builder(tzlc_stats_add_tzlc12n.this);
+                    pausebuilder.setTitle("Alert !!");
+                    pausebuilder.setMessage("Match Paused").show();
 
                 }
                 break;
