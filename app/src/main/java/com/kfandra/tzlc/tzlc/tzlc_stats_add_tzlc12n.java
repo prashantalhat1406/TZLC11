@@ -1612,9 +1612,20 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     pausebuilder.setMessage("Match Paused").setPositiveButton("Start match",pausedialog).setNegativeButton("Pause",pausedialog).show();
                     */
 
+                    DialogInterface.OnClickListener pausedialog = new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            switch (which)
+                            {
+                                case DialogInterface.BUTTON_POSITIVE : break;
+                                case DialogInterface.BUTTON_NEGATIVE :  break;
+                            }
+                        }
+                    };
+
                     AlertDialog.Builder pausebuilder = new AlertDialog.Builder(tzlc_stats_add_tzlc12n.this);
                     pausebuilder.setTitle("Alert !!");
-                    pausebuilder.setMessage("Match Paused").show();
+                    pausebuilder.setMessage("Match Paused. Please dismiss alert and press PLAY button to resume").setPositiveButton("Dismiss",pausedialog).show();
 
                 }
                 break;
