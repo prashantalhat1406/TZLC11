@@ -45,13 +45,21 @@ public class tzlc_match_details_formation extends Fragment {
                 if(isChecked) {
                     //Toast.makeText(getContext(), "Home", Toast.LENGTH_SHORT).show();
                     Formation formation = datasource.getFormation(match_details.getMatchID(), datasource.getMatch(match_details.getMatchID()).getHomeClubID());
-                    showFormation(formation,rootView);
-                    TextView formationInfo = rootView.findViewById(R.id.formationInfo);
-                    formationInfo.setText("" +  getResources().getStringArray(R.array.formations)[formation.getFormations()]);
-                    switch (formation.getFormationType()){
-                        case 1 : formationInfo.setText(formationInfo.getText() + " Attacking"); break;
-                        case 2 : formationInfo.setText(formationInfo.getText() + " Normal"); break;
-                        case 3 : formationInfo.setText(formationInfo.getText() + " Defensive"); break;
+                    if(formation.getRb() !=0 ) {
+                        showFormation(formation, rootView);
+                        TextView formationInfo = rootView.findViewById(R.id.formationInfo);
+                        formationInfo.setText("" + getResources().getStringArray(R.array.formations)[formation.getFormations()]);
+                        switch (formation.getFormationType()) {
+                            case 1:
+                                formationInfo.setText(formationInfo.getText() + " Attacking");
+                                break;
+                            case 2:
+                                formationInfo.setText(formationInfo.getText() + " Normal");
+                                break;
+                            case 3:
+                                formationInfo.setText(formationInfo.getText() + " Defensive");
+                                break;
+                        }
                     }
                 }
             }
@@ -64,13 +72,21 @@ public class tzlc_match_details_formation extends Fragment {
                 if(isChecked) {
                     //Toast.makeText(getContext(), "Away", Toast.LENGTH_SHORT).show();
                     Formation formation = datasource.getFormation(match_details.getMatchID(), datasource.getMatch(match_details.getMatchID()).getAwayClubID());
-                    showFormation(formation,rootView);
-                    TextView formationInfo = rootView.findViewById(R.id.formationInfo);
-                    formationInfo.setText("" +  getResources().getStringArray(R.array.formations)[formation.getFormations()]);
-                    switch (formation.getFormationType()){
-                        case 1 : formationInfo.setText(formationInfo.getText() + " Attacking"); break;
-                        case 2 : formationInfo.setText(formationInfo.getText() + " Normal"); break;
-                        case 3 : formationInfo.setText(formationInfo.getText() + " Defensive"); break;
+                    if(formation.getRb() !=0 ) {
+                        showFormation(formation, rootView);
+                        TextView formationInfo = rootView.findViewById(R.id.formationInfo);
+                        formationInfo.setText("" + getResources().getStringArray(R.array.formations)[formation.getFormations()]);
+                        switch (formation.getFormationType()) {
+                            case 1:
+                                formationInfo.setText(formationInfo.getText() + " Attacking");
+                                break;
+                            case 2:
+                                formationInfo.setText(formationInfo.getText() + " Normal");
+                                break;
+                            case 3:
+                                formationInfo.setText(formationInfo.getText() + " Defensive");
+                                break;
+                        }
                     }
                 }
             }
