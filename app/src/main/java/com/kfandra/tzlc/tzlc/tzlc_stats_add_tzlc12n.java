@@ -255,6 +255,27 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
         awayActions = findViewById(R.id.rdgrpAwayActions);
 
 
+        vcmTime = findViewById(R.id.edtHighLightVCM);
+        vcmTime.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                String str = vcmTime.getText().toString();
+                if(str.length() == 2)
+                    vcmTime.append(":");
+            }
+        });
+
+
         clear = findViewById(R.id.butStatsActionClear);
         clear.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -263,7 +284,10 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     ((RadioButton)homeActions.getChildAt(i)).setChecked(false);
                 for(int i=0;i < awayActions.getChildCount();i++)
                     ((RadioButton)awayActions.getChildAt(i)).setChecked(false);
+                vcmTime.setText("");
             }
+
+
         });
 
         save = findViewById(R.id.butStatsActionSave);
@@ -1229,25 +1253,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
         }); */
 
 
-        vcmTime = findViewById(R.id.edtHighLightVCM);
-        vcmTime.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                String str = vcmTime.getText().toString();
-                if(str.length() == 2)
-                    vcmTime.append(":");
-            }
-        });
 
 
         startPause = findViewById(R.id.butstatsPauseTZLC12);
