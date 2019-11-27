@@ -259,11 +259,13 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
         vcmTime.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
+                if(count == 1 && vcmTime.getText().toString().length()==3)
+                    vcmTime.setText(s.toString().substring(0,1));
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+
 
             }
 
