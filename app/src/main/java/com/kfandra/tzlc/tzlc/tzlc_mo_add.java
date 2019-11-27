@@ -51,7 +51,8 @@ public class tzlc_mo_add extends AppCompatActivity {
         moTime.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
+                if(count == 1 && moTime.getText().toString().length()==3)
+                    moTime.setText(s.toString().substring(0,1));
             }
 
             @Override
