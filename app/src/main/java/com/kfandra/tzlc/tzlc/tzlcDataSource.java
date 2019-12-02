@@ -535,6 +535,26 @@ public class tzlcDataSource
         return players;
     }
 
+    public List<Player> getAllPlayersNotForClub(long clubID)    {
+        List<Player> players = new ArrayList<>();
+        String selectQuery;
+
+        if (isSenialWombat(clubID))
+            //selectQuery = "SELECT * FROM playerDB WHERE sw = 1  ORDER BY playerName ASC";
+            selectQuery = "SELECT * FROM playerDB WHERE sw != 0  ORDER BY playerName ASC";
+        else {
+            if (isOrgnization(clubID))
+                selectQuery = "SELECT * FROM playerDB WHERE org != " + clubID + " ORDER BY playerName ASC";
+            else
+                selectQuery = "SELECT * FROM playerDB WHERE club != " + clubID + " ORDER BY playerName ASC";
+        }
+
+        Cursor cursor = database.rawQuery(selectQuery, null);
+        players = createPlayerList(cursor);
+        return players;
+    }
+
+
     public List<String> getAllPlayerNamesForClub(long clubID)    {
         List<String> playerNames = new ArrayList<>();
         List<Player> allPlayers =  getAllPlayersForClub(clubID);
@@ -1601,6 +1621,15 @@ public class tzlcDataSource
     public List<Squad> getAllSquadForMatchandClub(long matchID, long clubID)    {
         List<Squad> squads = new ArrayList<>();
         String selectQuery = "SELECT * FROM squadDB WHERE matchID = "+ matchID+ " AND clubID = "+ clubID+ "";
+        Cursor cursor = database.rawQuery(selectQuery, null);
+        squads = createSquadList(cursor);
+        return squads;
+    }
+
+    public List<Squad> getAllSquadForWombats(long matchID, long clubID)
+    {
+        List<Squad> squads = new ArrayList<>();
+        String selectQuery = "SELECT * FROM squadDB WHERE matchID = "+ matchID+ " AND clubID != "+ clubID+ "";
         Cursor cursor = database.rawQuery(selectQuery, null);
         squads = createSquadList(cursor);
         return squads;

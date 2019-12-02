@@ -52,7 +52,9 @@ public class tzlc_squad_add extends AppCompatActivity {
         squadlist = findViewById(R.id.lstSquadList);
         if(squadPlayers.size() == 0)
         {
+
             players = datasource.getAllMatchPlayers(clubID, matchID);
+
             for (Player player : players) {
                 Squad squad = new Squad();
                 squad.setPlayerID(player.getId());
