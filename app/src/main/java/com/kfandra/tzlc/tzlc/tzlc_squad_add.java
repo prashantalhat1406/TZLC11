@@ -5,12 +5,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,11 +61,15 @@ public class tzlc_squad_add extends AppCompatActivity {
                 else
                     squad.setClubID(player.getClubId());
                 if(clubID == 4)
+                {
                     squad.setAbsent(1);
+                    squad.setClubID(4);
+                }
                 else
                     squad.setAbsent(0);
                 squad.setMatchID(matchID);
-                datasource.addSquad(squad);
+                long _id = datasource.addSquad(squad);
+                squad.setId(_id);
                 squadPlayers.add(squad);
             }
         }
@@ -88,6 +94,10 @@ public class tzlc_squad_add extends AppCompatActivity {
                 for (Squad squad : squadPlayers) {
                     datasource.updateSquad(squad);
                 }
+
+                Toast t =  Toast.makeText(tzlc_squad_add.this, "Squad Added for " + datasource.getClub(clubID).getClubName() , Toast.LENGTH_SHORT);
+                t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
+                t.show();
 
                 Intent returnI = new Intent();
                 returnI.putExtra("matchID", matchID);

@@ -260,6 +260,7 @@ public class tzlc_formation_add extends AppCompatActivity implements View.OnDrag
                     case R.id.rdbFormationA : formation.setFormationType(1); break;
                     case R.id.rdbFormationN : formation.setFormationType(2); break;
                     case R.id.rdbFormationD : formation.setFormationType(3); break;
+                    default : formation.setFormationType(2); break;
                 }
                 formation.setFormations(formationSpinner.getSelectedItemPosition());
                 formation.setGk(gk);
@@ -278,6 +279,10 @@ public class tzlc_formation_add extends AppCompatActivity implements View.OnDrag
                 formation.setLst(lst);
 
                 datasource.addFormation(formation);
+
+                Toast t =  Toast.makeText(tzlc_formation_add.this, "Formation Added for " + datasource.getClub(clubID).getClubName() , Toast.LENGTH_SHORT);
+                t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
+                t.show();
 
 
                 Intent returnI = new Intent();

@@ -1550,10 +1550,11 @@ public class tzlcDataSource
         return squads;
     }
 
-    public void addSquad(Squad squad) {
+    public long addSquad(Squad squad) {
         ContentValues value = createContentForSquad(squad);
         long rowID =  database.insert(tzlcDBContract.SquadDB.TABLE_NAME,null, value);
         Log.d(tzlcDataSource.class.getSimpleName(), "squad added " + rowID);
+        return rowID;
     }
 
     public Squad getSquad(long squadID)    {
