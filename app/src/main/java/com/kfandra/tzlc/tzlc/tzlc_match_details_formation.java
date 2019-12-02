@@ -60,6 +60,8 @@ public class tzlc_match_details_formation extends Fragment {
                                 formationInfo.setText(formationInfo.getText() + " Defensive");
                                 break;
                         }
+                    }else{
+                        doNotShowFormation(rootView);
                     }
                 }
             }
@@ -87,12 +89,54 @@ public class tzlc_match_details_formation extends Fragment {
                                 formationInfo.setText(formationInfo.getText() + " Defensive");
                                 break;
                         }
+                    }else{
+                        doNotShowFormation(rootView);
                     }
                 }
             }
         });
         return rootView;
     }
+
+    private void doNotShowFormation(View rootView) {
+        TextView t1 = rootView.findViewById(R.id.formationDisplayRM);
+        t1.setVisibility(View.GONE);
+        TextView t2 = rootView.findViewById(R.id.formationDisplayRCM);
+        t2.setVisibility(View.GONE);
+        TextView t3 = rootView.findViewById(R.id.formationDisplayCM);
+        t3.setVisibility(View.GONE);
+        TextView t4 = rootView.findViewById(R.id.formationDisplayLCM);
+        t4.setVisibility(View.GONE);
+        TextView t5 = rootView.findViewById(R.id.formationDisplayLM);
+        t5.setVisibility(View.GONE);
+
+
+        TextView t6 = rootView.findViewById(R.id.formationDisplayRST);
+        t6.setVisibility(View.GONE);
+        TextView t7 = rootView.findViewById(R.id.formationDisplayST);
+        t7.setVisibility(View.GONE);
+        TextView t8= rootView.findViewById(R.id.formationDisplayLST);
+        t8.setVisibility(View.GONE);
+
+
+        TextView t11 = rootView.findViewById(R.id.formationDisplayRB);
+        t11.setVisibility(View.GONE);
+        TextView t12 = rootView.findViewById(R.id.formationDisplayRCD);
+        t12.setVisibility(View.GONE);
+        TextView t13 = rootView.findViewById(R.id.formationDisplayCD);
+        t13.setVisibility(View.GONE);
+        TextView t14 = rootView.findViewById(R.id.formationDisplayLCD);
+        t14.setVisibility(View.GONE);
+        TextView t15 = rootView.findViewById(R.id.formationDisplayLB);
+        t15.setVisibility(View.GONE);
+        TextView gk = rootView.findViewById(R.id.formationDisplayGK);
+        gk.setVisibility(View.GONE);
+
+
+        TextView formationInfo = rootView.findViewById(R.id.formationInfo);
+        formationInfo.setText("" + "Formation Not Available");
+    }
+
 
     private void showFormation(Formation formation, View rootView) {
         switch (formation.getFormations()){
@@ -212,6 +256,7 @@ public class tzlc_match_details_formation extends Fragment {
             TextView gk = rootView.findViewById(R.id.formationDisplayGK);
             if(datasource.getPlayer(datasource.getSquad(formation.getGk()).getPlayerID()).getPlayerName() != null)
             gk.setText("" + datasource.getPlayer(datasource.getSquad(formation.getGk()).getPlayerID()).getPlayerName().split("@")[1]);
+            gk.setVisibility(View.VISIBLE);
 
         switch (positions){
             case 4 :
