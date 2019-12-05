@@ -4,10 +4,10 @@ Pulkit@Saraswat,7,2,0
 Priank@Gurhani,7,2,0
 Aviank@Ghanaria,5,1,0
 Soumya@Ghosal,5,3,0
-Ravi@Poddar,8,1,0
-Shaurya@Shantam,8,3,0
-Ajinkya@Pote,8,1,0
-Shashank@Korada,8,3,0
+Ravi@Poddar,5,1,0
+Shaurya@Shantam,5,3,0
+Ajinkya@Pote,5,1,0
+Shashank@Korada,5,3,0
 Suraj@Patil,5,1,0
 Sharad@Yeole,5,1,0
 Aybhay@Mishra,5,1,0
