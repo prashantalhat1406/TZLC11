@@ -51,8 +51,15 @@ public class tzlc_stats_completed_passes extends AppCompatActivity {
                 homeP = findViewById(R.id.edtHomePasses);
                 awayP = findViewById(R.id.edtAwayPasses);
 
-                homePasses = Integer. parseInt(homeP.getText().toString());
-                awayPasses = Integer. parseInt(awayP.getText().toString());
+                if(homeP.getText().toString().length() > 0)
+                    homePasses = Integer. parseInt(homeP.getText().toString());
+                else
+                    homePasses = 0;
+
+                if(awayP.getText().toString().length() > 0)
+                    awayPasses = Integer. parseInt(awayP.getText().toString());
+                else
+                    awayPasses = 0;
                 Intent returnI = new Intent();
                 Bundle extras  = new Bundle();
                 extras.putLong("matchID", matchID);
