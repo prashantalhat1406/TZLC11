@@ -1405,8 +1405,10 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                             case DialogInterface.BUTTON_POSITIVE :
                                 stat.setMatchID(m.getId());
                                 stat.setMatchTime(matchTime);
-                                stat.setHome_TIME((stat.getHome_TIME()*1000)+completedPassesHome);
-                                stat.setAway_TIME((stat.getAway_TIME()*1000)+completedPassesAway);
+                                //stat.setHome_TIME((stat.getHome_TIME()*1000)+completedPassesHome);
+                                //stat.setAway_TIME((stat.getAway_TIME()*1000)+completedPassesAway);
+                                stat.setHome_TIME(completedPassesHome);
+                                stat.setAway_TIME(completedPassesAway);
                                 stat.setHome_Score(Integer.parseInt(homeScore.getText().toString()));
                                 stat.setAway_Score(Integer.parseInt(awayScore.getText().toString()));
                                 possesionTimers.add(new possesionTimer(lastPossession, matchTime));
