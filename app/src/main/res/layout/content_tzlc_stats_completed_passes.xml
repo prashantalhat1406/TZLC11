@@ -18,7 +18,7 @@
                 android:layout_width="match_parent" android:layout_weight="0.3" android:layout_gravity="center" android:gravity="center" android:textSize="@dimen/tzlcTextSize"
                 android:layout_height="match_parent"  android:text="Enter Passes for Home Cub :"/>
             <EditText android:id="@+id/edtHomePasses"
-                android:layout_width="match_parent" android:layout_weight="0.7"
+                android:layout_width="match_parent" android:layout_weight="0.7" android:inputType="number"
                 android:layout_height="match_parent" />
         </LinearLayout>
         <LinearLayout android:layout_weight="0.1"
@@ -28,7 +28,7 @@
                 android:layout_width="match_parent" android:layout_weight="0.3" android:layout_gravity="center" android:gravity="center" android:textSize="@dimen/tzlcTextSize"
                 android:layout_height="match_parent"  android:text="Enter Passes for Away Cub :"/>
             <EditText android:id="@+id/edtAwayPasses"
-                android:layout_width="match_parent" android:layout_weight="0.7"
+                android:layout_width="match_parent" android:layout_weight="0.7" android:inputType="number"
                 android:layout_height="match_parent" />
         </LinearLayout>
         <LinearLayout android:layout_weight="0.1"
