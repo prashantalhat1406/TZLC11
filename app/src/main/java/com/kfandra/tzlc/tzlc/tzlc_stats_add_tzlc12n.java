@@ -623,7 +623,7 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     }
                 }
 
-                //Code for Assist
+                //Code for Sub, No need to select player
                 RadioButton hSub = findViewById(R.id.rdbutHSub);
                 RadioButton aSub = findViewById(R.id.rdbutASub);
                 if(hSub.isChecked())
