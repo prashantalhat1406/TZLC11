@@ -432,6 +432,10 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         Goal goal = datasource.getGoal(lastGoalID);
                         goal.setAssistPlayerID(datasource.getPlayerID(spnHomePlayers.getSelectedItem().toString()));
                         datasource.updateGoal(goal);
+
+                        Highlight highlight = new Highlight(matchID, goal.getAgainstClubID(), 0, matchTime, "ASSIST", ""+spnHomePlayers.getSelectedItem().toString());
+                        datasource.addHighlight(highlight);
+
                         clearActions();
                         Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, ""+datasource.getClub( m.getHomeClubID()).getClubShortName() + " : Assist Added", Toast.LENGTH_SHORT);
                         t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
@@ -446,7 +450,11 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                         Goal goal = datasource.getGoal(lastGoalID);
                         goal.setAssistPlayerID(datasource.getPlayerID(spnAwayPlayers.getSelectedItem().toString()));
                         datasource.updateGoal(goal);
+
+                        Highlight highlight = new Highlight(matchID, goal.getAgainstClubID(), 0, matchTime, "ASSIST", ""+spnAwayPlayers.getSelectedItem().toString());
+                        datasource.addHighlight(highlight);
                         clearActions();
+
                         Toast t =  Toast.makeText(tzlc_stats_add_tzlc12n.this, ""+datasource.getClub( m.getAwayClubID()).getClubShortName() + " : Assist Added", Toast.LENGTH_SHORT);
                         t.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL,0,0);
                         t.show();
