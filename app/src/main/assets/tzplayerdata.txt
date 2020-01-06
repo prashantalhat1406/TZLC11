@@ -60,6 +60,7 @@ Heribert@Thomas,7,1,0
 Deepak@Soni,7,2,0
 Lokesh@Dubey,7,2,0
 Shahbaz@Khan,7,1,0
+Niraj@Shah,7,3,0
 Ajay@Sanghvi,9,2,0
 Atul@Shah,9,2,0
 Amit@Bhable,9,2,0
