@@ -224,10 +224,14 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
         homeSquad = datasource.getAvailableSquadForMatchandClub(matchID, m.getHomeClubID());
         homePlayerNames.clear();
 
-        for (Squad squad : homeSquad) {
+        /*for (Squad squad : homeSquad) {
             String name = datasource.getPlayer(squad.getPlayerID()).getPlayerName();
             homePlayerNames.add(""+name.split("@")[0].substring(0,2)+". "+name.split("@")[1]);
-        }
+        }*/
+        if( m.getHomeClubID() < 5)
+            homePlayerNames = datasource.getAllPlayerNamesForClub(m.getHomeClubID(),matchID,m.getAwayClubID());
+        else
+            homePlayerNames = datasource.getAllPlayerNamesForClub(m.getHomeClubID(),matchID);
         spnHomePlayers = findViewById(R.id.spnHomePlayers);
         ArrayAdapter<String> adapterPlayerNames = new ArrayAdapter<String>(tzlc_stats_add_tzlc12n.this,R.layout.dropdownitem, homePlayerNames);
         adapterPlayerNames.setDropDownViewResource(R.layout.dropdownitem);
@@ -239,10 +243,11 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
         awaySquad = datasource.getAvailableSquadForMatchandClub(matchID, m.getAwayClubID());
         awayPlayerNames.clear();
 
-        for (Squad squad : awaySquad) {
+        /*for (Squad squad : awaySquad) {
             String name = datasource.getPlayer(squad.getPlayerID()).getPlayerName();
             awayPlayerNames.add(""+name.split("@")[0].substring(0,2)+". "+name.split("@")[1]);
-        }
+        }*/
+        awayPlayerNames = datasource.getAllPlayerNamesForClub(m.getAwayClubID(),matchID);
         spnAwayPlayers = findViewById(R.id.spnAwayPlayers);
         ArrayAdapter<String> adapterPlayerNames2 = new ArrayAdapter<String>(tzlc_stats_add_tzlc12n.this,R.layout.dropdownitem, awayPlayerNames);
         adapterPlayerNames2.setDropDownViewResource(R.layout.dropdownitem);

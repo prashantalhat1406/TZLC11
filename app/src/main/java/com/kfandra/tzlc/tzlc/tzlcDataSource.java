@@ -6,8 +6,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import com.google.android.gms.common.util.CollectionUtils;
+
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -567,6 +570,37 @@ public class tzlcDataSource
     public List<String> getAllPlayerNamesForClub(long clubID,long matchId)    {
         List<String> playerNames = new ArrayList<>();
         List<Player> allPlayers =  getAllPlayersForClub(clubID);
+        for (Player player : allPlayers) {
+            playerNames.add(player.getPlayerName().split("@")[0].substring(0,2)+". "+player.getPlayerName().split("@")[1]);
+        }
+
+        List<Loan> loans = getAllLoansForClubForMatch(clubID,matchId);
+        for (Loan loan : loans) {
+            playerNames.add(getPlayer(loan.getLoanPlayerID()).getPlayerName().split("@")[0].substring(0,2)+". "+getPlayer(loan.getLoanPlayerID()).getPlayerName().split("@")[1]);
+        }
+
+        return playerNames;
+    }
+
+    public List<String> getAllPlayerNamesForClub(long clubID,long matchId, long againstClub)    {
+        List<String> playerNames = new ArrayList<>();
+
+        List<Player> allOrgPlayers =  getAllPlayersForClub(clubID);
+        List<Player> temp = new ArrayList<>(allOrgPlayers);
+        List<Player> oppositePlayers = getAllPlayersForClub(againstClub);
+
+        List<Player> allPlayers = new ArrayList<>();
+
+        boolean flag = false;
+        for (Player orgP : allOrgPlayers) {
+            flag = false;
+            for (Player cP : oppositePlayers)
+                if (orgP.getId() == cP.getId())
+                    flag = true;
+            if (!flag)
+                allPlayers.add(orgP);
+        }
+
         for (Player player : allPlayers) {
             playerNames.add(player.getPlayerName().split("@")[0].substring(0,2)+". "+player.getPlayerName().split("@")[1]);
         }
