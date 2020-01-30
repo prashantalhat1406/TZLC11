@@ -710,12 +710,12 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     {
                         possesionTimers.add(new possesionTimer("A1", matchTime));
                         t1.setTextOn(awayClubName);
-                        t1.setTextColor(awayColor);
+                        t1.setTextColor(tempawayColor);
                         lastPossession="A1";
                     }else {
                         possesionTimers.add(new possesionTimer("H1", matchTime));
                         t1.setTextOn(homeClubName);
-                        t1.setTextColor(homeColor);
+                        t1.setTextColor(temphomeColor);
                         lastPossession="H1";
                     }
                 }
@@ -739,12 +739,12 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     {
                         possesionTimers.add(new possesionTimer("H4", matchTime));
                         t1.setTextOff(homeClubName);
-                        t1.setTextColor(homeColor);
+                        t1.setTextColor(temphomeColor);
                         lastPossession="H4";
                     }else {
                         possesionTimers.add(new possesionTimer("A4", matchTime));
                         t1.setTextOff(awayClubName);
-                        t1.setTextColor(awayColor);
+                        t1.setTextColor(tempawayColor);
                         lastPossession="A4";
                     }
                 }
@@ -782,12 +782,12 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     {
                         possesionTimers.add(new possesionTimer("A2", matchTime));
                         t2.setTextOn(awayClubName);
-                        t2.setTextColor(awayColor);
+                        t2.setTextColor(tempawayColor);
                         lastPossession="A2";
                     }else {
                         possesionTimers.add(new possesionTimer("H2", matchTime));
                         t2.setTextOn(homeClubName);
-                        t2.setTextColor(homeColor);
+                        t2.setTextColor(temphomeColor);
                         lastPossession="H2";
                     }
 
@@ -812,13 +812,13 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     {
                         possesionTimers.add(new possesionTimer("H3", matchTime));
                         t2.setTextOff(homeClubName);
-                        t2.setTextColor(homeColor);
+                        t2.setTextColor(temphomeColor);
                         lastPossession="H3";
 
                     }else {
                         possesionTimers.add(new possesionTimer("A3", matchTime));
                         t2.setTextOff(awayClubName);
-                        t2.setTextColor(awayColor);
+                        t2.setTextColor(tempawayColor);
                         lastPossession="A3";
                     }
 
@@ -857,13 +857,13 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     {
                         possesionTimers.add(new possesionTimer("A3", matchTime));
                         t3.setTextOn(awayClubName);
-                        t3.setTextColor(awayColor);
+                        t3.setTextColor(tempawayColor);
                         lastPossession="A3";
 
                     }else {
                         possesionTimers.add(new possesionTimer("H3", matchTime));
                         t3.setTextOn(homeClubName);
-                        t3.setTextColor(homeColor);
+                        t3.setTextColor(temphomeColor);
                         lastPossession="H3";
                     }
                 }
@@ -889,12 +889,12 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     {
                         possesionTimers.add(new possesionTimer("H2", matchTime));
                         t3.setTextOff(homeClubName);
-                        t3.setTextColor(homeColor);
+                        t3.setTextColor(temphomeColor);
                         lastPossession="H2";
                     }else {
                         possesionTimers.add(new possesionTimer("A2", matchTime));
                         t3.setTextOff(awayClubName);
-                        t3.setTextColor(awayColor);
+                        t3.setTextColor(tempawayColor);
                         lastPossession="A2";
                     }
                 }
@@ -934,12 +934,12 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     {
                         possesionTimers.add(new possesionTimer("A4", matchTime));
                         t4.setTextOn(awayClubName);
-                        t4.setTextColor(awayColor);
+                        t4.setTextColor(tempawayColor);
                         lastPossession="A4";
                     }else {
                         possesionTimers.add(new possesionTimer("H4", matchTime));
                         t4.setTextOn(homeClubName);
-                        t4.setTextColor(homeColor);
+                        t4.setTextColor(temphomeColor);
                         lastPossession="H4";
                     }
                 }
@@ -963,13 +963,13 @@ public class tzlc_stats_add_tzlc12n extends AppCompatActivity {
                     {
                         possesionTimers.add(new possesionTimer("H1", matchTime));
                         t4.setTextOff(homeClubName);
-                        t4.setTextColor(homeColor);
+                        t4.setTextColor(temphomeColor);
                         lastPossession="H1";
                     }else {
 
                         possesionTimers.add(new possesionTimer("A1", matchTime));
                         t4.setTextOff(awayClubName);
-                        t4.setTextColor(awayColor);
+                        t4.setTextColor(tempawayColor);
                         lastPossession="A1";
                     }
                 }
